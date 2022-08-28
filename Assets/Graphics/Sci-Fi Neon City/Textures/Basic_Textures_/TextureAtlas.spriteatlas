@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TextureAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 8192
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 988024811278cdb419268743b5145c8d, type: 3}
+    - {fileID: 2800000, guid: 5a3d01104f3acaa4ea97bcccbe7d02ef, type: 3}
+    - {fileID: 2800000, guid: ff4e24396ea147548a68da4d8f934aa8, type: 3}
+    - {fileID: 2800000, guid: 4077982e945d2894ab57aeb1b283b70d, type: 3}
+    - {fileID: 2800000, guid: 671e5a31e2ca8cd409b122bfcd3d9b2d, type: 3}
+    - {fileID: 2800000, guid: 664912026cfe48348a3aab71a48a07fd, type: 3}
+    - {fileID: 2800000, guid: 8f58bedf3d6a43b4d941c222dd61a0c8, type: 3}
+    - {fileID: 2800000, guid: 9566e232027c527488472c2ac26f47ed, type: 3}
+    - {fileID: 2800000, guid: 88478213e4f2e7c469da437072523966, type: 3}
+    - {fileID: 2800000, guid: 8bc1ad6f44e20d54ead1b4e186a095a7, type: 3}
+    - {fileID: 2800000, guid: 8312b763f93fb754a807cc6c027bc10f, type: 3}
+    - {fileID: 2800000, guid: 063b264408e95bc4d9cfc90b374afe53, type: 3}
+    - {fileID: 2800000, guid: 18ef60abe92ebec49b68c061b6d4ada2, type: 3}
+    - {fileID: 2800000, guid: 7943259d62367404d94380e9dd7606f6, type: 3}
+    - {fileID: 2800000, guid: 90e1e5c4148e7c844b0785d5c98e45b7, type: 3}
+    - {fileID: 2800000, guid: 5ee19101396cbb442b7ce72b8eddb436, type: 3}
+    - {fileID: 2800000, guid: 65793eca1fedf794f84ec8d77cc8cf0c, type: 3}
+    - {fileID: 2800000, guid: e102f275c00e14d42a1d2110463c6e36, type: 3}
+    - {fileID: 2800000, guid: 1a70da0ade1d40043a4db05a8b7938c4, type: 3}
+    - {fileID: 2800000, guid: 10dcc38cc08b461408b02ed9a7ba4ac6, type: 3}
+    - {fileID: 2800000, guid: 22bab03daead2584ba314d815aa7b201, type: 3}
+    - {fileID: 2800000, guid: 9979799c3fed32649b4e6b8418fb81bf, type: 3}
+    - {fileID: 2800000, guid: bc83b10a1d9d11242adf574ab2ebde57, type: 3}
+    - {fileID: 2800000, guid: 63429459ba668cd419af632bed4c5c63, type: 3}
+    - {fileID: 2800000, guid: 0edf95a98b0e8b547838dfdae173887e, type: 3}
+    - {fileID: 2800000, guid: 167d972b5ad2bae40b19546ce084d7eb, type: 3}
+    - {fileID: 2800000, guid: 040cd31cc4c5bad47a48ca723ef52d7f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5a3d01104f3acaa4ea97bcccbe7d02ef, type: 3}
+  - {fileID: 21300000, guid: 5ee19101396cbb442b7ce72b8eddb436, type: 3}
+  - {fileID: 21300000, guid: 671e5a31e2ca8cd409b122bfcd3d9b2d, type: 3}
+  - {fileID: 21300000, guid: 988024811278cdb419268743b5145c8d, type: 3}
+  - {fileID: 21300000, guid: 664912026cfe48348a3aab71a48a07fd, type: 3}
+  - {fileID: 21300000, guid: 9566e232027c527488472c2ac26f47ed, type: 3}
+  - {fileID: 21300000, guid: 88478213e4f2e7c469da437072523966, type: 3}
+  - {fileID: 21300000, guid: 8312b763f93fb754a807cc6c027bc10f, type: 3}
+  - {fileID: 21300000, guid: 063b264408e95bc4d9cfc90b374afe53, type: 3}
+  - {fileID: 21300000, guid: 90e1e5c4148e7c844b0785d5c98e45b7, type: 3}
+  - {fileID: 21300000, guid: e102f275c00e14d42a1d2110463c6e36, type: 3}
+  - {fileID: 21300000, guid: ff4e24396ea147548a68da4d8f934aa8, type: 3}
+  - {fileID: 21300000, guid: 63429459ba668cd419af632bed4c5c63, type: 3}
+  - {fileID: 21300000, guid: 0edf95a98b0e8b547838dfdae173887e, type: 3}
+  - {fileID: 21300000, guid: bc83b10a1d9d11242adf574ab2ebde57, type: 3}
+  - {fileID: 21300000, guid: 1a70da0ade1d40043a4db05a8b7938c4, type: 3}
+  - {fileID: 21300000, guid: 65793eca1fedf794f84ec8d77cc8cf0c, type: 3}
+  - {fileID: 21300000, guid: 167d972b5ad2bae40b19546ce084d7eb, type: 3}
+  - {fileID: 21300000, guid: 18ef60abe92ebec49b68c061b6d4ada2, type: 3}
+  - {fileID: 21300000, guid: 040cd31cc4c5bad47a48ca723ef52d7f, type: 3}
+  - {fileID: 21300000, guid: 10dcc38cc08b461408b02ed9a7ba4ac6, type: 3}
+  - {fileID: 21300000, guid: 9979799c3fed32649b4e6b8418fb81bf, type: 3}
+  - {fileID: 21300000, guid: 22bab03daead2584ba314d815aa7b201, type: 3}
+  - {fileID: 21300000, guid: 7943259d62367404d94380e9dd7606f6, type: 3}
+  - {fileID: 21300000, guid: 4077982e945d2894ab57aeb1b283b70d, type: 3}
+  - {fileID: 21300000, guid: 8bc1ad6f44e20d54ead1b4e186a095a7, type: 3}
+  - {fileID: 21300000, guid: 8f58bedf3d6a43b4d941c222dd61a0c8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Antennas_Metalness_and_Roughness
+  - Material_4_Base_Color
+  - Facade_Metalness_and_Roughness
+  - Antennas_Base_Color
+  - Landing_Platforms_AO
+  - Landing_Platforms_Metalness_and_Roughness
+  - Material_1_Base_Color
+  - Material_2_Base_Color
+  - Material_2_Metalness_and_Roughness
+  - Material_4_AO
+  - Material_5_AO
+  - Facade_AO
+  - Power_Supply_Metalness_and_Roughness
+  - Roof_Platform_AO
+  - Power_Supply_Base_Color
+  - Material_5_Base_Color
+  - Material_4_Metalness_and_Roughness
+  - Roof_Platform_Base_Color
+  - Material_3_Base_Color
+  - Roof_Platform_Metalness_and_Roughness
+  - Material_5_Emission
+  - Power_Supply_AO
+  - Material_5_Metalness_and_Roughness
+  - Material_3_Metalness_and_Roughness
+  - Facade_Base_Color
+  - Material_1_Metalness_and_Roughness
+  - Landing_Platforms_Base_Color
+  m_RenderDataMap: {}
+  m_Tag: TextureAtlas
+  m_IsVariant: 0
