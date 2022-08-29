@@ -1620,7 +1620,7 @@ MonoBehaviour:
   useOcclusion: 1
   occlusionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294965465
+    m_Bits: 4294965337
   useAutoChangeCamera: 0
   topCameraAngle: {x: 45, y: 45, z: 0}
   maximumZDistanceOffset: 10
