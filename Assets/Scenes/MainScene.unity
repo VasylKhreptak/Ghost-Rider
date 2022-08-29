@@ -11778,14 +11778,14 @@ MonoBehaviour:
   highBeamHeadLightsOn: 0
   indicatorsOn: 0
   indicatorTimer: 0
-  useDamage: 0
+  useDamage: 1
   useWheelDamage: 0
   wheelDamageRadius: 1
   wheelDamageMultiplier: 0.1
   deformableMeshFilters: []
   damageFilter:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   randomizeVertices: 1
   damageRadius: 0.5
   repairNow: 0
