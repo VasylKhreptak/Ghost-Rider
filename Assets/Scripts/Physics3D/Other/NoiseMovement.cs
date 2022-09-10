@@ -5,7 +5,7 @@ public class NoiseMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform _transform;
 
-    [Header("Test Perlin Noise")]
+    [Header("Preferences")]
     [SerializeField] private Vector3 _amplitude;
     [SerializeField] private Vector3 _frequency;
 
