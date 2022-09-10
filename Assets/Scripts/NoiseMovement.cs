@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
-using VLB;
 
-public class RandomMovement : MonoBehaviour
+public class NoiseMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform _transform;
@@ -27,10 +25,19 @@ public class RandomMovement : MonoBehaviour
 
     private void Update()
     {
+        if (_amplitude == Vector3.zero) return;
+
+        Move();
+    }
+
+    #endregion
+
+    private void Move()
+    {
         float dx = (float)NoiseS3D.Noise(Time.time * _frequency.x, 0f, 0f) * _amplitude.x;
         float dy = (float)NoiseS3D.Noise(0f, Time.time * _frequency.y, 0f) * _amplitude.y;
         float dz = (float)NoiseS3D.Noise(0f, 0f, Time.time * _frequency.z) * _amplitude.z;
-        
+
         Vector3 position = _startPosition;
 
         position += _transform.right * dx;
@@ -39,6 +46,4 @@ public class RandomMovement : MonoBehaviour
 
         _transform.position = position;
     }
-
-    #endregion
 }
