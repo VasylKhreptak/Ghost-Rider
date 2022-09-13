@@ -4,13 +4,13 @@ public class GetKeyDownMonoEvent : MonoEvent
     [Header("Preferences")]
     [SerializeField] private KeyCode _keyCode;
     
-    public bool State = true;
+    public bool Enabled = true;
     
     #region MonoBehaviour
 
     private void Update()
     {
-        if (State == false) return;
+        if (Enabled == false) return;
 
         CheckPressedState();
     }
