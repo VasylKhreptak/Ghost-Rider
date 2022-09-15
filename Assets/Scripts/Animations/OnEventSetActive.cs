@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
 public class OnEventSetActive : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject _gameObject;
+    [SerializeField] private GameObject[] _gameObjects;
 
     [Header("Preferences")]
     [SerializeField] private bool _active;
@@ -13,11 +12,6 @@ public class OnEventSetActive : MonoBehaviour
     [SerializeField] private MonoEvent _monoEvent;
     
     #region MonoBehaviour
-
-    private void OnValidate()
-    {
-        _gameObject ??= gameObject;
-    }
 
     private void Awake()
     {
@@ -33,6 +27,9 @@ public class OnEventSetActive : MonoBehaviour
 
     private void SetActive()
     {
-        _gameObject.SetActive(_active);
+        foreach (var obj in _gameObjects)
+        {
+            obj.SetActive(_active);
+        }
     }
 }
