@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: RCC_Settings
   m_EditorClassIdentifier: 
   controllerSelectedIndex: 0
-  behaviorSelectedIndex: 0
-  overrideBehavior: 0
-  overrideFPS: 1
+  behaviorSelectedIndex: 3
+  overrideBehavior: 1
+  overrideFPS: 0
   overrideFixedTimeStep: 1
   fixedTimeStep: 0.02
   maxAngularVelocity: 8
@@ -209,22 +209,22 @@ MonoBehaviour:
   mouseXInput: Mouse X
   mouseYInput: Mouse Y
   handbrakeKB: 32
-  startEngineKB: 105
-  lowBeamHeadlightsKB: 108
-  highBeamHeadlightsKB: 107
-  rightIndicatorKB: 101
-  leftIndicatorKB: 113
-  hazardIndicatorKB: 122
-  shiftGearUp: 304
-  shiftGearDown: 306
+  startEngineKB: 0
+  lowBeamHeadlightsKB: 0
+  highBeamHeadlightsKB: 0
+  rightIndicatorKB: 0
+  leftIndicatorKB: 0
+  hazardIndicatorKB: 0
+  shiftGearUp: 0
+  shiftGearDown: 0
   NGear: 110
   boostKB: 102
-  slowMotionKB: 103
-  changeCameraKB: 99
-  recordKB: 114
-  playbackKB: 112
+  slowMotionKB: 0
+  changeCameraKB: 0
+  recordKB: 0
+  playbackKB: 0
   lookBackKB: 98
-  trailerAttachDetach: 116
+  trailerAttachDetach: 0
   Xbox_verticalInput: Xbox_Vertical
   Xbox_horizontalInput: Xbox_Horizontal
   Xbox_triggerLeftInput: Xbox_TriggerLeft
@@ -274,7 +274,7 @@ MonoBehaviour:
   useVR: 0
   useAutomaticGear: 1
   useAutomaticClutch: 1
-  runEngineAtAwake: 1
+  runEngineAtAwake: 0
   autoReverse: 1
   autoReset: 1
   contactParticles: {fileID: 193332, guid: 863b5201aede3aa438ac7d962625d663, type: 3}
@@ -287,14 +287,13 @@ MonoBehaviour:
   gyroSensitivity: 2
   useLightsAsVertexLights: 1
   useLightProjectorForLightingEffect: 0
-  setTagsAndLayers: 1
+  setTagsAndLayers: 0
   RCCLayer: RCC
   RCCTag: Player
   tagAllChildrenGameobjects: 0
   chassisJoint: {fileID: 116354, guid: a7e7b1406cded0e4cb52224eb5dc2d80, type: 3}
   exhaustGas: {fileID: 104134, guid: 46992adcb9d56714eb84164c8a965492, type: 3}
-  skidmarksManager: {fileID: 114786316056322602, guid: a107dc7aa77e84f4d8cf9888def4fe64,
-    type: 3}
+  skidmarksManager: {fileID: 114786316056322602, guid: a107dc7aa77e84f4d8cf9888def4fe64, type: 3}
   projector: {fileID: 102982, guid: 7f7b6e33e52b82e43a57b7cc85ed5cf9, type: 3}
   projectorIgnoreLayer:
     serializedVersion: 2
@@ -307,11 +306,9 @@ MonoBehaviour:
   mirrors: {fileID: 132014, guid: 42ab1ab32651fc74dad3e9cedf0b5270, type: 3}
   RCCMainCamera: {fileID: 11400656, guid: 9f32ea4a11500b344ae05427bdc21e05, type: 3}
   hoodCamera: {fileID: 171864, guid: a28e2d33ee4eec642be5568debd291ab, type: 3}
-  cinematicCamera: {fileID: 1000014008404042, guid: 330409232e97fd84c9b2e696d6de0bd5,
-    type: 3}
+  cinematicCamera: {fileID: 1000014008404042, guid: 330409232e97fd84c9b2e696d6de0bd5, type: 3}
   RCCCanvas: {fileID: 102148, guid: 3c49455ff7757444fa4b466c3250f423, type: 3}
-  RCCTelemetry: {fileID: 6059275310813240883, guid: 65802e5058ade584d99e0fba314f4a68,
-    type: 3}
+  RCCTelemetry: {fileID: 6059275310813240883, guid: 65802e5058ade584d99e0fba314f4a68, type: 3}
   dontUseAnyParticleEffects: 0
   dontUseSkidmarks: 0
   audioMixer: {fileID: 24300002, guid: a97addf01f8029040bb6ea53d3c8e62d, type: 2}
