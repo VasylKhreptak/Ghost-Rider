@@ -124,7 +124,8 @@ public class RCC_AICarController : MonoBehaviour
 
     void OnEnable()
     {
-
+        carController.externalController = true;
+        carController.canControl = true;
         // Calling this event when AI vehicle spawned.
         if (OnRCCAISpawned != null)
             OnRCCAISpawned(this);
@@ -613,13 +614,11 @@ public class RCC_AICarController : MonoBehaviour
 
     void OnDisable()
     {
+        carController.externalController = false;
 
         // Calling this event when AI vehicle is destroyed.
         if (OnRCCAIDestroyed != null)
             OnRCCAIDestroyed(this);
-
-        carController.canControl = false;
-        carController.canControl = true;
 
     }
 }
