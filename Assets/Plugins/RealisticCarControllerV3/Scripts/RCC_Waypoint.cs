@@ -7,12 +7,11 @@
 //
 //----------------------------------------------
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RCC_Waypoint : MonoBehaviour{
-
+public class RCC_Waypoint : MonoBehaviour
+{
+    
     public float targetSpeed = 100f;
-
+    
 }

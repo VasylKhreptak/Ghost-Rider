@@ -42,10 +42,10 @@ MonoBehaviour:
     m_Value: 5
   bladeCurvature:
     m_OverrideState: 0
-    m_Value: 0.189
+    m_Value: 1
   bladeRotation:
     m_OverrideState: 0
-    m_Value: -123
+    m_Value: -107
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class MoveAnimation : AnimationCore
     [SerializeField] private Transform _transform;
 
     [Header("Preferences")]
+    [SerializeField] private bool _startAtBeginning;
     [SerializeField] private Vector3 _startPosition;
     [SerializeField] private Vector3 _targetPosition;
     [SerializeField] private float _duration;
@@ -33,7 +34,11 @@ public class MoveAnimation : AnimationCore
     {
         Kill();
 
-        _transform.localPosition = state ? _startPosition : _targetPosition;
+        if (_startAtBeginning)
+        {
+            _transform.localPosition = state ? _startPosition : _targetPosition;
+        }
+        
         _moveTween = _transform.DOLocalMove(state ? _targetPosition : _startPosition, _duration)
             .SetEase(_animationCurve).SetLoops(_loops, _loopType);
     }

@@ -7,6 +7,7 @@ public class RotateAnimation : AnimationCore
     [SerializeField] private Transform _transform;
 
     [Header("Preferences")]
+    [SerializeField] private bool _startAtBeginning;
     [SerializeField] private Vector3 _startRotation;
     [SerializeField] private Vector3 _targetRotation;
     [SerializeField] private float _duration;
@@ -34,7 +35,10 @@ public class RotateAnimation : AnimationCore
     {
         Kill();
 
-        _transform.localRotation = Quaternion.Euler(state ? _startRotation : _targetRotation);
+        if (_startAtBeginning)
+        {
+            _transform.localRotation = Quaternion.Euler(state ? _startRotation : _targetRotation);
+        }
         
         _rotateTween = _transform.DOLocalRotate(_targetRotation, _duration).SetEase(_animationCurve).
             SetInverted(!state).SetLoops(_loops, _loopType);
