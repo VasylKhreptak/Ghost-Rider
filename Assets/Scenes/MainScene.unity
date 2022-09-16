@@ -345,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91562371}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1867614, y: 0, z: -79.00232}
+  m_LocalPosition: {x: -4.77, y: 0, z: -77.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8563,7 +8563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499017347}
   m_LocalRotation: {x: -0, y: -0.9908039, z: -0, w: 0.1353062}
-  m_LocalPosition: {x: -3.62, y: 0.00000047683716, z: -81.53}
+  m_LocalPosition: {x: -3.937, y: 0.00000047683716, z: -81.082}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12739,6 +12739,18 @@ PrefabInstance:
     - target: {fileID: 32473295730668913, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: _targetWaypointIndex
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+      propertyPath: clutchInertia
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+      propertyPath: engineInertia
+      value: 0.119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+      propertyPath: maxEngineTorque
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316978, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: m_RootOrder
