@@ -13007,6 +13007,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538778686}
   m_CullTransparentMesh: 0
+--- !u!1 &1540261609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540261610}
+  - component: {fileID: 1540261611}
+  m_Layer: 0
+  m_Name: SkyBox Rotator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1540261610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540261609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1648785219}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1540261611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540261609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35f19f0c2237204185306020d2c6c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotateSpeed: -0.4
 --- !u!1 &1577143121
 GameObject:
   m_ObjectHideFlags: 0
@@ -13311,6 +13356,7 @@ Transform:
   - {fileID: 2056458141}
   - {fileID: 115050083}
   - {fileID: 2078171913}
+  - {fileID: 1540261610}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14354,7 +14400,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 600
   field of view: 60
   orthographic: 0
   orthographic size: 10
@@ -15013,7 +15059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 32473295730668912, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: maximumSpeed
-      value: 160
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 32473295730668912, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: waypointsContainer
@@ -15029,7 +15075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: maxspeed
-      value: 160
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: totalGears
@@ -15061,7 +15107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[0].maxSpeed
-      value: 32
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[1].maxRatio
@@ -15069,7 +15115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[1].maxSpeed
-      value: 64
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[2].maxRatio
@@ -15077,7 +15123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[2].maxSpeed
-      value: 96
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[3].maxRatio
@@ -15085,7 +15131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[3].maxSpeed
-      value: 128
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[4].maxRatio
@@ -15093,7 +15139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[4].maxSpeed
-      value: 160
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[5].maxRatio
@@ -15113,19 +15159,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[1].targetSpeedForNextGear
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[2].targetSpeedForNextGear
-      value: 38
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[3].targetSpeedForNextGear
-      value: 51
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[4].targetSpeedForNextGear
-      value: 64
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: gears.Array.data[5].targetSpeedForNextGear
