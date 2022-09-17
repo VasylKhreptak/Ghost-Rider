@@ -396,8 +396,6 @@ GameObject:
   - component: {fileID: 69003474}
   - component: {fileID: 69003477}
   - component: {fileID: 69003476}
-  - component: {fileID: 69003478}
-  - component: {fileID: 69003479}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -516,33 +514,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 69003474}
---- !u!114 &69003478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69003472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ce1336fbaacef44a32f30f018e9f5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animation: {fileID: 69003476}
-  _monoEvent: {fileID: 69003479}
-  _forward: 1
---- !u!114 &69003479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69003472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &82511245
 GameObject:
   m_ObjectHideFlags: 0
@@ -14642,6 +14613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1856390838}
   - component: {fileID: 1856390839}
+  - component: {fileID: 1856390840}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -14686,6 +14658,21 @@ MonoBehaviour:
   - {fileID: 69003472}
   _active: 1
   _monoEvent: {fileID: 466508764}
+--- !u!114 &1856390840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856390837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ce1336fbaacef44a32f30f018e9f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 69003476}
+  _monoEvent: {fileID: 466508764}
+  _forward: 1
 --- !u!1 &1953103641
 GameObject:
   m_ObjectHideFlags: 0
@@ -15468,7 +15455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioMixer: {fileID: 24100000, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _maxSounds: 40
+  _maxSounds: 20
   _maxSoundDistance: 25
   _minSoundDistance: 1
   _rolloffMode: 1
