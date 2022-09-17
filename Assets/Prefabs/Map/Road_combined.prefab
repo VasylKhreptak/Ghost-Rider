@@ -365,8 +365,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 39.889786, y: 78.21581, z: 7.180378}
-  m_Center: {x: 0, y: 20.603374, z: 3.090189}
+  m_Size: {x: 39.889786, y: 78.21581, z: 0.25548935}
+  m_Center: {x: 0, y: 20.603374, z: -0.00027656555}
 --- !u!114 &6364323179249965021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +453,9 @@ GameObject:
   - component: {fileID: 7123128115458264780}
   - component: {fileID: 3601354002521819737}
   - component: {fileID: 701538798735411848}
+  - component: {fileID: 6351181684893299711}
+  - component: {fileID: 1596844073063922145}
+  - component: {fileID: 1080581708408538809}
   m_Layer: 0
   m_Name: SpawnRoadTrigger
   m_TagString: Untagged
@@ -468,7 +471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8486205573458755782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 50.9}
+  m_LocalPosition: {x: 0, y: 0, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -533,6 +536,50 @@ MonoBehaviour:
   _monoEvent: {fileID: 3601354002521819737}
   _offset: {x: 0, y: 0, z: 800}
   _rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &6351181684893299711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486205573458755782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35187c189bea8d54795bb5dc35e615dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scripts:
+  - {fileID: 701538798735411848}
+  _active: 0
+  _event: {fileID: 3601354002521819737}
+--- !u!114 &1596844073063922145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486205573458755782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35187c189bea8d54795bb5dc35e615dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scripts:
+  - {fileID: 701538798735411848}
+  _active: 1
+  _event: {fileID: 1080581708408538809}
+--- !u!114 &1080581708408538809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486205573458755782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8492320165720560190
 GameObject:
   m_ObjectHideFlags: 0
