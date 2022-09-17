@@ -3281,7 +3281,7 @@ MonoBehaviour:
   TPSDistance: 4
   TPSHeight: 1.5
   TPSHeightDamping: 10
-  TPSRotationDamping: 6
+  TPSRotationDamping: 5
   TPSTiltMaximum: 15
   TPSTiltMultiplier: 2
   TPSYawAngle: 0
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   TPSOffsetX: 0
   TPSOffsetY: 0.5
   TPSAutoFocus: 1
-  TPSAutoReverse: 1
+  TPSAutoReverse: 0
   TPSCollision: 1
   TPSOffset: {x: 0, y: 0, z: 0.25}
   TPSStartRotation: {x: 0, y: 0, z: 0}
@@ -15192,6 +15192,10 @@ PrefabInstance:
     - target: {fileID: 7928897730668759613, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+      propertyPath: TCS
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7928897731115316976, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: maxspeed
