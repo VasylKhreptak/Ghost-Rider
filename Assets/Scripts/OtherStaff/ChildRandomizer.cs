@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class ChildRandomizer : MonoBehaviour
@@ -13,8 +11,8 @@ public class ChildRandomizer : MonoBehaviour
 
     private void OnValidate()
     {
-        _transform = GetComponent<Transform>();
-        _monoEvent = GetComponent<MonoEvent>();
+        _transform ??= GetComponent<Transform>();
+        _monoEvent ??= GetComponent<MonoEvent>();
     }
 
     private void Awake()
