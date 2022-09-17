@@ -898,6 +898,8 @@ GameObject:
   - component: {fileID: 115050083}
   - component: {fileID: 115050085}
   - component: {fileID: 115050084}
+  - component: {fileID: 115050087}
+  - component: {fileID: 115050086}
   m_Layer: 0
   m_Name: CarEngineStateController
   m_TagString: Untagged
@@ -961,6 +963,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carController: {fileID: 32473295730668688}
+--- !u!114 &115050086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115050082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7b5fe2c19e9ec4687a9f11965a872b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &115050087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115050082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 115050086}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 115050085}
+        m_TargetAssemblyTypeName: CarEngineStateController, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &200441574
 GameObject:
   m_ObjectHideFlags: 0
