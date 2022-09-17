@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using VLB;
 
 public sealed class AudioPooler : MonoBehaviour
 {
@@ -164,14 +165,12 @@ public sealed class AudioPooler : MonoBehaviour
     public uint PlayOneShootSound(string track, AudioClip clip, Vector3 position, float volume,
         float spatialBlend, int priority = 128)
     {
-        if (CanPlayAudio(position) == false || _tracks.ContainsKey(track) == false ||
-            clip == null || volume.Equals(0f))
+        if (CanPlayAudio(position, spatialBlend) == false || _tracks.ContainsKey(track) == false || clip == null || volume.Equals(0f))
         {
             return 0;
         }
 
-        var unimportance = (_listenerTransform.position - position).sqrMagnitude /
-                           Mathf.Max(1, priority);
+        var unimportance = (_listenerTransform.position - position).sqrMagnitude / Mathf.Max(1, priority);
 
         var leastImportantIndex = -1;
         var leastImportanceValue = float.MaxValue;
@@ -198,8 +197,11 @@ public sealed class AudioPooler : MonoBehaviour
         return 0;
     }
 
-    private bool CanPlayAudio(Vector3 spawnPosition)
+    private bool CanPlayAudio(Vector3 spawnPosition, float spatialBlend)
     {
+        if (spatialBlend.Approximately(0))
+            return true;
+
         if (_listenerTransform == null)
             return false;
 

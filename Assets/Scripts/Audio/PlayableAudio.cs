@@ -4,14 +4,16 @@ using Zenject;
 public class PlayableAudio : AudioClipHolder
 {
     [Header("Audios")]
+    [SerializeField] private Transform _transform;
     [SerializeField] private AudioClip[] _audioClips;
 
     [Header("Preferences")]
     [SerializeField] private string _track;
+    [SerializeField] private bool _playOnTransformPosition;
     [SerializeField] private Vector3 _position;
     [SerializeField, Range(0f, 1f)] private float _volume = 1f;
-    [SerializeField] private float _spatialBlend;
-    [SerializeField] private int _priority = 128;
+    [SerializeField, Range(0f, 1f)] private float _spatialBlend;
+    [SerializeField, Range(0, 128)] private int _priority = 128;
 
     private AudioPooler _audioPooler;
 
@@ -22,10 +24,20 @@ public class PlayableAudio : AudioClipHolder
     {
         _audioPooler = audioPooler;
     }
+
+    #region MonoBehaviour
+
+    private void OnValidate()
+    {
+        _transform ??= GetComponent<Transform>();
+    }
+
+    #endregion
     
     public override void Play()
     {
-        _id = _audioPooler.PlayOneShootSound(_track, _audioClips.Random(), _position, _volume, _spatialBlend, _priority);
+        _id = _audioPooler.PlayOneShootSound(_track, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _position,
+            _volume, _spatialBlend, _priority);
     }
     public override void Stop()
     {
