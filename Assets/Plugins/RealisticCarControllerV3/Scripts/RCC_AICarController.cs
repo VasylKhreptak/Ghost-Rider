@@ -132,21 +132,21 @@ public class RCC_AICarController : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-        // If not controllable, no need to go further.
-        if (!carController.canControl)
-            return;
-
-        // Assigning navigator's position to front wheels of the vehicle.
-        //navigator.transform.localPosition = new Vector3(0f, carController.FrontLeftWheelCollider.transform.localPosition.y, carController.FrontLeftWheelCollider.transform.localPosition.z);
-        navigator.transform.localPosition = Vector3.zero;
-        navigator.transform.localPosition += Vector3.forward * carController.FrontLeftWheelCollider.transform.localPosition.z;
-
-        CheckTargets();
-
-    }
+    // void Update()
+    // {
+    //
+    //     // If not controllable, no need to go further.
+    //     if (!carController.canControl)
+    //         return;
+    //
+    //     // Assigning navigator's position to front wheels of the vehicle.
+    //     //navigator.transform.localPosition = new Vector3(0f, carController.FrontLeftWheelCollider.transform.localPosition.y, carController.FrontLeftWheelCollider.transform.localPosition.z);
+    //     navigator.transform.localPosition = Vector3.zero;
+    //     navigator.transform.localPosition += Vector3.forward * carController.FrontLeftWheelCollider.transform.localPosition.z;
+    //
+    //     CheckTargets();
+    //
+    // }
 
     void FixedUpdate()
     {
@@ -154,7 +154,13 @@ public class RCC_AICarController : MonoBehaviour
         // If not controllable, no need to go further.
         if (!carController.canControl)
             return;
+        //
+        navigator.transform.localPosition = Vector3.zero;
+        navigator.transform.localPosition += Vector3.forward * carController.FrontLeftWheelCollider.transform.localPosition.z;
 
+        CheckTargets();
+        //
+        
         if (useRaycasts)
             FixedRaycasts(); // Recalculates steerInput if one of raycasts detects an object front of AI vehicle.
 

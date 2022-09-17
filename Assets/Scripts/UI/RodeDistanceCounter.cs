@@ -40,6 +40,8 @@ public class RodeDistanceCounter : MonoBehaviour
     private void OnDisable()
     {
         _configurableUpdate.StopUpdating();
+        
+        ResetDistance();
     }
 
     #endregion
