@@ -156,7 +156,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8461811991393960512, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
   _floatAdapter: {fileID: 4257700441533144908}
   _fromStart: 1
   _startValue: 0
-  _targetValue: 0.4
+  _targetValue: 0.35
   _duration: 7
   _animationCurve:
     serializedVersion: 2
