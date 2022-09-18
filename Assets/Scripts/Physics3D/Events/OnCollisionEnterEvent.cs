@@ -7,7 +7,7 @@ public class OnCollisionEnterEvent : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
 
     public Action<Collision> onEnter;
-    
+
     #region MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
@@ -17,6 +17,6 @@ public class OnCollisionEnterEvent : MonoBehaviour
             onEnter?.Invoke(collision);
         }
     }
-    
+
     #endregion
 }

@@ -19919,6 +19919,10 @@ GameObject:
   - component: {fileID: 7928897731115316976}
   - component: {fileID: 32473295730668912}
   - component: {fileID: 32473295730668913}
+  - component: {fileID: 32473295730668914}
+  - component: {fileID: 32473295730668915}
+  - component: {fileID: 1792388922234300268}
+  - component: {fileID: 7960750266078265955}
   m_Layer: 6
   m_Name: Stellar
   m_TagString: Untagged
@@ -20013,40 +20017,31 @@ MonoBehaviour:
   useCounterSteering: 1
   counterSteeringFactor: 0.5
   speed: 0
-  maxspeed: 240
+  maxspeed: 140
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.42979
-      outSlope: 0.42979
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.10424779
-    - serializedVersion: 3
-      time: 838.4148
-      value: 181.39159
-      inSlope: 0.14035498
-      outSlope: 0.14035498
+      inSlope: 0.5
+      outSlope: 0.5
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 4500
-      value: 500
-      inSlope: 0.022222225
-      outSlope: 0.022222225
+      time: 2000
+      value: 1000
+      inSlope: 0.21666667
+      outSlope: 0.21666667
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 7000
-      value: 333.33334
+      value: 666.6667
       inSlope: -0.06666666
       outSlope: -0.06666666
       tangentMode: 0
@@ -20056,14 +20051,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  autoGenerateEngineRPMCurve: 0
-  maxEngineTorque: 1300
-  maxEngineTorqueAtRPM: 4500
+  autoGenerateEngineRPMCurve: 1
+  maxEngineTorque: 1000
+  maxEngineTorqueAtRPM: 2000
   minEngineRPM: 1000
   maxEngineRPM: 7000
   engineRPM: 0
-  engineInertia: 0.15
-  useRevLimiter: 1
+  engineInertia: 0.1
+  useRevLimiter: 0
   useExhaustFlame: 1
   engineRunning: 0
   useFuelConsumption: 0
@@ -20076,35 +20071,23 @@ MonoBehaviour:
   engineHeatRate: 1
   engineCoolRate: 1
   gears:
-  - maxRatio: 5.5
-    maxSpeed: 30
-    targetSpeedForNextGear: 12
-  - maxRatio: 2.5
-    maxSpeed: 60
-    targetSpeedForNextGear: 24
-  - maxRatio: 1.86
-    maxSpeed: 90
-    targetSpeedForNextGear: 36
-  - maxRatio: 1.43
-    maxSpeed: 120
-    targetSpeedForNextGear: 48
-  - maxRatio: 1.23
-    maxSpeed: 150
-    targetSpeedForNextGear: 60
-  - maxRatio: 1.05
-    maxSpeed: 180
-    targetSpeedForNextGear: 72
-  - maxRatio: 0.9
-    maxSpeed: 210
-    targetSpeedForNextGear: 84
+  - maxRatio: 2.86
+    maxSpeed: 35
+    targetSpeedForNextGear: 14
+  - maxRatio: 1.62
+    maxSpeed: 70
+    targetSpeedForNextGear: 28
+  - maxRatio: 1
+    maxSpeed: 105
+    targetSpeedForNextGear: 42
   - maxRatio: 0.72
-    maxSpeed: 240
-    targetSpeedForNextGear: 96
-  totalGears: 8
+    maxSpeed: 140
+    targetSpeedForNextGear: 56
+  totalGears: 4
   currentGear: 0
   NGear: 0
   finalRatio: 3.23
-  gearShiftingDelay: 0.2
+  gearShiftingDelay: 0.5
   gearShiftingThreshold: 0.4
   clutchInertia: 0.1
   gearShiftUpRPM: 5250
@@ -20152,7 +20135,7 @@ MonoBehaviour:
   highBeamHeadLightsOn: 0
   indicatorsOn: 0
   indicatorTimer: 0
-  useDamage: 1
+  useDamage: 0
   useWheelDamage: 0
   wheelDamageRadius: 1
   wheelDamageMultiplier: 0.1
@@ -20204,7 +20187,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7928897731115317007}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93dcd0266b466224f8d1d8ae405f4d73, type: 3}
   m_Name: 
@@ -20220,17 +20203,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   obstacle: {fileID: 0}
-  useRaycasts: 1
+  useRaycasts: 0
   steerInput: 0
   throttleInput: 0
   brakeInput: 0
   handbrakeInput: 0
   limitSpeed: 1
-  maximumSpeed: 240
+  maximumSpeed: 140
   smoothedSteer: 1
   lap: 0
   totalWaypointPassed: 0
-  nextWaypointPassDistance: 1
+  nextWaypointPassDistance: 4
   chaseDistance: 200
   startFollowDistance: 300
   stopFollowDistance: 30
@@ -20249,7 +20232,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _aiCarController: {fileID: 32473295730668912}
-  _targetWaypointIndex: 1
+  _targetWaypointIndex: 2
+--- !u!114 &32473295730668914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35187c189bea8d54795bb5dc35e615dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scripts:
+  - {fileID: 32473295730668912}
+  _active: 1
+  _event: {fileID: 32473295730668913}
+--- !u!114 &32473295730668915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35187c189bea8d54795bb5dc35e615dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scripts:
+  - {fileID: 32473295730668912}
+  _active: 0
+  _event: {fileID: 32473295730668913}
+--- !u!114 &1792388922234300268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14066cfaeff2b174cb85be0526d1f58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 320
+--- !u!114 &7960750266078265955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5a1becb2867cd4eacf596200aa731f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionEnterEvent: {fileID: 1792388922234300268}
+  _pools: 03000000
 --- !u!1 &7928897731142123605
 GameObject:
   m_ObjectHideFlags: 0
