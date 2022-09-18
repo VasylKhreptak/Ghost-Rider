@@ -1575,7 +1575,7 @@ MonoBehaviour:
   _transform: {fileID: 240374389}
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
-  _track: Sound
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   _transform: {fileID: 240374389}
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
-  _track: Sound
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
@@ -3026,7 +3026,7 @@ MonoBehaviour:
   _transform: {fileID: 951499987}
   _audioClips:
   - {fileID: 8300000, guid: 55be01ba577617048946b2f6c97c6a06, type: 3}
-  _track: Sound
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   _transform: {fileID: 1041201662}
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
-  _track: Sound
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
@@ -3462,7 +3462,7 @@ MonoBehaviour:
   _transform: {fileID: 240374389}
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
-  _track: Sound
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
@@ -4630,7 +4630,7 @@ MonoBehaviour:
   _transform: {fileID: 240374389}
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
-  _track: Sound
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
@@ -4651,7 +4651,7 @@ MonoBehaviour:
   _transform: {fileID: 1282634647}
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
-  _track: Sound
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _position: {x: 0, y: 0, z: 0}
   _volume: 1

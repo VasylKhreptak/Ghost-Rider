@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using Zenject;
 
 public class PlayableAudio : AudioClipHolder
@@ -8,7 +9,7 @@ public class PlayableAudio : AudioClipHolder
     [SerializeField] private AudioClip[] _audioClips;
 
     [Header("Preferences")]
-    [SerializeField] private string _track;
+    [SerializeField] private AudioMixerGroup _output;
     [SerializeField] private bool _playOnTransformPosition;
     [SerializeField] private Vector3 _position;
     [SerializeField, Range(0f, 1f)] private float _volume = 1f;
@@ -36,7 +37,7 @@ public class PlayableAudio : AudioClipHolder
     
     public override void Play()
     {
-        _id = _audioPooler.PlayOneShootSound(_track, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _position,
+        _id = _audioPooler.PlayOneShootSound(_output.name, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _position,
             _volume, _spatialBlend, _priority);
     }
     public override void Stop()
