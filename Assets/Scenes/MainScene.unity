@@ -4508,7 +4508,31 @@ MonoBehaviour:
     folder: {fileID: 0}
   - poolType: 3
     prefab: {fileID: 193332, guid: 84d0fe10df0b5a348b7423439f439ec8, type: 3}
-    size: 10
+    size: 7
+    folder: {fileID: 0}
+  - poolType: 4
+    prefab: {fileID: 2092489646663749628, guid: 7f7b82c5fca36f74bbbd4066f8b2ce6a, type: 3}
+    size: 7
+    folder: {fileID: 0}
+  - poolType: 5
+    prefab: {fileID: 94096082878400050, guid: 02ef8a5863529ce41a500c3590cf0c64, type: 3}
+    size: 7
+    folder: {fileID: 0}
+  - poolType: 6
+    prefab: {fileID: 1952763679920485269, guid: 7aba1f4c3803f8a4e849e8a5c9a61ae2, type: 3}
+    size: 7
+    folder: {fileID: 0}
+  - poolType: 7
+    prefab: {fileID: 822202834698765116, guid: 79fe8768a5042cd4d940754e6e3308a0, type: 3}
+    size: 7
+    folder: {fileID: 0}
+  - poolType: 8
+    prefab: {fileID: 6472855904706026109, guid: a4a3ead72adf50e45a2e8d8689a954d5, type: 3}
+    size: 7
+    folder: {fileID: 0}
+  - poolType: 9
+    prefab: {fileID: 7586557913188451307, guid: 8fbe07ae1a239614ea10c065934139e1, type: 3}
+    size: 7
     folder: {fileID: 0}
 --- !u!1 &1273194160
 GameObject:
@@ -16498,10 +16522,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2110798939}
     m_Modifications:
-    - target: {fileID: 5513852085649717557, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5513852087089650038, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16549,22 +16569,6 @@ PrefabInstance:
     - target: {fileID: 5513852087089650039, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
       propertyPath: m_Name
       value: LeftBuildings_menu_combined
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513852087089650039, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513852087089650039, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5513852087089650041, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8547234140106190087, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}
