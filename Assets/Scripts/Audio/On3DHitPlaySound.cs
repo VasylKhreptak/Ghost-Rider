@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using Zenject;
 
 public class On3DHitPlaySound : MonoBehaviour
@@ -10,7 +11,7 @@ public class On3DHitPlaySound : MonoBehaviour
     [SerializeField] protected AudioClip[] _audioClips;
     
     [Header("Preferences")]
-    [SerializeField] protected string _track;
+    [SerializeField] protected AudioMixerGroup _output;
     [SerializeField, Range(0f, 1f)] protected float _volume = 1f;
     [SerializeField, Range(0f, 1f)] protected float _spatialBlend;
     [SerializeField, Range(0, 128)] protected int _priority = 128;
@@ -46,6 +47,6 @@ public class On3DHitPlaySound : MonoBehaviour
     {
         Vector3 position = collision.GetContact(0).point;
 
-        _audioPooler.PlayOneShootSound(_track, _audioClips.Random(), position, _volume, _spatialBlend, _priority);
+        _audioPooler.PlayOneShootSound(_output.name, _audioClips.Random(), position, _volume, _spatialBlend, _priority);
     }
 }

@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f001ad2b9d5c42a500c17cefad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _occludeeStateEvent: {fileID: 1641340334018767343}
+  _occludeeEvents: {fileID: 1641340334018767343}
+  _pauseEvent: {fileID: 0}
+  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 55316735017958863}
   - {fileID: 4174379261054685797}
@@ -301,7 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f001ad2b9d5c42a500c17cefad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _occludeeStateEvent: {fileID: 4015188949132648272}
+  _occludeeEvents: {fileID: 4015188949132648272}
+  _pauseEvent: {fileID: 0}
+  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 2118390997283409621}
   - {fileID: 1007059642739977252}
@@ -462,7 +466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f001ad2b9d5c42a500c17cefad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _occludeeStateEvent: {fileID: 7792069923584073623}
+  _occludeeEvents: {fileID: 7792069923584073623}
+  _pauseEvent: {fileID: 0}
+  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 3635787378999756660}
   - {fileID: 6437941389231558509}
@@ -561,7 +567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f001ad2b9d5c42a500c17cefad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _occludeeStateEvent: {fileID: 5698569191375529393}
+  _occludeeEvents: {fileID: 5698569191375529393}
+  _pauseEvent: {fileID: 0}
+  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 4848560067257955003}
   - {fileID: 3900849410725391754}
@@ -691,7 +699,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f001ad2b9d5c42a500c17cefad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _occludeeStateEvent: {fileID: 4038720928507612344}
+  _occludeeEvents: {fileID: 4038720928507612344}
+  _pauseEvent: {fileID: 0}
+  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 609452502363975682}
   - {fileID: 5051801763231322769}
@@ -940,7 +950,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f001ad2b9d5c42a500c17cefad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _occludeeStateEvent: {fileID: 5238128818117883380}
+  _occludeeEvents: {fileID: 5238128818117883380}
+  _pauseEvent: {fileID: 0}
+  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 2086727893959445512}
   - {fileID: 8782674606053277053}
@@ -1163,7 +1175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 280f001ad2b9d5c42a500c17cefad069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _occludeeStateEvent: {fileID: 4384260651925662633}
+  _occludeeEvents: {fileID: 4384260651925662633}
+  _pauseEvent: {fileID: 0}
+  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 1399307188783679558}
   - {fileID: 3091365854110145023}

@@ -19923,6 +19923,7 @@ GameObject:
   - component: {fileID: 32473295730668915}
   - component: {fileID: 1792388922234300268}
   - component: {fileID: 7960750266078265955}
+  - component: {fileID: 7960750266078265956}
   m_Layer: 6
   m_Name: Stellar
   m_TagString: Untagged
@@ -20294,6 +20295,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collisionEnterEvent: {fileID: 1792388922234300268}
   _pools: 03000000
+--- !u!114 &7960750266078265956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65303c1814a09ed4e86930e5ed8a1a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionEnterEvent: {fileID: 1792388922234300268}
+  _audioClips:
+  - {fileID: 8300000, guid: a1d6e4a5d7edf844e8c81d4e1ad798d0, type: 3}
+  - {fileID: 8300000, guid: 568353fbb92b0d0408bf43b964227ad1, type: 3}
+  - {fileID: 8300000, guid: 8151ae89b2bf8504b98b20f17540200d, type: 3}
+  - {fileID: 8300000, guid: 07a69a0e1ba8913419a28b8d4d6216d2, type: 3}
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
+  _volume: 1
+  _spatialBlend: 1
+  _priority: 128
+  _volumeAmplifier: 0.001
+  _minVolume: 0.4
 --- !u!1 &7928897731142123605
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class FlyingVehicleSpawner : MonoBehaviour
     private float _duration => Random.Range(_minDuration, _maxDuration);
     private float _spawnDelay => Random.Range(_minSpawnDelay, _maxSpawnDelay);
     private float _startDelay => Random.Range(_minStartDelay, _maxStartDelay);
-    
+
     private ObjectPooler _objectPooler;
 
     private Tween _moveTween;
@@ -36,10 +36,13 @@ public class FlyingVehicleSpawner : MonoBehaviour
 
     private GameObject _currentVehicle;
 
+    private PauseEventsHolder _pauseEventsHolder;
+
     [Inject]
-    private void Construct(ObjectPooler objectPooler)
+    private void Construct(ObjectPooler objectPooler, PauseEventsHolder pauseEventsHolder)
     {
         _objectPooler = objectPooler;
+        _pauseEventsHolder = pauseEventsHolder;
     }
 
     #region MonoBehaviour
@@ -58,6 +61,9 @@ public class FlyingVehicleSpawner : MonoBehaviour
     private void OnEnable()
     {
         StartSpawning();
+
+        _pauseEventsHolder.onPause += OnPause;
+        _pauseEventsHolder.onResume += OnResume;
     }
 
     private void OnDisable()
@@ -65,6 +71,9 @@ public class FlyingVehicleSpawner : MonoBehaviour
         StopSpawning();
 
         Kill();
+
+        _pauseEventsHolder.onPause -= OnPause;
+        _pauseEventsHolder.onResume -= OnResume;
     }
 
     private void OnDestroy()
@@ -99,11 +108,14 @@ public class FlyingVehicleSpawner : MonoBehaviour
 
         while (true)
         {
-            float duration = _duration;
-            
-            Spawn(duration);
+            if (_pauseEventsHolder.isPaused == false)
+            {
+                float duration = _duration;
+                Spawn(duration);
 
-            yield return new WaitForSeconds(duration);
+                yield return new WaitForSeconds(duration);
+            }
+
 
             yield return new WaitForSeconds(_spawnDelay);
         }
@@ -160,7 +172,17 @@ public class FlyingVehicleSpawner : MonoBehaviour
     {
         this.enabled = true;
     }
-    
+
+    private void OnPause()
+    {
+        _moveTween.Pause();
+    }
+
+    private void OnResume()
+    {
+        _moveTween.Play();
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (_spawnPoints[0] == null || _spawnPoints[1] == null) return;
