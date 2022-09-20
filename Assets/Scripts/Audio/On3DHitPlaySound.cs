@@ -47,6 +47,6 @@ public class On3DHitPlaySound : MonoBehaviour
     {
         Vector3 position = collision.GetContact(0).point;
 
-        _audioPooler.PlayOneShootSound(_output.name, _audioClips.Random(), position, _volume, _spatialBlend, _priority);
+        _audioPooler.PlaySound(_output, _audioClips.Random(), position, _volume, _spatialBlend, _priority);
     }
 }

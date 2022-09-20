@@ -8,6 +8,6 @@ public class PauseEventsHolderInstaller : MonoInstaller
     
     public override void InstallBindings()
     {
-        Container.BindInstance(_pauseEventsHolder).AsSingle();
+        Container.Bind<PauseEventsHolder>().FromInstance(_pauseEventsHolder).AsSingle();
     }
 }

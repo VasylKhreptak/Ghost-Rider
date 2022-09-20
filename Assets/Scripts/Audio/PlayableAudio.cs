@@ -18,7 +18,7 @@ public class PlayableAudio : AudioClipHolder
 
     private AudioPooler _audioPooler;
 
-    private uint _id;
+    private int _id;
 
     [Inject]
     private void Construct(AudioPooler audioPooler)
@@ -37,11 +37,11 @@ public class PlayableAudio : AudioClipHolder
     
     public override void Play()
     {
-        _id = _audioPooler.PlayOneShootSound(_output.name, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _position,
+        _id = _audioPooler.PlaySound(_output, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _position,
             _volume, _spatialBlend, _priority);
     }
     public override void Stop()
     {
-        _audioPooler.StopOneShootSound(_id);
+        _audioPooler.StopSound(_id);
     }
 }

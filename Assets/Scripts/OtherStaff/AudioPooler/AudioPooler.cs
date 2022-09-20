@@ -1,229 +1,220 @@
-using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using VLB;
+using Zenject;
 
-public sealed class AudioPooler : MonoBehaviour
+public class AudioPooler : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private AudioMixer _audioMixer;
+    [SerializeField] private Transform _transform;
 
-    [Header("Preferences")]
-    [SerializeField] private int _maxSounds = 30;
-    [SerializeField] private float _maxSoundDistance = 25f;
-    [SerializeField] private float _minSoundDistance = 1f;
+    [Header("Sound Preferences")]
+    [SerializeField, Min(0)] private int _soundsCount;
+    [SerializeField, Min(0)] private float _minSoundDistance;
+    [SerializeField, Min(0)] private float _maxSoundDistance;
     [SerializeField] private AudioRolloffMode _rolloffMode = AudioRolloffMode.Linear;
 
-    private Dictionary<string, TrackInfo> _tracks = new Dictionary<string, TrackInfo>();
+    [Header("Pool Preferences")]
+    [SerializeField] private GameObject _audioItemPrefab;
+
     private List<AudioPoolItem> _pool = new List<AudioPoolItem>();
-    private Dictionary<uint, AudioPoolItem> _activePool = new Dictionary<uint, AudioPoolItem>();
-    private uint _idGiver;
-    private Transform _listenerTransform;
+    private Dictionary<int, AudioPoolItem> _activePool = new Dictionary<int, AudioPoolItem>();
+
+    private Transform _camera;
+
+    private int _idGiver;
+
+    private DiContainer _diContainer;
+
+    [Inject]
+    private void Construct(DiContainer diContainer)
+    {
+        _diContainer = diContainer;
+    }
 
     #region MonoBehaviour
 
+    private void OnValidate()
+    {
+        bool IsPrefabValid()
+        {
+            return _audioItemPrefab.TryGetComponent(out AudioSource audioSource) &&
+                _audioItemPrefab.TryGetComponent(out AudioPoolItem audioPoolItem);
+        }
+
+        _transform ??= GetComponent<Transform>();
+
+        if (IsPrefabValid() == false)
+        {
+            Debug.LogError("AudioPool prefab must contain AudioSource and AudioPoolItem", this);
+            _audioItemPrefab = null;
+        }
+    }
+
     private void Awake()
     {
-        FillTrackInfo();
-
         FillPool();
     }
 
     private void OnEnable()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += UpdateListener;
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= UpdateListener;
     }
 
     #endregion
 
-    private void FillTrackInfo()
-    {
-        var groups = _audioMixer.FindMatchingGroups(string.Empty);
+    private void UpdateListener(Scene scene, LoadSceneMode loadMode) => UpdateListener();
 
-        foreach (var group in groups)
-        {
-            var trackInfo = new TrackInfo();
-            trackInfo.name = group.name;
-            trackInfo.@group = group;
-            trackInfo.trackFader = null;
-            _tracks[group.name] = trackInfo;
-        }
+    private void UpdateListener()
+    {
+        _camera = Camera.main.transform;
     }
 
     private void FillPool()
     {
-        for (var i = 0; i < _maxSounds; i++)
+        for (int i = 0; i < _soundsCount; i++)
         {
-            var go = new GameObject("Pool Item");
-            var audioSource = go.AddComponent<AudioSource>();
-            go.transform.parent = transform;
-
-            var poolItem = new AudioPoolItem();
-            poolItem.go = go;
-            poolItem.audioSource = audioSource;
-            poolItem.isPlaying = false;
-            poolItem.audioSource.rolloffMode = _rolloffMode;
-            poolItem.audioSource.maxDistance = _maxSoundDistance;
-            poolItem.audioSource.minDistance = _minSoundDistance;
-
-            go.SetActive(false);
-
-            _pool.Add(poolItem);
+            CreatePoolItem();
         }
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void CreatePoolItem()
     {
-        _listenerTransform = Camera.main.transform;
+        GameObject instantiatedPoolItem = _diContainer.InstantiatePrefab(_audioItemPrefab);
+        instantiatedPoolItem.transform.SetParent(_transform);
+        
+        AudioPoolItem _audioPoolItem = instantiatedPoolItem.GetComponent<AudioPoolItem>();
+
+        _audioPoolItem.audioSource = instantiatedPoolItem.GetComponent<AudioSource>();
+
+        _audioPoolItem.audioSource.rolloffMode = _rolloffMode;
+        _audioPoolItem.audioSource.minDistance = _minSoundDistance;
+        _audioPoolItem.audioSource.maxDistance = _maxSoundDistance;
+        _audioPoolItem.ID = -1;
+
+        instantiatedPoolItem.SetActive(false);
+
+        _pool.Add(_audioPoolItem);
     }
 
-    private IEnumerator SetTrackVolumeInternal(string track, float volume, float fadeTime)
+    public int PlaySound(AudioMixerGroup output, AudioClip clip, Vector3 position, float volume, float spatialBlend, int priority = 128)
     {
-        var startVolume = 0f;
+        if (CanPlay(clip, position, volume, spatialBlend) == false) return 0;
 
-        _audioMixer.GetFloat(track, out startVolume);
+        AudioPoolItem appropriatePoolItem = GetAppropriatePoolItem();
 
-        for (float i = 0; i < 1; i += Time.deltaTime / fadeTime)
+        return ConfigurePoolObject(appropriatePoolItem, output, clip, position, volume, spatialBlend, priority);
+    }
+
+    private bool CanPlay(AudioClip clip, Vector3 playPosition, float volume, float spatialBlend)
+    {
+        if (_camera == null || volume.Approximately(0) || clip == null) return false;
+
+        if (spatialBlend.Approximately(0)) return true;
+
+        return Vector3.Distance(playPosition, _camera.position) < _maxSoundDistance;
+    }
+
+    private AudioPoolItem GetAppropriatePoolItem()
+    {
+        AudioPoolItem appropriatePoolItem;
+
+        if (TryGetFreePoolItem(out appropriatePoolItem))
         {
-            _audioMixer.SetFloat(track, Mathf.Lerp(startVolume, volume, i));
-
-            yield return null;
+            return appropriatePoolItem;
         }
 
-        _audioMixer.SetFloat(track, volume);
+        return GetLeastImportantPoolItem();
     }
 
-    private uint ConfigurePoolObject(int poolIndex, string track, AudioClip clip, Vector3 position,
-        float volume, float spatialBlend, float unimportance)
+    private bool TryGetFreePoolItem(out AudioPoolItem audioPoolItem)
     {
-        if (poolIndex < 0 || poolIndex >= _pool.Count) return 0;
+        for (int i = 0; i < _pool.Count; i++)
+        {
+            AudioPoolItem poolItem = _pool[i];
 
-        var poolItem = _pool[poolIndex];
+            if (poolItem.audioSource.isPlaying == false)
+            {
+                audioPoolItem = poolItem;
+                return true;
+            }
+        }
 
+        audioPoolItem = null;
+        return false;
+    }
+
+    private AudioPoolItem GetLeastImportantPoolItem()
+    {
+        AudioPoolItem leastImportantAudioPoolItem = _pool[0];
+
+        for (int i = 1; i < _pool.Count; i++)
+        {
+            AudioPoolItem poolItem = _pool[i];
+
+            if (poolItem.priority > leastImportantAudioPoolItem.priority)
+            {
+                leastImportantAudioPoolItem = poolItem;
+            }
+        }
+
+        return leastImportantAudioPoolItem;
+    }
+
+    private int ConfigurePoolObject(AudioPoolItem poolItem, AudioMixerGroup output, AudioClip clip, Vector3 position, float volume,
+        float spatialBlend, float priority)
+    {
         _idGiver++;
 
-        AudioSource source = poolItem.audioSource;
-        source.clip = clip;
-        source.volume = volume;
-        source.spatialBlend = spatialBlend;
-        source.outputAudioMixerGroup = _tracks[track].@group;
-        source.transform.position = position;
-
-        poolItem.isPlaying = true;
-        poolItem.unimportance = unimportance;
+        poolItem.audioSource.outputAudioMixerGroup = output;
+        poolItem.audioSource.clip = clip;
+        poolItem.transform.position = position;
+        poolItem.audioSource.volume = volume;
+        poolItem.audioSource.spatialBlend = spatialBlend;
+        poolItem.priority = priority;
         poolItem.ID = _idGiver;
-        poolItem.go.SetActive(true);
+        poolItem.gameObject.SetActive(true);
         poolItem.audioSource.Play();
 
-        poolItem.coroutine = StopSoundDelayed(_idGiver, source.clip.length);
-        StartCoroutine(poolItem.coroutine);
+        TryStopSoundDelayed(poolItem);
 
         _activePool[_idGiver] = poolItem;
-
         return _idGiver;
     }
 
-    private IEnumerator StopSoundDelayed(uint id, float duration)
+    private void TryStopSoundDelayed(AudioPoolItem poolItem)
     {
-        yield return new WaitForSeconds(duration);
-
-        AudioPoolItem activeSound;
-
-        if (_activePool.TryGetValue(id, out activeSound))
+        poolItem.waitTween = poolItem.DOWait(poolItem.audioSource.clip.length).OnComplete(() =>
         {
-            KillAudioPoolItem(activeSound, id);
-        }
+            StopSound(poolItem.ID);
+        });
     }
 
-    private void KillAudioPoolItem(AudioPoolItem activeSound, uint id)
-    {
-        activeSound.audioSource.Stop();
-        activeSound.audioSource.clip = null;
-        activeSound.audioSource.gameObject.SetActive(false);
-        activeSound.isPlaying = false;
-        _activePool.Remove(id);
-    }
 
-    public void StopOneShootSound(uint id)
+    public void StopSound(int id)
     {
         if (_activePool.TryGetValue(id, out AudioPoolItem activeSound))
         {
-            StopCoroutine(activeSound.coroutine);
-
-            KillAudioPoolItem(activeSound, id);
+            StopSound(activeSound);
         }
     }
 
-    public uint PlayOneShootSound(string track, AudioClip clip, Vector3 position, float volume,
-        float spatialBlend, int priority = 128)
+    private void StopSound(AudioPoolItem activePoolItem)
     {
-        if (CanPlayAudio(position, spatialBlend) == false || _tracks.ContainsKey(track) == false || clip == null || volume.Equals(0f))
-        {
-            return 0;
-        }
+        activePoolItem.audioSource.Stop();
+        activePoolItem.audioSource.clip = null;
+        activePoolItem.gameObject.SetActive(false);
+        activePoolItem.waitTween.Kill();
+        activePoolItem.ID = -1;
 
-        var unimportance = (_listenerTransform.position - position).sqrMagnitude / Mathf.Max(1, priority);
-
-        var leastImportantIndex = -1;
-        var leastImportanceValue = float.MaxValue;
-
-        for (var i = 0; i < _pool.Count; i++)
-        {
-            var poolItem = _pool[i];
-
-            if (poolItem.isPlaying == false)
-            {
-                return ConfigurePoolObject(i, track, clip, position, volume, spatialBlend, unimportance);
-            }
-            else if (poolItem.unimportance > leastImportanceValue)
-            {
-                leastImportanceValue = poolItem.unimportance;
-                leastImportantIndex = i;
-            }
-        }
-
-        if (leastImportanceValue > unimportance)
-            return ConfigurePoolObject(leastImportantIndex, track, clip, position,
-                volume, spatialBlend, unimportance);
-
-        return 0;
-    }
-
-    private bool CanPlayAudio(Vector3 spawnPosition, float spatialBlend)
-    {
-        if (spatialBlend.Approximately(0))
-            return true;
-
-        if (_listenerTransform == null)
-            return false;
-
-        return Vector3.Distance(spawnPosition, _listenerTransform.position) < _maxSoundDistance;
-    }
-
-    [Serializable]
-    private class TrackInfo
-    {
-        public string name;
-        public AudioMixerGroup group;
-        public IEnumerator trackFader;
-    }
-
-    [Serializable]
-    private class AudioPoolItem
-    {
-        public GameObject go;
-        public AudioSource audioSource;
-        public float unimportance = float.MaxValue;
-        public bool isPlaying;
-        public IEnumerator coroutine;
-        public uint ID;
+        _activePool.Remove(activePoolItem.ID);
     }
 }

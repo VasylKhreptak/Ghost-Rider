@@ -11,4 +11,3 @@ public class ObjectPoolerInstaller : MonoInstaller
         Container.Bind<ObjectPooler>().FromInstance(_objectPooler).AsSingle();
     }
 }
- 
