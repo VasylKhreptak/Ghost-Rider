@@ -7,27 +7,38 @@
 //
 //----------------------------------------------
 
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using System;
+using Zenject;
 
-public class RCC_Core : MonoBehaviour{
+public class RCC_Core : MonoBehaviour
+{
+    private DiContainer _diContainer;
+
+    [Inject]
+    private void Construct(DiContainer container)
+    {
+        _diContainer = container;
+    }
 
     #region Create AudioSource
 
     /// <summary>
     /// Creates new audiosource with specified settings.
     /// </summary>
-	public static AudioSource NewAudioSource(AudioMixerGroup audioMixer, GameObject go, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished){
+    public AudioSource NewAudioSource(AudioMixerGroup audioMixer, GameObject go, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished)
+    {
 
-        GameObject audioSourceObject = new GameObject(audioName);
+        var audioSourceObject = new GameObject(audioName);
 
-        if (go.transform.Find("All Audio Sources")){
+        if (go.transform.Find("All Audio Sources"))
+        {
             audioSourceObject.transform.SetParent(go.transform.Find("All Audio Sources"));
-        }else{
-            GameObject allAudioSources = new GameObject("All Audio Sources");
+        }
+        else
+        {
+            var allAudioSources = new GameObject("All Audio Sources");
             allAudioSources.transform.SetParent(go.transform, false);
             audioSourceObject.transform.SetParent(allAudioSources.transform, false);
         }
@@ -35,11 +46,10 @@ public class RCC_Core : MonoBehaviour{
         audioSourceObject.transform.position = go.transform.position;
         audioSourceObject.transform.rotation = go.transform.rotation;
 
-        audioSourceObject.AddComponent<AudioSource>();
-        AudioSource source = audioSourceObject.GetComponent<AudioSource>();
-
-		if (audioMixer)
-			source.outputAudioMixerGroup = audioMixer;
+        AudioSource source = audioSourceObject.AddComponent<AudioSource>();
+        
+        if (audioMixer)
+            source.outputAudioMixerGroup = audioMixer;
 
         //audioSource.GetComponent<AudioSource>().priority =1;
         source.minDistance = minDistance;
@@ -54,18 +64,22 @@ public class RCC_Core : MonoBehaviour{
         else
             source.spatialBlend = 1f;
 
-        if (playNow){
+        if (playNow)
+        {
 
             source.playOnAwake = true;
             source.Play();
 
-        }else{
+        }
+        else
+        {
 
             source.playOnAwake = false;
 
         }
 
-        if (destroyAfterFinished){
+        if (destroyAfterFinished)
+        {
 
             if (audioClip)
                 Destroy(audioSourceObject, audioClip.length);
@@ -78,75 +92,85 @@ public class RCC_Core : MonoBehaviour{
 
     }
 
-	/// <summary>
-	/// Creates new audiosource with specified settings.
-	/// </summary>
-	public static AudioSource NewAudioSource(GameObject go, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished){
+    /// <summary>
+    /// Creates new audiosource with specified settings.
+    /// </summary>
+    public AudioSource NewAudioSource(GameObject go, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished)
+    {
 
-		GameObject audioSourceObject = new GameObject(audioName);
+        var audioSourceObject = new GameObject(audioName);
 
-		if (go.transform.Find("All Audio Sources")){
-			audioSourceObject.transform.SetParent(go.transform.Find("All Audio Sources"));
-		}else{
-			GameObject allAudioSources = new GameObject("All Audio Sources");
-			allAudioSources.transform.SetParent(go.transform, false);
-			audioSourceObject.transform.SetParent(allAudioSources.transform, false);
-		}
+        if (go.transform.Find("All Audio Sources"))
+        {
+            audioSourceObject.transform.SetParent(go.transform.Find("All Audio Sources"));
+        }
+        else
+        {
+            var allAudioSources = new GameObject("All Audio Sources");
+            allAudioSources.transform.SetParent(go.transform, false);
+            audioSourceObject.transform.SetParent(allAudioSources.transform, false);
+        }
 
-		audioSourceObject.transform.position = go.transform.position;
-		audioSourceObject.transform.rotation = go.transform.rotation;
+        audioSourceObject.transform.position = go.transform.position;
+        audioSourceObject.transform.rotation = go.transform.rotation;
 
-		audioSourceObject.AddComponent<AudioSource>();
-		AudioSource source = audioSourceObject.GetComponent<AudioSource>();
+        AudioSource source = _diContainer.InstantiateComponent<AudioSource>(audioSourceObject);
 
-		//audioSource.GetComponent<AudioSource>().priority =1;
-		source.minDistance = minDistance;
-		source.maxDistance = maxDistance;
-		source.volume = volume;
-		source.clip = audioClip;
-		source.loop = loop;
-		source.dopplerLevel = .5f;
+        //audioSource.GetComponent<AudioSource>().priority =1;
+        source.minDistance = minDistance;
+        source.maxDistance = maxDistance;
+        source.volume = volume;
+        source.clip = audioClip;
+        source.loop = loop;
+        source.dopplerLevel = .5f;
 
-		if (minDistance == 0 && maxDistance == 0)
-			source.spatialBlend = 0f;
-		else
-			source.spatialBlend = 1f;
+        if (minDistance == 0 && maxDistance == 0)
+            source.spatialBlend = 0f;
+        else
+            source.spatialBlend = 1f;
 
-		if (playNow){
+        if (playNow)
+        {
 
-			source.playOnAwake = true;
-			source.Play();
+            source.playOnAwake = true;
+            source.Play();
 
-		}else{
+        }
+        else
+        {
 
-			source.playOnAwake = false;
+            source.playOnAwake = false;
 
-		}
+        }
 
-		if (destroyAfterFinished){
+        if (destroyAfterFinished)
+        {
 
-			if (audioClip)
-				Destroy(audioSourceObject, audioClip.length);
-			else
-				Destroy(audioSourceObject);
+            if (audioClip)
+                Destroy(audioSourceObject, audioClip.length);
+            else
+                Destroy(audioSourceObject);
 
-		}
+        }
 
-		return source;
+        return source;
 
-	}
+    }
 
     /// <summary>
     /// Creates new audiosource with specified settings.
     /// </summary>
-    public static AudioSource NewAudioSource(AudioMixerGroup audioMixer, GameObject go, Vector3 localPosition, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished) {
+    public AudioSource NewAudioSource(AudioMixerGroup audioMixer, GameObject go, Vector3 localPosition, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished)
+    {
+        var audioSourceObject = new GameObject(audioName);
 
-        GameObject audioSourceObject = new GameObject(audioName);
-
-        if (go.transform.Find("All Audio Sources")) {
+        if (go.transform.Find("All Audio Sources"))
+        {
             audioSourceObject.transform.SetParent(go.transform.Find("All Audio Sources"));
-        } else {
-            GameObject allAudioSources = new GameObject("All Audio Sources");
+        }
+        else
+        {
+            var allAudioSources = new GameObject("All Audio Sources");
             allAudioSources.transform.SetParent(go.transform, false);
             audioSourceObject.transform.SetParent(allAudioSources.transform, false);
         }
@@ -155,8 +179,7 @@ public class RCC_Core : MonoBehaviour{
         audioSourceObject.transform.rotation = go.transform.rotation;
         audioSourceObject.transform.localPosition = localPosition;
 
-        audioSourceObject.AddComponent<AudioSource>();
-        AudioSource source = audioSourceObject.GetComponent<AudioSource>();
+        AudioSource source = _diContainer.InstantiateComponent<AudioSource>(audioSourceObject);
 
         if (audioMixer)
             source.outputAudioMixerGroup = audioMixer;
@@ -174,18 +197,22 @@ public class RCC_Core : MonoBehaviour{
         else
             source.spatialBlend = 1f;
 
-        if (playNow) {
+        if (playNow)
+        {
 
             source.playOnAwake = true;
             source.Play();
 
-        } else {
+        }
+        else
+        {
 
             source.playOnAwake = false;
 
         }
 
-        if (destroyAfterFinished) {
+        if (destroyAfterFinished)
+        {
 
             if (audioClip)
                 Destroy(audioSourceObject, audioClip.length);
@@ -201,14 +228,18 @@ public class RCC_Core : MonoBehaviour{
     /// <summary>
     /// Creates new audiosource with specified settings.
     /// </summary>
-    public static AudioSource NewAudioSource(GameObject go, Vector3 localPosition, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished) {
+    public AudioSource NewAudioSource(GameObject go, Vector3 localPosition, string audioName, float minDistance, float maxDistance, float volume, AudioClip audioClip, bool loop, bool playNow, bool destroyAfterFinished)
+    {
 
-        GameObject audioSourceObject = new GameObject(audioName);
+        var audioSourceObject = new GameObject(audioName);
 
-        if (go.transform.Find("All Audio Sources")) {
+        if (go.transform.Find("All Audio Sources"))
+        {
             audioSourceObject.transform.SetParent(go.transform.Find("All Audio Sources"));
-        } else {
-            GameObject allAudioSources = new GameObject("All Audio Sources");
+        }
+        else
+        {
+            var allAudioSources = new GameObject("All Audio Sources");
             allAudioSources.transform.SetParent(go.transform, false);
             audioSourceObject.transform.SetParent(allAudioSources.transform, false);
         }
@@ -217,8 +248,7 @@ public class RCC_Core : MonoBehaviour{
         audioSourceObject.transform.rotation = go.transform.rotation;
         audioSourceObject.transform.localPosition = localPosition;
 
-        audioSourceObject.AddComponent<AudioSource>();
-        AudioSource source = audioSourceObject.GetComponent<AudioSource>();
+        AudioSource source = _diContainer.InstantiateComponent<AudioSource>(audioSourceObject);
 
         //audioSource.GetComponent<AudioSource>().priority =1;
         source.minDistance = minDistance;
@@ -233,18 +263,22 @@ public class RCC_Core : MonoBehaviour{
         else
             source.spatialBlend = 1f;
 
-        if (playNow) {
+        if (playNow)
+        {
 
             source.playOnAwake = true;
             source.Play();
 
-        } else {
+        }
+        else
+        {
 
             source.playOnAwake = false;
 
         }
 
-        if (destroyAfterFinished) {
+        if (destroyAfterFinished)
+        {
 
             if (audioClip)
                 Destroy(audioSourceObject, audioClip.length);
@@ -260,12 +294,13 @@ public class RCC_Core : MonoBehaviour{
     /// <summary>
     /// Adds High Pass Filter to audiosource. Used for turbo.
     /// </summary>
-    public static void NewHighPassFilter(AudioSource source, float freq, int level){
+    public static void NewHighPassFilter(AudioSource source, float freq, int level)
+    {
 
         if (source == null)
             return;
 
-        AudioHighPassFilter highFilter = source.gameObject.AddComponent<AudioHighPassFilter>();
+        var highFilter = source.gameObject.AddComponent<AudioHighPassFilter>();
         highFilter.cutoffFrequency = freq;
         highFilter.highpassResonanceQ = level;
 
@@ -274,12 +309,13 @@ public class RCC_Core : MonoBehaviour{
     /// <summary>
     /// Adds Low Pass Filter to audiosource. Used for engine off sounds.
     /// </summary>
-    public static void NewLowPassFilter(AudioSource source, float freq){
+    public static void NewLowPassFilter(AudioSource source, float freq)
+    {
 
         if (source == null)
             return;
 
-        AudioLowPassFilter lowFilter = source.gameObject.AddComponent<AudioLowPassFilter>();
+        var lowFilter = source.gameObject.AddComponent<AudioLowPassFilter>();
         lowFilter.cutoffFrequency = freq;
         //      lowFilter.highpassResonanceQ = level;
 
@@ -292,20 +328,20 @@ public class RCC_Core : MonoBehaviour{
     /// <summary>
     /// Creates the wheel colliders.
     /// </summary>
-    public void CreateWheelColliders(RCC_CarControllerV3 carController){
+    public void CreateWheelColliders(RCC_CarControllerV3 carController)
+    {
 
         // Creating a list for all wheel models.
-        List<Transform> allWheelModels = new List<Transform>();
-        allWheelModels.Add(carController.FrontLeftWheelTransform); allWheelModels.Add(carController.FrontRightWheelTransform); allWheelModels.Add(carController.RearLeftWheelTransform); allWheelModels.Add(carController.RearRightWheelTransform);
+        var allWheelModels = new List<Transform>();
+        allWheelModels.Add(carController.FrontLeftWheelTransform);
+        allWheelModels.Add(carController.FrontRightWheelTransform);
+        allWheelModels.Add(carController.RearLeftWheelTransform);
+        allWheelModels.Add(carController.RearRightWheelTransform);
 
         // If we have additional rear wheels, add them too.
         if (carController.ExtraRearWheelsTransform.Length > 0 && carController.ExtraRearWheelsTransform[0])
-        {
-
-            foreach (Transform t in carController.ExtraRearWheelsTransform)
+            foreach (var t in carController.ExtraRearWheelsTransform)
                 allWheelModels.Add(t);
-
-        }
 
         // If we don't have any wheelmodels, throw an error.
         if (allWheelModels != null && allWheelModels[0] == null)
@@ -317,23 +353,23 @@ public class RCC_Core : MonoBehaviour{
         }
 
         // Holding default rotation.
-        Quaternion currentRotation = transform.rotation;
+        var currentRotation = transform.rotation;
 
         // Resetting rotation.
         transform.rotation = Quaternion.identity;
 
         // Creating a new gameobject called Wheel Colliders for all Wheel Colliders, and parenting it to this gameobject.
-        GameObject WheelColliders = new GameObject("Wheel Colliders");
+        var WheelColliders = new GameObject("Wheel Colliders");
         WheelColliders.transform.SetParent(transform, false);
         WheelColliders.transform.localRotation = Quaternion.identity;
         WheelColliders.transform.localPosition = Vector3.zero;
         WheelColliders.transform.localScale = Vector3.one;
 
         // Creating WheelColliders.
-        foreach (Transform wheel in allWheelModels)
+        foreach (var wheel in allWheelModels)
         {
 
-            GameObject wheelcollider = new GameObject(wheel.transform.name);
+            var wheelcollider = new GameObject(wheel.transform.name);
 
             wheelcollider.transform.position = RCC_GetBounds.GetBoundsCenter(wheel.transform);
             wheelcollider.transform.rotation = transform.rotation;
@@ -342,21 +378,17 @@ public class RCC_Core : MonoBehaviour{
             wheelcollider.transform.localScale = Vector3.one;
             wheelcollider.AddComponent<WheelCollider>();
 
-            Bounds biggestBound = new Bounds();
-            Renderer[] renderers = wheel.GetComponentsInChildren<Renderer>();
+            var biggestBound = new Bounds();
+            var renderers = wheel.GetComponentsInChildren<Renderer>();
 
-            foreach (Renderer render in renderers)
-            {
+            foreach (var render in renderers)
                 if (render != GetComponent<Renderer>())
-                {
                     if (render.bounds.size.z > biggestBound.size.z)
                         biggestBound = render.bounds;
-                }
-            }
 
-            wheelcollider.GetComponent<WheelCollider>().radius = (biggestBound.extents.y) / transform.localScale.y;
+            wheelcollider.GetComponent<WheelCollider>().radius = biggestBound.extents.y / transform.localScale.y;
             wheelcollider.AddComponent<RCC_WheelCollider>();
-            JointSpring spring = wheelcollider.GetComponent<WheelCollider>().suspensionSpring;
+            var spring = wheelcollider.GetComponent<WheelCollider>().suspensionSpring;
 
             spring.spring = 40000f;
             spring.damper = 1500f;
@@ -391,7 +423,7 @@ public class RCC_Core : MonoBehaviour{
 
         }
 
-        RCC_WheelCollider[] allWheelColliders = new RCC_WheelCollider[allWheelModels.Count];
+        var allWheelColliders = new RCC_WheelCollider[allWheelModels.Count];
         allWheelColliders = GetComponentsInChildren<RCC_WheelCollider>();
 
         carController.FrontLeftWheelCollider = allWheelColliders[0];
@@ -401,10 +433,8 @@ public class RCC_Core : MonoBehaviour{
 
         carController.ExtraRearWheelsCollider = new RCC_WheelCollider[carController.ExtraRearWheelsTransform.Length];
 
-        for (int i = 0; i < carController.ExtraRearWheelsTransform.Length; i++)
-        {
+        for (var i = 0; i < carController.ExtraRearWheelsTransform.Length; i++)
             carController.ExtraRearWheelsCollider[i] = allWheelColliders[i + 4];
-        }
 
         transform.rotation = currentRotation;
 
@@ -417,24 +447,25 @@ public class RCC_Core : MonoBehaviour{
     /// <summary>
     /// Overrides the behavior.
     /// </summary>
-    public void SetBehavior(RCC_CarControllerV3 carController){
+    public void SetBehavior(RCC_CarControllerV3 carController)
+    {
 
         if (RCC_Settings.Instance.selectedBehaviorType == null)
             return;
 
-        RCC_Settings.BehaviorType currentBehaviorType = RCC_Settings.Instance.selectedBehaviorType;
+        var currentBehaviorType = RCC_Settings.Instance.selectedBehaviorType;
 
         carController.steeringHelper = currentBehaviorType.steeringHelper;
         carController.tractionHelper = currentBehaviorType.tractionHelper;
-		carController.angularDragHelper = currentBehaviorType.angularDragHelper;
-		carController.useCounterSteering = currentBehaviorType.counterSteering;
+        carController.angularDragHelper = currentBehaviorType.angularDragHelper;
+        carController.useCounterSteering = currentBehaviorType.counterSteering;
         carController.ABS = currentBehaviorType.ABS;
         carController.ESP = currentBehaviorType.ESP;
         carController.TCS = currentBehaviorType.TCS;
 
         carController.highspeedsteerAngle = Mathf.Clamp(carController.highspeedsteerAngle, currentBehaviorType.highSpeedSteerAngleMinimum, currentBehaviorType.highSpeedSteerAngleMaximum);
         carController.highspeedsteerAngleAtspeed = Mathf.Clamp(carController.highspeedsteerAngleAtspeed, currentBehaviorType.highSpeedSteerAngleAtspeedMinimum, currentBehaviorType.highSpeedSteerAngleAtspeedMaximum);
-		carController.counterSteeringFactor = Mathf.Clamp (carController.counterSteeringFactor, currentBehaviorType.counterSteeringMinimum, currentBehaviorType.counterSteeringMaximum);
+        carController.counterSteeringFactor = Mathf.Clamp(carController.counterSteeringFactor, currentBehaviorType.counterSteeringMinimum, currentBehaviorType.counterSteeringMaximum);
 
         carController.steerHelperAngularVelStrength = Mathf.Clamp(carController.steerHelperAngularVelStrength, currentBehaviorType.steerHelperAngularVelStrengthMinimum, currentBehaviorType.steerHelperAngularVelStrengthMaximum);
         carController.steerHelperLinearVelStrength = Mathf.Clamp(carController.steerHelperLinearVelStrength, currentBehaviorType.steerHelperLinearVelStrengthMinimum, currentBehaviorType.steerHelperLinearVelStrengthMaximum);
@@ -446,11 +477,10 @@ public class RCC_Core : MonoBehaviour{
         carController.gearShiftingDelay = Mathf.Clamp(carController.gearShiftingDelay, 0f, currentBehaviorType.gearShiftingDelayMaximum);
         carController.rigid.angularDrag = Mathf.Clamp(carController.rigid.angularDrag, currentBehaviorType.angularDrag, 1f);
 
-		carController.angularDragHelperStrength = Mathf.Clamp(carController.angularDragHelperStrength, currentBehaviorType.angularDragHelperMinimum, currentBehaviorType.angularDragHelperMaximum);
+        carController.angularDragHelperStrength = Mathf.Clamp(carController.angularDragHelperStrength, currentBehaviorType.angularDragHelperMinimum, currentBehaviorType.angularDragHelperMaximum);
 
     }
 
     #endregion
 
 }
-
