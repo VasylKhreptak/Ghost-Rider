@@ -66,9 +66,7 @@ public class RCC_CarControllerV3 : RCC_Core
     public bool overrideWheels = true; //	Overriding wheel settings such as steer, power, brake, handbrake.
     public int poweredWheels = 0; //	Total count of powered wheels. Used for dividing total power per each wheel.
     public bool applyEngineTorqueToExtraRearWheelColliders = true; //Applies engine torque to extra rear wheelcolliders.
-
-    private DiContainer _diContainer;
-
+    
     [System.Serializable]
     public class ConfigureVehicleSubsteps
     {
@@ -813,7 +811,9 @@ public class RCC_CarControllerV3 : RCC_Core
             {
                 GameObject sparks = (GameObject)Instantiate(contactSparkle, transform.position, Quaternion.identity) as GameObject;
                 sparks.transform.SetParent(allContactParticles.transform);
+                _diContainer.InstantiateComponent<ParticleSystemPauseController>(sparks);
                 contactSparkeList.Add(sparks.GetComponent<ParticleSystem>());
+                
                 ParticleSystem.EmissionModule em = sparks.GetComponent<ParticleSystem>().emission;
                 em.enabled = false;
             }

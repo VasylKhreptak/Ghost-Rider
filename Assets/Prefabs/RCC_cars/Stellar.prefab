@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 7928897730481989763}
   - component: {fileID: 7928897730481989762}
   - component: {fileID: 7928897730481989761}
+  - component: {fileID: 1182910722}
   m_Layer: 6
   m_Name: RCCExhaustFlame
   m_TagString: Player
@@ -5180,6 +5181,19 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &1182910722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897730481989791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf50ac64e0f2c264aa96e81cbe401fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 7928897730481989765}
 --- !u!1 &7928897730491174230
 GameObject:
   m_ObjectHideFlags: 0
@@ -5319,6 +5333,7 @@ GameObject:
   - component: {fileID: 7928897730605239830}
   - component: {fileID: 7928897730605239829}
   - component: {fileID: 7928897730605239828}
+  - component: {fileID: 541912296}
   m_Layer: 6
   m_Name: RCCExhaust (1)
   m_TagString: Player
@@ -10004,6 +10019,19 @@ MonoBehaviour:
   maxSize: 5
   minSpeed: 0.5
   maxSpeed: 5
+--- !u!114 &541912296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897730605239826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf50ac64e0f2c264aa96e81cbe401fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 7928897730605239830}
 --- !u!1 &7928897730668759613
 GameObject:
   m_ObjectHideFlags: 0
@@ -10143,6 +10171,7 @@ GameObject:
   - component: {fileID: 7928897730863744541}
   - component: {fileID: 7928897730863744540}
   - component: {fileID: 7928897730863744539}
+  - component: {fileID: 587549432}
   m_Layer: 6
   m_Name: RCCExhaust
   m_TagString: Player
@@ -14828,6 +14857,19 @@ MonoBehaviour:
   maxSize: 5
   minSpeed: 0.5
   maxSpeed: 5
+--- !u!114 &587549432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897730863744537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf50ac64e0f2c264aa96e81cbe401fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 7928897730863744541}
 --- !u!1 &7928897730865148028
 GameObject:
   m_ObjectHideFlags: 0
@@ -15108,6 +15150,7 @@ GameObject:
   - component: {fileID: 7928897731011191755}
   - component: {fileID: 7928897731011191754}
   - component: {fileID: 7928897731011191753}
+  - component: {fileID: 992173255}
   m_Layer: 6
   m_Name: RCCExhaustFlame
   m_TagString: Player
@@ -19875,6 +19918,19 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &992173255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731011191751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf50ac64e0f2c264aa96e81cbe401fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particleSystem: {fileID: 7928897731011191757}
 --- !u!1 &7928897731014490398
 GameObject:
   m_ObjectHideFlags: 0
@@ -19924,6 +19980,10 @@ GameObject:
   - component: {fileID: 1792388922234300268}
   - component: {fileID: 7960750266078265955}
   - component: {fileID: 7960750266078265956}
+  - component: {fileID: 32473295730668926}
+  - component: {fileID: 32473295730668925}
+  - component: {fileID: 32473295730668928}
+  - component: {fileID: 32473295730668927}
   m_Layer: 6
   m_Name: Stellar
   m_TagString: Untagged
@@ -20319,6 +20379,86 @@ MonoBehaviour:
   _priority: 128
   _volumeAmplifier: 0.001
   _minVolume: 0.4
+--- !u!114 &32473295730668926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b4701a7011fb0488667186639219e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &32473295730668925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa06868b76fd668409f32ac0b15ffebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &32473295730668928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 32473295730668926}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7928897731115316976}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &32473295730668927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928897731115317007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 32473295730668925}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7928897731115316976}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &7928897731142123605
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,8 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 5620408257384516593}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 5205684641363765926}
   - {fileID: 2434205065490607201}
@@ -211,8 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 9210805196234140900}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 7096958539792703296}
   - {fileID: 2931875482710718910}
@@ -351,8 +347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 4072252835537118893}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 1030694280046882614}
   - {fileID: 4751744629871202439}
@@ -576,8 +570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 5689389065764065804}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 6473696397433078662}
   - {fileID: 4866590452824441983}
@@ -750,7 +742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5513852085649717557}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 45}
+  m_LocalPosition: {x: 0, y: 0, z: -59.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -768,8 +760,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.029934, y: 10.823351, z: 1.1363134}
-  m_Center: {x: 0, y: 5.4662237, z: 2.5582352}
+  m_Size: {x: 25.029934, y: 10.823351, z: 0.31007004}
+  m_Center: {x: 0, y: 5.4662237, z: 2.6148014}
 --- !u!114 &5513852085649717553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,8 +1016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 7583954303219835662}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 8494052163140625692}
   - {fileID: 8844154531697426366}
@@ -1249,8 +1239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 6014615658281431590}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 7535551555240034578}
   - {fileID: 3319522685658654090}
@@ -1443,8 +1431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 568917247161534190}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 4420620835698634315}
   - {fileID: 5464492099467446811}
@@ -1599,8 +1585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 7456707955501682557}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 1892462497516817568}
   - {fileID: 7459360426822185109}

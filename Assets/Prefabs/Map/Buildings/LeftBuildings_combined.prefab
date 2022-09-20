@@ -48,8 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 1641340334018767343}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 55316735017958863}
   - {fileID: 4174379261054685797}
@@ -304,8 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 4015188949132648272}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 2118390997283409621}
   - {fileID: 1007059642739977252}
@@ -467,8 +463,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 7792069923584073623}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 3635787378999756660}
   - {fileID: 6437941389231558509}
@@ -568,8 +562,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 5698569191375529393}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 4848560067257955003}
   - {fileID: 3900849410725391754}
@@ -700,8 +692,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 4038720928507612344}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 609452502363975682}
   - {fileID: 5051801763231322769}
@@ -951,8 +941,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 5238128818117883380}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 2086727893959445512}
   - {fileID: 8782674606053277053}
@@ -1176,8 +1164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _occludeeEvents: {fileID: 4384260651925662633}
-  _pauseEvent: {fileID: 0}
-  _resumeEvent: {fileID: 0}
   _spawnPoints:
   - {fileID: 1399307188783679558}
   - {fileID: 3091365854110145023}
@@ -1275,8 +1261,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.029934, y: 10.823351, z: 1.1363134}
-  m_Center: {x: 0, y: 5.4662237, z: 2.5582352}
+  m_Size: {x: 25.029934, y: 10.823351, z: 0.33993912}
+  m_Center: {x: 0, y: 5.4662237, z: 2.7381077}
 --- !u!114 &8900205598009763985
 MonoBehaviour:
   m_ObjectHideFlags: 0

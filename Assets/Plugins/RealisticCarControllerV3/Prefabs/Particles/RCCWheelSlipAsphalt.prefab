@@ -4710,10 +4710,7 @@ GameObject:
   - component: {fileID: 4401534690552110}
   - component: {fileID: 198987657094923722}
   - component: {fileID: 199281948250390136}
-  - component: {fileID: -1280317712460240632}
-  - component: {fileID: -8809438136823358273}
-  - component: {fileID: 1577431563633255217}
-  - component: {fileID: -3601198034606798597}
+  - component: {fileID: -8565672714309170084}
   m_Layer: 0
   m_Name: RCCWheelSlipAsphalt
   m_TagString: Untagged
@@ -9403,7 +9400,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-1280317712460240632
+--- !u!114 &-8565672714309170084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9412,74 +9409,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1088255853978532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b4701a7011fb0488667186639219e2, type: 3}
+  m_Script: {fileID: 11500000, guid: bf50ac64e0f2c264aa96e81cbe401fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8809438136823358273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088255853978532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa06868b76fd668409f32ac0b15ffebc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1577431563633255217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088255853978532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: -1280317712460240632}
-  _unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 198987657094923722}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Pause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-3601198034606798597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088255853978532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: -8809438136823358273}
-  _unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 198987657094923722}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _particleSystem: {fileID: 198987657094923722}

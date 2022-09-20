@@ -12,10 +12,7 @@ GameObject:
   - component: {fileID: 19856756}
   - component: {fileID: 19922116}
   - component: {fileID: 11497078}
-  - component: {fileID: -8406684402739659633}
-  - component: {fileID: 4503912225020431097}
-  - component: {fileID: 4170216220142266832}
-  - component: {fileID: -5578643077048619204}
+  - component: {fileID: -5704572061586489405}
   m_Layer: 8
   m_Name: RCCExhaust
   m_TagString: Player
@@ -4627,7 +4624,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: da685c9676ead6248ab3ac0019efb88e, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4702,7 +4698,7 @@ MonoBehaviour:
   maxSize: 5
   minSpeed: 0.5
   maxSpeed: 5
---- !u!114 &-8406684402739659633
+--- !u!114 &-5704572061586489405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4711,77 +4707,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 104134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97b4701a7011fb0488667186639219e2, type: 3}
+  m_Script: {fileID: 11500000, guid: bf50ac64e0f2c264aa96e81cbe401fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4503912225020431097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa06868b76fd668409f32ac0b15ffebc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4170216220142266832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: -8406684402739659633}
-  _unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 19856756}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Pause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-5578643077048619204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: 4503912225020431097}
-  _unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 19856756}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _particleSystem: {fileID: 19856756}
 --- !u!1 &143854
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,6 +4724,7 @@ GameObject:
   - component: {fileID: 19948406}
   - component: {fileID: 10840862}
   - component: {fileID: 123180383222587174}
+  - component: {fileID: 5586454878113240475}
   m_Layer: 8
   m_Name: RCCExhaustFlame
   m_TagString: Player
@@ -9414,7 +9344,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d96b3301b035b0b4da53b0754702d33e, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9543,3 +9472,23 @@ LensFlare:
     serializedVersion: 2
     m_Bits: 262
   m_Directional: 0
+--- !u!114 &5586454878113240475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}

@@ -14,7 +14,7 @@ using Zenject;
 
 public class RCC_Core : MonoBehaviour
 {
-    private DiContainer _diContainer;
+    protected DiContainer _diContainer;
 
     [Inject]
     private void Construct(DiContainer container)
@@ -47,7 +47,8 @@ public class RCC_Core : MonoBehaviour
         audioSourceObject.transform.rotation = go.transform.rotation;
 
         AudioSource source = audioSourceObject.AddComponent<AudioSource>();
-        
+        _diContainer.InstantiateComponent<AudioSourcePauseController>(audioSourceObject);
+
         if (audioMixer)
             source.outputAudioMixerGroup = audioMixer;
 
@@ -114,7 +115,8 @@ public class RCC_Core : MonoBehaviour
         audioSourceObject.transform.position = go.transform.position;
         audioSourceObject.transform.rotation = go.transform.rotation;
 
-        AudioSource source = _diContainer.InstantiateComponent<AudioSource>(audioSourceObject);
+        AudioSource source = audioSourceObject.AddComponent<AudioSource>();
+        _diContainer.InstantiateComponent<AudioSourcePauseController>(audioSourceObject);
 
         //audioSource.GetComponent<AudioSource>().priority =1;
         source.minDistance = minDistance;
@@ -179,8 +181,9 @@ public class RCC_Core : MonoBehaviour
         audioSourceObject.transform.rotation = go.transform.rotation;
         audioSourceObject.transform.localPosition = localPosition;
 
-        AudioSource source = _diContainer.InstantiateComponent<AudioSource>(audioSourceObject);
-
+        AudioSource source = audioSourceObject.AddComponent<AudioSource>();
+        _diContainer.InstantiateComponent<AudioSourcePauseController>(audioSourceObject);
+        
         if (audioMixer)
             source.outputAudioMixerGroup = audioMixer;
 
@@ -248,7 +251,8 @@ public class RCC_Core : MonoBehaviour
         audioSourceObject.transform.rotation = go.transform.rotation;
         audioSourceObject.transform.localPosition = localPosition;
 
-        AudioSource source = _diContainer.InstantiateComponent<AudioSource>(audioSourceObject);
+        AudioSource source = audioSourceObject.AddComponent<AudioSource>();
+        _diContainer.InstantiateComponent<AudioSourcePauseController>(audioSourceObject);
 
         //audioSource.GetComponent<AudioSource>().priority =1;
         source.minDistance = minDistance;
