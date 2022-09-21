@@ -16,6 +16,8 @@
         <option value="$PROJECT_DIR$/Assets/Plugins" />
         <option value="$PROJECT_DIR$/Assets/Resources" />
         <option value="$PROJECT_DIR$/Assets/Scenes" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RCC" />
+        <option value="$PROJECT_DIR$/Assets/Editor/RCC" />
       </list>
     </option>
   </component>
