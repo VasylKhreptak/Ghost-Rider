@@ -3923,6 +3923,9 @@ GameObject:
   - component: {fileID: 860803182}
   - component: {fileID: 860803183}
   - component: {fileID: 860803184}
+  - component: {fileID: 860803186}
+  - component: {fileID: 860803190}
+  - component: {fileID: 860803189}
   m_Layer: 0
   m_Name: GamePauseController
   m_TagString: Untagged
@@ -4082,6 +4085,53 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &860803186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860803175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0241c4e45b8bb224a97d2236b537818a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 860803176}
+  _audioClips:
+  - {fileID: 8300000, guid: 66d653ada053d804c99b77bd687a6c57, type: 3}
+  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
+  _playOnTransformPosition: 1
+  _position: {x: 0, y: 0, z: 0}
+  _volume: 1
+  _spatialBlend: 0
+  _priority: 128
+--- !u!114 &860803189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860803175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc3acc654291d34c8158d68ec1ffbc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 860803190}
+  _clipHolder: {fileID: 860803186}
+--- !u!114 &860803190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860803175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97b4701a7011fb0488667186639219e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &879176974
 GameObject:
   m_ObjectHideFlags: 0

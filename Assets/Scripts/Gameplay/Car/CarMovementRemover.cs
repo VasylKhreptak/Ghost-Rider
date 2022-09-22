@@ -8,7 +8,7 @@ public class CarMovementRemover : MonoBehaviour
     public void CanMove(bool canMove)
     {
         Rigidbody rigidbody = _car.gameObject.GetComponent<Rigidbody>();
-
+        
         rigidbody.constraints = canMove ? RigidbodyConstraints.None : RigidbodyConstraints.FreezeAll;
     }
 }
