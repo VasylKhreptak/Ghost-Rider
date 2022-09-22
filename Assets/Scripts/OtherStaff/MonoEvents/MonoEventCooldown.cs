@@ -12,7 +12,7 @@ public class MonoEventCooldown : MonoEvent
     private Tween _waitTween;
 
     private bool _canInvoke = true;
-
+    
     #region MonoBehaviour
 
     private void OnValidate()
@@ -20,15 +20,18 @@ public class MonoEventCooldown : MonoEvent
         _event ??= GetComponent<MonoEvent>();
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         _event.onMonoCall += TryInvoke;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _event.onMonoCall -= TryInvoke;
+    }
 
+    private void OnDestroy()
+    {
         _waitTween.Kill();
     }
 
@@ -58,5 +61,10 @@ public class MonoEventCooldown : MonoEvent
     {
         _canInvoke = enabled;
         _event.enabled = enabled;
+    }
+
+    public void CancelCooldown()
+    {
+        _waitTween.Kill();
     }
 }

@@ -7,13 +7,6 @@ public class CarEngineStateController : MonoBehaviour
 
     public void SetState(bool enabled)
     {
-        if (enabled)
-        {
-            _carController.StartEngine();
-        }
-        else
-        {
-            _carController.KillEngine();
-        }
+        _carController.SetEngine(enabled);
     }
 }

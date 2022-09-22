@@ -13,8 +13,8 @@ public class OnEventAlpha : MonoBehaviour
 
     private void OnValidate()
     {
-        _alphaAdapter = GetComponent<AlphaAdapter>();
-        _monoEvent = GetComponent<MonoEvent>();
+        _alphaAdapter ??= GetComponent<AlphaAdapter>();
+        _monoEvent ??= GetComponent<MonoEvent>();
     }
 
     private void Awake()

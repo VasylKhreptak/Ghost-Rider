@@ -13,8 +13,8 @@ public class OnEventLocalRotation : MonoBehaviour
 
     private void OnValidate()
     {
-        _transform = GetComponent<Transform>();
-        _monoEvent = GetComponent<MonoEvent>();
+        _transform ??= GetComponent<Transform>();
+        _monoEvent ??= GetComponent<MonoEvent>();
     }
 
     private void Awake()

@@ -10,4 +10,9 @@ public class CameraCarSelector : MonoBehaviour
     {
         _rccCamera.playerCar = _carController;
     }
+
+    public void ResetCarCamera()
+    {
+        _rccCamera.playerCar = null;
+    }
 }
