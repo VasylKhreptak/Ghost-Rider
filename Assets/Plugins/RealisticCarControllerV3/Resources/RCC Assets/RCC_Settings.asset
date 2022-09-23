@@ -311,7 +311,7 @@ MonoBehaviour:
   RCCTelemetry: {fileID: 6059275310813240883, guid: 65802e5058ade584d99e0fba314f4a68, type: 3}
   dontUseAnyParticleEffects: 0
   dontUseSkidmarks: 0
-  audioMixer: {fileID: 24300002, guid: a97addf01f8029040bb6ea53d3c8e62d, type: 2}
+  audioMixer: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   gearShiftingClips:
   - {fileID: 8300000, guid: fd92e514f75331e4085d0846a166fef8, type: 3}
   - {fileID: 8300000, guid: 51d3f215e07c15a41aab4038522df8d6, type: 3}

@@ -38,4 +38,9 @@ public class DelayedMonoEvent : MonoEvent
         _waitTween.Kill();
         _waitTween = this.DOWait(_delay).OnComplete(() => { onMonoCall?.Invoke(); });
     }
+
+    public void KillDelay()
+    {
+        _waitTween.Kill();
+    }
 }

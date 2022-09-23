@@ -1,4 +1,5 @@
 using UnityEngine;
+
 public class GetKeyDownMonoEvent : MonoEvent
 {
     [Header("Preferences")]
