@@ -11043,7 +11043,11 @@ GameObject:
   - component: {fileID: 1282634650}
   - component: {fileID: 1282634649}
   - component: {fileID: 1282634648}
+  - component: {fileID: 1282634659}
+  - component: {fileID: 1282634658}
+  - component: {fileID: 1282634657}
   - component: {fileID: 1282634656}
+  - component: {fileID: 1282634660}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -11319,13 +11323,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1282634646}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1282634659}
+        m_TargetAssemblyTypeName: ManualMonoEvent, Assembly-CSharp
+        m_MethodName: Invoke
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11372,7 +11376,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badf6cb14aa39364190273767afaa445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 1282634653}
+--- !u!114 &1282634657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282634646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 1282634658}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1282634656}
+        m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1282634658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282634646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a2292525bb16442abbefd69f161fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 1282634659}
+  _delay: 0.3
+--- !u!114 &1282634659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282634646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3695bcf90e5dbb74797baac2c5a70bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1282634660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282634646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71ce1336fbaacef44a32f30f018e9f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 1050963877}
+  _monoEvent: {fileID: 1282634659}
+  _forward: 1
 --- !u!1 &1299551835
 GameObject:
   m_ObjectHideFlags: 0
@@ -25400,7 +25472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4be62ba1dbac6418c2cb80c3386867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultFramerate: 9999
+  _defaultFramerate: 60
   _editMode: 0
   _key: GameFramerate
 --- !u!1 &2057072783
@@ -25811,7 +25883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badf6cb14aa39364190273767afaa445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 2088112805}
 --- !u!114 &2088112800
 MonoBehaviour:
   m_ObjectHideFlags: 0
