@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -21,7 +20,7 @@ public class VolumeSlider : MonoBehaviour
         _slider ??= GetComponent<Slider>();
     }
 
-    private void Start()
+    private void Awake()
     {
         _mixerGroup.audioMixer.GetFloat(_mixerGroup.name, out float mixerVolume);
         _slider.value = mixerVolume.Remap(_mixerMin, _mixerMax, _slider.minValue, _slider.maxValue);
@@ -41,7 +40,8 @@ public class VolumeSlider : MonoBehaviour
 
     private void OnValueChanged(float value)
     {
-        float newValue = _valueCurve.Evaluate(_slider.value).Remap(_slider.minValue, _slider.maxValue, _mixerMin, _mixerMax);
+        float newValue = (_valueCurve.Evaluate(_slider.value / _slider.maxValue) * _slider.maxValue)
+            .Remap(_slider.minValue, _slider.maxValue, _mixerMin, _mixerMax);
         _mixerGroup.audioMixer.SetFloat(_mixerGroup.name, newValue);
     }
 }

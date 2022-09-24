@@ -1,22 +1,19 @@
-using System;
-using System.Linq;
 using ModestTree;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class FullScreenModeDropdown : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
 
-    private readonly FullScreenMode[] _screenModes = {
+    private readonly FullScreenMode[] _screenModes =
+    {
         FullScreenMode.Windowed,
-        FullScreenMode.MaximizedWindow, 
         FullScreenMode.ExclusiveFullScreen,
         FullScreenMode.FullScreenWindow
     };
-     
+
     #region MonoBehaviour
 
     private void Awake()
