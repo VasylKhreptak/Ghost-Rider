@@ -5869,6 +5869,7 @@ GameObject:
   - component: {fileID: 951500007}
   - component: {fileID: 951500006}
   - component: {fileID: 951500008}
+  - component: {fileID: 951500009}
   m_Layer: 5
   m_Name: PressSpaceToStartButton
   m_TagString: Untagged
@@ -6204,6 +6205,34 @@ MonoBehaviour:
   - {fileID: 951499996}
   _active: 0
   _event: {fileID: 951499998}
+--- !u!114 &951500009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951499986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 240374398}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 951500007}
+        m_TargetAssemblyTypeName: DelayedMonoEvent, Assembly-CSharp
+        m_MethodName: KillDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &952955184
 GameObject:
   m_ObjectHideFlags: 0
