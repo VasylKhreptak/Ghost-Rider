@@ -24,7 +24,7 @@ public class OnEventSetActiveBehaviour : MonoBehaviour
         _event.onMonoCall += SetActive;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _event.onMonoCall -= SetActive;
     }

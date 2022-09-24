@@ -13,8 +13,8 @@ public class VolumeSlider : MonoBehaviour
     [SerializeField] private AnimationCurve _valueCurve;
     [SerializeField] private float _mixerMin = -80;
     [SerializeField] private float _mixerMax = 0;
-    
-    #region MonoBehaviour 
+
+    #region MonoBehaviour
 
     private void OnValidate()
     {
@@ -42,7 +42,6 @@ public class VolumeSlider : MonoBehaviour
     private void OnValueChanged(float value)
     {
         float newValue = _valueCurve.Evaluate(_slider.value).Remap(_slider.minValue, _slider.maxValue, _mixerMin, _mixerMax);
-        
         _mixerGroup.audioMixer.SetFloat(_mixerGroup.name, newValue);
     }
 }

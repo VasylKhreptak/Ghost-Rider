@@ -10,6 +10,7 @@ public class MonoEventCountLimiter : MonoEvent
     [SerializeField] private int _maxEventsCount;
 
     private int _count;
+    private bool _enabled = true; 
     
     #region MonoBehaviour
 
@@ -42,7 +43,11 @@ public class MonoEventCountLimiter : MonoEvent
 
             if (_count == _maxEventsCount)
             {
-                _targetEvent.enabled = false;
+                if (_enabled == _targetEvent.enabled)
+                {
+                    _targetEvent.enabled = false;
+                    _enabled = false;
+                }
             }
         }
     }
@@ -61,6 +66,10 @@ public class MonoEventCountLimiter : MonoEvent
     {
         _count = 0;
 
-        _targetEvent.enabled = true;
+        if (_enabled == _targetEvent.enabled)
+        {
+            _targetEvent.enabled = true;
+            _enabled = true;
+        }
     }
 }
