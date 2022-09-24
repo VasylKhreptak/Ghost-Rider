@@ -18,10 +18,6 @@ public class TargetFramerateSlider : MonoBehaviour
     private void Awake()
     {
         _slider.maxValue = Screen.currentResolution.refreshRate;
-    }
-
-    private void Start()
-    {
         _slider.value = Application.targetFrameRate;
     }
 

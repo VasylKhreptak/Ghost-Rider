@@ -21,7 +21,7 @@ public class GameFramerate : MonoBehaviour
             return;
         }
         
-        Set(Application.targetFrameRate = Int32.MaxValue);
+        Set(Application.targetFrameRate = int.MaxValue);
     }
 
     private void Awake()
