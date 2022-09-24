@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class CursorStateController : MonoBehaviour
 {
-    public void SetState(bool enabled)
+    public void SetVisible(bool visible)
     {
-        #if !UNITY_EDITOR
-        Cursor.visible = enabled;
-        Cursor.lockState = enabled ? CursorLockMode.None : CursorLockMode.Locked;
-        #endif
+#if !UNITY_EDITOR
+        Cursor.visible = visible;
+#endif
+    }
+
+    public void SetLock(bool @lock)
+    {
+#if !UNITY_EDITOR
+        Cursor.lockState = @lock ? CursorLockMode.Locked : CursorLockMode.None;
+#endif
     }
 }

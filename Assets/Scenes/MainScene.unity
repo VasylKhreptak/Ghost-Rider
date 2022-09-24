@@ -9684,6 +9684,7 @@ GameObject:
   - component: {fileID: 1482063463}
   - component: {fileID: 1482063462}
   - component: {fileID: 1482063465}
+  - component: {fileID: 1482063466}
   m_Layer: 0
   m_Name: CursorStateController
   m_TagString: Untagged
@@ -9736,7 +9737,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1482063460}
         m_TargetAssemblyTypeName: CursorStateController, Assembly-CSharp
-        m_MethodName: SetState
+        m_MethodName: SetVisible
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9764,7 +9765,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1482063460}
         m_TargetAssemblyTypeName: CursorStateController, Assembly-CSharp
-        m_MethodName: SetState
+        m_MethodName: SetVisible
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9773,6 +9774,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1482063460}
+        m_TargetAssemblyTypeName: CursorStateController, Assembly-CSharp
+        m_MethodName: SetLock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1482063460}
+        m_TargetAssemblyTypeName: CursorStateController, Assembly-CSharp
+        m_MethodName: SetLock
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1482063463
 MonoBehaviour:
@@ -9816,7 +9841,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1482063460}
         m_TargetAssemblyTypeName: CursorStateController, Assembly-CSharp
-        m_MethodName: SetState
+        m_MethodName: SetVisible
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9825,6 +9850,34 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1482063466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482063458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 1712494550}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1482063460}
+        m_TargetAssemblyTypeName: CursorStateController, Assembly-CSharp
+        m_MethodName: SetVisible
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1483578115
 GameObject:
