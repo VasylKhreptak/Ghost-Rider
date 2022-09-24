@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MaxFramerateToggle : MonoBehaviour
+public class VSyncToggle : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Toggle _toggle;
-    [SerializeField] private GameFramerate _gameFramerate;
 
     #region MonoBehaciour
 
@@ -13,7 +12,6 @@ public class MaxFramerateToggle : MonoBehaviour
     {
         _toggle ??= GetComponent<Toggle>();
     }
-
     private void OnEnable()
     {
         _toggle.onValueChanged.AddListener(OnValueChanged);
@@ -26,11 +24,8 @@ public class MaxFramerateToggle : MonoBehaviour
 
     #endregion
 
-    private void OnValueChanged(bool state)
+    private void OnValueChanged(bool value)
     {
-        if (state)
-        {
-            _gameFramerate.Set(int.MaxValue);
-        }
+        QualitySettings.vSyncCount = value ? 1 : 0;
     }
 }

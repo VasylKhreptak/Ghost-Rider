@@ -1,19 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MaxFramerateToggle : MonoBehaviour
+public class OnToggleStateMonoEvent : MonoEvent
 {
     [Header("References")]
     [SerializeField] private Toggle _toggle;
-    [SerializeField] private GameFramerate _gameFramerate;
 
-    #region MonoBehaciour
+    [Header("Preferences")]
+    [SerializeField] private bool _state;
+
+    #region MonoBehaviour
 
     private void OnValidate()
     {
         _toggle ??= GetComponent<Toggle>();
     }
-
     private void OnEnable()
     {
         _toggle.onValueChanged.AddListener(OnValueChanged);
@@ -26,11 +27,11 @@ public class MaxFramerateToggle : MonoBehaviour
 
     #endregion
 
-    private void OnValueChanged(bool state)
+    private void OnValueChanged(bool value)
     {
-        if (state)
+        if (value == _state)
         {
-            _gameFramerate.Set(int.MaxValue);
+            onMonoCall?.Invoke();
         }
     }
 }
