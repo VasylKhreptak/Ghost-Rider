@@ -24,7 +24,7 @@ public class GameFramerate : MonoBehaviour
         Set(Application.targetFrameRate = Int32.MaxValue);
     }
 
-    private void Start()
+    private void Awake()
     {
         Set(PlayerPrefsSafe.GetInt(_key, _defaultFramerate));
 
@@ -33,7 +33,7 @@ public class GameFramerate : MonoBehaviour
 
     #endregion
 
-    private void Set(int framerate)
+    public void Set(int framerate)
     {
         Application.targetFrameRate = framerate;
     }
