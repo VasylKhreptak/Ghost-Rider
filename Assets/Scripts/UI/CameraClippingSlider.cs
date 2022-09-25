@@ -1,25 +1,22 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraClippingSlider : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private Camera _camera;
     [SerializeField] private Slider _slider;
-
-    private Camera _camera;
     
     #region MonoBehaviour
 
     private void OnValidate()
     {
         _slider ??= GetComponent<Slider>();
+        _camera = Camera.main;
     }
 
     private void Awake()
     {
-        _camera = Camera.main;
-        
         _slider.SetValueWithoutNotify(_camera.farClipPlane);
     }
 

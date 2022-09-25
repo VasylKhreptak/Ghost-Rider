@@ -56,8 +56,6 @@ public class ToggleGroupEvents : MonoBehaviour
     private void CheckState()
     {
         (MatchCase() ? onMatchCase : onDismatchCase)?.Invoke();
-
-        Debug.Log("Match: " + (MatchCase()));
     }
 
     private bool MatchCase()
