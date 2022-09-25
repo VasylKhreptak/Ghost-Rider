@@ -35,9 +35,7 @@ public class ToggleGroupEvents : MonoBehaviour
     }
 
     #endregion
-
-#if UNITY_EDITOR
-
+    
     [ContextMenu("SyncContent")]
     private void SyncContent()
     {
@@ -54,9 +52,7 @@ public class ToggleGroupEvents : MonoBehaviour
             _toggleItems.Add(toggleItem);
         }
     }
-
-#endif
-
+    
     private void CheckState()
     {
         (MatchCase() ? onMatchCase : onDismatchCase)?.Invoke();

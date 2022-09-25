@@ -14,12 +14,12 @@ public class CameraClippingSlider : MonoBehaviour
     private void OnValidate()
     {
         _slider ??= GetComponent<Slider>();
-
-        _camera = Camera.main;
     }
 
     private void Awake()
     {
+        _camera = Camera.main;
+        
         _slider.SetValueWithoutNotify(_camera.farClipPlane);
     }
 

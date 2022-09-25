@@ -5,28 +5,12 @@ public class GameFramerate : MonoBehaviour
 {
     [Header("Preferences")]
     [SerializeField] private int _defaultFramerate = 60;
-    [SerializeField] private bool _editMode;
 
-    [Header("PlayerPrefs Preferences")]
-    [SerializeField] private string _key = "GameFramerate";
-
-    #region MonoBehaviour
-
-    private void OnValidate()
-    {
-        if (_editMode)
-        {
-            Set(_defaultFramerate);
-            
-            return;
-        }
-        
-        Set(Application.targetFrameRate = int.MaxValue);
-    }
+    #region Monobehaviour
 
     private void Awake()
     {
-        Set(PlayerPrefsSafe.GetInt(_key, _defaultFramerate));
+        Set(_defaultFramerate);
 
         QualitySettings.vSyncCount = 0;
     }
