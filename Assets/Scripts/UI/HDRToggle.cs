@@ -22,7 +22,7 @@ public class HDRToggle : MonoBehaviour
 	{
 		_renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
 		_toggle.isOn = _renderAsset.supportsHDR;
-		_toggle.interactable = Mathf.Approximately(_volume.weight, 0);
+		_toggle.interactable = !Mathf.Approximately(_volume.weight, 0);
 	}
 
 	private void OnEnable()
