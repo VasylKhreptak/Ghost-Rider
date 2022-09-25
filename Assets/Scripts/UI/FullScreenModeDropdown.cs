@@ -18,7 +18,7 @@ public class FullScreenModeDropdown : MonoBehaviour
 
     private void Awake()
     {
-        _dropdown.SetValueWithoutNotify(_screenModes.IndexOf(Screen.fullScreenMode));
+        _dropdown.value = _screenModes.IndexOf(Screen.fullScreenMode);
     }
 
     private void OnValidate()

@@ -6,7 +6,7 @@ public class CameraClippingSlider : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera _camera;
     [SerializeField] private Slider _slider;
-    
+
     #region MonoBehaviour
 
     private void OnValidate()
@@ -17,7 +17,7 @@ public class CameraClippingSlider : MonoBehaviour
 
     private void Awake()
     {
-        _slider.SetValueWithoutNotify(_camera.farClipPlane);
+        _slider.value = _camera.farClipPlane;
     }
 
     private void OnEnable()

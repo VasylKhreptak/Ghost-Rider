@@ -15,9 +15,9 @@ public class ResolutionDropdown : MonoBehaviour
     private void Awake()
     {
         _resolutions = Screen.resolutions;
-        
+
         Array.Reverse(_resolutions);
-        
+
         Init();
     }
 
@@ -59,7 +59,7 @@ public class ResolutionDropdown : MonoBehaviour
 
         _dropdown.AddOptions(options);
 
-        _dropdown.SetValueWithoutNotify(currentResolutionIndex);
+        _dropdown.value = currentResolutionIndex;
         _dropdown.RefreshShownValue();
     }
 
