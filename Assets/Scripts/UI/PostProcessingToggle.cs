@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PostProcessingToggle : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject _globalVolume;
+    [SerializeField] private Volume _volume;
     [SerializeField] private Toggle _toggle;
 
     #region MonoBehaviour
@@ -17,7 +17,7 @@ public class PostProcessingToggle : MonoBehaviour
 
     private void Awake()
     {
-        _toggle.SetIsOnWithoutNotify(_globalVolume.activeSelf);
+        _toggle.isOn = !Mathf.Approximately(_volume.weight, 0);
     }
 
     private void OnEnable()
@@ -34,6 +34,6 @@ public class PostProcessingToggle : MonoBehaviour
 
     private void SetPostProcessingState(bool enabled)
     {
-        _globalVolume.SetActive(enabled);
+        _volume.weight = enabled ? 1 : 0;
     }
 }
