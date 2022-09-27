@@ -40,13 +40,25 @@ public class DepthOfFieldAnimation : AnimationCore
     public override void Animate(bool state)
     {
         Kill();
-
+        
+        if (state)
+        {
+            _depthOfField.mode.value = DepthOfFieldMode.Bokeh;
+        }
+        
         _depthOfField.aperture.value = state ? _startAperture : _targetAperture;
-
+        
         _tween = DOTween
             .To(() => _depthOfField.aperture.value, x => _depthOfField.aperture.value = x,
                 state ? _targetAperture : _startAperture, _duration)
-            .SetEase(_animationCurve);
+            .SetEase(_animationCurve)
+            .OnComplete(() =>
+            {
+                if (state == false)
+                {
+                    _depthOfField.mode.value = DepthOfFieldMode.Off;
+                }
+            });
     }
     public override void Pause()
     {
