@@ -128,6 +128,7 @@ public class RCC_Camera : MonoBehaviour{
 	public float orbitXSpeed = 50f;
 	public float orbitYSpeed = 50f;
 	public float orbitSmooth = 10f;
+	public float sensitivity = 1f;
 
 	//	Resetting orbits.
 	public bool orbitReset = false;
@@ -319,8 +320,8 @@ public class RCC_Camera : MonoBehaviour{
 			if (Input.GetKeyDown (RCCSettings.changeCameraKB))
 				ChangeCamera ();
 
-			orbitX += Input.GetAxis (RCCSettings.mouseXInput) * orbitXSpeed * .02f;
-			orbitY -= Input.GetAxis (RCCSettings.mouseYInput) * orbitYSpeed * .02f;
+			orbitX += Input.GetAxis (RCCSettings.mouseXInput) * orbitXSpeed * .02f * sensitivity;
+			orbitY -= Input.GetAxis (RCCSettings.mouseYInput) * orbitYSpeed * .02f * sensitivity;
 
 			break;
 
@@ -329,8 +330,8 @@ public class RCC_Camera : MonoBehaviour{
 			if (Input.GetButtonDown (RCCSettings.Xbox_changeCameraKB))
 				ChangeCamera ();
 
-			orbitX += Input.GetAxis (RCCSettings.Xbox_mouseXInput) * orbitXSpeed * .01f;
-			orbitY -= Input.GetAxis (RCCSettings.Xbox_mouseYInput) * orbitYSpeed * .01f;
+			orbitX += Input.GetAxis (RCCSettings.Xbox_mouseXInput) * orbitXSpeed * .01f * sensitivity;
+			orbitY -= Input.GetAxis (RCCSettings.Xbox_mouseYInput) * orbitYSpeed * .01f * sensitivity;
 
 			break;
 
@@ -339,8 +340,8 @@ public class RCC_Camera : MonoBehaviour{
 			if (Input.GetButtonDown (RCCSettings.PS4_changeCameraKB))
 				ChangeCamera ();
 
-			orbitX += Input.GetAxis (RCCSettings.PS4_mouseXInput) * orbitXSpeed * .01f;
-			orbitY -= Input.GetAxis (RCCSettings.PS4_mouseYInput) * orbitYSpeed * .01f;
+			orbitX += Input.GetAxis (RCCSettings.PS4_mouseXInput) * orbitXSpeed * .01f * sensitivity;
+			orbitY -= Input.GetAxis (RCCSettings.PS4_mouseYInput) * orbitYSpeed * .01f * sensitivity;
 
 			break;
 
