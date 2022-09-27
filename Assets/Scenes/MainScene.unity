@@ -2447,6 +2447,74 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &163145669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163145670}
+  - component: {fileID: 163145671}
+  m_Layer: 0
+  m_Name: SettignsProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &163145670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163145669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1648785219}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163145671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163145669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703a99ec067d558429406ba5c21482a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerPrefsKey: Settings
+  settings:
+    masterVolume: 0
+    musicVolume: 0
+    soundVolume: 0
+    carsVolume: 0
+    mouseSensitivity: 0
+    fullScreenMode: 1
+    targetFramerate: 0
+    maxFramerateEnabled: 0
+    vsyncEnabled: 0
+    cameraClipping: 0
+    postProcessingEnabled: 0
+    antialiasingMode: 0
+    msaaIndex: 0
+    antialiasingQuality: 0
+    renderScale: 0
+    upscalingFilter: 0
+    hdrEnabled: 0
+    bloomEnabled: 0
+    vignetteEnabled: 0
+    depthOfFieldEnabled: 0
+    _dofHighQualityEnabled: 0
+    textureResolutionIndex: 0
 --- !u!1 &164839404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,6 +2866,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &187497127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187497128}
+  - component: {fileID: 187497129}
+  m_Layer: 0
+  m_Name: SettingsProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &187497128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187497127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 320256750}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187497129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187497127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41eca7a9a79817e48a66175206e7c3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingsProvider: {fileID: 163145671}
 --- !u!1 &200441574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5328,6 +5441,7 @@ Transform:
   - {fileID: 823024175}
   - {fileID: 1957441248}
   - {fileID: 1329652878}
+  - {fileID: 187497128}
   m_Father: {fileID: 1648785219}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5348,6 +5462,7 @@ MonoBehaviour:
   - {fileID: 1329652879}
   - {fileID: 823024176}
   - {fileID: 1957441249}
+  - {fileID: 187497129}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -13227,10 +13342,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1979499304}
   m_HandleRect: {fileID: 500509653}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13243,55 +13358,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 933409849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00baffe5ffbb5c742a2bed8630e192a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 01b1ef17241c4a84997528b439ef9def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 933409851}
   _mixerGroup: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _valueCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.0473125
-      outSlope: 2.0473125
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.029134296
-    - serializedVersion: 3
-      time: 0.013510161
-      value: 0.110431805
-      inSlope: 1.2468725
-      outSlope: 1.2468725
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 0.032422177
-      value: 0.46311468
-      inSlope: 0.80801654
-      outSlope: 0.80801654
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.033415608
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _mixerMin: -80
-  _mixerMax: 0
+  _mixerVolumeAmplifier: 10
+  _logBase: 2
 --- !u!1 &946982993
 GameObject:
   m_ObjectHideFlags: 0
@@ -21024,7 +21097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00012207031}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1397306016
@@ -22982,7 +23055,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 682389977}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.54961723
+  m_Size: 0.5496173
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35300,6 +35373,7 @@ Transform:
   - {fileID: 1540261610}
   - {fileID: 1482063459}
   - {fileID: 1572344710}
+  - {fileID: 163145670}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37372,10 +37446,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 707959911}
   m_HandleRect: {fileID: 1092648099}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -37388,55 +37462,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791242126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00baffe5ffbb5c742a2bed8630e192a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 116fa4ce5683da3468f451bfd8318f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1791242128}
   _mixerGroup: {fileID: 24300002, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _valueCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.0473125
-      outSlope: 2.0473125
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.029134296
-    - serializedVersion: 3
-      time: 0.013510161
-      value: 0.110431805
-      inSlope: 1.2468725
-      outSlope: 1.2468725
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 0.032422177
-      value: 0.46311468
-      inSlope: 0.80801654
-      outSlope: 0.80801654
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.033415608
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _mixerMin: -80
-  _mixerMax: 0
+  _mixerVolumeAmplifier: 10
+  _logBase: 2
 --- !u!1 &1800213198
 GameObject:
   m_ObjectHideFlags: 0
@@ -39408,10 +39440,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1271256225}
   m_HandleRect: {fileID: 274355334}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -39424,55 +39456,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1962867047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00baffe5ffbb5c742a2bed8630e192a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 649039e654afc1141b46f9b39b059a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 1962867049}
   _mixerGroup: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _valueCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.0473125
-      outSlope: 2.0473125
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.029134296
-    - serializedVersion: 3
-      time: 0.013510161
-      value: 0.110431805
-      inSlope: 1.2468725
-      outSlope: 1.2468725
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 0.032422177
-      value: 0.46311468
-      inSlope: 0.80801654
-      outSlope: 0.80801654
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.033415608
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _mixerMin: -80
-  _mixerMax: 0
+  _mixerVolumeAmplifier: 10
+  _logBase: 2
 --- !u!1 &1966018544
 GameObject:
   m_ObjectHideFlags: 0
@@ -41374,10 +41364,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2059224889}
   m_HandleRect: {fileID: 1985636804}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -41390,55 +41380,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095597217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00baffe5ffbb5c742a2bed8630e192a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f3402729e203034bbe7da25c4217076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 2095597219}
   _mixerGroup: {fileID: 8461811991393960512, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _valueCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2.0473125
-      outSlope: 2.0473125
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.029134296
-    - serializedVersion: 3
-      time: 0.013510161
-      value: 0.110431805
-      inSlope: 1.2468725
-      outSlope: 1.2468725
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 0.032422177
-      value: 0.46311468
-      inSlope: 0.80801654
-      outSlope: 0.80801654
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.033415608
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _mixerMin: -80
-  _mixerMax: 0
+  _mixerVolumeAmplifier: 10
+  _logBase: 2
 --- !u!1 &2102848387
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,43 +5,41 @@ using UnityEngine.UI;
 public class VolumeSlider : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Slider _slider;
+    [SerializeField] protected Slider _slider;
 
     [Header("Preferences")]
-    [SerializeField] private AudioMixerGroup _mixerGroup;
-    [SerializeField] private AnimationCurve _valueCurve;
-    [SerializeField] private float _mixerMin = -80;
-    [SerializeField] private float _mixerMax = 0;
-
+    [SerializeField] protected AudioMixerGroup _mixerGroup;
+    [SerializeField] protected float _mixerVolumeAmplifier = 20f;
+    [SerializeField] protected int _logBase = 2;
+    
     #region MonoBehaviour
 
     private void OnValidate()
     {
         _slider ??= GetComponent<Slider>();
-    }
 
-    private void Awake()
-    {
-        _mixerGroup.audioMixer.GetFloat(_mixerGroup.name, out float mixerVolume);
-        _slider.value = mixerVolume.Remap(_mixerMin, _mixerMax, _slider.minValue, _slider.maxValue);
+        if (_slider.minValue == 0)
+        {
+            Debug.LogError("Slider min value cannot be 0, set 0.0...1");
+        }
     }
 
     private void OnEnable()
     {
-        _slider.onValueChanged.AddListener(OnValueChanged);
+        _slider.onValueChanged.AddListener(SetVolume);
     }
 
     private void OnDisable()
     {
-        _slider.onValueChanged.RemoveListener(OnValueChanged);
+        _slider.onValueChanged.RemoveListener(SetVolume);
     }
 
     #endregion
 
-    private void OnValueChanged(float value)
+    protected virtual void SetVolume(float value)
     {
-        float newValue = (_valueCurve.Evaluate(_slider.value / _slider.maxValue) * _slider.maxValue)
-            .Remap(_slider.minValue, _slider.maxValue, _mixerMin, _mixerMax);
-        _mixerGroup.audioMixer.SetFloat(_mixerGroup.name, newValue);
+        float newVolume = Mathf.Log(value / _slider.maxValue, _logBase) * _mixerVolumeAmplifier;
+        
+        _mixerGroup.audioMixer.SetFloat(_mixerGroup.name, newVolume);
     }
 }
