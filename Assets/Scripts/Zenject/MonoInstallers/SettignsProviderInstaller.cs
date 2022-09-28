@@ -4,10 +4,12 @@ using Zenject;
 public class SettignsProviderInstaller : MonoInstaller
 {
     [Header("References")]
-    [SerializeField] private SettingsProvider _settingsProvider;
+    [SerializeField] private GameObject _settingsProviderPrefab;
 
     public override void InstallBindings()
     {
-        Container.Bind<SettingsProvider>().FromInstance(_settingsProvider).AsSingle();
+        GameObject settingsProvider = GameObjectExtensions.InstantiateDontDestroyOnLoad(_settingsProviderPrefab);
+
+        Container.Bind<SettingsProvider>().FromComponentOn(settingsProvider).AsSingle();
     }
 }

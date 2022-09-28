@@ -26,7 +26,7 @@ public class ResolutionDropdown : MonoBehaviour
         _resolutions = Screen.resolutions;
 
         Array.Reverse(_resolutions);
-
+        
         Init();
     }
 
@@ -58,7 +58,7 @@ public class ResolutionDropdown : MonoBehaviour
         for (var i = 0; i < _resolutions.Length; i++)
         {
             var resolution = _resolutions[i];
-            options.Add(resolution.width + " x " + resolution.height);
+            options.Add(resolution.width + " x " + resolution.height + " " + resolution.refreshRate + " Hz");
 
             if (Screen.currentResolution.width == resolution.width && Screen.currentResolution.height == resolution.height)
             {
@@ -74,6 +74,12 @@ public class ResolutionDropdown : MonoBehaviour
 
     private void SetResolution(int index)
     {
-        Screen.SetResolution(_resolutions[index].width, _resolutions[index].height, Screen.fullScreenMode);
+        Resolution resolution = _resolutions[index];
+        
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRate);
+
+        _settingsProvider.settings.screenWidth = resolution.width;
+        _settingsProvider.settings.screenHeight = resolution.height;
+        _settingsProvider.settings.screenRefreshRate = resolution.refreshRate;
     }
 }

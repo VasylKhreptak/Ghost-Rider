@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6758098804091792302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6758098804091792301}
+  - component: {fileID: 6758098804091792300}
+  m_Layer: 0
+  m_Name: SettignsProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6758098804091792301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758098804091792302}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6758098804091792300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758098804091792302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703a99ec067d558429406ba5c21482a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerPrefsKey: Settings
+  settings:
+    masterMixerVolume: 0
+    musicMixerVolume: 0
+    soundMixerVolume: 0
+    carsMixerVolume: 0
+    mouseSensitivity: 1
+    fullScreenMode: 1
+    screenWidth: 1920
+    screenHeight: 1080
+    screenRefreshRate: 60
+    targetFramerate: 60
+    maxFramerateEnabled: 0
+    vSyncEnabled: 0
+    cameraClipping: 600
+    postProcessingEnabled: 1
+    antialiasingMode: 1
+    msaaSampleCount: 1
+    antialiasingQuality: 0
+    renderScale: 1
+    upscalingFilter: 1
+    hdrEnabled: 1
+    bloomEnabled: 1
+    vignetteEnabled: 1
+    depthOfFieldEnabled: 1
+    dofHighQualityEnabled: 1
+    bloomHighQualityEnabled: 1
+    masterTextureLimit: 0
