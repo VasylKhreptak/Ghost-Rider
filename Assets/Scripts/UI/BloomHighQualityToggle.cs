@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 using Zenject;
 
-public class BloomToggle : MonoBehaviour
+public class BloomHighQualityToggle : MonoBehaviour
 {
 	[Header("References")]
+	[SerializeField] private Volume _volume;
 	[SerializeField] private Toggle _toggle;
-	[SerializeField] private Volume _postProcessingVolume;
 
 	private SettingsProvider _settingsProvider;
 
@@ -29,29 +29,28 @@ public class BloomToggle : MonoBehaviour
 
 	private void Start()
 	{
-		_postProcessingVolume.profile.TryGet(out _bloom);
-		_toggle.isOn = _settingsProvider.settings.bloomEnabled;
-		_bloom.active = _settingsProvider.settings.bloomEnabled;
+		_volume.profile.TryGet(out _bloom);
+		_toggle.isOn = _settingsProvider.settings.bloomHighQualityEnabled;
 		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
-		_toggle.onValueChanged?.Invoke(_toggle.isOn);
+		_bloom.highQualityFiltering.value = _settingsProvider.settings.bloomHighQualityEnabled;
 	}
 
 	private void OnEnable()
 	{
-		_toggle.onValueChanged.AddListener(SetBloomState);
+		_toggle.onValueChanged.AddListener(SetHighQuality);
 	}
 
 	private void OnDisable()
 	{
-		_toggle.onValueChanged.RemoveListener(SetBloomState);
+		_toggle.onValueChanged.RemoveListener(SetHighQuality);
 	}
 
 	#endregion
 
-	private void SetBloomState(bool enabled)
+	private void SetHighQuality(bool enabled)
 	{
-		_bloom.active = enabled;
+		_bloom.highQualityFiltering.value = enabled;
 
-		_settingsProvider.settings.bloomEnabled = enabled;
+		_settingsProvider.settings.bloomHighQualityEnabled = enabled; 
 	}
 }

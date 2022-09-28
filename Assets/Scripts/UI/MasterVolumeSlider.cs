@@ -17,7 +17,7 @@ public class MasterVolumeSlider : VolumeSlider
 
     private void Start()
     {
-        float mixerVolume = _settingsProvider.settings.masterVolume;
+        float mixerVolume = _settingsProvider.settings.masterMixerVolume;
 
         _slider.value = Mathf.Pow(2, mixerVolume / _mixerVolumeAmplifier) * _slider.maxValue;
     }
@@ -27,7 +27,7 @@ public class MasterVolumeSlider : VolumeSlider
         
         _mixerGroup.audioMixer.SetFloat(_mixerGroup.name, newVolume);
 
-        _settingsProvider.settings.masterVolume = newVolume;
+        _settingsProvider.settings.masterMixerVolume = newVolume;
     }
 
     #endregion

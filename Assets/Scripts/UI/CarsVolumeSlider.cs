@@ -15,7 +15,7 @@ public class CarsVolumeSlider : VolumeSlider
     
     private void Start()
     {
-        float mixerVolume = _settingsProvider.settings.carsVolume;
+        float mixerVolume = _settingsProvider.settings.carsMixerVolume;
 
         _slider.value = Mathf.Pow(2, mixerVolume / _mixerVolumeAmplifier) * _slider.maxValue;
     }
@@ -25,7 +25,7 @@ public class CarsVolumeSlider : VolumeSlider
         
         _mixerGroup.audioMixer.SetFloat(_mixerGroup.name, newVolume);
 
-        _settingsProvider.settings.carsVolume = newVolume;
+        _settingsProvider.settings.carsMixerVolume = newVolume;
     }
 
     #endregion

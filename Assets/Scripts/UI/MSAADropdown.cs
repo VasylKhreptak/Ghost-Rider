@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using Zenject;
 
 public class MSAADropdown : MonoBehaviour
 {
@@ -11,19 +12,27 @@ public class MSAADropdown : MonoBehaviour
 
     private UniversalRenderPipelineAsset _renderAsset;
 
+    private SettingsProvider _settingsProvider;
+    
     private int[] msaaIndexes = { 1, 2, 4, 8 };
+
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
     
     #region MonoBehaviour
-
+    
     private void OnValidate()
     {
         _dropdown ??= GetComponent<TMP_Dropdown>();
     }
 
-    private void Awake()
+    private void Start()
     {
         _renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
-        _dropdown.value = msaaIndexes.IndexOf(_renderAsset.msaaSampleCount);
+        _dropdown.value = msaaIndexes.IndexOf(_settingsProvider.settings.msaaSampleCount);
     }
 
     private void OnEnable()
@@ -41,5 +50,7 @@ public class MSAADropdown : MonoBehaviour
     private void SetAntiAliasing(int index)
     {
         _renderAsset.msaaSampleCount = msaaIndexes[index];
+
+        _settingsProvider.settings.msaaSampleCount = msaaIndexes[index];
     }
 }

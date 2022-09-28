@@ -5,22 +5,23 @@ using UnityEngine.Rendering.Universal;
 [Serializable]
 public class Settings
 {
-	public float masterVolume = 0f;
-	public float musicVolume = 0f;
-	public float soundVolume = 0f;
-	public float carsVolume = 0f;
+	public float masterMixerVolume = 0f;
+	public float musicMixerVolume = 0f;
+	public float soundMixerVolume = 0f;
+	public float carsMixerVolume = 0f;
 	
 	public float mouseSensitivity = 1;
 
 	public FullScreenMode fullScreenMode = FullScreenMode.FullScreenWindow;
-	public Resolution resolution;
+	public int screenWidth = 1920;
+	public int screenHeight = 1080;
 	public int targetFramerate = 60;
 	public bool maxFramerateEnabled = false;
-	public bool vsyncEnabled = false;
+	public bool vSyncEnabled = false;
 	public float cameraClipping = 600f;
 	public bool postProcessingEnabled = true;
 	public AntialiasingMode antialiasingMode = AntialiasingMode.FastApproximateAntialiasing;
-	public int msaaIndex = 1;
+	public int msaaSampleCount = 1;
 	public AntialiasingQuality antialiasingQuality = AntialiasingQuality.Low;
 	public float renderScale = 1f;
 	public UpscalingFilterSelection upscalingFilter = UpscalingFilterSelection.Linear;
@@ -28,6 +29,7 @@ public class Settings
 	public bool bloomEnabled = true;
 	public bool vignetteEnabled = true;
 	public bool depthOfFieldEnabled = true;
-	public bool _dofHighQualityEnabled = true;
-	public int textureResolutionIndex = 0;
+	public bool dofHighQualityEnabled = true;
+	public bool bloomHighQualityEnabled = true;
+	public int masterTextureLimit = 0;
 }

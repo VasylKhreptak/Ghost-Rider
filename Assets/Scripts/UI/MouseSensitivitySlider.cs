@@ -1,12 +1,21 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class MouseSensitivitySlider : MonoBehaviour
 {
 	[Header("References")]
 	[SerializeField] private Slider _slider;
 	[SerializeField] private RCC_Camera _camera;
+
+	private SettingsProvider _settingsProvider;
+
+	[Inject]
+	private void Construct(SettingsProvider settingsProvider)
+	{
+		_settingsProvider = settingsProvider;
+	}
 
 	#region MonoBehaviour
 
@@ -15,9 +24,9 @@ public class MouseSensitivitySlider : MonoBehaviour
 		_slider ??= GetComponent<Slider>();
 	}
 
-	private void Awake()
+	private void Start()
 	{
-		_slider.value = _camera.sensitivity;
+		_slider.value = _settingsProvider.settings.mouseSensitivity;
 	}
 
 	private void OnEnable()
@@ -35,5 +44,6 @@ public class MouseSensitivitySlider : MonoBehaviour
 	private void SetSensitivity(float value)
 	{
 		_camera.sensitivity = value;
+		_settingsProvider.settings.mouseSensitivity = value;
 	}
 }

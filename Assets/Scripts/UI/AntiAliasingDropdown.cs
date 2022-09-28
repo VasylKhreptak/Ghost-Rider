@@ -2,6 +2,7 @@ using ModestTree;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using Zenject;
 
 public class AntiAliasingDropdown : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class AntiAliasingDropdown : MonoBehaviour
 
     private UniversalAdditionalCameraData _cameraData;
 
+    private SettingsProvider _settingsProvider;
+    
     private AntialiasingMode[] _antialiasingModes =
     {
         AntialiasingMode.None,
@@ -18,6 +21,12 @@ public class AntiAliasingDropdown : MonoBehaviour
         AntialiasingMode.SubpixelMorphologicalAntiAliasing
     };
 
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
+    
     #region MonoBehaviour
 
     private void OnValidate()
@@ -26,10 +35,10 @@ public class AntiAliasingDropdown : MonoBehaviour
         _dropdown ??= GetComponent<TMP_Dropdown>();
     }
 
-    private void Awake()
+    private void Start()
     {
         _cameraData = _camera.GetComponent<UniversalAdditionalCameraData>();
-        _dropdown.SetValueWithoutNotify(_antialiasingModes.IndexOf(_cameraData.antialiasing));
+        _dropdown.value = _antialiasingModes.IndexOf(_settingsProvider.settings.antialiasingMode);
     }
 
     private void OnEnable()
@@ -51,6 +60,8 @@ public class AntiAliasingDropdown : MonoBehaviour
 
     private void SetAntiAliasing(int index)
     {
-        _cameraData.antialiasing = _antialiasingModes[index];        
+        _cameraData.antialiasing = _antialiasingModes[index];
+
+        _settingsProvider.settings.antialiasingMode = _antialiasingModes[index];
     }
 }

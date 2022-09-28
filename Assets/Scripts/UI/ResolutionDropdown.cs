@@ -2,17 +2,26 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class ResolutionDropdown : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
 
+    private SettingsProvider _settingsProvider;
+    
     private Resolution[] _resolutions;
 
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
+    
     #region MonoBehaviour
 
-    private void Awake()
+    private void Start()
     {
         _resolutions = Screen.resolutions;
 

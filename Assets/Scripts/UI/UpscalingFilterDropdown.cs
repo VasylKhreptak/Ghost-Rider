@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using Zenject;
 
 public class UpscalingFilterDropdown : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class UpscalingFilterDropdown : MonoBehaviour
     [SerializeField] private TMP_Dropdown _dropdown;
 
     private UniversalRenderPipelineAsset _renderAsset;
+
+    private SettingsProvider _settingsProvider;
 
     private UpscalingFilterSelection[] _upscalingFilters =
     {
@@ -19,6 +22,12 @@ public class UpscalingFilterDropdown : MonoBehaviour
         UpscalingFilterSelection.FSR
     };
 
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
+
     #region MonoBehaviour
 
     private void OnValidate()
@@ -26,10 +35,10 @@ public class UpscalingFilterDropdown : MonoBehaviour
         _dropdown ??= GetComponent<TMP_Dropdown>();
     }
 
-    private void Awake()
+    private void Start()
     {
         _renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
-        _dropdown.value = _upscalingFilters.IndexOf(_renderAsset.upscalingFilter);
+        _dropdown.value = _upscalingFilters.IndexOf(_settingsProvider.settings.upscalingFilter);
     }
 
     private void OnEnable()
@@ -47,5 +56,7 @@ public class UpscalingFilterDropdown : MonoBehaviour
     private void SetUpscaleFilter(int index)
     {
         _renderAsset.upscalingFilter = _upscalingFilters[index];
+
+        _settingsProvider.settings.upscalingFilter = _upscalingFilters[index];
     }
 }

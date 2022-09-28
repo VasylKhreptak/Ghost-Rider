@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Zenject;
 
 public class DepthOfFieldToggle : MonoBehaviour
 {
@@ -9,8 +10,16 @@ public class DepthOfFieldToggle : MonoBehaviour
     [SerializeField] private Toggle _toggle;
     [SerializeField] private Volume _postProcessingVolume;
 
+    private SettingsProvider _settingsProvider;
+    
     private DepthOfField _depthOfField;
 
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
+    
     #region MonoBehaviour
 
     private void OnValidate()
@@ -18,10 +27,13 @@ public class DepthOfFieldToggle : MonoBehaviour
         _toggle ??= GetComponent<Toggle>();
     }
 
-    private void Awake()
+    private void Start()
     {
         _postProcessingVolume.profile.TryGet(out _depthOfField);
-        _toggle.isOn = _depthOfField.IsActive();
+        _toggle.isOn = _settingsProvider.settings.depthOfFieldEnabled;
+        _toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
+        _depthOfField.active = _settingsProvider.settings.depthOfFieldEnabled;
+        _toggle.onValueChanged?.Invoke(_toggle.isOn);
     }
 
     private void OnEnable()
@@ -39,5 +51,7 @@ public class DepthOfFieldToggle : MonoBehaviour
     private void SetDepthOfFieldState(bool enabled)
     {
         _depthOfField.active = enabled;
+
+        _settingsProvider.settings.depthOfFieldEnabled = enabled;
     }
 }

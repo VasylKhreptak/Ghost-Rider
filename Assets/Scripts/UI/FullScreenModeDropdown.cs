@@ -1,11 +1,14 @@
 using ModestTree;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class FullScreenModeDropdown : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
+
+    private SettingsProvider _settingsProvider;
 
     private readonly FullScreenMode[] _screenModes =
     {
@@ -14,11 +17,18 @@ public class FullScreenModeDropdown : MonoBehaviour
         FullScreenMode.FullScreenWindow
     };
 
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
+
     #region MonoBehaviour
 
     private void Awake()
     {
-        _dropdown.value = _screenModes.IndexOf(Screen.fullScreenMode);
+        _dropdown.value = _screenModes.IndexOf(_settingsProvider.settings.fullScreenMode);
+        Screen.fullScreenMode = _settingsProvider.settings.fullScreenMode;
     }
 
     private void OnValidate()
@@ -41,5 +51,7 @@ public class FullScreenModeDropdown : MonoBehaviour
     private void SetFullScreenMode(int index)
     {
         Screen.fullScreenMode = _screenModes[index];
+
+        _settingsProvider.settings.fullScreenMode = _screenModes[index];
     }
 }

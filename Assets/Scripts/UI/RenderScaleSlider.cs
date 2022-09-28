@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Zenject;
 
 public class RenderScaleSlider : MonoBehaviour
 {
@@ -11,8 +12,16 @@ public class RenderScaleSlider : MonoBehaviour
 	[Header("Preferences")]
 	[SerializeField] private float _roundPrecision;
 	
-	private UniversalRenderPipelineAsset _renderAsset;	
+	private UniversalRenderPipelineAsset _renderAsset;
 
+	private SettingsProvider _settingsProvider;
+
+	[Inject]
+	private void Construct(SettingsProvider settingsProvider)
+	{
+		_settingsProvider = settingsProvider;
+	}
+	
 	#region MonoBehavoiur
 
 	private void OnValidate()
@@ -20,10 +29,10 @@ public class RenderScaleSlider : MonoBehaviour
 		_slider ??= GetComponent<Slider>();
 	}
 
-	private void Awake()
+	private void Start()
 	{
 		_renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
-		_slider.value = _renderAsset.renderScale;
+		_slider.value = _settingsProvider.settings.renderScale;
 	}
 
 	private void OnEnable()
@@ -40,6 +49,10 @@ public class RenderScaleSlider : MonoBehaviour
 
 	private void SetRenderScale(float value)
 	{
-		_renderAsset.renderScale = Mathf.Round(value * _roundPrecision) / _roundPrecision;
+		float renderScale = Mathf.Round(value * _roundPrecision) / _roundPrecision;
+		
+		_renderAsset.renderScale = renderScale;
+
+		_settingsProvider.settings.renderScale = renderScale;
 	}
 }

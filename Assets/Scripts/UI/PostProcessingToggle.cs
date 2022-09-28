@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using Zenject;
 
 public class PostProcessingToggle : MonoBehaviour
 {
@@ -8,6 +9,14 @@ public class PostProcessingToggle : MonoBehaviour
     [SerializeField] private Volume _volume;
     [SerializeField] private Toggle _toggle;
 
+    private SettingsProvider _settingsProvider;
+
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
+    
     #region MonoBehaviour
 
     private void OnValidate()
@@ -15,9 +24,10 @@ public class PostProcessingToggle : MonoBehaviour
         _toggle ??= GetComponent<Toggle>();
     }
 
-    private void Awake()
+    private void Start()
     {
-        _toggle.isOn = !Mathf.Approximately(_volume.weight, 0);
+        _toggle.isOn = _settingsProvider.settings.postProcessingEnabled;
+        _volume.weight = _settingsProvider.settings.postProcessingEnabled ? 1 : 0;
     }
 
     private void OnEnable()
@@ -35,5 +45,7 @@ public class PostProcessingToggle : MonoBehaviour
     private void SetPostProcessingState(bool enabled)
     {
         _volume.weight = enabled ? 1 : 0;
+
+        _settingsProvider.settings.postProcessingEnabled = enabled;
     }
 }

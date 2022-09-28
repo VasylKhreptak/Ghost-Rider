@@ -1,12 +1,21 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class TargetFramerateSlider : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Slider _slider;
     [SerializeField] private GameFramerate _gameFramerate;
+
+    private SettingsProvider _settingsProvider;
+
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
 
     #region MonoBehaviour
 
@@ -15,10 +24,16 @@ public class TargetFramerateSlider : MonoBehaviour
         _slider ??= GetComponent<Slider>();
     }
 
-    private void Awake()
+    private void Start()
     {
         _slider.maxValue = Screen.currentResolution.refreshRate;
-        _slider.value = Application.targetFrameRate;
+        
+        if (_settingsProvider.settings.maxFramerateEnabled == false)
+        {
+            _gameFramerate.Set(_settingsProvider.settings.targetFramerate);
+        }
+        
+        _slider.value = _settingsProvider.settings.targetFramerate;
     }
 
     private void OnEnable()
@@ -36,5 +51,6 @@ public class TargetFramerateSlider : MonoBehaviour
     private void SetFramerate(float framerate)
     {
         _gameFramerate.Set((int)framerate);
+        _settingsProvider.settings.targetFramerate = (int)framerate;
     }
 }

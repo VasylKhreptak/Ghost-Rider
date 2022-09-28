@@ -1,10 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class VSyncToggle : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Toggle _toggle;
+    [SerializeField] private GameFramerate _gameFramerate;
+
+    private SettingsProvider _settingsProvider;
+
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
 
     #region MonoBehaciour
 
@@ -12,6 +22,13 @@ public class VSyncToggle : MonoBehaviour
     {
         _toggle ??= GetComponent<Toggle>();
     }
+
+    private void Start()
+    {
+        _toggle.isOn = _settingsProvider.settings.vSyncEnabled;
+        QualitySettings.vSyncCount = _settingsProvider.settings.vSyncEnabled ? 1 : 0;
+    }
+
     private void OnEnable()
     {
         _toggle.onValueChanged.AddListener(OnValueChanged);
@@ -26,6 +43,15 @@ public class VSyncToggle : MonoBehaviour
 
     private void OnValueChanged(bool value)
     {
-        QualitySettings.vSyncCount = value ? 1 : 0;
+        int vSyncCount = value ? 1 : 0;
+
+        QualitySettings.vSyncCount = vSyncCount;
+
+        _settingsProvider.settings.vSyncEnabled = value;
+
+        if (_settingsProvider.settings.maxFramerateEnabled)
+        {
+            _gameFramerate.Set(int.MaxValue);
+        }
     }
 }

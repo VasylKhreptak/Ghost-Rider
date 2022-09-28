@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Zenject;
 
 public class HDRToggle : MonoBehaviour
 {
@@ -9,8 +10,16 @@ public class HDRToggle : MonoBehaviour
 	[SerializeField] private Toggle _toggle;
 	[SerializeField] private Volume _volume;
 
+	private SettingsProvider _settingsProvider;
+	
 	private UniversalRenderPipelineAsset _renderAsset;
-
+	
+	[Inject]
+	private void Construct(SettingsProvider settingsProvider)
+	{
+		_settingsProvider = settingsProvider;
+	}
+	
 	#region MonoBaheviour
 
 	private void OnValidate()
@@ -18,11 +27,12 @@ public class HDRToggle : MonoBehaviour
 		_toggle ??= GetComponent<Toggle>();
 	}
 
-	private void Awake()
+	private void Start()
 	{
 		_renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
-		_toggle.isOn = _renderAsset.supportsHDR;
-		_toggle.interactable = !Mathf.Approximately(_volume.weight, 0);
+		_toggle.isOn = _settingsProvider.settings.hdrEnabled;
+		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
+		_renderAsset.supportsHDR = _settingsProvider.settings.hdrEnabled;
 	}
 
 	private void OnEnable()
@@ -40,5 +50,7 @@ public class HDRToggle : MonoBehaviour
 	private void SetHDR(bool enabled)
 	{
 		_renderAsset.supportsHDR = enabled;
+
+		_settingsProvider.settings.hdrEnabled = enabled;
 	}
 }
