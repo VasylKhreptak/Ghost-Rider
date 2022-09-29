@@ -63,6 +63,7 @@ public class SettingsLoader : MonoBehaviour
     {
         ApplyVolumeSettings(settings);
         ApplyInputSettings(settings);
+        ApplyScreenSettings(settings);
         ApplyGraphicsSettings(settings);
     }
 
@@ -85,14 +86,7 @@ public class SettingsLoader : MonoBehaviour
 
     public void ApplyGraphicsSettings(Settings settings)
     {
-        Screen.SetResolution(settings.screenWidth, settings.screenHeight, settings.fullScreenMode, settings.screenRefreshRate);
-        _gameFramerate.Set(settings.targetFramerate);
-
-        if (settings.maxFramerateEnabled)
-        {
-            _gameFramerate.Set(int.MaxValue);
-        }
-
+        QualitySettings.vSyncCount = settings.vSyncEnabled ? 1 : 0;
         _camera.farClipPlane = settings.cameraClipping;
         _postProcessingVolume.weight = settings.postProcessingEnabled ? 1 : 0;
         _cameraData.antialiasing = settings.antialiasingMode;
@@ -108,7 +102,6 @@ public class SettingsLoader : MonoBehaviour
         _depthOfField.highQualitySampling.value = settings.dofHighQualityEnabled;
         _bloom.highQualityFiltering.value = settings.bloomHighQualityEnabled;
 
-        QualitySettings.vSyncCount = settings.vSyncEnabled ? 1 : 0;
         QualitySettings.masterTextureLimit = settings.masterTextureLimit;
 
         ApplyGraphicsSettingsToProvider(settings);
@@ -129,12 +122,6 @@ public class SettingsLoader : MonoBehaviour
 
     private void ApplyGraphicsSettingsToProvider(Settings settings)
     {
-        _settingsProvider.settings.fullScreenMode = settings.fullScreenMode;
-        _settingsProvider.settings.screenWidth = settings.screenWidth;
-        _settingsProvider.settings.screenHeight = settings.screenHeight;
-        _settingsProvider.settings.screenRefreshRate = settings.screenRefreshRate;
-        _settingsProvider.settings.targetFramerate = settings.targetFramerate;
-        _settingsProvider.settings.maxFramerateEnabled = settings.maxFramerateEnabled;
         _settingsProvider.settings.vSyncEnabled = settings.vSyncEnabled;
         _settingsProvider.settings.cameraClipping = settings.cameraClipping;
         _settingsProvider.settings.postProcessingEnabled = settings.postProcessingEnabled;
@@ -150,5 +137,28 @@ public class SettingsLoader : MonoBehaviour
         _settingsProvider.settings.dofHighQualityEnabled = settings.dofHighQualityEnabled;
         _settingsProvider.settings.bloomHighQualityEnabled = settings.bloomHighQualityEnabled;
         _settingsProvider.settings.masterTextureLimit = settings.masterTextureLimit;
+    }
+
+    public void ApplyScreenSettings(Settings settings)
+    {
+        Screen.SetResolution(settings.screenWidth, settings.screenHeight, settings.fullScreenMode, settings.screenRefreshRate);
+        _gameFramerate.Set(settings.targetFramerate);
+
+        if (settings.maxFramerateEnabled)
+        {
+            _gameFramerate.Set(int.MaxValue);
+        }
+        
+        ApplyScreenSettingsToProvider(settings);
+    }
+
+    private void ApplyScreenSettingsToProvider(Settings settings)
+    {
+        _settingsProvider.settings.fullScreenMode = settings.fullScreenMode;
+        _settingsProvider.settings.screenWidth = settings.screenWidth;
+        _settingsProvider.settings.screenHeight = settings.screenHeight;
+        _settingsProvider.settings.screenRefreshRate = settings.screenRefreshRate;
+        _settingsProvider.settings.targetFramerate = settings.targetFramerate;
+        _settingsProvider.settings.maxFramerateEnabled = settings.maxFramerateEnabled;
     }
 }

@@ -12,6 +12,7 @@ public class OnEventApplySettings : MonoBehaviour
     [Header("Preferences")]
     [SerializeField] private bool _applyVolume = true;
     [SerializeField] private bool _applyInput = true;
+    [SerializeField] private bool _applyScreen = true;
     [SerializeField] private bool _applyGraphics = true;
 
     [Header("Settings")]
@@ -50,6 +51,11 @@ public class OnEventApplySettings : MonoBehaviour
             _settingsloader.ApplyInputSettings(_settings);
         }
 
+        if (_applyScreen)
+        {
+            _settingsloader.ApplyScreenSettings(_settings);
+        }
+        
         if (_applyGraphics)
         {
             _settingsloader.ApplyGraphicsSettings(_settings);
