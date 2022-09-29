@@ -1,38 +1,15 @@
 using UnityEngine;
 
-public class SettingsProvider : MonoBehaviour
+public class SettingsProvider : DataLoader
 {
-    [Header("Preferences")]
-    [SerializeField] private string _playerPrefsKey;
-
     public Settings settings;
-
-    #region MonoBehaviour
-
-    private void Awake()
-    {
-        Load();
-    }
-
-    private void OnApplicationQuit()
-    {
-        Save();
-    }
-
-
-    private void OnApplicationPause(bool pauseStatus)
-    {
-        Save();
-    }
-
-    #endregion
-
-    private void Save()
+    
+    protected override void Save()
     {
         GameDataProvider.Save(_playerPrefsKey, settings);
     }
 
-    private void Load()
+    protected override void Load()
     {
         settings = GameDataProvider.Load(_playerPrefsKey, new Settings());
     }
