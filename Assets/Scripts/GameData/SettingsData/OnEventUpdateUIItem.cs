@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class OnEventUpdateSettingsOption : MonoBehaviour
+public class OnEventUpdateUIItem : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private UIUpdatableItem _updatableItem;
