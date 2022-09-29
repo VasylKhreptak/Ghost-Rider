@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 using Zenject;
 
-public class BloomToggle : MonoBehaviour
+public class BloomToggle : UIUpdatableItem
 {
 	[Header("References")]
 	[SerializeField] private Toggle _toggle;
@@ -30,10 +30,8 @@ public class BloomToggle : MonoBehaviour
 	private void Start()
 	{
 		_postProcessingVolume.profile.TryGet(out _bloom);
-		_toggle.isOn = _settingsProvider.settings.bloomEnabled;
-		_bloom.active = _settingsProvider.settings.bloomEnabled;
-		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
-		_toggle.onValueChanged?.Invoke(_toggle.isOn);
+		
+		UpdateValue();
 	}
 
 	private void OnEnable()
@@ -47,6 +45,14 @@ public class BloomToggle : MonoBehaviour
 	}
 
 	#endregion
+
+	public override void UpdateValue()
+	{
+		_toggle.isOn = _settingsProvider.settings.bloomEnabled;
+		_bloom.active = _settingsProvider.settings.bloomEnabled;
+		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
+		_toggle.onValueChanged?.Invoke(_toggle.isOn);
+	}
 
 	private void SetBloomState(bool enabled)
 	{

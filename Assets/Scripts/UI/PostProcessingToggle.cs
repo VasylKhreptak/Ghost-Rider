@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 using Zenject;
 
-public class PostProcessingToggle : MonoBehaviour
+public class PostProcessingToggle : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private Volume _volume;
@@ -16,7 +16,7 @@ public class PostProcessingToggle : MonoBehaviour
     {
         _settingsProvider = settingsProvider;
     }
-    
+
     #region MonoBehaviour
 
     private void OnValidate()
@@ -26,8 +26,7 @@ public class PostProcessingToggle : MonoBehaviour
 
     private void Start()
     {
-        _toggle.isOn = _settingsProvider.settings.postProcessingEnabled;
-        _volume.weight = _settingsProvider.settings.postProcessingEnabled ? 1 : 0;
+        UpdateValue();
     }
 
     private void OnEnable()
@@ -41,6 +40,12 @@ public class PostProcessingToggle : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _toggle.isOn = _settingsProvider.settings.postProcessingEnabled;
+        _volume.weight = _settingsProvider.settings.postProcessingEnabled ? 1 : 0;
+    }
 
     private void SetPostProcessingState(bool enabled)
     {

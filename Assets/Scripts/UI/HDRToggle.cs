@@ -4,53 +4,59 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Zenject;
 
-public class HDRToggle : MonoBehaviour
+public class HDRToggle : UIUpdatableItem
 {
-	[Header("References")]
-	[SerializeField] private Toggle _toggle;
-	[SerializeField] private Volume _volume;
+    [Header("References")]
+    [SerializeField] private Toggle _toggle;
+    [SerializeField] private Volume _volume;
 
-	private SettingsProvider _settingsProvider;
-	
-	private UniversalRenderPipelineAsset _renderAsset;
-	
-	[Inject]
-	private void Construct(SettingsProvider settingsProvider)
-	{
-		_settingsProvider = settingsProvider;
-	}
-	
-	#region MonoBaheviour
+    private SettingsProvider _settingsProvider;
 
-	private void OnValidate()
-	{
-		_toggle ??= GetComponent<Toggle>();
-	}
+    private UniversalRenderPipelineAsset _renderAsset;
 
-	private void Start()
-	{
-		_renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
-		_toggle.isOn = _settingsProvider.settings.hdrEnabled;
-		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
-		_renderAsset.supportsHDR = _settingsProvider.settings.hdrEnabled;
-	}
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
 
-	private void OnEnable()
-	{
-		_toggle.onValueChanged.AddListener(SetHDR);
-	}
+    #region MonoBaheviour
 
-	private void OnDisable()
-	{
-		_toggle.onValueChanged.RemoveListener(SetHDR);
-	}
+    private void OnValidate()
+    {
+        _toggle ??= GetComponent<Toggle>();
+    }
 
-	#endregion
+    private void Start()
+    {
+        _renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
 
-	private void SetHDR(bool enabled)
-	{
-		_renderAsset.supportsHDR = enabled;
+        UpdateValue();
+    }
 
-		_settingsProvider.settings.hdrEnabled = enabled;
-	}
+    private void OnEnable()
+    {
+        _toggle.onValueChanged.AddListener(SetHDR);
+    }
+
+    private void OnDisable()
+    {
+        _toggle.onValueChanged.RemoveListener(SetHDR);
+    }
+
+    #endregion
+
+    public override void UpdateValue()
+    {
+        _toggle.isOn = _settingsProvider.settings.hdrEnabled;
+        _toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
+        _renderAsset.supportsHDR = _settingsProvider.settings.hdrEnabled;
+    }
+
+    private void SetHDR(bool enabled)
+    {
+        _renderAsset.supportsHDR = enabled;
+
+        _settingsProvider.settings.hdrEnabled = enabled;
+    }
 }

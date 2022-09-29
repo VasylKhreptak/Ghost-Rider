@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class TargetFramerateSlider : MonoBehaviour
+public class TargetFramerateSlider : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private Slider _slider;
@@ -26,14 +25,16 @@ public class TargetFramerateSlider : MonoBehaviour
 
     private void Start()
     {
+        UpdateValue();
+    }
+
+    public override void UpdateValue()
+    {
         _slider.maxValue = Screen.currentResolution.refreshRate;
-        
-        if (_settingsProvider.settings.maxFramerateEnabled == false)
-        {
-            _gameFramerate.Set(_settingsProvider.settings.targetFramerate);
-        }
-        
+
         _slider.value = _settingsProvider.settings.targetFramerate;
+
+        _gameFramerate.Set(_settingsProvider.settings.maxFramerateEnabled ? int.MaxValue : _settingsProvider.settings.targetFramerate);
     }
 
     private void OnEnable()

@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using Zenject;
 
-public class UpscalingFilterDropdown : MonoBehaviour
+public class UpscalingFilterDropdown : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
@@ -38,7 +38,8 @@ public class UpscalingFilterDropdown : MonoBehaviour
     private void Start()
     {
         _renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
-        _dropdown.value = _upscalingFilters.IndexOf(_settingsProvider.settings.upscalingFilter);
+
+        UpdateValue();
     }
 
     private void OnEnable()
@@ -52,6 +53,11 @@ public class UpscalingFilterDropdown : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _dropdown.value = _upscalingFilters.IndexOf(_settingsProvider.settings.upscalingFilter);
+    }
 
     private void SetUpscaleFilter(int index)
     {

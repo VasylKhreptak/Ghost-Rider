@@ -66,20 +66,24 @@ public class SettingsLoader : MonoBehaviour
         ApplyGraphicsSettings(settings);
     }
 
-    private void ApplyVolumeSettings(Settings settings)
+    public void ApplyVolumeSettings(Settings settings)
     {
         _audioMixer.SetFloat(_masterMixerGroup.name, settings.masterMixerVolume);
         _audioMixer.SetFloat(_musicMixerGroup.name, settings.musicMixerVolume);
         _audioMixer.SetFloat(_soundMixerGroup.name, settings.soundMixerVolume);
         _audioMixer.SetFloat(_carsMixerGroup.name, settings.carsMixerVolume);
+
+        ApplyVolumeSettingsToProvider(settings);
     }
 
-    private void ApplyInputSettings(Settings settings)
+    public void ApplyInputSettings(Settings settings)
     {
         _rccCamera.sensitivity = settings.mouseSensitivity;
+
+        ApplyInputSettingsToProvider(settings);
     }
 
-    private void ApplyGraphicsSettings(Settings settings)
+    public void ApplyGraphicsSettings(Settings settings)
     {
         Screen.SetResolution(settings.screenWidth, settings.screenHeight, settings.fullScreenMode);
         _gameFramerate.Set(settings.targetFramerate);
@@ -106,5 +110,45 @@ public class SettingsLoader : MonoBehaviour
 
         QualitySettings.vSyncCount = settings.vSyncEnabled ? 1 : 0;
         QualitySettings.masterTextureLimit = settings.masterTextureLimit;
+
+        ApplyGraphicsSettingsToProvider(settings);
+    }
+
+    private void ApplyVolumeSettingsToProvider(Settings settings)
+    {
+        _settingsProvider.settings.masterMixerVolume = settings.masterMixerVolume;
+        _settingsProvider.settings.musicMixerVolume = settings.musicMixerVolume;
+        _settingsProvider.settings.soundMixerVolume = settings.soundMixerVolume;
+        _settingsProvider.settings.carsMixerVolume = settings.carsMixerVolume;
+    }
+
+    private void ApplyInputSettingsToProvider(Settings settings)
+    {
+        _settingsProvider.settings.mouseSensitivity = settings.mouseSensitivity;
+    }
+
+    private void ApplyGraphicsSettingsToProvider(Settings settings)
+    {
+        _settingsProvider.settings.fullScreenMode = settings.fullScreenMode;
+        _settingsProvider.settings.screenWidth = settings.screenWidth;
+        _settingsProvider.settings.screenHeight = settings.screenHeight;
+        _settingsProvider.settings.screenRefreshRate = settings.screenRefreshRate;
+        _settingsProvider.settings.targetFramerate = settings.targetFramerate;
+        _settingsProvider.settings.maxFramerateEnabled = settings.maxFramerateEnabled;
+        _settingsProvider.settings.vSyncEnabled = settings.vSyncEnabled;
+        _settingsProvider.settings.cameraClipping = settings.cameraClipping;
+        _settingsProvider.settings.postProcessingEnabled = settings.postProcessingEnabled;
+        _settingsProvider.settings.antialiasingMode = settings.antialiasingMode;
+        _settingsProvider.settings.msaaSampleCount = settings.msaaSampleCount;
+        _settingsProvider.settings.antialiasingQuality = settings.antialiasingQuality;
+        _settingsProvider.settings.renderScale = settings.renderScale;
+        _settingsProvider.settings.upscalingFilter = settings.upscalingFilter;
+        _settingsProvider.settings.hdrEnabled = settings.hdrEnabled;
+        _settingsProvider.settings.bloomEnabled = settings.bloomEnabled;
+        _settingsProvider.settings.vignetteEnabled = settings.vignetteEnabled;
+        _settingsProvider.settings.depthOfFieldEnabled = settings.depthOfFieldEnabled;
+        _settingsProvider.settings.dofHighQualityEnabled = settings.dofHighQualityEnabled;
+        _settingsProvider.settings.bloomHighQualityEnabled = settings.bloomHighQualityEnabled;
+        _settingsProvider.settings.masterTextureLimit = settings.masterTextureLimit;
     }
 }

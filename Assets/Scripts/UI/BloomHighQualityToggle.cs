@@ -4,53 +4,59 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Zenject;
 
-public class BloomHighQualityToggle : MonoBehaviour
+public class BloomHighQualityToggle : UIUpdatableItem
 {
-	[Header("References")]
-	[SerializeField] private Volume _volume;
-	[SerializeField] private Toggle _toggle;
+    [Header("References")]
+    [SerializeField] private Volume _volume;
+    [SerializeField] private Toggle _toggle;
 
-	private SettingsProvider _settingsProvider;
+    private SettingsProvider _settingsProvider;
 
-	private Bloom _bloom;
+    private Bloom _bloom;
 
-	[Inject]
-	private void Construct(SettingsProvider settingsProvider)
-	{
-		_settingsProvider = settingsProvider;
-	}
-	
-	#region MonoBehaviour
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
 
-	private void OnValidate()
-	{
-		_toggle ??= GetComponent<Toggle>();
-	}
+    #region MonoBehaviour
 
-	private void Start()
-	{
-		_volume.profile.TryGet(out _bloom);
-		_toggle.isOn = _settingsProvider.settings.bloomHighQualityEnabled;
-		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
-		_bloom.highQualityFiltering.value = _settingsProvider.settings.bloomHighQualityEnabled;
-	}
+    private void OnValidate()
+    {
+        _toggle ??= GetComponent<Toggle>();
+    }
 
-	private void OnEnable()
-	{
-		_toggle.onValueChanged.AddListener(SetHighQuality);
-	}
+    private void Start()
+    {
+        _volume.profile.TryGet(out _bloom);
 
-	private void OnDisable()
-	{
-		_toggle.onValueChanged.RemoveListener(SetHighQuality);
-	}
+        UpdateValue();
+    }
 
-	#endregion
+    private void OnEnable()
+    {
+        _toggle.onValueChanged.AddListener(SetHighQuality);
+    }
 
-	private void SetHighQuality(bool enabled)
-	{
-		_bloom.highQualityFiltering.value = enabled;
+    private void OnDisable()
+    {
+        _toggle.onValueChanged.RemoveListener(SetHighQuality);
+    }
 
-		_settingsProvider.settings.bloomHighQualityEnabled = enabled; 
-	}
+    #endregion
+
+    public override void UpdateValue()
+    {
+        _toggle.isOn = _settingsProvider.settings.bloomHighQualityEnabled;
+        _toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
+        _bloom.highQualityFiltering.value = _settingsProvider.settings.bloomHighQualityEnabled;
+    }
+
+    private void SetHighQuality(bool enabled)
+    {
+        _bloom.highQualityFiltering.value = enabled;
+
+        _settingsProvider.settings.bloomHighQualityEnabled = enabled;
+    }
 }

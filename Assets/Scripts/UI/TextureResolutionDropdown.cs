@@ -1,51 +1,56 @@
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using Zenject;
 
-public class TextureResolutionDropdown : MonoBehaviour
+public class TextureResolutionDropdown : UIUpdatableItem
 {
-	[Header("References")]
-	[SerializeField] private TMP_Dropdown _dropdown;
+    [Header("References")]
+    [SerializeField] private TMP_Dropdown _dropdown;
 
-	private SettingsProvider _settingsProvider;
+    private SettingsProvider _settingsProvider;
 
-	[Inject]
-	private void Construct(SettingsProvider settingsProvider)
-	{
-		_settingsProvider = settingsProvider;
-	}
-	
-	#region MonoBehaviour
+    [Inject]
+    private void Construct(SettingsProvider settingsProvider)
+    {
+        _settingsProvider = settingsProvider;
+    }
 
-	private void OnValidate()
-	{
-		_dropdown ??= GetComponent<TMP_Dropdown>();
-	}
+    #region MonoBehaviour
 
-	private void Start()
-	{
-		_dropdown.value = _settingsProvider.settings.masterTextureLimit;
-		QualitySettings.masterTextureLimit = _settingsProvider.settings.masterTextureLimit;
-	}
+    private void OnValidate()
+    {
+        _dropdown ??= GetComponent<TMP_Dropdown>();
+    }
 
-	private void OnEnable()
-	{
-		_dropdown.onValueChanged.AddListener(SetResolution);
-	}
+    private void Start()
+    {
+        _dropdown.value = _settingsProvider.settings.masterTextureLimit;
 
-	private void OnDisable()
-	{
-		_dropdown.onValueChanged.RemoveListener(SetResolution);
-	}
+        UpdateValue();
+    }
 
-	#endregion
+    private void OnEnable()
+    {
+        _dropdown.onValueChanged.AddListener(SetResolution);
+    }
 
-	private void SetResolution(int index)
-	{
-		QualitySettings.masterTextureLimit = index;
+    private void OnDisable()
+    {
+        _dropdown.onValueChanged.RemoveListener(SetResolution);
+    }
 
-		_settingsProvider.settings.masterTextureLimit = index;
-	}
+    #endregion
+
+    public override void UpdateValue()
+    {
+        QualitySettings.masterTextureLimit = _settingsProvider.settings.masterTextureLimit;
+        _dropdown.value = QualitySettings.masterTextureLimit;
+    }
+
+    private void SetResolution(int index)
+    {
+        QualitySettings.masterTextureLimit = index;
+
+        _settingsProvider.settings.masterTextureLimit = index;
+    }
 }

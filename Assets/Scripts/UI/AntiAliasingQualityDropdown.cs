@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Zenject;
 
-public class AntiAliasingQualityDropdown : MonoBehaviour
+public class AntiAliasingQualityDropdown : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private Camera _camera;
@@ -38,9 +38,8 @@ public class AntiAliasingQualityDropdown : MonoBehaviour
     private void Start()
     {
         _cameraData = _camera.GetComponent<UniversalAdditionalCameraData>();
-        _dropdown.SetValueWithoutNotify(_antialiasingQualities.IndexOf(_settingsProvider.settings.antialiasingQuality));
 
-        _dropdown.interactable = _settingsProvider.settings.antialiasingMode == AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+        UpdateValue();
     }
 
     private void OnEnable()
@@ -54,6 +53,13 @@ public class AntiAliasingQualityDropdown : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _dropdown.SetValueWithoutNotify(_antialiasingQualities.IndexOf(_settingsProvider.settings.antialiasingQuality));
+
+        _dropdown.interactable = _settingsProvider.settings.antialiasingMode == AntialiasingMode.SubpixelMorphologicalAntiAliasing;
+    }
 
     private void SetQuality(int index)
     {

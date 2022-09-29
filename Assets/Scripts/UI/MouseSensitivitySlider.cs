@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class MouseSensitivitySlider : MonoBehaviour
+public class MouseSensitivitySlider : UIUpdatableItem
 {
 	[Header("References")]
 	[SerializeField] private Slider _slider;
@@ -25,6 +24,11 @@ public class MouseSensitivitySlider : MonoBehaviour
 	}
 
 	private void Start()
+	{
+		UpdateValue();
+	}
+	
+	public override void UpdateValue()
 	{
 		_slider.value = _settingsProvider.settings.mouseSensitivity;
 	}

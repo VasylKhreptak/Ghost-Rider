@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using Zenject;
 
-public class FullScreenModeDropdown : MonoBehaviour
+public class FullScreenModeDropdown : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
@@ -25,10 +25,17 @@ public class FullScreenModeDropdown : MonoBehaviour
 
     #region MonoBehaviour
 
-    private void Awake()
+    private void Start()
+    {
+        Screen.fullScreenMode = _settingsProvider.settings.fullScreenMode;
+        
+        UpdateValue();
+    }
+
+    public override void UpdateValue()
     {
         _dropdown.value = _screenModes.IndexOf(_settingsProvider.settings.fullScreenMode);
-        Screen.fullScreenMode = _settingsProvider.settings.fullScreenMode;
+        Screen.fullScreenMode = _screenModes[_dropdown.value];
     }
 
     private void OnValidate()

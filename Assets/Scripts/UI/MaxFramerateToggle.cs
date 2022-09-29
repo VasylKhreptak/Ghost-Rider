@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class MaxFramerateToggle : MonoBehaviour
+public class MaxFramerateToggle : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private Toggle _toggle;
@@ -17,7 +16,7 @@ public class MaxFramerateToggle : MonoBehaviour
     {
         _settingsProvider = settingsProvider;
     }
-    
+
     #region MonoBehaciour
 
     private void OnValidate()
@@ -27,8 +26,7 @@ public class MaxFramerateToggle : MonoBehaviour
 
     private void Start()
     {
-        _toggle.isOn = _settingsProvider.settings.maxFramerateEnabled;
-        OnValueChanged(_toggle.isOn);
+        UpdateValue();
     }
 
     private void OnEnable()
@@ -42,6 +40,12 @@ public class MaxFramerateToggle : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _toggle.isOn = _settingsProvider.settings.maxFramerateEnabled;
+        OnValueChanged(_toggle.isOn);
+    }
 
     private void OnValueChanged(bool state)
     {

@@ -4,13 +4,13 @@ using TMPro;
 using UnityEngine;
 using Zenject;
 
-public class ResolutionDropdown : MonoBehaviour
+public class ResolutionDropdown : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
 
     private SettingsProvider _settingsProvider;
-    
+
     private Resolution[] _resolutions;
 
     [Inject]
@@ -18,16 +18,31 @@ public class ResolutionDropdown : MonoBehaviour
     {
         _settingsProvider = settingsProvider;
     }
-    
+
     #region MonoBehaviour
 
     private void Start()
     {
         _resolutions = Screen.resolutions;
-
+        
         Array.Reverse(_resolutions);
         
-        Init();
+        InitDropdown();
+        
+        UpdateValue();
+    }
+
+    public override void UpdateValue()
+    {
+        // _resolutions = Screen.resolutions;
+        //
+        // Array.Reverse(_resolutions);
+        //
+        // InitDropdown();
+
+        Screen.SetResolution(_settingsProvider.settings.screenWidth, _settingsProvider.settings.screenHeight,
+            Screen.fullScreenMode, _settingsProvider.settings.screenRefreshRate);
+
     }
 
     private void OnValidate()
@@ -47,7 +62,7 @@ public class ResolutionDropdown : MonoBehaviour
 
     #endregion
 
-    private void Init()
+    private void InitDropdown()
     {
         _dropdown.ClearOptions();
 
@@ -60,7 +75,9 @@ public class ResolutionDropdown : MonoBehaviour
             var resolution = _resolutions[i];
             options.Add(resolution.width + " x " + resolution.height + " " + resolution.refreshRate + " Hz");
 
-            if (Screen.currentResolution.width == resolution.width && Screen.currentResolution.height == resolution.height)
+            if (Screen.currentResolution.width == resolution.width
+                && Screen.currentResolution.height == resolution.height
+                && Screen.currentResolution.refreshRate == resolution.refreshRate)
             {
                 currentResolutionIndex = i;
             }
@@ -75,7 +92,7 @@ public class ResolutionDropdown : MonoBehaviour
     private void SetResolution(int index)
     {
         Resolution resolution = _resolutions[index];
-        
+
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRate);
 
         _settingsProvider.settings.screenWidth = resolution.width;

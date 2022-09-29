@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Zenject;
 
-public class DepthOfFieldHighQualityToggle : MonoBehaviour
+public class DepthOfFieldHighQualityToggle : UIUpdatableItem
 {
 	[Header("References")]
 	[SerializeField] private Toggle _toggle;
@@ -30,9 +30,8 @@ public class DepthOfFieldHighQualityToggle : MonoBehaviour
 	private void Start()
 	{
 		_postProcessingVolume.profile.TryGet(out _depthOfField);
-		_toggle.isOn = _settingsProvider.settings.dofHighQualityEnabled;
-		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
-		_depthOfField.highQualitySampling.value = _settingsProvider.settings.dofHighQualityEnabled;
+
+		UpdateValue();
 	}
 
 	private void OnEnable()
@@ -46,6 +45,13 @@ public class DepthOfFieldHighQualityToggle : MonoBehaviour
 	}
 
 	#endregion
+
+	public override void UpdateValue()
+	{
+		_toggle.isOn = _settingsProvider.settings.dofHighQualityEnabled;
+		_toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
+		_depthOfField.highQualitySampling.value = _settingsProvider.settings.dofHighQualityEnabled;
+	}
 
 	private void SetHighQuality(bool enabled)
 	{

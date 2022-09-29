@@ -4,7 +4,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 using Zenject;
 
-public class VignetteToggle : MonoBehaviour
+public class VignetteToggle : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private Toggle _toggle;
@@ -30,9 +30,8 @@ public class VignetteToggle : MonoBehaviour
     private void Start()
     {
         _postProcessingVolume.profile.TryGet(out _vignette);
-        _toggle.isOn = _settingsProvider.settings.vignetteEnabled;
-        _toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
-        _vignette.active = _settingsProvider.settings.vignetteEnabled;
+       
+        UpdateValue();
     }
 
     private void OnEnable()
@@ -46,6 +45,13 @@ public class VignetteToggle : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _toggle.isOn = _settingsProvider.settings.vignetteEnabled;
+        _toggle.interactable = _settingsProvider.settings.postProcessingEnabled;
+        _vignette.active = _settingsProvider.settings.vignetteEnabled;
+    }
 
     private void SetVignetteState(bool enabled)
     {

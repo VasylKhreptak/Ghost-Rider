@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class VolumeSlider : MonoBehaviour
+public class VolumeSlider : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] protected Slider _slider;
@@ -24,12 +24,12 @@ public class VolumeSlider : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _slider.onValueChanged.AddListener(SetVolume);
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         _slider.onValueChanged.RemoveListener(SetVolume);
     }

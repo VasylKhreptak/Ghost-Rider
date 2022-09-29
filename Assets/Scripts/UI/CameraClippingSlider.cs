@@ -1,9 +1,8 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class CameraClippingSlider : MonoBehaviour
+public class CameraClippingSlider : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private Camera _camera;
@@ -27,8 +26,7 @@ public class CameraClippingSlider : MonoBehaviour
 
     private void Start()
     {
-        _slider.value = _settingsProvider.settings.cameraClipping;
-        SetClippingDistance(_settingsProvider.settings.cameraClipping);
+       UpdateValue();
     }
 
     private void OnEnable()
@@ -42,6 +40,12 @@ public class CameraClippingSlider : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _slider.value = _settingsProvider.settings.cameraClipping;
+        SetClippingDistance(_settingsProvider.settings.cameraClipping);
+    }
 
     private void SetClippingDistance(float value)
     {

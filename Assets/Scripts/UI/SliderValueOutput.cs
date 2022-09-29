@@ -35,7 +35,7 @@ public class SliderValueOutput : MonoBehaviour
     }
 
     #endregion
-
+    
     protected virtual void UpdateValue(float value)
     {
         _tmpText.text = _slider.value.ToString(_format);

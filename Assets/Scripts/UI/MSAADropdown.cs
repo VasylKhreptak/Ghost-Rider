@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using Zenject;
 
-public class MSAADropdown : MonoBehaviour
+public class MSAADropdown : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
@@ -32,7 +32,8 @@ public class MSAADropdown : MonoBehaviour
     private void Start()
     {
         _renderAsset = (UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
-        _dropdown.value = msaaIndexes.IndexOf(_settingsProvider.settings.msaaSampleCount);
+        
+        UpdateValue();
     }
 
     private void OnEnable()
@@ -46,6 +47,11 @@ public class MSAADropdown : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _dropdown.value = msaaIndexes.IndexOf(_settingsProvider.settings.msaaSampleCount);
+    }
 
     private void SetAntiAliasing(int index)
     {

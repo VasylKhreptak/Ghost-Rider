@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class VSyncToggle : MonoBehaviour
+public class VSyncToggle : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private Toggle _toggle;
@@ -25,8 +25,7 @@ public class VSyncToggle : MonoBehaviour
 
     private void Start()
     {
-        _toggle.isOn = _settingsProvider.settings.vSyncEnabled;
-        QualitySettings.vSyncCount = _settingsProvider.settings.vSyncEnabled ? 1 : 0;
+        UpdateValue();
     }
 
     private void OnEnable()
@@ -40,6 +39,12 @@ public class VSyncToggle : MonoBehaviour
     }
 
     #endregion
+
+    public override void UpdateValue()
+    {
+        _toggle.isOn = _settingsProvider.settings.vSyncEnabled;
+        QualitySettings.vSyncCount = _settingsProvider.settings.vSyncEnabled ? 1 : 0;
+    }
 
     private void OnValueChanged(bool value)
     {

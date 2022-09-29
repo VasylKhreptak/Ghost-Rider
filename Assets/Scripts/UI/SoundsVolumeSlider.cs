@@ -15,10 +15,16 @@ public class SoundsVolumeSlider : VolumeSlider
 	
 	private void Start()
 	{
+		UpdateValue();
+	}
+	
+	public override void UpdateValue()
+	{
 		float mixerVolume = _settingsProvider.settings.soundMixerVolume;
 
 		_slider.value = Mathf.Pow(2, mixerVolume / _mixerVolumeAmplifier) * _slider.maxValue;
 	}
+
 	protected override void SetVolume(float value)
 	{
 		float newVolume = Mathf.Log(value / _slider.maxValue, _logBase) * _mixerVolumeAmplifier;

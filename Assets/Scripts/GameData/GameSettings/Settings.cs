@@ -15,7 +15,7 @@ public class Settings
 	public FullScreenMode fullScreenMode = FullScreenMode.FullScreenWindow;
 	public int screenWidth = 1920;
 	public int screenHeight = 1080;
-	public int screenRefreshRate = 60;
+	public int screenRefreshRate = 60;//подивитися чи це використовується в коді
 	public int targetFramerate = 60;
 	public bool maxFramerateEnabled = false;
 	public bool vSyncEnabled = false;
