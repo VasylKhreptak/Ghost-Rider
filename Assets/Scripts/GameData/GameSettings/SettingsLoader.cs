@@ -85,7 +85,7 @@ public class SettingsLoader : MonoBehaviour
 
     public void ApplyGraphicsSettings(Settings settings)
     {
-        Screen.SetResolution(settings.screenWidth, settings.screenHeight, settings.fullScreenMode);
+        Screen.SetResolution(settings.screenWidth, settings.screenHeight, settings.fullScreenMode, settings.screenRefreshRate);
         _gameFramerate.Set(settings.targetFramerate);
 
         if (settings.maxFramerateEnabled)

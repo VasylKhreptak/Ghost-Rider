@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using ModestTree;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -8,6 +10,7 @@ public class ResolutionDropdown : UIUpdatableItem
 {
     [Header("References")]
     [SerializeField] private TMP_Dropdown _dropdown;
+    [SerializeField] private RefreshRateDropdown _refreshRateDropdown;
 
     private SettingsProvider _settingsProvider;
 
@@ -23,26 +26,20 @@ public class ResolutionDropdown : UIUpdatableItem
 
     private void Start()
     {
-        _resolutions = Screen.resolutions;
-        
-        Array.Reverse(_resolutions);
-        
-        InitDropdown();
-        
         UpdateValue();
     }
 
     public override void UpdateValue()
     {
-        // _resolutions = Screen.resolutions;
-        //
-        // Array.Reverse(_resolutions);
-        //
-        // InitDropdown();
+        _resolutions = Screen.resolutions;
 
-        Screen.SetResolution(_settingsProvider.settings.screenWidth, _settingsProvider.settings.screenHeight,
-            Screen.fullScreenMode, _settingsProvider.settings.screenRefreshRate);
+        Array.Reverse(_resolutions);
 
+        List<int> possibleRefreshRates = _refreshRateDropdown.GetPossibleRefreshRates(ref _resolutions);
+
+        _resolutions.ToList().RemoveAll(x => x.refreshRate > possibleRefreshRates[0]);
+        
+        InitDropdown();
     }
 
     private void OnValidate()
@@ -73,11 +70,10 @@ public class ResolutionDropdown : UIUpdatableItem
         for (var i = 0; i < _resolutions.Length; i++)
         {
             var resolution = _resolutions[i];
-            options.Add(resolution.width + " x " + resolution.height + " " + resolution.refreshRate + " Hz");
+            options.Add(resolution.width + " x " + resolution.height);
 
             if (Screen.currentResolution.width == resolution.width
-                && Screen.currentResolution.height == resolution.height
-                && Screen.currentResolution.refreshRate == resolution.refreshRate)
+                && Screen.currentResolution.height == resolution.height)
             {
                 currentResolutionIndex = i;
             }
@@ -85,18 +81,17 @@ public class ResolutionDropdown : UIUpdatableItem
 
         _dropdown.AddOptions(options);
 
-        _dropdown.value = currentResolutionIndex;
+        _dropdown.SetValueWithoutNotify(currentResolutionIndex);
         _dropdown.RefreshShownValue();
     }
 
     private void SetResolution(int index)
     {
         Resolution resolution = _resolutions[index];
-
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRate);
+        
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
 
         _settingsProvider.settings.screenWidth = resolution.width;
         _settingsProvider.settings.screenHeight = resolution.height;
-        _settingsProvider.settings.screenRefreshRate = resolution.refreshRate;
     }
 }
