@@ -33,29 +33,62 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: f1a0bd1c66eb8d0428bb9d19d752d2d2, type: 3}
-    - {fileID: 2800000, guid: a5c40351342f4fd47ab16bf7ca684c5c, type: 3}
-    - {fileID: 2800000, guid: 7a5756869f1571347bb873ae7ef9ce15, type: 3}
+    - {fileID: 2800000, guid: a10aeba42240b8040b4ef5b7bcdc1a9f, type: 3}
+    - {fileID: 2800000, guid: 5571c731dfe3a2243bb3a59437fcd79e, type: 3}
+    - {fileID: 2800000, guid: 931ee65063c890d43849f8ea78ccd08e, type: 3}
+    - {fileID: 2800000, guid: 9480d58feb0237840b2189d47e7dec78, type: 3}
+    - {fileID: 2800000, guid: 9ab2daaac82e5d64ab9f581beec74a90, type: 3}
+    - {fileID: 2800000, guid: 883bb911412b13741a114f83590b5d06, type: 3}
+    - {fileID: 2800000, guid: e5fe03b3f1b13ba46b303ccd3a517833, type: 3}
+    - {fileID: 2800000, guid: d3b98e1aa18c98d4d916ac092f70fd1e, type: 3}
+    - {fileID: 2800000, guid: 4e80d7c910d61ba4ba2262a2fcff5161, type: 3}
     - {fileID: 2800000, guid: 5f364fe17ac32084db7de848e4ec5961, type: 3}
-    - {fileID: 2800000, guid: 912b94882ec2f4b9f9d110f92972d4b1, type: 3}
+    - {fileID: 2800000, guid: 784d4891745cfae4bbd7c1ba87d935aa, type: 3}
+    - {fileID: 2800000, guid: a5c40351342f4fd47ab16bf7ca684c5c, type: 3}
     - {fileID: 2800000, guid: 8f8da22ef20774691989b6b19e2c9aa2, type: 3}
+    - {fileID: 2800000, guid: 25c2b4cda785ee4489ea15cd8bdb371e, type: 3}
+    - {fileID: 2800000, guid: 7a5756869f1571347bb873ae7ef9ce15, type: 3}
+    - {fileID: 2800000, guid: e36d73849d356134b8012e368d5e4160, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 931ee65063c890d43849f8ea78ccd08e, type: 3}
+  - {fileID: 21300000, guid: 883bb911412b13741a114f83590b5d06, type: 3}
+  - {fileID: 21300000, guid: 5571c731dfe3a2243bb3a59437fcd79e, type: 3}
   - {fileID: 21300000, guid: a5c40351342f4fd47ab16bf7ca684c5c, type: 3}
+  - {fileID: 21300000, guid: 784d4891745cfae4bbd7c1ba87d935aa, type: 3}
   - {fileID: 21300000, guid: 5f364fe17ac32084db7de848e4ec5961, type: 3}
+  - {fileID: 21300000, guid: e5fe03b3f1b13ba46b303ccd3a517833, type: 3}
+  - {fileID: 21300000, guid: e36d73849d356134b8012e368d5e4160, type: 3}
+  - {fileID: 21300000, guid: a10aeba42240b8040b4ef5b7bcdc1a9f, type: 3}
   - {fileID: 21300000, guid: 7a5756869f1571347bb873ae7ef9ce15, type: 3}
-  - {fileID: 21300000, guid: 912b94882ec2f4b9f9d110f92972d4b1, type: 3}
+  - {fileID: 21300000, guid: 4e80d7c910d61ba4ba2262a2fcff5161, type: 3}
+  - {fileID: 21300000, guid: d3b98e1aa18c98d4d916ac092f70fd1e, type: 3}
+  - {fileID: 699021514, guid: 9ab2daaac82e5d64ab9f581beec74a90, type: 3}
   - {fileID: 21300000, guid: f1a0bd1c66eb8d0428bb9d19d752d2d2, type: 3}
+  - {fileID: 21300000, guid: 25c2b4cda785ee4489ea15cd8bdb371e, type: 3}
   - {fileID: 21300000, guid: 8f8da22ef20774691989b6b19e2c9aa2, type: 3}
+  - {fileID: 21300000, guid: 9480d58feb0237840b2189d47e7dec78, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Button1-1
+  - Circle6-2_pressed
+  - Btn_MenuButton_Square03_White3_s
   - icon_01_13
+  - switch_off
   - SettingsIcon
+  - switch_on
+  - right_hover
+  - Btn_ClosePanel_h
   - MoneyIcon
-  - Common_4pixel_White
+  - Dropdown background
+  - down_hover
+  - checkbox_pressed_0
   - ArrowIcon
+  - left_hover
   - Icon_PictoIcon_Arrow_Triangle01_White
+  - checkbox_normal
   m_RenderDataMap: {}
   m_Tag: UIAtlas
   m_IsVariant: 0
