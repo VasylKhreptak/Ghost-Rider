@@ -2311,7 +2311,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.00289917, y: 23}
-  m_SizeDelta: {x: 205161.53, y: 128956.68}
+  m_SizeDelta: {x: 29857.39, y: 19627.242}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &116252357
 Canvas:
@@ -2330,9 +2330,9 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 9
   m_TargetDisplay: 0
 --- !u!114 &116252358
 MonoBehaviour:
@@ -15461,6 +15461,8 @@ GameObject:
   - component: {fileID: 871324002}
   - component: {fileID: 871324001}
   - component: {fileID: 871324006}
+  - component: {fileID: 871324008}
+  - component: {fileID: 871324007}
   m_Layer: 5
   m_Name: SettignsMenu
   m_TagString: Untagged
@@ -15537,7 +15539,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871323987}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -15819,6 +15821,34 @@ MonoBehaviour:
   _alphaAdapter: {fileID: 871323994}
   _monoEvent: {fileID: 871323996}
   _alpha: 0
+--- !u!114 &871324007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871323987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7b5fe2c19e9ec4687a9f11965a872b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &871324008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871323987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27988b591132f64baba8bde96c5ea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjects:
+  - {fileID: 871323987}
+  _active: 0
+  _monoEvent: {fileID: 871324007}
 --- !u!1 &873744328
 GameObject:
   m_ObjectHideFlags: 0
@@ -24629,7 +24659,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 49
   m_TargetDisplay: 0
 --- !u!1 &1274181333
 GameObject:
