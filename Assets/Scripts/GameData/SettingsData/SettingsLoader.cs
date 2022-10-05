@@ -16,6 +16,9 @@ public class SettingsLoader : MonoBehaviour
     [SerializeField] private AudioMixerGroup _soundMixerGroup;
     [SerializeField] private AudioMixerGroup _carsMixerGroup;
 
+    [Header("UI Preferences")]
+    [SerializeField] private GameObject _fpsCounterObject;
+    
     [Header("Input References")]
     [SerializeField] private RCC_Camera _rccCamera;
 
@@ -62,6 +65,7 @@ public class SettingsLoader : MonoBehaviour
     private void ApplySettings(Settings settings)
     {
         ApplyVolumeSettings(settings);
+        ApplyUISettings(settings);
         ApplyInputSettings(settings);
         ApplyScreenSettings(settings);
         ApplyGraphicsSettings(settings);
@@ -77,6 +81,18 @@ public class SettingsLoader : MonoBehaviour
         ApplyVolumeSettingsToProvider(settings);
     }
 
+    public void ApplyUISettings(Settings settings)
+    {
+        _fpsCounterObject.SetActive(settings.showFPS);
+        
+        ApplyUISettingsToProvider(settings);
+    }
+
+    private void ApplyUISettingsToProvider(Settings settings)
+    {
+        _settingsProvider.settings.showFPS = settings.showFPS;
+    }
+    
     public void ApplyInputSettings(Settings settings)
     {
         _rccCamera.sensitivity = settings.mouseSensitivity;

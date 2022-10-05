@@ -9,6 +9,8 @@ public class Settings
 	public float musicMixerVolume = 0f;
 	public float soundMixerVolume = 0f;
 	public float carsMixerVolume = 0f;
+
+	public bool showFPS = true;
 	
 	public float mouseSensitivity = 1;
 

@@ -28,7 +28,7 @@ public class UnityMonoEvent : MonoEvent
 
     #endregion
 
-    private void Invoke()
+    private new void Invoke()
     {
         onMonoCall?.Invoke();
 

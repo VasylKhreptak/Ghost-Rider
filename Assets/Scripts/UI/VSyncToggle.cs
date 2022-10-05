@@ -16,7 +16,7 @@ public class VSyncToggle : UIUpdatableItem
         _settingsProvider = settingsProvider;
     }
 
-    #region MonoBehaciour
+    #region MonoBehaviour
 
     private void OnValidate()
     {
