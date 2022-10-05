@@ -23,9 +23,4 @@ public class OnToggleGroupMatchEvent : MonoEvent
     }
 
     #endregion
-
-    private void Invoke()
-    {
-        onMonoCall?.Invoke();
-    }
 }

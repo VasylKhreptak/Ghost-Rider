@@ -1,6 +1,6 @@
 public class ManualMonoEvent : MonoEvent
 {
-    public void Invoke()
+    public new void Invoke()
     {
         onMonoCall?.Invoke();
     }

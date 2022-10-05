@@ -25,7 +25,7 @@ public class OnEventSetActive : MonoBehaviour
 
     #endregion
 
-    private void SetActive()
+    public void SetActive()
     {
         foreach (var obj in _gameObjects)
         {

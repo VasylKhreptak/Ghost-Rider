@@ -24,9 +24,4 @@ public class OnRaycastMonoEvent : MonoEvent
     #endregion
 
     private void Invoke(RaycastHit raycastHit) => Invoke();
-    
-    private void Invoke()
-    {
-        onMonoCall?.Invoke();
-    }
 }

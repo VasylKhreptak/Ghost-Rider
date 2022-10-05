@@ -40,11 +40,6 @@ public class OnWaypointEnterMonoEvent : MonoEvent
         return waypointIndex == _targetWaypointIndex;
     }
 
-    private void Invoke()
-    {
-        onMonoCall?.Invoke();
-    }
-
     public void SetAIController(RCC_AICarController controller)
     {
         _aiCarController = controller;

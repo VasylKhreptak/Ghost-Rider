@@ -56,12 +56,7 @@ public class MonoEventCountLimiter : MonoEvent
     {
         return _count < _maxEventsCount;
     }
-    
-    private void Invoke()
-    {
-        onMonoCall?.Invoke();
-    }
-    
+
     private void ResetCount()
     {
         _count = 0;
