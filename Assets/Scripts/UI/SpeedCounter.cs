@@ -11,7 +11,7 @@ public class SpeedCounter : MonoBehaviour
     [SerializeField] private float _updateDelay;
 
     private ConfigurableUpdate _configurableUpdate = new ConfigurableUpdate();
-
+    
     #region MonoBehaviour
 
     private void OnValidate()

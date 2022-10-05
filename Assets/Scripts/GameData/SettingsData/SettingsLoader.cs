@@ -18,7 +18,7 @@ public class SettingsLoader : MonoBehaviour
 
     [Header("UI Preferences")]
     [SerializeField] private GameObject _fpsCounterObject;
-    
+
     [Header("Input References")]
     [SerializeField] private RCC_Camera _rccCamera;
 
@@ -37,6 +37,8 @@ public class SettingsLoader : MonoBehaviour
     private Vignette _vignette;
     private DepthOfField _depthOfField;
 
+    private RectTransform _fpsRectTransform;
+
     [Inject]
     private void Construct(SettingsProvider settingsProvider)
     {
@@ -53,6 +55,8 @@ public class SettingsLoader : MonoBehaviour
         _postProcessingVolume.profile.TryGet(out _bloom);
         _postProcessingVolume.profile.TryGet(out _vignette);
         _postProcessingVolume.profile.TryGet(out _depthOfField);
+
+        _fpsRectTransform = _fpsCounterObject.GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -84,15 +88,19 @@ public class SettingsLoader : MonoBehaviour
     public void ApplyUISettings(Settings settings)
     {
         _fpsCounterObject.SetActive(settings.showFPS);
-        
+        _fpsRectTransform.anchorMin = settings.fpsAnchorPosition.min;
+        _fpsRectTransform.anchorMax = settings.fpsAnchorPosition.max;
+        _fpsRectTransform.anchoredPosition = settings.fpsAnchorPosition.anchoredPosition;
+
         ApplyUISettingsToProvider(settings);
     }
 
     private void ApplyUISettingsToProvider(Settings settings)
     {
         _settingsProvider.settings.showFPS = settings.showFPS;
+        _settingsProvider.settings.fpsAnchorPosition = settings.fpsAnchorPosition;
     }
-    
+
     public void ApplyInputSettings(Settings settings)
     {
         _rccCamera.sensitivity = settings.mouseSensitivity;
@@ -164,7 +172,7 @@ public class SettingsLoader : MonoBehaviour
         {
             _gameFramerate.Set(int.MaxValue);
         }
-        
+
         ApplyScreenSettingsToProvider(settings);
     }
 
