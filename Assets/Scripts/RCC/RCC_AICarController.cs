@@ -103,6 +103,7 @@ public class RCC_AICarController : MonoBehaviour
 
         // Creating our Navigator and setting properties.
         GameObject navigatorObject = new GameObject("Navigator");
+        navigatorObject.layer = gameObject.layer;
         navigatorObject.transform.SetParent(transform, false);
         navigator = navigatorObject.AddComponent<NavMeshAgent>();
         navigator.radius = 1;

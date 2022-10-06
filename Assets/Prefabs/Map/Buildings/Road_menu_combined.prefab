@@ -301,7 +301,7 @@ MonoBehaviour:
   _mainCollider: {fileID: 292069747532785965}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
 --- !u!1 &3324799670479294842
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 3967283728912173481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 313.6516}
-  m_LocalScale: {x: 17.92, y: 1, z: 99.38214}
+  m_LocalScale: {x: 10, y: 1, z: 99.38214}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4372842994174528324}
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
 --- !u!114 &158457253344496535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
 --- !u!114 &4919290089964811981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 5575491540184785846}
   - component: {fileID: 731941194560356330}
   - component: {fileID: 3127237886073122783}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: SpawnRoadTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
 --- !u!114 &1873180494518515093
 MonoBehaviour:
   m_ObjectHideFlags: 0

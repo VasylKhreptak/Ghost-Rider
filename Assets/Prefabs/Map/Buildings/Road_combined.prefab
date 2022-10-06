@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2013432988712797079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 400.2897}
-  m_LocalScale: {x: 17.92, y: 1, z: 82.05263}
+  m_LocalScale: {x: 10, y: 1, z: 82.05263}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1489352643936384136}
@@ -384,7 +384,7 @@ MonoBehaviour:
   _mainCollider: {fileID: 8554494597550556857}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
 --- !u!1 &4461051789466903108
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
 --- !u!114 &3601354002521819737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
 --- !u!114 &2019704439778441044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
 --- !u!114 &1723743962967616730
 MonoBehaviour:
   m_ObjectHideFlags: 0
