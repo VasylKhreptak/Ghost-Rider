@@ -223,7 +223,7 @@ MonoBehaviour:
   _allObjects: 02000000
   _spawnPlace: {fileID: 1703008952221157431}
   _monoEvent: {fileID: 734321815183533288}
-  _offset: {x: 0, y: 0, z: 775.6}
+  _offset: {x: 0, y: 0, z: 820}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &5402866430772120205
 MonoBehaviour:

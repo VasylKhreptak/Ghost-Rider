@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 928291103079236327}
   - component: {fileID: 2409658590143307433}
   - component: {fileID: 8769962897119896498}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 6351181684893299711}
   - component: {fileID: 1596844073063922145}
   - component: {fileID: 1080581708408538809}
+  - component: {fileID: 4202870113024681885}
   m_Layer: 0
   m_Name: SpawnRoadTrigger
   m_TagString: Untagged
@@ -534,7 +535,7 @@ MonoBehaviour:
   _allObjects: 00000000
   _spawnPlace: {fileID: 1489352643936384136}
   _monoEvent: {fileID: 3601354002521819737}
-  _offset: {x: 0, y: 0, z: 800}
+  _offset: {x: 0, y: 0, z: 820}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &6351181684893299711
 MonoBehaviour:
@@ -580,6 +581,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4202870113024681885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486205573458755782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe1ca516ac5f8f448d7de8e71257b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 3601354002521819737}
 --- !u!1 &8492320165720560190
 GameObject:
   m_ObjectHideFlags: 0

@@ -805,7 +805,7 @@ MonoBehaviour:
   _allObjects: 01000000
   _spawnPlace: {fileID: 5513852087089650038}
   _monoEvent: {fileID: 5513852085649717554}
-  _offset: {x: 0, y: 0, z: 728.2}
+  _offset: {x: 0, y: 0, z: 820}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!1 &5513852087089650039
 GameObject:
