@@ -2002,7 +2002,7 @@ MonoBehaviour:
   m_OverrideTileSize: 1
   m_TileSize: 1024
   m_OverrideVoxelSize: 1
-  m_VoxelSize: 9
+  m_VoxelSize: 14
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 702d04758674a7d48a0771f913989072, type: 2}
 --- !u!114 &109191596
@@ -44480,7 +44480,7 @@ Transform:
   - {fileID: 239706140}
   - {fileID: 1952046109}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729584124
 GameObject:
@@ -50062,15 +50062,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967980370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 879176976}
   - {fileID: 1729940981}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 2110798939}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1972372006
 GameObject:
@@ -52311,6 +52311,7 @@ Transform:
   - {fileID: 838208294454770221}
   - {fileID: 3026707314752352038}
   - {fileID: 963123887657921939}
+  - {fileID: 1967980372}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63380,7 +63381,7 @@ Transform:
   - {fileID: 2055384248}
   - {fileID: 840217470}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7108700444829121889
 Transform:
