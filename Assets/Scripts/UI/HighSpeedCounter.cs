@@ -10,7 +10,7 @@ public class HighSpeedCounter : MonoBehaviour
     [Header("Preferences")]
     [SerializeField] private float _updateDelay;
 
-    private float _maxSpeed;
+    private SafeFloat _maxSpeed;
 
     private ConfigurableUpdate _configurableUpdate = new ConfigurableUpdate();
     

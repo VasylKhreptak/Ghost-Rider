@@ -12,7 +12,7 @@ public class RodeDistanceCounter : MonoBehaviour
     [SerializeField] private float _amplifier;
     [SerializeField] private string _format;
     
-    private float _rodeDistance;
+    private SafeFloat _rodeDistance;
 
     private Vector3 _previousPosition;
     

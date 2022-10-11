@@ -131,7 +131,7 @@ public class RCC_CarControllerV3 : RCC_Core
     public float downForce = 25f; // Applies downforce related with vehicle speed.
     public bool useCounterSteering = true; // Applies counter steering when vehicle is drifting. It helps to keep the control fine of the vehicle.
     [Range(0f, 1f)] public float counterSteeringFactor = .5f; // Counter steering multiplier.
-    public float speed = 0f; // Vehicle speed.
+    public SafeFloat speed = 0f; // Vehicle speed.
     public float maxspeed = 240f; // Maximum speed.
     private float resetTime = 0f; // Used for resetting the vehicle if upside down.
     private float orgSteerAngle = 0f; // Original steer angle.

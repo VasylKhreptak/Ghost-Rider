@@ -3,5 +3,5 @@ using System;
 [Serializable]
 public class PlayerData
 {
-	public int money;
+	public SafeInt money;
 }
