@@ -1,16 +1,44 @@
 using UnityEngine;
 
-public class SettingsProvider : DataLoader
+public class SettingsProvider : DataProvider
 {
-    public Settings settings;
-    
+    public Settings settings = new Settings();
+
+    private string _path;
+
+    #region MonoBehaviuor
+
+    protected override void Awake()
+    {
+        _path = Application.dataPath + "/" + "settings";
+
+        base.Awake();
+    }
+
+    #endregion
+
+    protected override void OnApplicationPause(bool pauseStatus)
+    {
+#if !UNITY_EDITOR
+        base.OnApplicationPause(pauseStatus);
+#endif
+    }
+
+    protected override void OnApplicationQuit()
+    {
+#if !UNITY_EDITOR
+        base.OnApplicationQuit();
+#endif
+    }
+
+
     protected override void Save()
     {
-        GameDataProvider.Save(_playerPrefsKey, settings);
+        EncryptedFileDataProvider.Save(_path, settings);
     }
 
     protected override void Load()
     {
-        settings = GameDataProvider.Load(_playerPrefsKey, new Settings());
+        settings = EncryptedFileDataProvider.Load(_path, new Settings());
     }
 }

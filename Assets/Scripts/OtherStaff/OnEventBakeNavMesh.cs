@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class OnEventBakeSurface : MonoBehaviour
+public class OnEventBakeNavMesh : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private MonoEvent _event;

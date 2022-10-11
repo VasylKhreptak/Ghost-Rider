@@ -1,25 +1,22 @@
 using System;
 using UnityEngine;
 
-public class DataLoader : MonoBehaviour
+public class DataProvider : MonoBehaviour
 {
-	[Header("Preferences")]
-	[SerializeField] protected string _playerPrefsKey = "PlayerData";
-	
 	#region MonoBehaviour
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		Load();
 	}
 
-	private void OnApplicationQuit()
+	protected virtual void OnApplicationQuit()
 	{
 		Save();
 	}
 
 
-	private void OnApplicationPause(bool pauseStatus)
+	protected virtual void OnApplicationPause(bool pauseStatus)
 	{
 		Save();
 	}

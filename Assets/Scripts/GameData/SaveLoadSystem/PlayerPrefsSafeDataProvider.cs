@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public static class GameDataProvider
+public static class PlayerPrefsSafeDataProvider
 {
     public static void Save<T>(string key, T obj)
     {
