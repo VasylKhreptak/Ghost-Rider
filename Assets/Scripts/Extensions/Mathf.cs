@@ -12,13 +12,18 @@ namespace Extensions
         {
             return value ? 1 : -1;
         }
-        
+
         public static void Probability(float probability, Action action)
         {
             if (probability >= UnityEngine.Random.value)
             {
                 action?.Invoke();
             }
+        }
+
+        public static bool Probability(float probability)
+        {
+            return probability >= UnityEngine.Random.value;
         }
     }
 }
