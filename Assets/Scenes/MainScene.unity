@@ -24265,7 +24265,7 @@ MonoBehaviour:
     folder: {fileID: 0}
   - poolType: 3
     prefab: {fileID: 193332, guid: 84d0fe10df0b5a348b7423439f439ec8, type: 3}
-    size: 7
+    size: 15
     folder: {fileID: 0}
   - poolType: 4
     prefab: {fileID: 2092489646663749628, guid: 7f7b82c5fca36f74bbbd4066f8b2ce6a, type: 3}

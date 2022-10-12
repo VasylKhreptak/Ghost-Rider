@@ -258,6 +258,8 @@ GameObject:
   - component: {fileID: 8874735916361773197}
   - component: {fileID: 8073295199122533414}
   - component: {fileID: 9214815591791682331}
+  - component: {fileID: 4420176152795821797}
+  - component: {fileID: 251201808483853527}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -853,6 +855,37 @@ MonoBehaviour:
   _rigidbody: {fileID: 1536608713267606522}
   _event: {fileID: 8073295199122533414}
   _targetVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &4420176152795821797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0418c63e4bda9441a8e56c71f89e666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713267606521}
+  _fallTriggerY: -3
+  _checkDelay: 1
+--- !u!114 &251201808483853527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27988b591132f64baba8bde96c5ea7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjects:
+  - {fileID: 1536608713267606020}
+  _active: 0
+  _monoEvent: {fileID: 4420176152795821797}
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
