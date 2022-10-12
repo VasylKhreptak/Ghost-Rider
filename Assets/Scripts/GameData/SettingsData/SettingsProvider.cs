@@ -17,28 +17,21 @@ public class SettingsProvider : DataProvider
 
     #endregion
 
-    protected override void OnApplicationPause(bool pauseStatus)
-    {
-#if !UNITY_EDITOR
-        base.OnApplicationPause(pauseStatus);
-#endif
-    }
-
-    protected override void OnApplicationQuit()
-    {
-#if !UNITY_EDITOR
-        base.OnApplicationQuit();
-#endif
-    }
-
-
     protected override void Save()
     {
+#if UNITY_EDITOR
+        PlayerPrefsSafeDataProvider.Save("Settings", settings);
+#else
         EncryptedFileDataProvider.Save(_path, settings);
+#endif
     }
 
     protected override void Load()
     {
+#if UNITY_EDITOR
+        settings = PlayerPrefsSafeDataProvider.Load("Settings", new Settings());
+#else
         settings = EncryptedFileDataProvider.Load(_path, new Settings());
+#endif
     }
 }

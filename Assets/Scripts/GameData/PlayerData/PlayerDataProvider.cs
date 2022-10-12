@@ -17,27 +17,21 @@ public class PlayerDataProvider : DataProvider
 
     #endregion
 
-    protected override void OnApplicationPause(bool pauseStatus)
-    {
-#if !UNITY_EDITOR
-        base.OnApplicationPause(pauseStatus);
-#endif
-    }
-
-    protected override void OnApplicationQuit()
-    {
-#if !UNITY_EDITOR
-        base.OnApplicationQuit();
-#endif
-    }
-
     protected override void Save()
     {
-        PlayerPrefsSafeDataProvider.Save(_path, playerData);
+#if UNITY_EDITOR
+        PlayerPrefsSafeDataProvider.Save("PlayerData", playerData);
+#else
+        EncryptedFileDataProvider.Save(_path, playerData);
+#endif
     }
 
     protected override void Load()
     {
-        playerData = PlayerPrefsSafeDataProvider.Load(_path, new PlayerData());
+#if UNITY_EDITOR
+        playerData = PlayerPrefsSafeDataProvider.Load("PlayerData", new PlayerData());
+#else
+        playerData = EncryptedFileDataProvider.Load(_path, new PlayerData());
+#endif
     }
 }
