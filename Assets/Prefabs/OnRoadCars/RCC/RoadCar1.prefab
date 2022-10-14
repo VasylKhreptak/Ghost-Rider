@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 8784117903806593937}
   - component: {fileID: 7518555057948733521}
   - component: {fileID: 4476162640402683802}
+  - component: {fileID: 5383068194177121942}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -945,6 +946,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5383068194177121942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5d3c1ea5ae8a04d99240900fce985f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713267606521}
+  _monoEvent: {fileID: 4476162640402683802}
+  _rotation: {x: 0, y: 0, z: 0}
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
