@@ -33,7 +33,7 @@ public sealed class ObjectPooler : MonoBehaviour
     {
         Init();
     }
-   
+
     private void Init()
     {
         CreatePoolFolders();
@@ -102,12 +102,39 @@ public sealed class ObjectPooler : MonoBehaviour
         objectFromPool.transform.position = position;
         objectFromPool.transform.rotation = rotation;
 
-
         objectFromPool.SetActive(true);
 
         _poolDictionary[pool].Enqueue(objectFromPool);
 
         return objectFromPool;
+    }
+
+    public bool TrySpawnInactive(out GameObject poolObject, Pools pool, Vector3 position, Quaternion rotation)
+    {
+        if (_poolDictionary.ContainsKey(pool) == false)
+        {
+            Debug.LogWarning("Pool with name " + pool + "doesn't exist");
+        }
+
+        GameObject objectFromPool = _poolDictionary[pool].Dequeue();
+
+        if (objectFromPool.activeSelf == false)
+        {
+            objectFromPool.transform.position = position;
+            objectFromPool.transform.rotation = rotation;
+
+            objectFromPool.SetActive(true);
+
+            poolObject = objectFromPool;
+
+            return true;
+        }
+
+        _poolDictionary[pool].Enqueue(objectFromPool);
+        
+        poolObject = null;
+
+        return false;
     }
 
     private void OnSceneUnloaded(Scene scene)

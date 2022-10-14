@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 7518555057948733521}
   - component: {fileID: 4476162640402683802}
   - component: {fileID: 5383068194177121942}
+  - component: {fileID: 4086150529800108505}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -540,12 +541,12 @@ MonoBehaviour:
   targetTag: Player
   navigationMode: 0
   raycastLength: 5
-  raycastAngle: 25
+  raycastAngle: 10
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 1344
   obstacle: {fileID: 0}
-  useRaycasts: 0
+  useRaycasts: 1
   steerInput: -1
   throttleInput: 0.33082137
   brakeInput: 0.020630866
@@ -873,7 +874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 1536608713267606521}
-  _fallTriggerY: -3
+  _fallTriggerY: 0
   _checkDelay: 1
 --- !u!114 &251201808483853527
 MonoBehaviour:
@@ -962,6 +963,20 @@ MonoBehaviour:
   _transform: {fileID: 1536608713267606521}
   _monoEvent: {fileID: 4476162640402683802}
   _rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &4086150529800108505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e108679b00054468dfa7deb0f9b9a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiCarController: {fileID: 1522356525058983785}
+  _waypoint: {fileID: 8643546914646777425}
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
@@ -20664,8 +20679,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3349426, y: 0.6213809, z: 7.125605}
-  m_Center: {x: 0, y: -0.00041288137, z: 2.9015925}
+  m_Size: {x: 1.3349426, y: 0.6213809, z: 19.99143}
+  m_Center: {x: 0, y: -0.00041288137, z: 9.334506}
 --- !u!114 &8773946823320519795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20711,7 +20726,8 @@ MonoBehaviour:
   _triggerEnterEvent: {fileID: 8773946823320519795}
   _triggerExitEvent: {fileID: 1585410891383010654}
   _aiCarController: {fileID: 1522356525058983785}
-  _carSpeedSetter: {fileID: 8784117903806593937}
+  _carSpeedSetter: {fileID: 4086150529800108505}
+  _carRandomSpeedSetter: {fileID: 8784117903806593937}
   _mainCarLayerMask:
     serializedVersion: 2
     m_Bits: 1024

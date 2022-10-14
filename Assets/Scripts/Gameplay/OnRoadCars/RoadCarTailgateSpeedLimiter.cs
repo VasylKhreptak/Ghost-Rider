@@ -1,5 +1,4 @@
 using System;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class RoadCarTailgateSpeedLimiter : MonoBehaviour
@@ -9,13 +8,14 @@ public class RoadCarTailgateSpeedLimiter : MonoBehaviour
     [SerializeField] private OnTriggerExitEvent _triggerExitEvent;
     [SerializeField] private RCC_AICarController _aiCarController;
     [SerializeField] private RoadCarSpeedSetter _carSpeedSetter;
+    [SerializeField] private RoadCarRandomSpeedSetter _carRandomSpeedSetter;
 
     [Header("Preferences")]
     [SerializeField] private LayerMask _mainCarLayerMask;
 
     private float _rawSpeed;
 
-    #region MonoBehaviou
+    #region MonoBehaviour
 
     private void OnValidate()
     {
@@ -23,6 +23,7 @@ public class RoadCarTailgateSpeedLimiter : MonoBehaviour
         _triggerExitEvent ??= GetComponent<OnTriggerExitEvent>();
         _aiCarController ??= transform.parent.GetComponent<RCC_AICarController>();
         _carSpeedSetter ??= transform.parent.GetComponent<RoadCarSpeedSetter>();
+        _carRandomSpeedSetter ??= transform.parent.GetComponent<RoadCarRandomSpeedSetter>();
     }
 
     private void Awake()
@@ -33,14 +34,14 @@ public class RoadCarTailgateSpeedLimiter : MonoBehaviour
     {
         _triggerEnterEvent.onEnter += StartTailgate;
         _triggerExitEvent.onExit += StopTailgate;
-        _carSpeedSetter.onSet += UpdateRawSpeed;
+        _carRandomSpeedSetter.onSet += UpdateRawSpeed;
     }
 
     private void OnDisable()
     {
         _triggerEnterEvent.onEnter -= StartTailgate;
         _triggerExitEvent.onExit -= StopTailgate;
-        _carSpeedSetter.onSet -= UpdateRawSpeed;
+        _carRandomSpeedSetter.onSet -= UpdateRawSpeed;
     }
 
     #endregion

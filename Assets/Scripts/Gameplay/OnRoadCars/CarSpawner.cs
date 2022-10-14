@@ -61,7 +61,7 @@ public class CarSpawner : MonoBehaviour
     private IEnumerator SpawnRoutine()
     {
         yield return new WaitForSeconds(_spawnDelay);
-        
+
         while (true)
         {
             if (CanSpawn())
@@ -82,6 +82,7 @@ public class CarSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        _objectPooler.Spawn(_cars.Random(), _triggerArea.gameObject.transform.position + _offset, Quaternion.identity);
+        _objectPooler.TrySpawnInactive(out var poolObject, _cars.Random(),
+            _triggerArea.gameObject.transform.position + _offset, Quaternion.identity);
     }
 }
