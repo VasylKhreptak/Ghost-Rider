@@ -545,7 +545,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1344
   obstacle: {fileID: 0}
-  useRaycasts: 1
+  useRaycasts: 0
   steerInput: -1
   throttleInput: 0.33082137
   brakeInput: 0.020630866
