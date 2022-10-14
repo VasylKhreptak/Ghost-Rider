@@ -125,6 +125,8 @@ public sealed class ObjectPooler : MonoBehaviour
 
             objectFromPool.SetActive(true);
 
+            _poolDictionary[pool].Enqueue(objectFromPool);
+            
             poolObject = objectFromPool;
 
             return true;
