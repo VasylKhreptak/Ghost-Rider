@@ -260,6 +260,9 @@ GameObject:
   - component: {fileID: 9214815591791682331}
   - component: {fileID: 4420176152795821797}
   - component: {fileID: 251201808483853527}
+  - component: {fileID: 8784117903806593937}
+  - component: {fileID: 7518555057948733521}
+  - component: {fileID: 4476162640402683802}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -886,6 +889,62 @@ MonoBehaviour:
   - {fileID: 1536608713267606020}
   _active: 0
   _monoEvent: {fileID: 4420176152795821797}
+--- !u!114 &8784117903806593937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3b2b8a49f198b48bb9cb9d1bb87e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiCarController: {fileID: 1522356525058983785}
+  _waypoint: {fileID: 8643546914646777425}
+  _minSpeed: 50
+  _maxSpeed: 90
+--- !u!114 &7518555057948733521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 4476162640402683802}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8784117903806593937}
+        m_TargetAssemblyTypeName: RoadCarRandomSpeedSetter, Assembly-CSharp
+        m_MethodName: SetRandomSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4476162640402683802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
