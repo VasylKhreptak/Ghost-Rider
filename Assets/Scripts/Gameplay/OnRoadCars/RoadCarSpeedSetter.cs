@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class RoadCarSpeedSetter : MonoBehaviour
@@ -5,6 +6,8 @@ public class RoadCarSpeedSetter : MonoBehaviour
     [Header("References")]
     [SerializeField] private RCC_AICarController _aiCarController;
     [SerializeField] private RCC_Waypoint _waypoint;
+
+    public Action<float> onSet;
 
     #region MonoBehaviour
 
@@ -20,5 +23,7 @@ public class RoadCarSpeedSetter : MonoBehaviour
     {
         _waypoint.targetSpeed = speed;
         _aiCarController.maximumSpeed = speed;
+        
+        onSet?.Invoke(speed);
     }
 }
