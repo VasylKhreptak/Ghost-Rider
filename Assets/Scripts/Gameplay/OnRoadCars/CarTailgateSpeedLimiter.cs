@@ -1,7 +1,8 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
-public class RoadCarTailgateSpeedLimiter : MonoBehaviour
+public class CarTailgateSpeedLimiter : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private OnTriggerEnterEvent _triggerEnterEvent;
@@ -12,9 +13,13 @@ public class RoadCarTailgateSpeedLimiter : MonoBehaviour
 
     [Header("Preferences")]
     [SerializeField] private LayerMask _mainCarLayerMask;
+    [SerializeField] private float _speedChangeDuration;
+    [SerializeField] private AnimationCurve _speedChangeCurve;
 
     private float _rawSpeed;
 
+    private Tween _speedChangeTween;
+    
     #region MonoBehaviour
 
     private void OnValidate()
@@ -42,6 +47,8 @@ public class RoadCarTailgateSpeedLimiter : MonoBehaviour
         _triggerEnterEvent.onEnter -= StartTailgate;
         _triggerExitEvent.onExit -= StopTailgate;
         _carRandomSpeedSetter.onSet -= UpdateRawSpeed;
+
+        _speedChangeTween.Kill();
     }
 
     #endregion
@@ -66,13 +73,22 @@ public class RoadCarTailgateSpeedLimiter : MonoBehaviour
             speed = frontCarObject.GetComponent<RCC_AICarController>().maximumSpeed;
         }
 
-        _carSpeedSetter.SetSpeed(speed);
+        SetSpeedSmoothly(speed);
     }
 
     private void StopTailgate(Collider collider) => StopTailgate();
 
     private void StopTailgate()
     {
-        _carSpeedSetter.SetSpeed(_rawSpeed);
+        SetSpeedSmoothly(_rawSpeed);
+    }
+
+    private void SetSpeedSmoothly(float speed)
+    {
+        _speedChangeTween.Kill();
+
+        _speedChangeTween = DOTween
+            .To(() => _aiCarController.maximumSpeed, x => _carSpeedSetter.SetSpeed(x), speed, _speedChangeDuration)
+            .SetEase(_speedChangeCurve);
     }
 }
