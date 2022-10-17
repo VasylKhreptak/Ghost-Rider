@@ -7,15 +7,15 @@ public class RigidbodyPauseController : MonoBehaviour
     [Header("References")]
     [SerializeField] private Rigidbody _rigidbody;
 
-    private PauseEventsHolder _pauseEventsHolder;
+    private PauseEvents _pauseEvents;
 
     private Vector3 _previousVelocity;
     private Vector3 _previousAngularVelocity;
 
     [Inject]
-    private void Construct(PauseEventsHolder pauseEventsHolder)
+    private void Construct(PauseEvents _pauseEvents)
     {
-        _pauseEventsHolder = pauseEventsHolder;
+        this._pauseEvents = _pauseEvents;
     }
 
     #region MonoBehaviour
@@ -40,8 +40,8 @@ public class RigidbodyPauseController : MonoBehaviour
 
     private void OnDisable()
     {
-        _pauseEventsHolder.onPause -= OnPause;
-        _pauseEventsHolder.onResume -= OnResume;
+        _pauseEvents.onPause -= OnPause;
+        _pauseEvents.onResume -= OnResume;
     }
 
     #endregion
@@ -50,8 +50,8 @@ public class RigidbodyPauseController : MonoBehaviour
     {
         yield return null;
 
-        _pauseEventsHolder.onPause += OnPause;
-        _pauseEventsHolder.onResume += OnResume;
+        _pauseEvents.onPause += OnPause;
+        _pauseEvents.onResume += OnResume;
     }
 
     private void OnPause()

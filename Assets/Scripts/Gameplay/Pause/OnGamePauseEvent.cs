@@ -2,12 +2,12 @@ using System.Collections;
 using Zenject;
 public class OnGamePauseEvent : MonoEvent
 {
-    private PauseEventsHolder _pauseEventsHolder;
+    private PauseEvents _pauseEvents;
 
     [Inject]
-    private void Construct(PauseEventsHolder pauseEventsHolder)
+    private void Construct(PauseEvents _pauseEvents)
     {
-        _pauseEventsHolder = pauseEventsHolder;
+        this._pauseEvents = _pauseEvents;
     }
     
     #region MonoBehaviour
@@ -19,7 +19,7 @@ public class OnGamePauseEvent : MonoEvent
 
     private void OnDisable()
     {
-        _pauseEventsHolder.onPause -= OnPause;
+        _pauseEvents.onPause -= OnPause;
     }
 
     #endregion
@@ -28,7 +28,7 @@ public class OnGamePauseEvent : MonoEvent
     {
         yield return null;
         
-        _pauseEventsHolder.onPause += OnPause;
+        _pauseEvents.onPause += OnPause;
     }
     
     private void OnPause()

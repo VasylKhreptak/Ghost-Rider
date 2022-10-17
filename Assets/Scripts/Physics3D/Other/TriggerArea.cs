@@ -1,34 +1,39 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TriggerArea : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private OnTriggerEnterEvent _triggerEnterEvent;
-    [SerializeField] private OnTriggerExitEvent _triggerExitEvent;
+    [FormerlySerializedAs("_triggerEnterEvent")] public OnTriggerEnterEvent triggerEnterEvent;
+    [FormerlySerializedAs("_triggerExitEvent")] public OnTriggerExitEvent triggerExitEvent;
 
     public List<Collider> affectedObjects = new List<Collider>();
 
+    public Action onFill;
+    public Action onEmpty;
+
     public bool IsEmpty => affectedObjects.Count == 0;
-    
+
     #region MonoBehaviour
 
     private void OnValidate()
     {
-        _triggerEnterEvent ??= GetComponent<OnTriggerEnterEvent>();
-        _triggerExitEvent ??= GetComponent<OnTriggerExitEvent>();
+        triggerEnterEvent ??= GetComponent<OnTriggerEnterEvent>();
+        triggerExitEvent ??= GetComponent<OnTriggerExitEvent>();
     }
 
     private void OnEnable()
     {
-        _triggerEnterEvent.onEnter += OnEnter;
-        _triggerExitEvent.onExit += OnExit;
+        triggerEnterEvent.onEnter += OnEnter;
+        triggerExitEvent.onExit += OnExit;
     }
 
     private void OnDisable()
     {
-        _triggerEnterEvent.onEnter -= OnEnter;
-        _triggerExitEvent.onExit -= OnExit;
+        triggerEnterEvent.onEnter -= OnEnter;
+        triggerExitEvent.onExit -= OnExit;
     }
 
     #endregion
@@ -36,10 +41,20 @@ public class TriggerArea : MonoBehaviour
     private void OnEnter(Collider collider)
     {
         affectedObjects.Add(collider);
+
+        if (affectedObjects.Count == 1)
+        {
+            onFill?.Invoke();
+        }
     }
 
     private void OnExit(Collider collider)
     {
         affectedObjects.Remove(collider);
+        
+        if(affectedObjects.Count == 0)
+        {
+            onEmpty?.Invoke();
+        }
     }
 }

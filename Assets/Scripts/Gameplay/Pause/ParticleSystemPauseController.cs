@@ -7,12 +7,12 @@ public class ParticleSystemPauseController : MonoBehaviour
     [Header("References")]
     [SerializeField] private ParticleSystem _particleSystem;
 
-    private PauseEventsHolder _pauseEventsHolder;
+    private PauseEvents _pauseEvents;
     
     [Inject]
-    private void Construct(PauseEventsHolder pauseEventsHolder)
+    private void Construct(PauseEvents _pauseEvents)
     {
-        _pauseEventsHolder = pauseEventsHolder;
+        this._pauseEvents = _pauseEvents;
     }
 
     #region MonoBehaviour
@@ -37,8 +37,8 @@ public class ParticleSystemPauseController : MonoBehaviour
 
     private void OnDisable()
     {
-        _pauseEventsHolder.onPause -= OnPause;
-        _pauseEventsHolder.onResume -= OnResume;
+        _pauseEvents.onPause -= OnPause;
+        _pauseEvents.onResume -= OnResume;
     }
 
     #endregion
@@ -47,8 +47,8 @@ public class ParticleSystemPauseController : MonoBehaviour
     {
         yield return null;
 
-        _pauseEventsHolder.onPause += OnPause;
-        _pauseEventsHolder.onResume += OnResume;
+        _pauseEvents.onPause += OnPause;
+        _pauseEvents.onResume += OnResume;
     }
     
     private void OnPause()

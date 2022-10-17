@@ -22,13 +22,13 @@ public class CarSpawner : MonoBehaviour
 
     private ObjectPooler _objectPooler;
 
-    private PauseEventsHolder _pauseEventsHolder;
+    private PauseEvents _pauseEvents;
 
     [Inject]
-    private void Construct(ObjectPooler objectPooler, PauseEventsHolder pauseEventsHolder)
+    private void Construct(ObjectPooler objectPooler, PauseEvents _pauseEvents)
     {
         _objectPooler = objectPooler;
-        _pauseEventsHolder = pauseEventsHolder;
+        this._pauseEvents = _pauseEvents;
     }
 
     #region MonoBehaviour
@@ -76,7 +76,7 @@ public class CarSpawner : MonoBehaviour
     private bool CanSpawn()
     {
         return _triggerArea.IsEmpty
-            && _pauseEventsHolder.isPaused == false
+            && _pauseEvents.isPaused == false
             && Extensions.Mathf.Probability(_spawnProbability);
     }
 

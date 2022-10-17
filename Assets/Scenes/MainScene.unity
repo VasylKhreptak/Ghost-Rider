@@ -1950,8 +1950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2987ea3d6055c41bf67394fbe27b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerEnterEvent: {fileID: 98288107}
-  _triggerExitEvent: {fileID: 98288106}
+  triggerEnterEvent: {fileID: 98288107}
+  triggerExitEvent: {fileID: 98288106}
   affectedObjects: []
 --- !u!114 &98288106
 MonoBehaviour:
@@ -14316,8 +14316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2987ea3d6055c41bf67394fbe27b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerEnterEvent: {fileID: 790314437}
-  _triggerExitEvent: {fileID: 790314436}
+  triggerEnterEvent: {fileID: 790314437}
+  triggerExitEvent: {fileID: 790314436}
   affectedObjects: []
 --- !u!114 &790314436
 MonoBehaviour:
@@ -23797,8 +23797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2987ea3d6055c41bf67394fbe27b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerEnterEvent: {fileID: 1196886412}
-  _triggerExitEvent: {fileID: 1196886411}
+  triggerEnterEvent: {fileID: 1196886412}
+  triggerExitEvent: {fileID: 1196886411}
   affectedObjects: []
 --- !u!114 &1196886411
 MonoBehaviour:
@@ -27037,7 +27037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c09b3b7ab2415543bfefd1190d72cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseEventsHolder: {fileID: 860803180}
+  _pauseEvents: {fileID: 860803180}
 --- !u!1 &1355604074
 GameObject:
   m_ObjectHideFlags: 0
@@ -45328,8 +45328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2987ea3d6055c41bf67394fbe27b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerEnterEvent: {fileID: 1760711420}
-  _triggerExitEvent: {fileID: 1760711419}
+  triggerEnterEvent: {fileID: 1760711420}
+  triggerExitEvent: {fileID: 1760711419}
   affectedObjects: []
 --- !u!114 &1760711422
 MonoBehaviour:

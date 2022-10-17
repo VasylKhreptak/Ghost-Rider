@@ -1,13 +1,15 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class PauseEventsHolderInstaller : MonoInstaller
 {
+    [FormerlySerializedAs("_pauseEventsHolder")]
     [Header("References")]
-    [SerializeField] private PauseEventsHolder _pauseEventsHolder;
+    [SerializeField] private PauseEvents _pauseEvents;
     
     public override void InstallBindings()
     {
-        Container.Bind<PauseEventsHolder>().FromInstance(_pauseEventsHolder).AsSingle();
+        Container.Bind<PauseEvents>().FromInstance(_pauseEvents).AsSingle();
     }
 }

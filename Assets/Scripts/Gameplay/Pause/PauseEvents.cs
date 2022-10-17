@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PauseEventsHolder : MonoBehaviour
+public class PauseEvents : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private MonoEvent _toggleEvent;
@@ -10,10 +10,6 @@ public class PauseEventsHolder : MonoBehaviour
 
     public Action onPause;
     public Action onResume;
-    
-    #region Singleton
-    
-    #endregion
 
     #region MonoBehaviour
 
