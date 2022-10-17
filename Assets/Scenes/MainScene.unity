@@ -1860,8 +1860,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 98288100}
-  _linkTo: {fileID: 2057072784}
-  _linkAxis: {x: 0, y: 0, z: 1}
+  linkTo: {fileID: 2057072784}
+  linkAxis: {x: 0, y: 0, z: 1}
   _offset: {x: 7.5, y: 0, z: 300}
 --- !u!114 &98288102
 MonoBehaviour:
@@ -4636,7 +4636,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -4657,7 +4658,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -14226,8 +14228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 790314430}
-  _linkTo: {fileID: 2057072784}
-  _linkAxis: {x: 0, y: 0, z: 1}
+  linkTo: {fileID: 2057072784}
+  linkAxis: {x: 0, y: 0, z: 1}
   _offset: {x: 2.5, y: 0, z: 300}
 --- !u!114 &790314432
 MonoBehaviour:
@@ -15698,7 +15700,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 66d653ada053d804c99b77bd687a6c57, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -18059,7 +18062,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 55be01ba577617048946b2f6c97c6a06, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -20415,7 +20419,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -20436,7 +20441,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -23707,8 +23713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 1196886405}
-  _linkTo: {fileID: 2057072784}
-  _linkAxis: {x: 0, y: 0, z: 1}
+  linkTo: {fileID: 2057072784}
+  linkAxis: {x: 0, y: 0, z: 1}
   _offset: {x: -2.5, y: 0, z: 300}
 --- !u!114 &1196886407
 MonoBehaviour:
@@ -25558,7 +25564,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -25579,7 +25586,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -27251,6 +27259,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383303226}
   m_CullTransparentMesh: 1
+--- !u!1 &1396013409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396013410}
+  - component: {fileID: 1396013411}
+  m_Layer: 0
+  m_Name: ObjectPoolerCleaner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1396013410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396013409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1648785219}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1396013411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396013409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce49321caad00854881bc9fb68c0bfb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pools: 0100000002000000000000000a000000
+  _event: {fileID: 1483578126}
 --- !u!1 &1396729683
 GameObject:
   m_ObjectHideFlags: 0
@@ -27542,7 +27596,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -27563,7 +27618,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -30445,7 +30501,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: 456ee15a4db76be42988f800f41b8dfa, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -30466,7 +30523,8 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: b292f3b65c0daf049aa7c379417f9c08, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -39369,7 +39427,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f673331bcaca5d54a91a1af5e00a3ece, type: 3}
   - {fileID: 8300000, guid: d64169031cc4ee041acef9acbc60566a, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -39449,7 +39508,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 21883a2f1113b9e4e8ee3c82ab769700, type: 3}
   - {fileID: 8300000, guid: a1fbd9ba2cb5f84458b20653468cf59e, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -39532,7 +39592,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 21883a2f1113b9e4e8ee3c82ab769700, type: 3}
   - {fileID: 8300000, guid: a1fbd9ba2cb5f84458b20653468cf59e, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
+  _playOnTransformPosition: 0
+  _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
@@ -43007,6 +43068,7 @@ Transform:
   - {fileID: 1946053952}
   - {fileID: 306840164}
   - {fileID: 109191594}
+  - {fileID: 1396013410}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45419,8 +45481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 1760711417}
-  _linkTo: {fileID: 2057072784}
-  _linkAxis: {x: 0, y: 0, z: 1}
+  linkTo: {fileID: 2057072784}
+  linkAxis: {x: 0, y: 0, z: 1}
   _offset: {x: -7.5, y: 0, z: 300}
 --- !u!1 &1767510251
 GameObject:

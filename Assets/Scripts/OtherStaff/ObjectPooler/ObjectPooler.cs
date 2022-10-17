@@ -154,4 +154,19 @@ public sealed class ObjectPooler : MonoBehaviour
             }
         }
     }
+
+    public void DisablePool(Pools pool)
+    {
+        GameObject poolItem = _poolDictionary[pool].Dequeue();
+        _poolDictionary[pool].Enqueue(poolItem);
+
+        Transform poolTransform = poolItem.transform.parent;
+
+        Transform[] poolItems = poolTransform.GetChildren();
+
+        foreach (Transform item in poolItems)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
 }
