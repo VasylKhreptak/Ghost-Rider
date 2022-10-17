@@ -27303,8 +27303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce49321caad00854881bc9fb68c0bfb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pools: 0100000002000000000000000a000000
-  _event: {fileID: 1483578126}
+  _pools: 010000000200000000000000030000000a000000
+  _event: {fileID: 1050963879}
 --- !u!1 &1396729683
 GameObject:
   m_ObjectHideFlags: 0
@@ -39427,7 +39427,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f673331bcaca5d54a91a1af5e00a3ece, type: 3}
   - {fileID: 8300000, guid: d64169031cc4ee041acef9acbc60566a, type: 3}
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 0
+  _playOnTransformPosition: 1
   _linkTo: {fileID: 0}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
