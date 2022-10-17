@@ -222,6 +222,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 148126d56e8492143809445ef8e483de, type: 3}
   _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
+  _linkTo: {fileID: 1536608713267606521}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 1
@@ -754,6 +755,7 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _volume: 1
   _spatialBlend: 1
+  _linkTo: {fileID: 1536608713267606521}
   _priority: 128
   _volumeAmplifier: 0.001
   _minVolume: 0.4
@@ -20782,6 +20784,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 148126d56e8492143809445ef8e483de, type: 3}
   _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
+  _linkTo: {fileID: 1536608713267606521}
   _position: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 1
@@ -20930,6 +20933,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f6b53d4a4cabb2743a7dc860ed4290d7, type: 3}
   _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
+  _linkTo: {fileID: 1536608713267606521}
   _position: {x: 0, y: 0, z: 0}
   _volume: 0.7
   _spatialBlend: 1
@@ -21779,8 +21783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 8643546915910338424}
-  _linkTo: {fileID: 1536608713267606521}
-  _linkAxis: {x: 0, y: 0, z: 1}
+  linkTo: {fileID: 1536608713267606521}
+  linkAxis: {x: 0, y: 0, z: 1}
   _offset: {x: 2.5, y: 0, z: 20}
 --- !u!1 &8643546916309445027
 GameObject:

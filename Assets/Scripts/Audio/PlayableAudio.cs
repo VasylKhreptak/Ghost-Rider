@@ -11,6 +11,7 @@ public class PlayableAudio : AudioClipHolder
     [Header("Preferences")]
     [SerializeField] private AudioMixerGroup _output;
     [SerializeField] private bool _playOnTransformPosition;
+    [SerializeField] private Transform _linkTo;
     [SerializeField] private Vector3 _position;
     [SerializeField, Range(0f, 1f)] private float _volume = 1f;
     [SerializeField, Range(0f, 1f)] private float _spatialBlend;
@@ -34,11 +35,11 @@ public class PlayableAudio : AudioClipHolder
     }
 
     #endregion
-    
+
     public override void Play()
     {
         _id = _audioPooler.PlaySound(_output, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _position,
-            _volume, _spatialBlend, _priority);
+            _volume, _spatialBlend, _linkTo, _priority);
     }
     public override void Stop()
     {

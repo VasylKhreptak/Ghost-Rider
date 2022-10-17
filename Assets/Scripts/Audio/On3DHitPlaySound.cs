@@ -9,11 +9,12 @@ public class On3DHitPlaySound : MonoBehaviour
 
     [Header("Clips")]
     [SerializeField] protected AudioClip[] _audioClips;
-    
+
     [Header("Preferences")]
     [SerializeField] protected AudioMixerGroup _output;
     [SerializeField, Range(0f, 1f)] protected float _volume = 1f;
     [SerializeField, Range(0f, 1f)] protected float _spatialBlend;
+    [SerializeField] protected Transform _linkTo;
     [SerializeField, Range(0, 128)] protected int _priority = 128;
 
     protected AudioPooler _audioPooler;
@@ -23,7 +24,7 @@ public class On3DHitPlaySound : MonoBehaviour
     {
         _audioPooler = audioPooler;
     }
-    
+
     #region MonoBehaviour
 
     private void OnValidate()
@@ -47,6 +48,6 @@ public class On3DHitPlaySound : MonoBehaviour
     {
         Vector3 position = collision.GetContact(0).point;
 
-        _audioPooler.PlaySound(_output, _audioClips.Random(), position, _volume, _spatialBlend, _priority);
+        _audioPooler.PlaySound(_output, _audioClips.Random(), position, _volume, _spatialBlend, _linkTo, _priority);
     }
 }

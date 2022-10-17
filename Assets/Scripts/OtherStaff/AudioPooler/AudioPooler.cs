@@ -94,7 +94,8 @@ public class AudioPooler : MonoBehaviour
         AudioPoolItem _audioPoolItem = instantiatedPoolItem.GetComponent<AudioPoolItem>();
 
         _audioPoolItem.audioSource = instantiatedPoolItem.GetComponent<AudioSource>();
-
+        _audioPoolItem.positionLinker = instantiatedPoolItem.GetComponent<TransformPositionLinker>();
+        
         _audioPoolItem.audioSource.rolloffMode = _rolloffMode;
         _audioPoolItem.audioSource.minDistance = _minSoundDistance;
         _audioPoolItem.audioSource.maxDistance = _maxSoundDistance;
@@ -105,13 +106,14 @@ public class AudioPooler : MonoBehaviour
         _pool.Add(_audioPoolItem);
     }
 
-    public int PlaySound(AudioMixerGroup output, AudioClip clip, Vector3 position, float volume, float spatialBlend, int priority = 128)
+    public int PlaySound(AudioMixerGroup output, AudioClip clip, Vector3 position, float volume,
+        float spatialBlend, Transform linkTo = null, int priority = 128)
     {
         if (CanPlay(clip, position, volume, spatialBlend) == false) return 0;
 
         AudioPoolItem appropriatePoolItem = GetAppropriatePoolItem();
 
-        return ConfigurePoolObject(appropriatePoolItem, output, clip, position, volume, spatialBlend, priority);
+        return ConfigurePoolObject(appropriatePoolItem, output, clip, position, volume, spatialBlend, linkTo, priority);
     }
 
     private bool CanPlay(AudioClip clip, Vector3 playPosition, float volume, float spatialBlend)
@@ -170,7 +172,7 @@ public class AudioPooler : MonoBehaviour
     }
 
     private int ConfigurePoolObject(AudioPoolItem poolItem, AudioMixerGroup output, AudioClip clip, Vector3 position, float volume,
-        float spatialBlend, float priority)
+        float spatialBlend, Transform linkTo, float priority)
     {
         _idGiver++;
 
@@ -183,6 +185,12 @@ public class AudioPooler : MonoBehaviour
         poolItem.ID = _idGiver;
         poolItem.gameObject.SetActive(true);
         poolItem.audioSource.Play();
+
+        if (linkTo != null)
+        {
+            poolItem.positionLinker.linkTo = linkTo;
+            poolItem.positionLinker.enabled = true;
+        }
 
         TryStopSoundDelayed(poolItem);
 
@@ -211,6 +219,8 @@ public class AudioPooler : MonoBehaviour
     {
         activePoolItem.audioSource.Stop();
         activePoolItem.audioSource.clip = null;
+        activePoolItem.positionLinker.linkTo = null;
+        activePoolItem.positionLinker.enabled = false;
         activePoolItem.gameObject.SetActive(false);
         activePoolItem.waitTween.Kill();
         activePoolItem.ID = -1;

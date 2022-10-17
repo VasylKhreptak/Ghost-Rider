@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TransformPositionLinker : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform _transform;
-    [SerializeField] protected Transform _linkTo;
-
-    [Header("Preferences")]
-    [SerializeField] private Vector3 _linkAxis;
+    [FormerlySerializedAs("_linkTo")] public Transform linkTo;
+    
+    [Header("Preferences")] 
+    [FormerlySerializedAs("_linkAxis")] public Vector3 linkAxis;
     [SerializeField] protected Vector3 _offset;
 
     #region MonoBehaviour
@@ -19,7 +20,9 @@ public class TransformPositionLinker : MonoBehaviour
 
     private void Update()
     {
-        _transform.position = Vector3.Scale(_linkTo.position, _linkAxis) + _offset;
+        if (linkTo == null) return;
+        
+        _transform.position = Vector3.Scale(linkTo.position, linkAxis) + _offset;
     }
 
     #endregion

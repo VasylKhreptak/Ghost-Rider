@@ -13,6 +13,6 @@ public sealed class On3DHitPlayAmplifiedSound : On3DHitPlaySound
 
         volume = Mathf.Clamp(volume, _minVolume, _volume);
         
-        _audioPooler.PlaySound(_output, _audioClips.Random(), position, volume, _spatialBlend, _priority);
+        _audioPooler.PlaySound(_output, _audioClips.Random(), position, volume, _spatialBlend, _linkTo, _priority);
     }
 }

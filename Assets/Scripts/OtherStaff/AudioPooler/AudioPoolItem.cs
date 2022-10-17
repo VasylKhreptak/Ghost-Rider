@@ -6,6 +6,7 @@ using UnityEngine;
 public class AudioPoolItem : MonoBehaviour
 {
     public AudioSource audioSource;
+    public TransformPositionLinker positionLinker;
     public Tween waitTween;
     public float priority;
     public int ID;

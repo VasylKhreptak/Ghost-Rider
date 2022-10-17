@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 918043492167606895}
   - component: {fileID: 918043492167606894}
   - component: {fileID: -2028930211568890916}
+  - component: {fileID: 3722370096034906155}
   m_Layer: 0
   m_Name: AudioPoolItem
   m_TagString: Untagged
@@ -158,3 +159,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioPoolItem: {fileID: 918043492167606894}
+--- !u!114 &3722370096034906155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918043492167606893}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48bb3025f672b93479fcc757adee16e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 918043492167606800}
+  linkTo: {fileID: 0}
+  linkAxis: {x: 0, y: 1, z: 1}
+  _offset: {x: 0, y: 0, z: 0}
