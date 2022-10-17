@@ -30,7 +30,7 @@ public class CarHighPassEvent : MonoEvent
 
 	private void TryInvoke(Collider collider)
 	{
-		if (collider.transform.parent.parent.TryGetComponent(out RCC_CarControllerV3 carController) 
+		if (collider.transform.parent.parent.TryGetComponent(out RCC_CarControllerV3 carController)
 		    && (carController.speed - _carController.speed) > _speedDifference)
 		{
 			onMonoCall?.Invoke();

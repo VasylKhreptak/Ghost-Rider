@@ -15,6 +15,7 @@ public class OnToggleStateMonoEvent : MonoEvent
     {
         _toggle ??= GetComponent<Toggle>();
     }
+    
     private void OnEnable()
     {
         _toggle.onValueChanged.AddListener(OnValueChanged);

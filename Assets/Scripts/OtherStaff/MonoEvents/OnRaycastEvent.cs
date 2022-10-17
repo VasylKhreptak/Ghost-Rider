@@ -14,7 +14,7 @@ public class OnRaycastEvent : MonoBehaviour
 
     private Camera _camera;
 
-    #region MyRegion
+    #region MonoBehaviour
 
     private void Awake()
     {

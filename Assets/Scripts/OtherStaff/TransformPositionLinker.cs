@@ -3,8 +3,8 @@ using UnityEngine;
 public class TransformPositionLinker : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] protected Transform _transform;
-    [SerializeField] private Transform _linkTo;
+    [SerializeField] private Transform _transform;
+    [SerializeField] protected Transform _linkTo;
 
     [Header("Preferences")]
     [SerializeField] private Vector3 _linkAxis;

@@ -209,7 +209,7 @@ public class RCC_AICarController : MonoBehaviour
                 float distanceToNextWaypoint = GetPathLength(navigator.path);
 
                 // Setting destination of the Navigator. 
-                if (!navigator.hasPath)
+                if (!navigator.hasPath && gameObject.activeSelf && navigator.isOnNavMesh)
                     navigator.SetDestination(waypointsContainer.waypoints[currentWaypointIndex].transform.position);
 
                 if (distanceToNextWaypoint != 0 && distanceToNextWaypoint < nextWaypointPassDistance)
@@ -231,7 +231,7 @@ public class RCC_AICarController : MonoBehaviour
                     }
 
                     // Setting destination of the Navigator. 
-                    if (navigator.isOnNavMesh)
+                    if (navigator.isOnNavMesh && gameObject.activeSelf && navigator.isOnNavMesh)
                         navigator.SetDestination(waypointsContainer.waypoints[currentWaypointIndex].transform.position);
 
                 }
@@ -270,7 +270,7 @@ public class RCC_AICarController : MonoBehaviour
                 }
 
                 // Setting destination of the Navigator. 
-                if (navigator.isOnNavMesh)
+                if (navigator.isOnNavMesh && gameObject.activeSelf && navigator.isOnNavMesh)
                     navigator.SetDestination(targetChase.position);
 
                 if (!reversingNow)
@@ -307,7 +307,7 @@ public class RCC_AICarController : MonoBehaviour
                 }
 
                 // Setting destination of the Navigator. 
-                if (navigator.isOnNavMesh)
+                if (navigator.isOnNavMesh && gameObject.activeSelf && navigator.isOnNavMesh)
                     navigator.SetDestination(targetChase.position);
 
                 // Checks for the distance to target. 
