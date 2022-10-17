@@ -116,6 +116,144 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1326028876029847011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4746664897744058286}
+  - component: {fileID: 8328627173749411237}
+  - component: {fileID: 2362498213601730795}
+  - component: {fileID: 7972712019005913539}
+  - component: {fileID: 7479021497274554567}
+  - component: {fileID: 6087070622289145495}
+  - component: {fileID: 4983888058832478922}
+  m_Layer: 2
+  m_Name: RightHighCarPassSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4746664897744058286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326028876029847011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.58, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1536608713267606521}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8328627173749411237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326028876029847011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1201761, y: 1, z: 3.6332912}
+  m_Center: {x: -1.7359387, y: 0, z: -0.46945858}
+--- !u!114 &2362498213601730795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326028876029847011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80303057538cee4986bd7dcd592fe0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1088
+--- !u!114 &7972712019005913539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326028876029847011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5861bd4fbfbd4f64dbd8d8ea088baa1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carPassEvent: {fileID: 2362498213601730795}
+  _carController: {fileID: 1536608713267606523}
+  _speedDifference: 30
+--- !u!114 &7479021497274554567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326028876029847011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0241c4e45b8bb224a97d2236b537818a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 4746664897744058286}
+  _audioClips:
+  - {fileID: 8300000, guid: 1f735af8bb1da1d4298e5a505072024b, type: 3}
+  - {fileID: 8300000, guid: 7026b3925fa07fd4aa8c3a723d030c75, type: 3}
+  - {fileID: 8300000, guid: 5ee9479444caa5d49bdceb7b5ad83ce5, type: 3}
+  - {fileID: 8300000, guid: 55313ac52f69d244abe6f93497252e39, type: 3}
+  - {fileID: 8300000, guid: e1f51041e38bb73448073f0a83ccc1cb, type: 3}
+  - {fileID: 8300000, guid: f9a34a55ed614e14caf12274711a26f0, type: 3}
+  - {fileID: 8300000, guid: a047dd2a01fbf324781c8a10b75aa45a, type: 3}
+  - {fileID: 8300000, guid: 11e58d1f62e56864da4e55f9bff27343, type: 3}
+  - {fileID: 8300000, guid: 4b6ab96506630254499eb7168dc9b1f6, type: 3}
+  - {fileID: 8300000, guid: 148126d56e8492143809445ef8e483de, type: 3}
+  _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
+  _playOnTransformPosition: 1
+  _position: {x: 0, y: 0, z: 0}
+  _volume: 1
+  _spatialBlend: 1
+  _priority: 128
+--- !u!114 &6087070622289145495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326028876029847011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8c7526ba7184843984bc24747c30cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _probability: 0.7
+  _monoEvent: {fileID: 7972712019005913539}
+--- !u!114 &4983888058832478922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326028876029847011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc3acc654291d34c8158d68ec1ffbc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 6087070622289145495}
+  _clipHolder: {fileID: 7479021497274554567}
 --- !u!1 &1536608712740965573
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +403,7 @@ GameObject:
   - component: {fileID: 4476162640402683802}
   - component: {fileID: 5383068194177121942}
   - component: {fileID: 4086150529800108505}
+  - component: {fileID: 1853825064562955109}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -293,7 +432,8 @@ Transform:
   - {fileID: 8643546915910338424}
   - {fileID: 6052486129814320691}
   - {fileID: 1365664254322653078}
-  - {fileID: 61895561578267862}
+  - {fileID: 4746664897744058286}
+  - {fileID: 3631051589505239280}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -979,6 +1119,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiCarController: {fileID: 1522356525058983785}
   _waypoint: {fileID: 8643546914646777425}
+--- !u!114 &1853825064562955109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14066cfaeff2b174cb85be0526d1f58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
@@ -20533,6 +20688,7 @@ GameObject:
   - component: {fileID: 2284612972414136633}
   - component: {fileID: 8731142835425376657}
   - component: {fileID: 313945613171721941}
+  - component: {fileID: 226311980896970978}
   - component: {fileID: 3681112519235993690}
   m_Layer: 2
   m_Name: LeftHighCarPassSound
@@ -20629,6 +20785,20 @@ MonoBehaviour:
   _volume: 1
   _spatialBlend: 1
   _priority: 128
+--- !u!114 &226311980896970978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3330323387906469698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8c7526ba7184843984bc24747c30cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _probability: 0.7
+  _monoEvent: {fileID: 8731142835425376657}
 --- !u!114 &3681112519235993690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20641,8 +20811,128 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc3acc654291d34c8158d68ec1ffbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monoEvent: {fileID: 8731142835425376657}
+  _monoEvent: {fileID: 226311980896970978}
   _clipHolder: {fileID: 313945613171721941}
+--- !u!1 &4131863222917231314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3631051589505239280}
+  - component: {fileID: 6173715681748392075}
+  - component: {fileID: 4504076392171371613}
+  - component: {fileID: 542334499777845006}
+  - component: {fileID: 6054121236616809827}
+  - component: {fileID: 7927810260663206760}
+  m_Layer: 6
+  m_Name: CarCrashAudios
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3631051589505239280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131863222917231314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1536608713267606521}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6173715681748392075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131863222917231314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276037866f644954fa6da98fc70dcd92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionEnterEvent: {fileID: 1853825064562955109}
+--- !u!114 &4504076392171371613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131863222917231314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f9295d99ec3d243bc100f1e1e9c269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coolDown: 1
+  _event: {fileID: 6173715681748392075}
+--- !u!114 &542334499777845006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131863222917231314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8c7526ba7184843984bc24747c30cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _probability: 0.6
+  _monoEvent: {fileID: 4504076392171371613}
+--- !u!114 &6054121236616809827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131863222917231314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc3acc654291d34c8158d68ec1ffbc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 542334499777845006}
+  _clipHolder: {fileID: 7927810260663206760}
+--- !u!114 &7927810260663206760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131863222917231314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0241c4e45b8bb224a97d2236b537818a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 3631051589505239280}
+  _audioClips:
+  - {fileID: 8300000, guid: cac9143e3d3a2724fb64a4ee3880ed47, type: 3}
+  - {fileID: 8300000, guid: 9bdcec36fbbc2064089bb3a6dee7fa4b, type: 3}
+  - {fileID: 8300000, guid: ed0871940f83e1847a0d1a840aad2e04, type: 3}
+  - {fileID: 8300000, guid: eb9def6e2dd842741b787b2c2ff7c6c4, type: 3}
+  - {fileID: 8300000, guid: c7368796d73dcd04c99de61ddc89783e, type: 3}
+  - {fileID: 8300000, guid: db6f96ee365e4a545b9e9cf7a562df87, type: 3}
+  - {fileID: 8300000, guid: 9e53d747dc4cc2448addae23c9cdfa5d, type: 3}
+  - {fileID: 8300000, guid: 83722d766c8e28243a4a32cf49d64547, type: 3}
+  - {fileID: 8300000, guid: f6b53d4a4cabb2743a7dc860ed4290d7, type: 3}
+  _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
+  _playOnTransformPosition: 1
+  _position: {x: 0, y: 0, z: 0}
+  _volume: 0.7
+  _spatialBlend: 1
+  _priority: 128
 --- !u!1 &5832715987812147585
 GameObject:
   m_ObjectHideFlags: 0
@@ -21578,126 +21868,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: ccb1d75e65d677f47b83f4cf2bc0c8ef, type: 3}
---- !u!1 &8941346078518480535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 61895561578267862}
-  - component: {fileID: 4433390377925388702}
-  - component: {fileID: 8022161691941986172}
-  - component: {fileID: 3416781675609737610}
-  - component: {fileID: 3204771022421510699}
-  - component: {fileID: 5547048035260228300}
-  m_Layer: 2
-  m_Name: RightHighCarPassSound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &61895561578267862
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8941346078518480535}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.15, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1536608713267606521}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4433390377925388702
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8941346078518480535}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2119722, y: 1, z: 3.5852203}
-  m_Center: {x: -1.5053205, y: 0, z: -0.49349403}
---- !u!114 &8022161691941986172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8941346078518480535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f80303057538cee4986bd7dcd592fe0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 1088
---- !u!114 &3416781675609737610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8941346078518480535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5861bd4fbfbd4f64dbd8d8ea088baa1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _carPassEvent: {fileID: 8022161691941986172}
-  _carController: {fileID: 1536608713267606523}
-  _speedDifference: 30
---- !u!114 &3204771022421510699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8941346078518480535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0241c4e45b8bb224a97d2236b537818a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transform: {fileID: 1365664254322653078}
-  _audioClips:
-  - {fileID: 8300000, guid: 1f735af8bb1da1d4298e5a505072024b, type: 3}
-  - {fileID: 8300000, guid: 7026b3925fa07fd4aa8c3a723d030c75, type: 3}
-  - {fileID: 8300000, guid: 5ee9479444caa5d49bdceb7b5ad83ce5, type: 3}
-  - {fileID: 8300000, guid: 55313ac52f69d244abe6f93497252e39, type: 3}
-  - {fileID: 8300000, guid: e1f51041e38bb73448073f0a83ccc1cb, type: 3}
-  - {fileID: 8300000, guid: f9a34a55ed614e14caf12274711a26f0, type: 3}
-  - {fileID: 8300000, guid: a047dd2a01fbf324781c8a10b75aa45a, type: 3}
-  - {fileID: 8300000, guid: 11e58d1f62e56864da4e55f9bff27343, type: 3}
-  - {fileID: 8300000, guid: 4b6ab96506630254499eb7168dc9b1f6, type: 3}
-  - {fileID: 8300000, guid: 148126d56e8492143809445ef8e483de, type: 3}
-  _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _playOnTransformPosition: 1
-  _position: {x: 0, y: 0, z: 0}
-  _volume: 1
-  _spatialBlend: 1
-  _priority: 128
---- !u!114 &5547048035260228300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8941346078518480535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fc3acc654291d34c8158d68ec1ffbc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _monoEvent: {fileID: 3416781675609737610}
-  _clipHolder: {fileID: 3204771022421510699}
