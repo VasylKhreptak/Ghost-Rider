@@ -1,48 +1,52 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public class PlatformEffector3D : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private OnTriggerEnterMonoEvent _triggetEnterEvent;
-    [SerializeField] private OnTriggerExitMonoEvent _triggerExitMonoEvent;
-    [SerializeField] private Collider _mainCollider;
-
-    [Header("Preferences")]
-    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private Transform _transform;
+    [SerializeField] private Collider _collider;
+    [SerializeField] private OnTriggerEnterEvent _triggerEnterEvent;
+    [SerializeField] private OnTriggerExitEvent _triggerExitEvent;
 
     #region MonoBehaviour
 
     private void OnValidate()
     {
-        _mainCollider ??= GetComponent<Collider>();
+        _transform ??= GetComponent<Transform>();
+        _collider ??= GetComponent<Collider>();
+        _triggerEnterEvent ??= GetComponent<OnTriggerEnterEvent>();
+        _triggerExitEvent ??= GetComponent<OnTriggerExitEvent>();
     }
 
     private void OnEnable()
     {
-        _triggetEnterEvent.onMonoCall += DisableCollider;
-        _triggerExitMonoEvent.onMonoCall += EnableCollider;
+        _triggerEnterEvent.onEnter += OnEnter;
+        _triggerExitEvent.onExit += OnExit;
     }
 
     private void OnDisable()
     {
-        _triggetEnterEvent.onMonoCall -= DisableCollider;
-        _triggerExitMonoEvent.onMonoCall -= EnableCollider;
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (_layerMask.ContainsLayer(other.gameObject.layer))
-        {
-            EnableCollider();
-        }
+        _triggerEnterEvent.onEnter -= OnEnter;
+        _triggerExitEvent.onExit -= OnExit;
     }
 
     #endregion
-    
-    private void EnableCollider() => SetColliderState(true);
 
-    private void DisableCollider() => SetColliderState(false);
-    
-    private void SetColliderState(bool state) => _mainCollider.isTrigger = !state;
+    private void OnEnter(Collider collider)
+    {
+        if (_transform.position.z - collider.transform.position.z < 0)
+        {
+            SetColliderState(true);
+        }
+    }
+
+    private void OnExit(Collider collider)
+    {
+        SetColliderState(false);
+    }
+
+    private void SetColliderState(bool state)
+    {
+        _collider.isTrigger = !state;
+    }
 }
