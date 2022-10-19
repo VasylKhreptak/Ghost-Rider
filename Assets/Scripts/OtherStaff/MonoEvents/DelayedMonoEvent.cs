@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -33,6 +32,16 @@ public class DelayedMonoEvent : MonoEvent
 
     #endregion
 
+    public void SetEvent(MonoEvent monoEvent)
+    {
+        _monoEvent = monoEvent;
+    }
+
+    public void SetDelay(float delay)
+    {
+        _delay = delay;
+    }
+    
     private void DelayMonoEvent()
     {
         _waitTween.Kill();

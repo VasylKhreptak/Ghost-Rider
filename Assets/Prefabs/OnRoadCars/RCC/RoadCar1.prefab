@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 1536608713267606521}
-  _fallTriggerY: 0
+  _fallTriggerY: -1
   _checkDelay: 1
 --- !u!114 &251201808483853527
 MonoBehaviour:

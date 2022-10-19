@@ -1862,7 +1862,7 @@ MonoBehaviour:
   _transform: {fileID: 98288100}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  offset: {x: 7.5, y: 0, z: 300}
+  offset: {x: 7.5, y: 0, z: 500}
 --- !u!114 &98288102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_OverrideTileSize: 1
   m_TileSize: 1024
   m_OverrideVoxelSize: 1
-  m_VoxelSize: 14
+  m_VoxelSize: 1.8
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: 702d04758674a7d48a0771f913989072, type: 2}
 --- !u!114 &109191596
@@ -14230,7 +14230,7 @@ MonoBehaviour:
   _transform: {fileID: 790314430}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  offset: {x: 2.5, y: 0, z: 300}
+  offset: {x: 2.5, y: 0, z: 500}
 --- !u!114 &790314432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22205,7 +22205,7 @@ MonoBehaviour:
   useOcclusion: 1
   occlusionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294965593
+    m_Bits: 4294961497
   useAutoChangeCamera: 0
   topCameraAngle: {x: 45, y: 45, z: 0}
   maximumZDistanceOffset: 10
@@ -23715,7 +23715,7 @@ MonoBehaviour:
   _transform: {fileID: 1196886405}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  offset: {x: -2.5, y: 0, z: 300}
+  offset: {x: -2.5, y: 0, z: 500}
 --- !u!114 &1196886407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45385,7 +45385,7 @@ MonoBehaviour:
   _transform: {fileID: 1760711417}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  offset: {x: -7.5, y: 0, z: 300}
+  offset: {x: -7.5, y: 0, z: 500}
 --- !u!1 &1767510251
 GameObject:
   m_ObjectHideFlags: 0

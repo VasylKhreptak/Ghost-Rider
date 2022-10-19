@@ -106,12 +106,29 @@ public class RCC_AICarController : MonoBehaviour
         navigatorObject.layer = gameObject.layer;
         navigatorObject.transform.SetParent(transform, false);
         navigator = navigatorObject.AddComponent<NavMeshAgent>();
+        navigator.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         navigator.radius = 1;
         navigator.speed = 1;
         navigator.angularSpeed = 100000f;
         navigator.acceleration = 100000f;
         navigator.height = 1;
         navigator.avoidancePriority = 0;
+
+        // OnEnableEvent enableEvent = navigatorObject.AddComponent<OnEnableEvent>();
+        // OnDisableEvent disableEvent = navigatorObject.AddComponent<OnDisableEvent>();
+        // DelayedMonoEvent delayedMonoEvent = navigatorObject.AddComponent<DelayedMonoEvent>();
+        // delayedMonoEvent.SetEvent(enableEvent);
+        // delayedMonoEvent.SetDelay(0.3f);
+        // OnEventSetActiveBehaviour onEventEnableNNavigator = navigatorObject.AddComponent<OnEventSetActiveBehaviour>();
+        // OnEventSetActiveBehaviour onEventDisableNavigator = navigatorObject.AddComponent<OnEventSetActiveBehaviour>();
+        //
+        // onEventEnableNNavigator.SetEvent(delayedMonoEvent);
+        // onEventEnableNNavigator.SetTargetState(true);
+        // onEventEnableNNavigator.SetScripts(new MonoBehaviour[] {});//
+        // onEventDisableNavigator.SetEvent(disableEvent);
+        // onEventDisableNavigator.SetTargetState(false);
+        // onEventDisableNavigator.SetScripts(new MonoBehaviour[] {});//
+
 
         // Creating our Detector and setting properties. Used for getting nearest target gameobjects.
         GameObject detectorGO = new GameObject("Detector");

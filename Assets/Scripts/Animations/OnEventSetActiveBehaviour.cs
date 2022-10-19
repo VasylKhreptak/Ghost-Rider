@@ -28,9 +28,24 @@ public class OnEventSetActiveBehaviour : MonoBehaviour
     {
         _event.onMonoCall -= SetActive;
     }
-
+    
     #endregion
 
+    public void SetScripts(MonoBehaviour[] scripts)
+    {
+        _scripts = scripts;
+    }
+
+    public void SetTargetState(bool state)
+    {
+        _active = state;
+    }
+
+    public void SetEvent(MonoEvent monoEvent)
+    {
+        _event = monoEvent;
+    }
+    
     private void SetActive()
     {
         foreach (var script in _scripts)

@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 2321843816341902447}
   - component: {fileID: 8709714909438852071}
   - component: {fileID: 8255339528230447540}
-  m_Layer: 2
+  m_Layer: 12
   m_Name: PlatformEffector3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4464080858094715345
 Transform:
@@ -94,5 +94,3 @@ MonoBehaviour:
   _collider: {fileID: 8582013484544931424}
   _triggerEnterEvent: {fileID: 2321843816341902447}
   _triggerExitEvent: {fileID: 8709714909438852071}
-  _allowedDirection: {x: 0, y: 0, z: 1}
-  _maxAngleDifference: 90
