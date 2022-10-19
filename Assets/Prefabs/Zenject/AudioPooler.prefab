@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 202590456076202175}
   _soundsCount: 40
-  _minSoundDistance: 1
-  _maxSoundDistance: 100
+  _minSoundDistance: 5
+  _maxSoundDistance: 50
   _rolloffMode: 1
   _audioItemPrefab: {fileID: 918043492167606893, guid: b7ed82c747a6a684194a8b6a8e13874a, type: 3}

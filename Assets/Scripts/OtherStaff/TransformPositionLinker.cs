@@ -9,7 +9,7 @@ public class TransformPositionLinker : MonoBehaviour
     
     [Header("Preferences")] 
     [FormerlySerializedAs("_linkAxis")] public Vector3 linkAxis;
-    [SerializeField] protected Vector3 _offset;
+    [FormerlySerializedAs("_offset")] [SerializeField] public Vector3 offset;
 
     #region MonoBehaviour
 
@@ -22,7 +22,7 @@ public class TransformPositionLinker : MonoBehaviour
     {
         if (linkTo == null) return;
         
-        _transform.position = Vector3.Scale(linkTo.position, linkAxis) + _offset;
+        _transform.position = Vector3.Scale(linkTo.position, linkAxis) + offset;
     }
 
     #endregion

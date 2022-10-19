@@ -6,7 +6,7 @@ public class CarWaypointPositionLinker : TransformPositionLinker
 
     private void OnEnable()
     {
-        _offset = new Vector3(linkTo.position.x, _offset.y, _offset.z);
+        offset = new Vector3(linkTo.position.x, offset.y, offset.z);
     }
 
     #endregion

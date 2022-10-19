@@ -1862,7 +1862,7 @@ MonoBehaviour:
   _transform: {fileID: 98288100}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  _offset: {x: 7.5, y: 0, z: 300}
+  offset: {x: 7.5, y: 0, z: 300}
 --- !u!114 &98288102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14230,7 +14230,7 @@ MonoBehaviour:
   _transform: {fileID: 790314430}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  _offset: {x: 2.5, y: 0, z: 300}
+  offset: {x: 2.5, y: 0, z: 300}
 --- !u!114 &790314432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23715,7 +23715,7 @@ MonoBehaviour:
   _transform: {fileID: 1196886405}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  _offset: {x: -2.5, y: 0, z: 300}
+  offset: {x: -2.5, y: 0, z: 300}
 --- !u!114 &1196886407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45483,7 +45483,7 @@ MonoBehaviour:
   _transform: {fileID: 1760711417}
   linkTo: {fileID: 2057072784}
   linkAxis: {x: 0, y: 0, z: 1}
-  _offset: {x: -7.5, y: 0, z: 300}
+  offset: {x: -7.5, y: 0, z: 300}
 --- !u!1 &1767510251
 GameObject:
   m_ObjectHideFlags: 0
