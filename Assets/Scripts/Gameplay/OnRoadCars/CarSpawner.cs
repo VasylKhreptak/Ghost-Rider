@@ -27,10 +27,10 @@ public class CarSpawner : MonoBehaviour
     private PauseEvents _pauseEvents;
 
     [Inject]
-    private void Construct(ObjectPooler objectPooler, PauseEvents _pauseEvents)
+    private void Construct(ObjectPooler objectPooler, PauseEvents pauseEvents)
     {
         _objectPooler = objectPooler;
-        this._pauseEvents = _pauseEvents;
+        _pauseEvents = pauseEvents;
     }
 
     #region MonoBehaviour

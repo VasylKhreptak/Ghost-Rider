@@ -10133,37 +10133,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 739.06, y: 69.4237}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &567054202
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 567054203}
-  m_Layer: 0
-  m_Name: 123123123123
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &567054203
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567054202}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -95.002945, y: 10.090149, z: 1494.8585}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &578236429
 GameObject:
   m_ObjectHideFlags: 0
@@ -24377,6 +24346,10 @@ MonoBehaviour:
   - poolType: 10
     prefab: {fileID: 1536608713267606020, guid: 7bb390cba66486c49ba824e7af244249, type: 3}
     size: 20
+    folder: {fileID: 0}
+  - poolType: 11
+    prefab: {fileID: 2368082131807604421, guid: 35e3ab2fd8c2ee84dbd10541599cd66c, type: 3}
+    size: 10
     folder: {fileID: 0}
 --- !u!1 &1234494375
 GameObject:
