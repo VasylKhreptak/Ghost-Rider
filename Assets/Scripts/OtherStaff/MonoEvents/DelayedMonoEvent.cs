@@ -18,20 +18,28 @@ public class DelayedMonoEvent : MonoEvent
         _monoEvent ??= GetComponent<MonoEvent>();
     }
 
-    private void Awake()
+    private void OnEnable()
     {
-        _monoEvent.onMonoCall += DelayMonoEvent;
+        TryAddListener();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        _monoEvent.onMonoCall -= DelayMonoEvent;
+        _monoEvent.onMonoCall -= DelayInvoke;
 
         _waitTween.Kill();
     }
 
     #endregion
 
+    public void TryAddListener()
+    {
+        if (_monoEvent != null)
+        {
+            _monoEvent.onMonoCall += DelayInvoke;
+        }
+    }
+    
     public void SetEvent(MonoEvent monoEvent)
     {
         _monoEvent = monoEvent;
@@ -42,7 +50,7 @@ public class DelayedMonoEvent : MonoEvent
         _delay = delay;
     }
     
-    private void DelayMonoEvent()
+    private void DelayInvoke()
     {
         _waitTween.Kill();
         _waitTween = this.DOWait(_delay).OnComplete(() => { onMonoCall?.Invoke(); });

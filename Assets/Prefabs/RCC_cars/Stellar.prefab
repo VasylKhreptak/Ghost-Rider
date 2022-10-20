@@ -19789,7 +19789,6 @@ MonoBehaviour:
   downForce: 30
   useCounterSteering: 1
   counterSteeringFactor: 0.5
-  speed: 0
   maxspeed: 140
   engineTorqueCurve:
     serializedVersion: 2
@@ -20020,6 +20019,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scripts:
   - {fileID: 1842045922422513775}
+  _targetScripts:
+  - {fileID: 1842045922422513775}
   _active: 1
   _event: {fileID: 1842045922422513774}
 --- !u!114 &1842045922422513768
@@ -20035,6 +20036,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scripts:
+  - {fileID: 1842045922422513775}
+  _targetScripts:
   - {fileID: 1842045922422513775}
   _active: 0
   _event: {fileID: 1842045922422513774}
@@ -20088,6 +20091,7 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _volume: 1
   _spatialBlend: 1
+  _linkTo: {fileID: 0}
   _priority: 128
   _volumeAmplifier: 0.001
   _minVolume: 0.4

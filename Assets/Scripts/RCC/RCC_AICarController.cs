@@ -114,21 +114,23 @@ public class RCC_AICarController : MonoBehaviour
         navigator.height = 1;
         navigator.avoidancePriority = 0;
 
-        // OnEnableEvent enableEvent = navigatorObject.AddComponent<OnEnableEvent>();
-        // OnDisableEvent disableEvent = navigatorObject.AddComponent<OnDisableEvent>();
-        // DelayedMonoEvent delayedMonoEvent = navigatorObject.AddComponent<DelayedMonoEvent>();
-        // delayedMonoEvent.SetEvent(enableEvent);
-        // delayedMonoEvent.SetDelay(0.3f);
-        // OnEventSetActiveBehaviour onEventEnableNNavigator = navigatorObject.AddComponent<OnEventSetActiveBehaviour>();
-        // OnEventSetActiveBehaviour onEventDisableNavigator = navigatorObject.AddComponent<OnEventSetActiveBehaviour>();
-        //
-        // onEventEnableNNavigator.SetEvent(delayedMonoEvent);
-        // onEventEnableNNavigator.SetTargetState(true);
-        // onEventEnableNNavigator.SetScripts(new MonoBehaviour[] {});//
-        // onEventDisableNavigator.SetEvent(disableEvent);
-        // onEventDisableNavigator.SetTargetState(false);
-        // onEventDisableNavigator.SetScripts(new MonoBehaviour[] {});//
-
+        OnEnableEvent enableEvent = navigatorObject.AddComponent<OnEnableEvent>();
+        OnDisableEvent disableEvent = navigatorObject.AddComponent<OnDisableEvent>();
+        DelayedMonoEvent delayedMonoEvent = navigatorObject.AddComponent<DelayedMonoEvent>();
+        OnEventSetActiveBehaviour onEventEnableNavigator = navigatorObject.AddComponent<OnEventSetActiveBehaviour>();
+        OnEventSetActiveBehaviour onEventDisableNavigator = navigatorObject.AddComponent<OnEventSetActiveBehaviour>();
+        
+        delayedMonoEvent.SetEvent(enableEvent);
+        delayedMonoEvent.SetDelay(0.1f);
+        onEventEnableNavigator.SetEvent(delayedMonoEvent);
+        onEventEnableNavigator.SetTargetState(true);
+        onEventEnableNavigator.SetScripts(new Behaviour[] {navigator});
+        onEventDisableNavigator.SetEvent(disableEvent);
+        onEventDisableNavigator.SetTargetState(false);
+        onEventDisableNavigator.SetScripts(new Behaviour[] {navigator});
+        delayedMonoEvent.TryAddListener();
+        onEventEnableNavigator.TryAddListener();
+        onEventDisableNavigator.TryAddListener();
 
         // Creating our Detector and setting properties. Used for getting nearest target gameobjects.
         GameObject detectorGO = new GameObject("Detector");

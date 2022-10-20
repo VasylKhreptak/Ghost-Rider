@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class OnEventSetActiveBehaviour : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private MonoBehaviour[] _scripts;
+    [SerializeField] private Behaviour[] _targetScripts;
 
     [Header("Preferences")]
     [SerializeField] private bool _active;
@@ -19,21 +20,29 @@ public class OnEventSetActiveBehaviour : MonoBehaviour
         _event ??= GetComponent<MonoEvent>();
     }
 
-    private void Awake()
+    private void OnEnable()
     {
-        _event.onMonoCall += SetActive;
+        TryAddListener();
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _event.onMonoCall -= SetActive;
     }
     
     #endregion
 
-    public void SetScripts(MonoBehaviour[] scripts)
+    public void TryAddListener()
     {
-        _scripts = scripts;
+        if (_event != null)
+        {
+            _event.onMonoCall += SetActive;
+        }
+    }
+    
+    public void SetScripts(Behaviour[] scripts)
+    {
+        _targetScripts = scripts;
     }
 
     public void SetTargetState(bool state)
@@ -48,7 +57,7 @@ public class OnEventSetActiveBehaviour : MonoBehaviour
     
     private void SetActive()
     {
-        foreach (var script in _scripts)
+        foreach (var script in _targetScripts)
         {
             script.enabled = _active;
         }
