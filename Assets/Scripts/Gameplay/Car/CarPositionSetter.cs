@@ -12,5 +12,7 @@ public class CarPositionSetter : MonoBehaviour
     public void SetPosition()
     {
         _car.gameObject.transform.position = _position;
+        _car.gameObject.SetActive(false);
+        _car.gameObject.SetActive(true);
     }
 }

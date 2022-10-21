@@ -72,7 +72,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865366880963326655}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 2959467708922500008, guid: 91a57669f3145ad48b276c1d8541f6b7, type: 3}
 --- !u!23 &1865366880963326642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19708,6 +19708,8 @@ GameObject:
   - component: {fileID: 32473295730668944}
   - component: {fileID: 32473295730668945}
   - component: {fileID: 32473295730668946}
+  - component: {fileID: 1352835959917505507}
+  - component: {fileID: 1109967835810402732}
   m_Layer: 10
   m_Name: Stellar
   m_TagString: Untagged
@@ -20436,6 +20438,7 @@ MonoBehaviour:
   _collisionEnterEvent: {fileID: 1842045922422513771}
   _meshFilter: {fileID: 1865366880963326643}
   _meshCollider: {fileID: 1865366880963326653}
+  _updateCollider: 0
   _deformRadius: 1
   _maxVertexDeform: 0.2
   _minImpulse: 2000
@@ -20560,6 +20563,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 32473295730668945}
   _delay: 0.1
+--- !u!114 &1352835959917505507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366882267259369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 1109967835810402732}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 32473295730668941}
+        m_TargetAssemblyTypeName: MeshDeformation, Assembly-CSharp
+        m_MethodName: RestoreMesh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1109967835810402732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366882267259369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865366882380033440
 GameObject:
   m_ObjectHideFlags: 0

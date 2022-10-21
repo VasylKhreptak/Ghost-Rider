@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 6589584567326527336}
   - component: {fileID: 6378707066550277525}
   - component: {fileID: 4429204211297038060}
+  - component: {fileID: 3804255005989273029}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -1266,6 +1267,7 @@ MonoBehaviour:
   _collisionEnterEvent: {fileID: 7171387826406974055}
   _meshFilter: {fileID: 8643546916309445038}
   _meshCollider: {fileID: 8643546916309445039}
+  _updateCollider: 0
   _deformRadius: 1.5
   _maxVertexDeform: 0.4
   _minImpulse: 2000
@@ -1389,6 +1391,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3804255005989273029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 332588441393233370}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 407439368055173930}
+        m_TargetAssemblyTypeName: MeshDeformation, Assembly-CSharp
+        m_MethodName: RestoreMesh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1462,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1536608713512324773}
   - component: {fileID: 1536608713512324772}
+  - component: {fileID: 6223384824413965202}
+  - component: {fileID: 4235366981077763471}
+  - component: {fileID: 5806170600352588763}
   m_Layer: 6
   m_Name: Front2
   m_TagString: Untagged
@@ -1537,6 +1570,48 @@ MonoBehaviour:
   _SortingOrder: 0
   _FadeOutBegin: -150
   _FadeOutEnd: -200
+--- !u!135 &6223384824413965202
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713512324774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2
+  m_Center: {x: 0.04, y: 0.12, z: 0.24}
+--- !u!114 &4235366981077763471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713512324774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14066cfaeff2b174cb85be0526d1f58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 3392
+--- !u!114 &5806170600352588763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713512324774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caecc6cc692818498b350e1247856f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionEnterEvent: {fileID: 4235366981077763471}
+  _minImpulse: 2000
 --- !u!1 &1536608713512696393
 GameObject:
   m_ObjectHideFlags: 0
@@ -20987,7 +21062,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerEnterEvent: {fileID: 2698258701687079578}
   triggerExitEvent: {fileID: 6469662342586892382}
-  affectedObjects: []
 --- !u!1 &3125649819805974832
 GameObject:
   m_ObjectHideFlags: 0
@@ -21463,7 +21537,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerEnterEvent: {fileID: 8773946823320519795}
   triggerExitEvent: {fileID: 1585410891383010654}
-  affectedObjects: []
 --- !u!114 &8773946823320519795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22509,4 +22582,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerEnterEvent: {fileID: 4255067968225103891}
   triggerExitEvent: {fileID: 6704359101562369016}
-  affectedObjects: []
