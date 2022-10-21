@@ -415,6 +415,9 @@ GameObject:
   - component: {fileID: 407439368055173930}
   - component: {fileID: 2926978135812635957}
   - component: {fileID: 332588441393233370}
+  - component: {fileID: 6589584567326527336}
+  - component: {fileID: 6378707066550277525}
+  - component: {fileID: 4429204211297038060}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -1331,6 +1334,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6589584567326527336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9bac40713e71349839687183ff64f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshDeformation: {fileID: 407439368055173930}
+--- !u!114 &6378707066550277525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a2292525bb16442abbefd69f161fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 6589584567326527336}
+  _delay: 0.1
+--- !u!114 &4429204211297038060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6378707066550277525}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9043255518561452507}
+        m_TargetAssemblyTypeName: ScratchEvents, Assembly-CSharp
+        m_MethodName: StopScratching
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0

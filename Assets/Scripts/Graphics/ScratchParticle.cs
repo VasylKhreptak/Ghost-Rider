@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using Zenject;
 
 public class ScratchParticle : MonoBehaviour
@@ -44,19 +45,27 @@ public class ScratchParticle : MonoBehaviour
 
     private void OnStartScratching(Vector3 point)
     {
-        SpawnParticle(ref point);
+        TrySpawnParticle(ref point);
     }
 
     private void OnScratchUpdate(Vector3 point)
     {
-        UpdateParticlePosition(ref point);
+        TryUpdateParticlePosition(ref point);
     }
 
     private void OnStopScratching()
     {
-        DisableParticle();
+        TryDisableParticle();
     }
 
+    private void TrySpawnParticle(ref Vector3 position)
+    {
+        if (_particle == null)
+        {
+            SpawnParticle(ref position);
+        }
+    }
+    
     private void SpawnParticle(ref Vector3 point)
     {
         GameObject particleObject = _objectPooler.Spawn(_particlePool, point, Quaternion.identity);
@@ -66,6 +75,14 @@ public class ScratchParticle : MonoBehaviour
         module.loop = true;
     }
 
+    private void TryDisableParticle()
+    {
+        if (_particle != null)
+        {
+            DisableParticle();
+        }
+    }
+    
     private void DisableParticle()
     {
         ParticleSystem.MainModule module = _particle.main;
@@ -73,6 +90,14 @@ public class ScratchParticle : MonoBehaviour
         _particle = null;
     }
 
+    private void TryUpdateParticlePosition(ref Vector3 position)
+    {
+        if (_particle != null)
+        {
+            UpdateParticlePosition(ref position);
+        }
+    }
+    
     private void UpdateParticlePosition(ref Vector3 position)
     {
         _particle.transform.position = position;

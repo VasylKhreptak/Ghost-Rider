@@ -65,7 +65,7 @@ public class ScratchEvents : MonoBehaviour
 
     private void OnExit(Collision collision)
     {
-        TryStopScratchingOnExit(collision);
+        TryStopScratchingOnExit();
     }
 
     private void CheckVelocity(Collision collision)
@@ -117,7 +117,7 @@ public class ScratchEvents : MonoBehaviour
         return _hasAppropriateVelocity == false && _isScratching;
     }
 
-    private void TryStopScratchingOnExit(Collision collision)
+    public void TryStopScratchingOnExit()
     {
         if (CanStopScratchingOnExit())
         {
@@ -130,7 +130,7 @@ public class ScratchEvents : MonoBehaviour
         return _isScratching;
     }
     
-    private void StopScratching()
+    public void StopScratching()
     {
         onStopScratching?.Invoke();
 

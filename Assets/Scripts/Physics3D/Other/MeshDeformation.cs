@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MeshDeformation : MonoBehaviour
@@ -18,6 +19,8 @@ public class MeshDeformation : MonoBehaviour
     private Vector3[] _meshVertices;
     private Vector3[] _startMeshVertices;
 
+    public Action onDeform;
+    
     #region MonoBehaviour
 
     private void Awake()
@@ -76,6 +79,8 @@ public class MeshDeformation : MonoBehaviour
                 }
             }
         }
+
+        onDeform?.Invoke();
 
         UpdateMeshVertices();
     }
