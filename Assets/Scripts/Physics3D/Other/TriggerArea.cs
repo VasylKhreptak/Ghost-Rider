@@ -9,7 +9,7 @@ public class TriggerArea : MonoBehaviour
     [FormerlySerializedAs("_triggerEnterEvent")] public OnTriggerEnterEvent triggerEnterEvent;
     [FormerlySerializedAs("_triggerExitEvent")] public OnTriggerExitEvent triggerExitEvent;
 
-    public List<Collider> affectedObjects = new List<Collider>();
+    public HashSet<Transform> affectedObjects = new HashSet<Transform>();
 
     public Action onFill;
     public Action onEmpty;
@@ -40,7 +40,7 @@ public class TriggerArea : MonoBehaviour
 
     private void OnEnter(Collider collider)
     {
-        affectedObjects.Add(collider);
+        affectedObjects.Add(collider.transform);
 
         if (affectedObjects.Count == 1)
         {
@@ -50,7 +50,7 @@ public class TriggerArea : MonoBehaviour
 
     private void OnExit(Collider collider)
     {
-        affectedObjects.Remove(collider);
+        affectedObjects.Remove(collider.transform);
         
         if(affectedObjects.Count == 0)
         {

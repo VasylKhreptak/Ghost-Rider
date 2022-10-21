@@ -97,9 +97,7 @@ public class CarTailgating : MonoBehaviour
     }
     private Transform GetClosestCar()
     {
-        Transform[] transforms = _triggerArea.affectedObjects.Select(x => x.transform).ToArray();
-
-        Transform car = _transform.FindClosestTransform(transforms);
+        Transform car = _transform.FindClosestTransform(_triggerArea.affectedObjects.ToArray());
 
         return car;
     }

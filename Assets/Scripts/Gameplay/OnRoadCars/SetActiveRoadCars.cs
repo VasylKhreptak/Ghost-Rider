@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 public class SetActiveRoadCars : SetActiveTriggerAreaObjects
 {
-    protected override void SetActiveObject(Collider collider, bool enabled)
+    protected override void SetActiveObject(Transform areaObject, bool enabled)
     {
-        collider.transform.parent.parent.gameObject.SetActive(enabled);
+        areaObject.parent.parent.gameObject.SetActive(enabled);
     }
 }

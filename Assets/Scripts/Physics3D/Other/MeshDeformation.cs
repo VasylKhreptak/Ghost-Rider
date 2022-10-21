@@ -10,6 +10,7 @@ public class MeshDeformation : MonoBehaviour
     [SerializeField] private MeshCollider _meshCollider;
 
     [Header("Preferences")]
+    [SerializeField] private bool _updateCollider;
     [SerializeField] private float _deformRadius;
     [SerializeField] private float _maxVertexDeform;
     [SerializeField] private float _minImpulse;
@@ -20,7 +21,7 @@ public class MeshDeformation : MonoBehaviour
     private Vector3[] _startMeshVertices;
 
     public Action onDeform;
-    
+
     #region MonoBehaviour
 
     private void Awake()
@@ -53,7 +54,7 @@ public class MeshDeformation : MonoBehaviour
     private void DeformMesh(Collision collision)
     {
         float collisionImpulse = collision.impulse.magnitude;
-        
+
         if (collisionImpulse < _minImpulse) return;
 
         foreach (var contactPoint in collision.contacts)
@@ -69,7 +70,7 @@ public class MeshDeformation : MonoBehaviour
                 if (distanceFromCollision < _deformRadius && distanceFromOriginalVertex < _maxVertexDeform)
                 {
                     float falloff = _damageSpreadCurve.Evaluate(distanceFromCollision / _deformRadius);
-                    
+
                     float deformedX = Mathf.Clamp(pointPosition.x * falloff, 0, _maxVertexDeform);
                     float deformedY = Mathf.Clamp(pointPosition.y * falloff, 0, _maxVertexDeform);
                     float deformedZ = Mathf.Clamp(pointPosition.z * falloff, 0, _maxVertexDeform);
@@ -82,18 +83,31 @@ public class MeshDeformation : MonoBehaviour
 
         onDeform?.Invoke();
 
-        UpdateMeshVertices();
+        UpdateModel();
     }
 
-    private void UpdateMeshVertices()
+    private void UpdateModel()
     {
         _meshFilter.mesh.vertices = _meshVertices;
+
+        if (_updateCollider)
+        {
+            UpdateCollider();
+        }
+    }
+
+    private void UpdateCollider()
+    {
         _meshCollider.sharedMesh = _meshFilter.mesh;
     }
 
     public void RestoreMesh()
     {
         _meshFilter.mesh.vertices = _startMeshVertices;
+    }
+
+    public void RestoreCollider()
+    {
         _meshCollider.sharedMesh = _meshFilter.mesh;
     }
 }

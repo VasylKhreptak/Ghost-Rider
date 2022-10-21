@@ -16,9 +16,9 @@ public class SetActiveTriggerAreaObjects : MonoBehaviour
 
 	public void SetActiveAreaObjects(bool enabled)
 	{
-		foreach (var collider in _triggerArea.affectedObjects)
+		foreach (var areaObject in _triggerArea.affectedObjects)
 		{
-			SetActiveObject(collider, enabled);
+			SetActiveObject(areaObject, enabled);
 		}
 
 		if (enabled == false)
@@ -27,8 +27,8 @@ public class SetActiveTriggerAreaObjects : MonoBehaviour
 		}
 	}
 
-	protected virtual void SetActiveObject(Collider collider, bool enabled)
+	protected virtual void SetActiveObject(Transform areaObject, bool enabled)
 	{
-		collider.gameObject.SetActive(enabled);
+		areaObject.gameObject.SetActive(enabled);
 	}
 }
