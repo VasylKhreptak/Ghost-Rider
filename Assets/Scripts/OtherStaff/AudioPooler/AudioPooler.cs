@@ -107,13 +107,13 @@ public class AudioPooler : MonoBehaviour
     }
 
     public int PlaySound(AudioMixerGroup output, AudioClip clip, Vector3 position, float volume,
-        float spatialBlend, Transform linkTo = null, int priority = 128)
+        float spatialBlend, bool loop = false, Transform linkTo = null, int priority = 128)
     {
         if (CanPlay(clip, position, volume, spatialBlend) == false) return 0;
 
         AudioPoolItem appropriatePoolItem = GetAppropriatePoolItem();
 
-        return ConfigurePoolObject(appropriatePoolItem, output, clip, position, volume, spatialBlend, linkTo, priority);
+        return ConfigurePoolObject(appropriatePoolItem, output, clip, position, volume, spatialBlend, loop, linkTo, priority);
     }
 
     private bool CanPlay(AudioClip clip, Vector3 playPosition, float volume, float spatialBlend)
@@ -172,7 +172,7 @@ public class AudioPooler : MonoBehaviour
     }
 
     private int ConfigurePoolObject(AudioPoolItem poolItem, AudioMixerGroup output, AudioClip clip, Vector3 position, float volume,
-        float spatialBlend, Transform linkTo, float priority)
+        float spatialBlend, bool loop, Transform linkTo, float priority)
     {
         _idGiver++;
 
@@ -183,6 +183,7 @@ public class AudioPooler : MonoBehaviour
         poolItem.audioSource.spatialBlend = spatialBlend;
         poolItem.priority = priority;
         poolItem.ID = _idGiver;
+        poolItem.audioSource.loop = loop;
         poolItem.gameObject.SetActive(true);
         poolItem.audioSource.Play();
 
@@ -200,13 +201,19 @@ public class AudioPooler : MonoBehaviour
 
     private void TryStopSoundDelayed(AudioPoolItem poolItem)
     {
+        if (CanStopSoundDelayed(poolItem) == false) return;
+        
         poolItem.waitTween = poolItem.DOWait(poolItem.audioSource.clip.length).OnComplete(() =>
         {
             StopSound(poolItem.ID);
         });
     }
 
-
+    private bool CanStopSoundDelayed(AudioPoolItem poolItem)
+    {
+        return poolItem.audioSource.loop == false;
+    }
+    
     public void StopSound(int id)
     {
         if (_activePool.TryGetValue(id, out AudioPoolItem activeSound))

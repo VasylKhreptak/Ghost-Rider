@@ -39,7 +39,7 @@ public class PlayableAudio : AudioClipHolder
     public override void Play()
     {
         _id = _audioPooler.PlaySound(_output, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _position,
-            _volume, _spatialBlend, _linkTo, _priority);
+            _volume, _spatialBlend, linkTo:_linkTo, priority:_priority);
     }
     public override void Stop()
     {
