@@ -19698,6 +19698,7 @@ GameObject:
   - component: {fileID: 1842045922422513823}
   - component: {fileID: 8199726315889718679}
   - component: {fileID: 2391370143938526048}
+  - component: {fileID: 32473295730668938}
   - component: {fileID: 3663690318871740391}
   m_Layer: 10
   m_Name: Stellar
@@ -20343,6 +20344,23 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 2368
+--- !u!114 &32473295730668938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366882267259369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e6d44bdd2b90244ad0dc7c8dd16434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1842045922422513772}
+  _collisionEnterEvent: {fileID: 1842045922422513771}
+  _collisionStayEvent: {fileID: 2391370143938526048}
+  _collisionExitEvent: {fileID: 8199726315889718679}
+  _minVelocity: 5
 --- !u!114 &3663690318871740391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20355,11 +20373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb67097ee089ca54f8732baebff4e4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 1842045922422513772}
-  _collisionExitEvent: {fileID: 8199726315889718679}
-  _collisionStayEvent: {fileID: 2391370143938526048}
+  _scratchEvents: {fileID: 32473295730668938}
   _particlePool: 11
-  _minVelocity: 5
 --- !u!1 &1865366882380033440
 GameObject:
   m_ObjectHideFlags: 0

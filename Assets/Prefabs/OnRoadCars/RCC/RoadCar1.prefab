@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 1853825064562955109}
   - component: {fileID: 5217922883332976017}
   - component: {fileID: 5846633592416688759}
+  - component: {fileID: 9043255518561452507}
   - component: {fileID: 6167886150880383074}
   m_Layer: 6
   m_Name: RoadCar1
@@ -1172,6 +1173,23 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 3392
+--- !u!114 &9043255518561452507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e6d44bdd2b90244ad0dc7c8dd16434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1536608713267606522}
+  _collisionEnterEvent: {fileID: 7171387826406974055}
+  _collisionStayEvent: {fileID: 5217922883332976017}
+  _collisionExitEvent: {fileID: 5846633592416688759}
+  _minVelocity: 5
 --- !u!114 &6167886150880383074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,11 +1202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb67097ee089ca54f8732baebff4e4b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 1536608713267606522}
-  _collisionStayEvent: {fileID: 5217922883332976017}
-  _collisionExitEvent: {fileID: 5846633592416688759}
+  _scratchEvents: {fileID: 9043255518561452507}
   _particlePool: 11
-  _minVelocity: 5
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
