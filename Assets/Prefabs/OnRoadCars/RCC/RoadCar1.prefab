@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 6167886150880383074}
   - component: {fileID: 1160775551938223841}
   - component: {fileID: 4851316412866396658}
+  - component: {fileID: 407439368055173930}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -1244,6 +1245,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scratchEvents: {fileID: 9043255518561452507}
   _audio: {fileID: 1160775551938223841}
+--- !u!114 &407439368055173930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c052432509de345a0cf869da249b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713267606521}
+  _collisionEnterEvent: {fileID: 7171387826406974055}
+  _meshFilter: {fileID: 8643546916309445038}
+  _meshCollider: {fileID: 8643546916309445039}
+  _deformRadius: 1.5
+  _maxVertexDeform: 0.4
+  _minImpulse: 2000
+  _damageMultiplier: 1
+  _damageSpreadCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0027114959
+      value: 1.0041907
+      inSlope: -0.8915763
+      outSlope: -0.8915763
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.033969812
+    - serializedVersion: 3
+      time: 0.99602276
+      value: 0.00461025
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
