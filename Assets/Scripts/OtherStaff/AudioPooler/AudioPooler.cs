@@ -234,4 +234,11 @@ public class AudioPooler : MonoBehaviour
 
         _activePool.Remove(activePoolItem.ID);
     }
+
+    public AudioPoolItem GetAudioPoolItem(int id)
+    {
+        _activePool.TryGetValue(id, out AudioPoolItem poolItem);
+
+        return poolItem;
+    }
 }

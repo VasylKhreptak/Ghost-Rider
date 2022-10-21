@@ -19700,6 +19700,8 @@ GameObject:
   - component: {fileID: 2391370143938526048}
   - component: {fileID: 32473295730668938}
   - component: {fileID: 3663690318871740391}
+  - component: {fileID: 1541181808516993343}
+  - component: {fileID: 32473295730668939}
   m_Layer: 10
   m_Name: Stellar
   m_TagString: Untagged
@@ -20375,6 +20377,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scratchEvents: {fileID: 32473295730668938}
   _particlePool: 11
+--- !u!114 &1541181808516993343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366882267259369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0241c4e45b8bb224a97d2236b537818a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1842045922422513822}
+  _audioClips:
+  - {fileID: 8300000, guid: 8cedf19ba9ccbd54c9625f9589769c02, type: 3}
+  _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
+  _playOnTransformPosition: 1
+  _linkTo: {fileID: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
+  _volume: 1
+  _spatialBlend: 1
+  _priority: 128
+  _loop: 1
+--- !u!114 &32473295730668939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366882267259369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a31f6a45d8bff94b82040b2c49b2a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scratchEvents: {fileID: 32473295730668938}
+  _audio: {fileID: 1541181808516993343}
 --- !u!1 &1865366882380033440
 GameObject:
   m_ObjectHideFlags: 0

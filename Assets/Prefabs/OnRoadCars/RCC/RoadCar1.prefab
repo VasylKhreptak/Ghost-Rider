@@ -223,10 +223,11 @@ MonoBehaviour:
   _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _linkTo: {fileID: 1536608713267606521}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 1
   _priority: 128
+  _loop: 0
 --- !u!114 &6087070622289145495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +410,8 @@ GameObject:
   - component: {fileID: 5846633592416688759}
   - component: {fileID: 9043255518561452507}
   - component: {fileID: 6167886150880383074}
+  - component: {fileID: 1160775551938223841}
+  - component: {fileID: 4851316412866396658}
   m_Layer: 6
   m_Name: RoadCar1
   m_TagString: Untagged
@@ -1204,6 +1207,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scratchEvents: {fileID: 9043255518561452507}
   _particlePool: 11
+--- !u!114 &1160775551938223841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0241c4e45b8bb224a97d2236b537818a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713267606521}
+  _audioClips:
+  - {fileID: 8300000, guid: 8cedf19ba9ccbd54c9625f9589769c02, type: 3}
+  _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
+  _playOnTransformPosition: 1
+  _linkTo: {fileID: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
+  _volume: 1
+  _spatialBlend: 1
+  _priority: 128
+  _loop: 1
+--- !u!114 &4851316412866396658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713267606020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a31f6a45d8bff94b82040b2c49b2a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scratchEvents: {fileID: 9043255518561452507}
+  _audio: {fileID: 1160775551938223841}
 --- !u!1 &1536608713465760096
 GameObject:
   m_ObjectHideFlags: 0
@@ -20945,10 +20985,11 @@ MonoBehaviour:
   _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _linkTo: {fileID: 1536608713267606521}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 1
   _priority: 128
+  _loop: 0
 --- !u!114 &226311980896970978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21094,10 +21135,11 @@ MonoBehaviour:
   _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _linkTo: {fileID: 1536608713267606521}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 0.7
   _spatialBlend: 1
   _priority: 128
+  _loop: 0
 --- !u!1 &5832715987812147585
 GameObject:
   m_ObjectHideFlags: 0
@@ -21556,10 +21598,11 @@ MonoBehaviour:
   _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _linkTo: {fileID: 1536608713267606521}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 1
   _priority: 128
+  _loop: 0
 --- !u!114 &5733554413000561012
 MonoBehaviour:
   m_ObjectHideFlags: 0

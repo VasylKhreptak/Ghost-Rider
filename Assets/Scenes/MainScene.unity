@@ -4664,10 +4664,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &240374397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4686,10 +4687,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &240374398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15820,10 +15822,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &860803189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18182,10 +18185,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &951500003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20539,10 +20543,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1041201670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20561,10 +20566,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!1 &1048018565
 GameObject:
   m_ObjectHideFlags: 0
@@ -25616,10 +25622,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1282634649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25638,10 +25645,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1282634650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27648,10 +27656,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1413996096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27670,10 +27679,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1413996097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30553,10 +30563,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1483578118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30575,10 +30586,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1483578119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39479,10 +39491,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 1
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1506296491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39560,10 +39573,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1506296496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39644,10 +39658,11 @@ MonoBehaviour:
   _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   _playOnTransformPosition: 0
   _linkTo: {fileID: 0}
-  _position: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 0, z: 0}
   _volume: 1
   _spatialBlend: 0
   _priority: 128
+  _loop: 0
 --- !u!114 &1506296501
 MonoBehaviour:
   m_ObjectHideFlags: 0
