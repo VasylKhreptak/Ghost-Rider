@@ -5,7 +5,7 @@ public class MonoEvent : MonoBehaviour
 {
     public Action onMonoCall;
 
-    public void Invoke()
+    public virtual void Invoke()
     {
         onMonoCall?.Invoke();
     }

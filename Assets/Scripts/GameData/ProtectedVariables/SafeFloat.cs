@@ -1,3 +1,4 @@
+[System.Serializable]
 public struct SafeFloat
 {
 	private int value;

@@ -385,7 +385,6 @@ GameObject:
   - component: {fileID: 1522356525058983785}
   - component: {fileID: 7171387826406974055}
   - component: {fileID: 1522356525058983784}
-  - component: {fileID: 1522356525058983791}
   - component: {fileID: 8874735916361773173}
   - component: {fileID: 8874735916361773174}
   - component: {fileID: 8874735916361773195}
@@ -750,31 +749,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collisionEnterEvent: {fileID: 7171387826406974055}
   _pools: 03000000
---- !u!114 &1522356525058983791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536608713267606020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65303c1814a09ed4e86930e5ed8a1a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collisionEnterEvent: {fileID: 7171387826406974055}
-  _audioClips:
-  - {fileID: 8300000, guid: a1d6e4a5d7edf844e8c81d4e1ad798d0, type: 3}
-  - {fileID: 8300000, guid: 568353fbb92b0d0408bf43b964227ad1, type: 3}
-  - {fileID: 8300000, guid: 8151ae89b2bf8504b98b20f17540200d, type: 3}
-  - {fileID: 8300000, guid: 07a69a0e1ba8913419a28b8d4d6216d2, type: 3}
-  _output: {fileID: 6459344901124582691, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
-  _volume: 1
-  _spatialBlend: 1
-  _linkTo: {fileID: 1536608713267606521}
-  _priority: 128
-  _volumeAmplifier: 0.001
-  _minVolume: 0.4
 --- !u!114 &8874735916361773173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,7 +928,7 @@ MonoBehaviour:
   _unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1522356525058983791}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -982,7 +956,7 @@ MonoBehaviour:
   _unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1522356525058983791}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -21251,6 +21225,7 @@ GameObject:
   - component: {fileID: 542334499777845006}
   - component: {fileID: 6054121236616809827}
   - component: {fileID: 7927810260663206760}
+  - component: {fileID: 2161790501111151029}
   m_Layer: 2
   m_Name: CarCrashAudios
   m_TagString: Untagged
@@ -21359,6 +21334,31 @@ MonoBehaviour:
   _spatialBlend: 1
   _priority: 128
   _loop: 0
+--- !u!114 &2161790501111151029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131863222917231314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65303c1814a09ed4e86930e5ed8a1a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionEnterEvent: {fileID: 7171387826406974055}
+  _audioClips:
+  - {fileID: 8300000, guid: a1d6e4a5d7edf844e8c81d4e1ad798d0, type: 3}
+  - {fileID: 8300000, guid: 568353fbb92b0d0408bf43b964227ad1, type: 3}
+  - {fileID: 8300000, guid: 8151ae89b2bf8504b98b20f17540200d, type: 3}
+  - {fileID: 8300000, guid: 07a69a0e1ba8913419a28b8d4d6216d2, type: 3}
+  _output: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
+  _volume: 1
+  _spatialBlend: 1
+  _linkTo: {fileID: 1536608713267606521}
+  _priority: 128
+  _volumeAmplifier: 0.001
+  _minVolume: 0.4
 --- !u!1 &5832715987812147585
 GameObject:
   m_ObjectHideFlags: 0

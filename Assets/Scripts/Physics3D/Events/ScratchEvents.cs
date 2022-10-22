@@ -12,6 +12,8 @@ public class ScratchEvents : MonoBehaviour
     [Header("Preferences")]
     [SerializeField] private float _minVelocity;
 
+    public float MinVelocity => _minVelocity;
+    
     public Action<Vector3> onStartScratching;
     public Action<Vector3> onScratchUpdate;
     public Action onStopScratching;
