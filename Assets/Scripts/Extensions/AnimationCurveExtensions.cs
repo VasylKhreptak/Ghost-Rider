@@ -31,11 +31,6 @@ public static class AnimationCurveExtensions
     /// if x == maxX, returns maxY
     /// Other values of x is evaluating
     /// </summary>
-    /// <param name="curve"></param>
-    /// <param name="minX"></param>
-    /// <param name="maxX"></param>
-    /// <param name="minY"></param>
-    /// <param name="maxY"></param>
     /// <returns></returns>
     public static float Evaluate(this AnimationCurve curve, float minX, float maxX, float x, float minY, float maxY)
     {

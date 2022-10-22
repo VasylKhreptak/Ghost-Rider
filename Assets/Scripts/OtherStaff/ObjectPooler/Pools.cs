@@ -11,10 +11,5 @@ public enum Pools
     FlyingVehicle5 = 8,
     FlyingVehicle6 = 9,
     MetalScratch = 11,
-    
-    #region OnRoadCars
-
     RoadCar1 = 10,
-
-    #endregion
 }

@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -20,8 +19,6 @@ public class ConsoleLog : MonoBehaviour
         _tmpText ??= GetComponent<TMP_Text>();
     }
 
-    #endregion
-
     private void OnEnable()
     {
         Application.logMessageReceived += ProcessLog;
@@ -30,10 +27,10 @@ public class ConsoleLog : MonoBehaviour
     private void OnDisable()
     {
         Application.logMessageReceived -= ProcessLog;
-
-        _waitTween.Kill();
     }
 
+    #endregion
+    
     private void ProcessLog(string log, string stackTrace, LogType logType)
     {
         _waitTween.Kill();

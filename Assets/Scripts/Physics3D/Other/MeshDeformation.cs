@@ -104,10 +104,17 @@ public class MeshDeformation : MonoBehaviour
     public void RestoreMesh()
     {
         _meshFilter.mesh.vertices = _startMeshVertices;
+        
+        RestoreVertices();
     }
 
     public void RestoreCollider()
     {
         _meshCollider.sharedMesh = _meshFilter.mesh;
+    }
+
+    public void RestoreVertices()
+    {
+        _meshVertices = _meshFilter.mesh.vertices;
     }
 }

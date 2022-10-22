@@ -881,7 +881,7 @@ public class RCC_CarControllerV3 : RCC_Core
         if (!engineRunning)
         {
 
-            engineStartSound = NewAudioSource(RCCSettings.audioMixer, gameObject, engineSoundPosition, "Engine Start AudioSource", 1, 10, 1, engineStartClip, false, true, true);
+            engineStartSound = NewAudioSource(RCCSettings.audioMixer, gameObject, engineSoundPosition, "Engine Start AudioSource", 20, 50, 1, engineStartClip, false, true, true);
 
             if (engineStartSound.isPlaying)
                 engineStartSound.Play();
