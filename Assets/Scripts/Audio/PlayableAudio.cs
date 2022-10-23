@@ -13,8 +13,7 @@ public class PlayableAudio : SoundHolder
     [SerializeField] private AudioMixerGroup _output;
     [SerializeField] private bool _playOnTransformPosition;
     [SerializeField] private Transform _linkTo;
-    [SerializeField] [FormerlySerializedAs("_position")]
-    private Vector3 _startPosition;
+    [SerializeField] [FormerlySerializedAs("_position")] private Vector3 _startPosition;
     [SerializeField, Range(0f, 1f)] private float _volume = 1f;
     [SerializeField, Range(0f, 1f)] private float _spatialBlend;
     [SerializeField, Range(0, 128)] private int _priority = 128;
@@ -39,6 +38,11 @@ public class PlayableAudio : SoundHolder
     }
 
     #endregion
+
+    public void SetAudioClips(AudioClip[] audioClips)
+    {
+        _audioClips = audioClips;
+    }
 
     public override void Play()
     {

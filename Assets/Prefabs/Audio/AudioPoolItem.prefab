@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
+  positionLinker: {fileID: 0}
   priority: 0
   ID: 0
 --- !u!114 &-2028930211568890916
@@ -173,5 +174,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 918043492167606800}
   linkTo: {fileID: 0}
-  linkAxis: {x: 0, y: 1, z: 1}
-  _offset: {x: 0, y: 0, z: 0}
+  linkAxis: {x: 1, y: 1, z: 1}
+  offset: {x: 0, y: 0, z: 0}

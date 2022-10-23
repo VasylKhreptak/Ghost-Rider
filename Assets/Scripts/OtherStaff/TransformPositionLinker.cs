@@ -9,7 +9,7 @@ public class TransformPositionLinker : MonoBehaviour
     
     [Header("Preferences")] 
     [FormerlySerializedAs("_linkAxis")] public Vector3 linkAxis;
-    [FormerlySerializedAs("_offset")] [SerializeField] public Vector3 offset;
+    [FormerlySerializedAs("_offset")] public Vector3 offset;
 
     #region MonoBehaviour
 
