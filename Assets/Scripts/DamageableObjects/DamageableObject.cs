@@ -53,8 +53,6 @@ public class DamageableObject : MonoBehaviour, IHealth
     private void SetHealth(float health)
     {
         _health = Mathf.Clamp(health, 0, _maxHealth);
-
-        Debug.Log("Health: " + (_health));
         
         onSetHealth?.Invoke(health);
     }

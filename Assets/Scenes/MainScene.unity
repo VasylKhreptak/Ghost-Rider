@@ -53030,10 +53030,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 32473295730668941, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
-      propertyPath: _minImpulse
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 1842045922422513769, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: _event
       value: 

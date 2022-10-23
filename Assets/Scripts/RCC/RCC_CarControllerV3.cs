@@ -2174,7 +2174,7 @@ public class RCC_CarControllerV3 : RCC_Core
         if (gearShiftingClips.Length > 0)
         {
 
-            gearShiftingSound = NewAudioSource(RCCSettings.audioMixer, gameObject, gearSoundPosition, "Gear Shifting AudioSource", 1f, 5f, RCCSettings.maxGearShiftingSoundVolume, gearShiftingClips[UnityEngine.Random.Range(0, gearShiftingClips.Length)], false, true, true);
+            gearShiftingSound = NewAudioSource(RCCSettings.audioMixer, gameObject, gearSoundPosition, "Gear Shifting AudioSource", 10f, 50f, RCCSettings.maxGearShiftingSoundVolume, gearShiftingClips[UnityEngine.Random.Range(0, gearShiftingClips.Length)], false, true, true);
 
             if (!gearShiftingSound.isPlaying)
                 gearShiftingSound.Play();

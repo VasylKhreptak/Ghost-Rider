@@ -67,9 +67,6 @@ public class TryKillEngineOnScratch : MonoBehaviour
 
     private float GetEngineKillProbability(float health)
     {
-        Debug.Log("Probability: " + (_engineKillProbabilityCurve.Evaluate(_minHealth, _maxHealth, health,
-            _maxEnginKillProbability, _minEngineKillProbability)));
-
         return _engineKillProbabilityCurve.Evaluate(_minHealth, _maxHealth, health,
             _maxEnginKillProbability, _minEngineKillProbability);
     }
