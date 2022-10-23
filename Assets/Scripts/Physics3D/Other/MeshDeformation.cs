@@ -11,11 +11,18 @@ public class MeshDeformation : MonoBehaviour
 
     [Header("Preferences")]
     [SerializeField] private bool _updateCollider;
-    [SerializeField] private float _deformRadius;
-    [SerializeField] private float _maxVertexDeform;
+
+    [Header("Deformation Preferences")]
+    [SerializeField] private float _minDeformationRadius;
+    [SerializeField] private float _maxDeformationRadius;
+    [SerializeField] private AnimationCurve _radiusDeformationCurve;
+    [SerializeField] private float _minVertexDeformation;
+    [SerializeField] private float _maxVertexDeformation;
+    [SerializeField] private AnimationCurve _deformationCurve;
     [SerializeField] private float _minImpulse;
-    [SerializeField] private float _damageMultiplier;
-    [SerializeField] private AnimationCurve _damageSpreadCurve;
+    [SerializeField] private float _maxImpulse;
+    [SerializeField] private AnimationCurve _falloffCurve;
+    [SerializeField] private float _deformationMultiplier;
 
     private Vector3[] _meshVertices;
     private Vector3[] _startMeshVertices;
@@ -57,8 +64,15 @@ public class MeshDeformation : MonoBehaviour
 
         if (collisionImpulse < _minImpulse) return;
 
+        float radius = GetDeformationRadius(ref collisionImpulse);
+
+        float deformation = _deformationCurve.Evaluate(_minImpulse, _maxImpulse, collisionImpulse,
+            _minVertexDeformation, _maxVertexDeformation) * _deformationMultiplier;
+        
         foreach (var contactPoint in collision.contacts)
         {
+            Vector3 deformationDirection = contactPoint.normal;
+            
             for (int i = 0; i < _meshVertices.Length; i++)
             {
                 Vector3 vertexPosition = _meshVertices[i];
@@ -66,36 +80,34 @@ public class MeshDeformation : MonoBehaviour
 
                 float distanceFromCollision = Vector3.Distance(vertexPosition, pointPosition);
                 float distanceFromOriginalVertex = Vector3.Distance(_startMeshVertices[i], vertexPosition);
-
-                if (distanceFromCollision < _deformRadius && distanceFromOriginalVertex < _maxVertexDeform)
+                
+                if (distanceFromCollision < radius && distanceFromOriginalVertex < _maxVertexDeformation)
                 {
-                    float falloff = _damageSpreadCurve.Evaluate(distanceFromCollision / _deformRadius);
-
-                    float deformedX = Mathf.Clamp(pointPosition.x * falloff, 0, _maxVertexDeform);
-                    float deformedY = Mathf.Clamp(pointPosition.y * falloff, 0, _maxVertexDeform);
-                    float deformedZ = Mathf.Clamp(pointPosition.z * falloff, 0, _maxVertexDeform);
-
-                    Vector3 deformation = new Vector3(deformedX, deformedY, deformedZ);
-                    _meshVertices[i] -= deformation * _damageMultiplier;
+                    _meshVertices[i] = GetNewVertexPosition(ref deformation, _meshVertices[i], ref deformationDirection, ref distanceFromCollision, ref radius);
                 }
             }
         }
-
+        
         onDeform?.Invoke();
 
-        UpdateModel();
+        OnUpdate();
     }
 
-    private void UpdateModel()
+    private void OnUpdate()
     {
-        _meshFilter.mesh.vertices = _meshVertices;
-
+        UpdateMesh();
+        
         if (_updateCollider)
         {
             UpdateCollider();
         }
     }
 
+    private void UpdateMesh()
+    {
+        _meshFilter.mesh.vertices = _meshVertices;
+    }
+    
     private void UpdateCollider()
     {
         _meshCollider.sharedMesh = _meshFilter.mesh;
@@ -104,7 +116,7 @@ public class MeshDeformation : MonoBehaviour
     public void RestoreMesh()
     {
         _meshFilter.mesh.vertices = _startMeshVertices;
-        
+
         RestoreVertices();
     }
 
@@ -116,5 +128,23 @@ public class MeshDeformation : MonoBehaviour
     public void RestoreVertices()
     {
         _meshVertices = _meshFilter.mesh.vertices;
+    }
+
+    private float GetDeformationRadius(ref float impulse)
+    {
+        return _radiusDeformationCurve
+            .Evaluate(_minImpulse, _maxImpulse, impulse, _minDeformationRadius, _maxDeformationRadius);
+    }
+
+    private Vector3 GetNewVertexPosition(ref float deformation, Vector3 previousVertexPosition,
+        ref Vector3 deformationDirection, ref float distanceFromCollision, ref float radius)
+    {
+        Vector3 previousWorldPosition = _transform.TransformPoint(previousVertexPosition);
+        
+        float falloff = _falloffCurve.Evaluate(distanceFromCollision / radius);
+
+        Vector3 newWorldPosition = previousWorldPosition + (deformationDirection * deformation * falloff);
+
+        return _transform.InverseTransformPoint(newWorldPosition);
     }
 }

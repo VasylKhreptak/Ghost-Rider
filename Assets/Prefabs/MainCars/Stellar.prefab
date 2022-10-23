@@ -20422,22 +20422,90 @@ MonoBehaviour:
   _meshFilter: {fileID: 1865366880963326643}
   _meshCollider: {fileID: 1865366880963326653}
   _updateCollider: 0
-  _deformRadius: 1
-  _maxVertexDeform: 0.2
-  _minImpulse: 2000
-  _damageMultiplier: 1
-  _damageSpreadCurve:
+  _minDeformationRadius: 0.4
+  _maxDeformationRadius: 1
+  _radiusDeformationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.9515126
+      outSlope: 2.9515126
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.019422865
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _minVertexDeformation: 0.08
+  _maxVertexDeformation: 0.45
+  _deformationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.3495975
+      outSlope: 4.3495975
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0131798005
+    - serializedVersion: 3
+      time: 0.30042815
+      value: 0.8098597
+      inSlope: 0.69412076
+      outSlope: 0.69412076
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.04630509
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _minImpulse: 1000
+  _maxImpulse: 20000
+  _falloffCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -0.0027114959
       value: 1.0041907
-      inSlope: -0.8915763
-      outSlope: -0.8915763
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.31473294
+      value: 0.89896816
+      inSlope: -0.7960935
+      outSlope: -0.7960935
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.033969812
+      outWeight: 0.037384827
     - serializedVersion: 3
       time: 0.99602276
       value: 0.00461025
@@ -20450,6 +20518,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _deformationMultiplier: 1
 --- !u!114 &32473295730668943
 MonoBehaviour:
   m_ObjectHideFlags: 0
