@@ -3,7 +3,7 @@ using UnityEngine.Audio;
 using UnityEngine.Serialization;
 using Zenject;
 
-public class PlayableAudio : AudioClipHolder
+public class PlayableAudio : SoundHolder
 {
     [Header("Audios")]
     [SerializeField] private Transform _transform;

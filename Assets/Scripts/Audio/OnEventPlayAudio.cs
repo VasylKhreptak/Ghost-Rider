@@ -4,7 +4,7 @@ public class OnEventPlayAudio : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private MonoEvent _monoEvent;
-    [SerializeField] private AudioClipHolder _clipHolder;
+    [SerializeField] private SoundHolder _clipHolder;
 
     #region MonoBehaviour
 

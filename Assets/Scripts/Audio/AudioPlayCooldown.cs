@@ -1,10 +1,12 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class AudioPlayCooldown : AudioClipHolder
+public class AudioPlayCooldown : SoundHolder
 {
+    [FormerlySerializedAs("_audioClipHolder")]
     [Header("References")]
-    [SerializeField] private AudioClipHolder _audioClipHolder;
+    [SerializeField] private SoundHolder _soundHolder;
 
     [Header("Preferences")]
     [SerializeField] private float _cooldown;
@@ -17,7 +19,7 @@ public class AudioPlayCooldown : AudioClipHolder
 
     private void OnValidate()
     {
-        _audioClipHolder ??= GetComponent<AudioClipHolder>();
+        _soundHolder ??= GetComponent<SoundHolder>();
     }
 
     private void OnDisable()
@@ -31,7 +33,7 @@ public class AudioPlayCooldown : AudioClipHolder
     {
         if (_canPlay)
         {
-            _audioClipHolder.Play();
+            _soundHolder.Play();
         }
 
         _canPlay = false;

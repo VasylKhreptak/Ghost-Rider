@@ -1,11 +1,13 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AudioDelay : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private MonoEvent _monoEvent;
-    [SerializeField] private AudioClipHolder _audioClipHolder;
+    [FormerlySerializedAs("_audioClipHolder")]
+    [SerializeField] private SoundHolder _soundHolder;
 
     [Header("Preferences")]
     [SerializeField] private bool _resetOnStart = true;
@@ -20,7 +22,7 @@ public class AudioDelay : MonoBehaviour
     private void OnValidate()
     {
         _monoEvent ??= GetComponent<MonoEvent>();
-        _audioClipHolder ??= GetComponent<AudioClipHolder>();
+        _soundHolder ??= GetComponent<SoundHolder>();
     }
 
     private void Awake()
@@ -57,7 +59,7 @@ public class AudioDelay : MonoBehaviour
     
     private void PlayAudio()
     {
-        _audioClipHolder.Play();
+        _soundHolder.Play();
     }
 
     private void KillTween()

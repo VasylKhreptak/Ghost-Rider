@@ -3,7 +3,7 @@ using UnityEngine;
 public class OnEventStopAudio : MonoBehaviour
 {
 	[Header("References")]
-	[SerializeField] private AudioClipHolder _audio;
+	[SerializeField] private SoundHolder _audio;
 
 	[Header("Event")]
 	[SerializeField] private MonoEvent _event;
@@ -12,7 +12,7 @@ public class OnEventStopAudio : MonoBehaviour
 
 	private void OnValidate()
 	{
-		_audio ??= GetComponent<AudioClipHolder>();
+		_audio ??= GetComponent<SoundHolder>();
 	}
 
 	private void Awake()

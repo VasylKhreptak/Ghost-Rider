@@ -19,11 +19,7 @@ public static class AnimationCurveExtensions
     /// <returns></returns>
     public static float Evaluate(this AnimationCurve curve, float min, float max, float i)
     {
-        float remappedMax = max.Remap(min, max, 0, max);
-
-        float evaluatedValue = curve.Evaluate(i) * remappedMax;
-
-        return evaluatedValue.Remap(0, remappedMax, min, max);
+        return curve.Evaluate(i) * (max - min) + min;
     }
     
     /// <summary>
@@ -35,7 +31,7 @@ public static class AnimationCurveExtensions
     public static float Evaluate(this AnimationCurve curve, float minX, float maxX, float x, float minY, float maxY)
     {
         float remappedX = x.Remap(minX, maxX, 0f, 1f);
-        
+
         return curve.Evaluate(minY, maxY, remappedX);
     }
 }
