@@ -21389,6 +21389,7 @@ GameObject:
   - component: {fileID: 1865366882830989833}
   - component: {fileID: 1865366882830989839}
   - component: {fileID: 1865366882830989838}
+  - component: {fileID: 5144862623164608495}
   m_Layer: 10
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -21461,6 +21462,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5144862623164608495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366882830989832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d66a8d95ec9d8408433afa87a30e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1865366882830989833}
+  _targetMeshFilter: {fileID: 1865366880963326643}
 --- !u!1 &1865366882847051948
 GameObject:
   m_ObjectHideFlags: 0

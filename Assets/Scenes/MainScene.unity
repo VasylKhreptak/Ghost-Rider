@@ -41852,6 +41852,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!4 &1579437230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1865366880963326652, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+  m_PrefabInstance: {fileID: 1865366881192711658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1581253311
 GameObject:
   m_ObjectHideFlags: 0
@@ -53086,6 +53091,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stellar
       objectReference: {fileID: 0}
+    - target: {fileID: 5144862623164608495, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 1579437230}
+    - target: {fileID: 5144862623164608495, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+      propertyPath: _meshTransform
+      value: 
+      objectReference: {fileID: 1579437230}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
 --- !u!4 &3026707314752352038 stripped
