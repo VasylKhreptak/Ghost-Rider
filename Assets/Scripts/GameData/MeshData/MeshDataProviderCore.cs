@@ -1,15 +1,13 @@
 using System;
 using UnityEngine;
 
-public class MeshVerticesProvider : MonoEvent
+public class MeshDataProviderCore : MonoEvent
 {
 	[Header("References")]
 	[SerializeField] protected MeshFilter _meshFilter;
 
 	[Header("Events")]
 	[SerializeField] protected MonoEvent _updateEvent;
-	
-	public Vector3[] vertices;
 	
 	#region MonoBehaviour
 
@@ -20,7 +18,7 @@ public class MeshVerticesProvider : MonoEvent
 
 	private void Awake()
 	{
-		UpdateVertices();
+		UpdateData();
 		
 		TryAddListener();
 	}
@@ -42,7 +40,7 @@ public class MeshVerticesProvider : MonoEvent
 
 	private void AddListener()
 	{
-		_updateEvent.onMonoCall += UpdateVertices;
+		_updateEvent.onMonoCall += UpdateData;
 	}
 	
 	private void TryRemoveListener()
@@ -55,10 +53,10 @@ public class MeshVerticesProvider : MonoEvent
 
 	private void RemoveListener()
 	{
-		_updateEvent.onMonoCall -= UpdateVertices;
+		_updateEvent.onMonoCall -= UpdateData;
 	}
 	
-	protected virtual void UpdateVertices()
+	protected virtual void UpdateData()
 	{
 		throw new NotImplementedException();
 	}

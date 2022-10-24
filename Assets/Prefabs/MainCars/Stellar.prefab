@@ -19770,7 +19770,6 @@ Transform:
   - {fileID: 1865366881329724763}
   - {fileID: 1865366881398715005}
   - {fileID: 1865366882396231381}
-  - {fileID: 4649906207065084074}
   - {fileID: 6248016930785257249}
   - {fileID: 5120277431522164879}
   - {fileID: 7571062317490232086}
@@ -20455,8 +20454,8 @@ MonoBehaviour:
   _collisionEnterEvent: {fileID: 1842045922422513771}
   _meshFilter: {fileID: 1865366880963326643}
   _meshCollider: {fileID: 1865366880963326653}
-  _verticesProvider: {fileID: 0}
-  _startVerticesProvider: {fileID: 0}
+  _verticesProvider: {fileID: 3689277715653844502}
+  _startVerticesProvider: {fileID: 3774178591084805389}
   _updateCollider: 0
   _minDeformationRadius: 0.4
   _maxDeformationRadius: 1
@@ -21653,7 +21652,7 @@ Transform:
   m_Children:
   - {fileID: 4405479346250294830}
   m_Father: {fileID: 1842045922422513822}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8903175887809426242
 MonoBehaviour:
@@ -21805,7 +21804,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1842045922422513822}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5975108442493858542
 MonoBehaviour:
@@ -21870,7 +21869,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1842045922422513822}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3423863914002068884
 MonoBehaviour:
@@ -22074,7 +22073,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1842045922422513822}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7026974905472162277
 MonoBehaviour:
@@ -22403,7 +22402,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1842045922422513822}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7990685507091555671
 MonoBehaviour:
@@ -22552,66 +22551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7908613870665164160
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4649906207065084074}
-  - component: {fileID: 3266006166846400062}
-  - component: {fileID: 4849969969548337420}
-  m_Layer: 0
-  m_Name: HealthThresholdEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4649906207065084074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908613870665164160}
-  m_LocalRotation: {x: -0, y: 0.45281595, z: -0, w: 0.891604}
-  m_LocalPosition: {x: -3.3782892, y: 0.34535813, z: 1.7359853}
-  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1842045922422513822}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3266006166846400062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908613870665164160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4849969969548337420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908613870665164160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4080bc2ce5cced94aa9ba2d22e5d2175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageableObject: {fileID: 1865366881192711660}
-  _healthThreshold: 90
-  _resetEvent: {fileID: 3266006166846400062}
 --- !u!1 &8738286282786505784
 GameObject:
   m_ObjectHideFlags: 0
@@ -22647,7 +22586,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1842045922422513822}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8224369575312960263
 MonoBehaviour:

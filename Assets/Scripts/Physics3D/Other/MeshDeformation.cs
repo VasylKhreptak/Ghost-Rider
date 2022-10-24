@@ -83,9 +83,9 @@ public class MeshDeformation : MonoBehaviour
             }
         }
         
-        onDeform?.Invoke();
-
         OnUpdate();
+        
+        onDeform?.Invoke();
     }
 
     private void OnUpdate()
@@ -112,7 +112,7 @@ public class MeshDeformation : MonoBehaviour
     {
         _meshFilter.mesh.vertices = _startVerticesProvider.vertices;
 
-        RestoreVertices();
+        RestoreVerticesCopy();
     }
 
     public void RestoreCollider()
@@ -120,7 +120,7 @@ public class MeshDeformation : MonoBehaviour
         _meshCollider.sharedMesh = _meshFilter.mesh;
     }
 
-    public void RestoreVertices()
+    public void RestoreVerticesCopy()
     {
         _verticesProvider.vertices = _meshFilter.mesh.vertices;
     }
