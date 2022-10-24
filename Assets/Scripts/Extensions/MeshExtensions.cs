@@ -52,7 +52,7 @@ public static class MeshExtensions
 		return triangleNormals;
 	}
 	
-	public static MeshTriangle[] GetMeshTriangles(this Mesh mesh)
+	public static MeshTriangle[] GetTriangles(this Mesh mesh)
 	{
 		int[] triangles = mesh.triangles;
 		Vector3[] vertices = mesh.vertices;

@@ -42265,6 +42265,54 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1592419792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592419793}
+  - component: {fileID: 1592419794}
+  m_Layer: 0
+  m_Name: ClosestMeshTriangleFinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1592419793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592419792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.063, y: 0.81, z: -83.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1592419794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592419792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953eb4aaf40e3054e8fb92ab2ef294c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1592419793}
+  _targetMeshFilter: {fileID: 1865366881192711659}
+  _targetTransform: {fileID: 1579437230}
+  _triangleIndex: 211
 --- !u!1 &1595055003
 GameObject:
   m_ObjectHideFlags: 0
@@ -53091,16 +53139,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stellar
       objectReference: {fileID: 0}
-    - target: {fileID: 5144862623164608495, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
-      propertyPath: _transform
-      value: 
-      objectReference: {fileID: 1579437230}
-    - target: {fileID: 5144862623164608495, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
-      propertyPath: _meshTransform
-      value: 
-      objectReference: {fileID: 1579437230}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+--- !u!33 &1865366881192711659 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 1865366880963326643, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
+  m_PrefabInstance: {fileID: 1865366881192711658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3026707314752352038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5513852087089650038, guid: af52eafeaf318444ab41c8ae48b66ae5, type: 3}

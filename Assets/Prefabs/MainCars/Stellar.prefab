@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 1865366880963326643}
   - component: {fileID: 1865366880963326642}
   - component: {fileID: 1865366880963326653}
+  - component: {fileID: 3689277715653844502}
+  - component: {fileID: 3774178591084805389}
   m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
@@ -130,6 +132,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2959467708922500008, guid: 91a57669f3145ad48b276c1d8541f6b7, type: 3}
+--- !u!114 &3689277715653844502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366880963326655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48303f1c88e54b748b37cd615146c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshFilter: {fileID: 1865366880963326643}
+  _updateEvent: {fileID: 0}
+  vertices: []
+--- !u!114 &3774178591084805389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366880963326655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8654261043230e4bb378bb58b335ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshFilter: {fileID: 1865366880963326643}
+  _updateEvent: {fileID: 0}
+  vertices: []
 --- !u!1 &1865366880963922405
 GameObject:
   m_ObjectHideFlags: 0
@@ -20423,6 +20455,8 @@ MonoBehaviour:
   _collisionEnterEvent: {fileID: 1842045922422513771}
   _meshFilter: {fileID: 1865366880963326643}
   _meshCollider: {fileID: 1865366880963326653}
+  _verticesProvider: {fileID: 0}
+  _startVerticesProvider: {fileID: 0}
   _updateCollider: 0
   _minDeformationRadius: 0.4
   _maxDeformationRadius: 1
@@ -21389,7 +21423,6 @@ GameObject:
   - component: {fileID: 1865366882830989833}
   - component: {fileID: 1865366882830989839}
   - component: {fileID: 1865366882830989838}
-  - component: {fileID: 5144862623164608495}
   m_Layer: 10
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -21462,20 +21495,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5144862623164608495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865366882830989832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d66a8d95ec9d8408433afa87a30e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transform: {fileID: 1865366882830989833}
-  _targetMeshFilter: {fileID: 1865366880963326643}
 --- !u!1 &1865366882847051948
 GameObject:
   m_ObjectHideFlags: 0

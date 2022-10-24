@@ -8,6 +8,8 @@ public class MeshDeformation : MonoBehaviour
     [SerializeField] private OnCollisionEnterEvent _collisionEnterEvent;
     [SerializeField] private MeshFilter _meshFilter;
     [SerializeField] private MeshCollider _meshCollider;
+    [SerializeField] private InstancedMeshVerticesProvider _verticesProvider;
+    [SerializeField] private SharedMeshVerticesProvider _startVerticesProvider;
 
     [Header("Preferences")]
     [SerializeField] private bool _updateCollider;
@@ -24,19 +26,9 @@ public class MeshDeformation : MonoBehaviour
     [SerializeField] private AnimationCurve _falloffCurve;
     [SerializeField] private float _deformationMultiplier;
 
-    private Vector3[] _meshVertices;
-    private Vector3[] _startMeshVertices;
-
     public Action onDeform;
 
     #region MonoBehaviour
-
-    private void Awake()
-    {
-        Mesh mesh = _meshFilter.mesh;
-        _meshVertices = mesh.vertices;
-        _startMeshVertices = mesh.vertices;
-    }
 
     private void OnValidate()
     {
@@ -44,6 +36,8 @@ public class MeshDeformation : MonoBehaviour
         _collisionEnterEvent ??= GetComponent<OnCollisionEnterEvent>();
         _meshFilter ??= GetComponent<MeshFilter>();
         _meshCollider ??= GetComponent<MeshCollider>();
+        _verticesProvider ??= GetComponentInChildren<InstancedMeshVerticesProvider>();
+        _startVerticesProvider ??= GetComponentInChildren<SharedMeshVerticesProvider>();
     }
 
     private void OnEnable()
@@ -73,17 +67,18 @@ public class MeshDeformation : MonoBehaviour
         {
             Vector3 deformationDirection = contactPoint.normal;
             
-            for (int i = 0; i < _meshVertices.Length; i++)
+            for (int i = 0; i < _verticesProvider.vertices.Length; i++)
             {
-                Vector3 vertexPosition = _meshVertices[i];
+                Vector3 vertexPosition = _verticesProvider.vertices[i];
                 Vector3 pointPosition = _transform.InverseTransformPoint(contactPoint.point);
 
                 float distanceFromCollision = Vector3.Distance(vertexPosition, pointPosition);
-                float distanceFromOriginalVertex = Vector3.Distance(_startMeshVertices[i], vertexPosition);
+                float distanceFromOriginalVertex = Vector3.Distance(_startVerticesProvider.vertices[i], vertexPosition);
                 
                 if (distanceFromCollision < radius && distanceFromOriginalVertex < _maxVertexDeformation)
                 {
-                    _meshVertices[i] = GetNewVertexPosition(ref deformation, _meshVertices[i], ref deformationDirection, ref distanceFromCollision, ref radius);
+                    _verticesProvider.vertices[i] = GetNewVertexPosition(ref deformation, _verticesProvider.vertices[i], 
+                        ref deformationDirection, ref distanceFromCollision, ref radius);
                 }
             }
         }
@@ -105,7 +100,7 @@ public class MeshDeformation : MonoBehaviour
 
     private void UpdateMesh()
     {
-        _meshFilter.mesh.vertices = _meshVertices;
+        _meshFilter.mesh.vertices = _verticesProvider.vertices;
     }
     
     private void UpdateCollider()
@@ -115,7 +110,7 @@ public class MeshDeformation : MonoBehaviour
 
     public void RestoreMesh()
     {
-        _meshFilter.mesh.vertices = _startMeshVertices;
+        _meshFilter.mesh.vertices = _startVerticesProvider.vertices;
 
         RestoreVertices();
     }
@@ -127,7 +122,7 @@ public class MeshDeformation : MonoBehaviour
 
     public void RestoreVertices()
     {
-        _meshVertices = _meshFilter.mesh.vertices;
+        _verticesProvider.vertices = _meshFilter.mesh.vertices;
     }
 
     private float GetDeformationRadius(ref float impulse)

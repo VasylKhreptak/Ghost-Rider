@@ -1242,6 +1242,8 @@ MonoBehaviour:
   _collisionEnterEvent: {fileID: 7171387826406974055}
   _meshFilter: {fileID: 8643546916309445038}
   _meshCollider: {fileID: 8643546916309445039}
+  _verticesProvider: {fileID: 6805226776568023189}
+  _startVerticesProvider: {fileID: 9073093808502574648}
   _updateCollider: 0
   _minDeformationRadius: 0.4
   _maxDeformationRadius: 1
@@ -22702,6 +22704,8 @@ GameObject:
   - component: {fileID: 8643546916309445038}
   - component: {fileID: 8643546916309445025}
   - component: {fileID: 8643546916309445039}
+  - component: {fileID: 9073093808502574648}
+  - component: {fileID: 6805226776568023189}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -22792,6 +22796,36 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: ccb1d75e65d677f47b83f4cf2bc0c8ef, type: 3}
+--- !u!114 &9073093808502574648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643546916309445027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8654261043230e4bb378bb58b335ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshFilter: {fileID: 8643546916309445038}
+  _updateEvent: {fileID: 0}
+  vertices: []
+--- !u!114 &6805226776568023189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643546916309445027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48303f1c88e54b748b37cd615146c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshFilter: {fileID: 8643546916309445038}
+  _updateEvent: {fileID: 0}
+  vertices: []
 --- !u!1 &8921832875904695748
 GameObject:
   m_ObjectHideFlags: 0
