@@ -1,6 +1,6 @@
 public class SharedMeshVerticesProvider : MeshVerticesProvider
 {
-	protected override void UpdateData()
+	public override void UpdateData()
 	{
 		vertices = _meshFilter.sharedMesh.vertices;
 		

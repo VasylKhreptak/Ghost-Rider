@@ -1,6 +1,6 @@
 public class SharedMeshTriangleCentersProvider : MeshTriangleCentersProvider
 {
-	protected override void UpdateData()
+	public override void UpdateData()
 	{
 		centers = _meshFilter.sharedMesh.GetTriangleCenters();
 		

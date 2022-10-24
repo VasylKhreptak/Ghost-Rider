@@ -1,6 +1,6 @@
 public class InstancedMeshTrianglesProvider : MeshTrianglesProvider
 {
-	protected override void UpdateData()
+	public override void UpdateData()
 	{
 		triangles = _meshFilter.mesh.GetTriangles();
 		

@@ -1,6 +1,6 @@
 public class InstancedMeshTriangleCentersProvider : MeshTriangleCentersProvider
 {
-	protected override void UpdateData()
+	public override void UpdateData()
 	{
 		centers = _meshFilter.mesh.GetTriangleCenters();
 		
