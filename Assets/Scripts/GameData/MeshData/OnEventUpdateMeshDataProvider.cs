@@ -15,12 +15,12 @@ public class OnEventUpdateMeshDataProvider : MonoBehaviour
 		_dataProvider ??= GetComponent<MeshDataProviderCore>();
 	}
 
-	private void OnEnable()
+	private void Awake()
 	{
 		_monoEvent.onMonoCall += _dataProvider.UpdateData;
 	}
 
-	private void OnDisable()
+	private void OnDestroy()
 	{
 		_monoEvent.onMonoCall -= _dataProvider.UpdateData;
 	}

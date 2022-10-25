@@ -12,12 +12,12 @@ public class OnMeshUpdateEvent : MonoEvent
 		_meshDeformation ??= GetComponent<MeshDeformation>();
 	}
 
-	private void OnEnable()
+	private void Awake()
 	{
 		_meshDeformation.onMeshUpdate += Invoke;
 	}
 
-	private void OnDisable()
+	private void OnDestroy()
 	{
 		_meshDeformation.onMeshUpdate -= Invoke;
 	}
