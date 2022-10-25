@@ -26,7 +26,7 @@ public class MeshDeformation : MonoBehaviour
     [SerializeField] private AnimationCurve _falloffCurve;
     [SerializeField] private float _deformationMultiplier;
 
-    public Action onDeform;
+    public Action onMeshUpdate;
 
     #region MonoBehaviour
 
@@ -84,8 +84,6 @@ public class MeshDeformation : MonoBehaviour
         }
         
         OnUpdate();
-        
-        onDeform?.Invoke();
     }
 
     private void OnUpdate()
@@ -101,6 +99,8 @@ public class MeshDeformation : MonoBehaviour
     private void UpdateMesh()
     {
         _meshFilter.mesh.vertices = _verticesProvider.vertices;
+        
+        onMeshUpdate?.Invoke();
     }
     
     private void UpdateCollider()
@@ -111,6 +111,8 @@ public class MeshDeformation : MonoBehaviour
     public void RestoreMesh()
     {
         _meshFilter.mesh.vertices = _startVerticesProvider.vertices;
+
+        onMeshUpdate?.Invoke();
 
         RestoreVerticesCopy();
     }

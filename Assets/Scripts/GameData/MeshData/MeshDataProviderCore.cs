@@ -1,26 +1,52 @@
 using System;
 using UnityEngine;
 
-public class MeshDataProviderCore : MonoEvent
+[RequireComponent(typeof(MeshFilter))]
+public class MeshDataProviderCore : MonoBehaviour
 {
-	[Header("References")]
-	[SerializeField] protected MeshFilter _meshFilter;
+    [Header("References")]
+    [SerializeField] protected Transform _transform;
+    [SerializeField] protected MeshFilter _meshFilter;
+    
+    public Action onLoad;
+    public Action onUpdate;
+    
+    #region MonoBehaviour
 
-	#region MonoBehaviour
+    private void OnValidate()
+    {
+        _transform ??= GetComponent<Transform>();
+        _meshFilter ??= GetComponent<MeshFilter>();
+    }
 
-	private void OnValidate()
-	{
-		_meshFilter ??= GetComponent<MeshFilter>();
-	}
+    private void Awake()
+    {
+        LoadData();
+    }
 
-	private void Awake()
-	{
-		UpdateData();
-	}
-	#endregion
+    #endregion
 
-	public virtual void UpdateData()
-	{
-		throw new NotImplementedException();
-	}
+    private void LoadData()
+    {
+        SyncData();
+
+        onLoad?.Invoke();
+    }
+    
+    public void UpdateData()
+    {
+        SyncData();
+
+        onUpdate?.Invoke();
+    }
+
+    protected virtual void SyncData()
+    {
+        throw new NotImplementedException();
+    }
+
+    protected virtual void PreloadData()
+    {
+        throw new NotImplementedException();
+    }
 }

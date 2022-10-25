@@ -1,9 +1,7 @@
 public class InstancedMeshVerticesProvider : MeshVerticesProvider
 {
-	public override void UpdateData()
+	protected override void SyncData()
 	{
 		vertices = _meshFilter.mesh.vertices;
-		
-		onMonoCall?.Invoke();
 	}
 }

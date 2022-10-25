@@ -1,9 +1,7 @@
 public class InstancedMeshTriangleNormalsProvider : MeshTriangleNormalsProvider
 {
-	public override void UpdateData()
+	protected override void SyncData()
 	{
 		normals = _meshFilter.mesh.GetTriangleNormals();
-		
-		onMonoCall?.Invoke();
 	}
 }

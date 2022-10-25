@@ -1,9 +1,7 @@
 public class SharedMeshVerticesProvider : MeshVerticesProvider
 {
-	public override void UpdateData()
+	protected override void SyncData()
 	{
 		vertices = _meshFilter.sharedMesh.vertices;
-		
-		onMonoCall?.Invoke();
 	}
 }

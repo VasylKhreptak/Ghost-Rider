@@ -1,9 +1,7 @@
 public class SharedMeshTriangleNormalsProvider : MeshTriangleNormalsProvider
 {
-	public override void UpdateData()
+	protected override void SyncData()
 	{
 		normals = _meshFilter.sharedMesh.GetTriangleNormals();
-		
-		onMonoCall?.Invoke();
 	}
 }

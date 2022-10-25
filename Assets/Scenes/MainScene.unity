@@ -42290,7 +42290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592419792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.063, y: 0.81, z: -83.64}
+  m_LocalPosition: {x: -0.9989, y: 0.707, z: -82.4084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42312,7 +42312,7 @@ MonoBehaviour:
   _transform: {fileID: 1592419793}
   _targetMeshFilter: {fileID: 1865366881192711659}
   _targetTransform: {fileID: 1579437230}
-  _triangleIndex: 211
+  _triangleIndex: 2001
 --- !u!1 &1595055003
 GameObject:
   m_ObjectHideFlags: 0

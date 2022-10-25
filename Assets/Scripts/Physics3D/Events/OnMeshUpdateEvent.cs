@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OnMeshDeformEvent : MonoEvent
+public class OnMeshUpdateEvent : MonoEvent
 {
 	[Header("References")]
 	[SerializeField] private MeshDeformation _meshDeformation;
@@ -14,12 +14,12 @@ public class OnMeshDeformEvent : MonoEvent
 
 	private void OnEnable()
 	{
-		_meshDeformation.onDeform += Invoke;
+		_meshDeformation.onMeshUpdate += Invoke;
 	}
 
 	private void OnDisable()
 	{
-		_meshDeformation.onDeform -= Invoke;
+		_meshDeformation.onMeshUpdate -= Invoke;
 	}
 
 	#endregion

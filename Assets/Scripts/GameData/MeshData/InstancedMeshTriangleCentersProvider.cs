@@ -1,9 +1,7 @@
 public class InstancedMeshTriangleCentersProvider : MeshTriangleCentersProvider
 {
-	public override void UpdateData()
+	protected override void SyncData()
 	{
 		centers = _meshFilter.mesh.GetTriangleCenters();
-		
-		onMonoCall?.Invoke();
 	}
 }

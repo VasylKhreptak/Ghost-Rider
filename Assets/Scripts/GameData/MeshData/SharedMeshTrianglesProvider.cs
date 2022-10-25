@@ -1,9 +1,7 @@
 public class SharedMeshTrianglesProvider : MeshTrianglesProvider
 {
-	public override void UpdateData()
+	protected override void SyncData()
 	{
 		triangles = _meshFilter.sharedMesh.GetTriangles();
-		
-		onMonoCall?.Invoke();
 	}
 }
