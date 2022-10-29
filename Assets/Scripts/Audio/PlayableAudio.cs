@@ -46,16 +46,22 @@ public class PlayableAudio : SoundHolder
 
     public override void Play()
     {
+        if (IsPlayingLooped()) return;
+        
         _currentAudioID = _audioPooler.PlaySound(_output, _audioClips.Random(), _playOnTransformPosition ? _transform.position : _startPosition,
             _volume, _spatialBlend, _loop, _linkTo, _priority);
 
         _currentAudioItem = _audioPooler.GetAudioPoolItem(_currentAudioID);
     }
+
     public override void Stop()
     {
+        if (_currentAudioItem == null) return;
+        
         _audioPooler.StopSound(_currentAudioID);
 
         _currentAudioItem = null;
+        _currentAudioID = -1;
     }
 
     public bool TrySetAudioPosition(Vector3 position)
@@ -73,8 +79,13 @@ public class PlayableAudio : SoundHolder
     private bool IsPlaying()
     {
         if (_currentAudioItem == null) return false;
-        
+
         return _currentAudioItem.audioSource.isPlaying;
+    }
+
+    private bool IsPlayingLooped()
+    {
+        return IsPlaying() && _loop;
     }
 
     private void SetAudioPosition(ref Vector3 position)
@@ -85,5 +96,18 @@ public class PlayableAudio : SoundHolder
     public AudioPoolItem GetAudioItem()
     {
         return _currentAudioItem;
+    }
+
+    public void TrySetVolume(float volume)
+    {
+        if (IsPlaying())
+        {
+            SetVolume(volume);
+        }
+    }
+
+    private void SetVolume(float volume)
+    {
+        _currentAudioItem.audioSource.volume = volume;
     }
 }

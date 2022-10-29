@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
 using VLB;
 using Zenject;
 
@@ -22,9 +21,7 @@ public class AudioPooler : MonoBehaviour
 
     private List<AudioPoolItem> _pool = new List<AudioPoolItem>();
     private Dictionary<int, AudioPoolItem> _activePool = new Dictionary<int, AudioPoolItem>();
-
-    private Transform _camera;
-
+    
     private int _idGiver;
 
     private DiContainer _diContainer;
@@ -58,25 +55,9 @@ public class AudioPooler : MonoBehaviour
     {
         FillPool();
     }
-
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += UpdateListener;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= UpdateListener;
-    }
-
+    
     #endregion
-
-    private void UpdateListener(Scene scene, LoadSceneMode loadMode) => UpdateListener();
-
-    private void UpdateListener()
-    {
-        _camera = Camera.main.transform;
-    }
+    
 
     private void FillPool()
     {
@@ -109,20 +90,18 @@ public class AudioPooler : MonoBehaviour
     public int PlaySound(AudioMixerGroup output, AudioClip clip, Vector3 position, float volume,
         float spatialBlend, bool loop = false, Transform linkTo = null, int priority = 128)
     {
-        if (CanPlay(clip, position, volume, spatialBlend) == false) return 0;
+        if (CanPlay(clip, volume) == false) return 0;
 
         AudioPoolItem appropriatePoolItem = GetAppropriatePoolItem();
 
         return ConfigurePoolObject(appropriatePoolItem, output, clip, position, volume, spatialBlend, loop, linkTo, priority);
     }
 
-    private bool CanPlay(AudioClip clip, Vector3 playPosition, float volume, float spatialBlend)
+    private bool CanPlay(AudioClip clip, float volume)
     {
-        if (_camera == null || volume.Approximately(0) || clip == null) return false;
-
-        if (spatialBlend.Approximately(0)) return true;
-
-        return Vector3.Distance(playPosition, _camera.position) < _maxSoundDistance;
+        if (volume.Approximately(0) || clip == null) return false;
+        
+        return true;
     }
 
     private AudioPoolItem GetAppropriatePoolItem()
@@ -172,7 +151,7 @@ public class AudioPooler : MonoBehaviour
     }
 
     private int ConfigurePoolObject(AudioPoolItem poolItem, AudioMixerGroup output, AudioClip clip, Vector3 position, float volume,
-        float spatialBlend, bool loop, Transform linkTo, float priority)
+        float spatialBlend, bool loop, Transform linkTo, int priority)
     {
         _idGiver++;
 
@@ -182,6 +161,7 @@ public class AudioPooler : MonoBehaviour
         poolItem.audioSource.volume = volume;
         poolItem.audioSource.spatialBlend = spatialBlend;
         poolItem.priority = priority;
+        poolItem.audioSource.priority = priority;
         poolItem.ID = _idGiver;
         poolItem.audioSource.loop = loop;
         poolItem.gameObject.SetActive(true);
@@ -202,7 +182,7 @@ public class AudioPooler : MonoBehaviour
     private void TryStopSoundDelayed(AudioPoolItem poolItem)
     {
         if (CanStopSoundDelayed(poolItem) == false) return;
-        
+
         poolItem.waitTween = poolItem.DOWait(poolItem.audioSource.clip.length).OnComplete(() =>
         {
             StopSound(poolItem.ID);
@@ -231,7 +211,7 @@ public class AudioPooler : MonoBehaviour
         activePoolItem.gameObject.SetActive(false);
         activePoolItem.waitTween.Kill();
         activePoolItem.ID = -1;
-
+        
         _activePool.Remove(activePoolItem.ID);
     }
 

@@ -14,12 +14,12 @@ public class OnEventPlayAudio : MonoBehaviour
         _clipHolder ??= GetComponent<PlayableAudio>();
     }
 
-    private void OnEnable()
+    private void Awake()
     {
         _monoEvent.onMonoCall += PlayAudio;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _monoEvent.onMonoCall -= PlayAudio;
     }
