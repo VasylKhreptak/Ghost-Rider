@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 8841672683081334890}
   - component: {fileID: 5034882335720253857}
   - component: {fileID: 3552492543942358731}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Front2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 8765061830627188545}
   - component: {fileID: 824458173027666322}
   - component: {fileID: 5316667475486678213}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: RCCExhaust
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -5536,7 +5536,7 @@ GameObject:
   - component: {fileID: 1563981879119847967}
   - component: {fileID: 8088009873499767678}
   - component: {fileID: 1593781997591913613}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: RCCExhaust (1)
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -10405,7 +10405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1865366881398715005}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Exhausts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10444,7 +10444,7 @@ GameObject:
   - component: {fileID: 1865366881563876365}
   - component: {fileID: 1865366881563876364}
   - component: {fileID: 1865366881563876367}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: RCCExhaustFlame
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -15239,7 +15239,7 @@ GameObject:
   - component: {fileID: 1865366881932638423}
   - component: {fileID: 1865366881932638422}
   - component: {fileID: 1865366881932638417}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: RCCExhaustFlame
   m_TagString: Player
   m_Icon: {fileID: -7310811918437815874, guid: 0000000000000000d000000000000000, type: 0}
@@ -21179,7 +21179,7 @@ GameObject:
   - component: {fileID: 1865366882396231381}
   - component: {fileID: 7696177411311805639}
   - component: {fileID: 2491175304830885455}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21487,7 +21487,7 @@ GameObject:
   - component: {fileID: 5727811736428615817}
   - component: {fileID: 3954798367230313483}
   - component: {fileID: 6854067566106350578}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: Front1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22068,7 +22068,7 @@ GameObject:
   - component: {fileID: 4454931103454050414}
   - component: {fileID: 8055201832543915110}
   - component: {fileID: 1114392782041464933}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: CrashSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22180,7 +22180,7 @@ GameObject:
   - component: {fileID: 1414156796535591130}
   - component: {fileID: 3431532526579234958}
   - component: {fileID: 2523725850320592786}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: CrashSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22289,7 +22289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2345634771365215715}
   - component: {fileID: 8903175887809426242}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: EngineSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22442,7 +22442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6248016930785257249}
   - component: {fileID: 5975108442493858542}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: OnHitSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22507,7 +22507,7 @@ GameObject:
   - component: {fileID: 3561136207526500907}
   - component: {fileID: 5258041449515864988}
   - component: {fileID: 6396094812465084162}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AbuseVoices
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22711,7 +22711,7 @@ GameObject:
   - component: {fileID: 7026974905472162277}
   - component: {fileID: 7339106632553513048}
   - component: {fileID: 4819130515687499084}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: CarSpeedMovementProblems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23041,7 +23041,7 @@ GameObject:
   - component: {fileID: 1116537876626495317}
   - component: {fileID: 4490011448550156849}
   - component: {fileID: 7112471125609691460}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EngineSmokeSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23241,7 +23241,7 @@ GameObject:
   - component: {fileID: 6566411861316006892}
   - component: {fileID: 4844592685694825939}
   - component: {fileID: 7086414728142659004}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: TryEngineStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23425,7 +23425,7 @@ GameObject:
   - component: {fileID: 3455068716583884640}
   - component: {fileID: 7780315570117490823}
   - component: {fileID: 2679936078301814738}
-  m_Layer: 10
+  m_Layer: 2
   m_Name: EngineProblemsOnLowHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23687,6 +23687,10 @@ PrefabInstance:
     - target: {fileID: 8176951838569341731, guid: d917e8884fff71a459488b362892ee3a, type: 3}
       propertyPath: m_Name
       value: SmokeEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 8176951838569341731, guid: d917e8884fff71a459488b362892ee3a, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8342562240701122663, guid: d917e8884fff71a459488b362892ee3a, type: 3}
       propertyPath: InitialModule.size3D
