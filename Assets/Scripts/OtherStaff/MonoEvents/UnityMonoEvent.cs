@@ -32,6 +32,6 @@ public class UnityMonoEvent : MonoEvent
     {
         onMonoCall?.Invoke();
 
-        _unityEvent.Invoke();
+        _unityEvent?.Invoke();
     }
 }

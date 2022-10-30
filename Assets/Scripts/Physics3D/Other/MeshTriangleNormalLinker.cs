@@ -5,7 +5,6 @@ public class MeshTriangleNormalLinker : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform _transform;
     [SerializeField] private InstancedMeshTriangleNormalsProvider _normalProvider;
-    [SerializeField] private SharedMeshTriangleNormalsProvider _startNormalsProvider;
 
     [Header("Preferences")]
     [SerializeField] private int _triangleIndex;
@@ -15,6 +14,7 @@ public class MeshTriangleNormalLinker : MonoBehaviour
     
     private Vector3 _previousNormalDirection;
     private Vector3 _startLocalRotation;
+    private Vector3 _startNormalDirection;
     
     #region MonoBehaviour
 
@@ -27,30 +27,23 @@ public class MeshTriangleNormalLinker : MonoBehaviour
     private void Awake()
     {
         _startLocalRotation = _transform.localRotation.eulerAngles;
-
-        _restoreEvent.onMonoCall += Restore;
-    }
-
-    private void Start()
-    {
-        UpdateLookDirection();
     }
 
     private void OnEnable()
     {
         _normalProvider.onUpdate += UpdateLookDirection;
+        _normalProvider.onLoad += UpdateLookDirection;
         _normalProvider.onLoad += UpdatePreviousNormalDirection;
-
+        _normalProvider.onLoad += UpdateStartNormal;
+        _restoreEvent.onMonoCall += Restore;
     }
 
     private void OnDisable()
     {
         _normalProvider.onUpdate -= UpdateLookDirection;
+        _normalProvider.onLoad -= UpdateLookDirection;
         _normalProvider.onLoad -= UpdatePreviousNormalDirection;
-    }
-
-    private void OnDestroy()
-    {
+        _normalProvider.onLoad -= UpdateStartNormal;
         _restoreEvent.onMonoCall -= Restore;
     }
 
@@ -70,9 +63,14 @@ public class MeshTriangleNormalLinker : MonoBehaviour
         _previousNormalDirection = _normalProvider.normals[_triangleIndex];
     }
 
+    private void UpdateStartNormal()
+    {
+        _startNormalDirection = _normalProvider.normals[_triangleIndex];
+    }
+    
     private void Restore()
     {
         _transform.localRotation = Quaternion.Euler(_startLocalRotation);
-        _previousNormalDirection = _startNormalsProvider.normals[_triangleIndex];
+        _previousNormalDirection = _startNormalDirection;
     }
 }

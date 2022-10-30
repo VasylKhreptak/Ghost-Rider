@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class NormalDeviationEvent : MonoEvent
@@ -16,16 +17,24 @@ public class NormalDeviationEvent : MonoEvent
 	
 	#region MonoBehaviour
 
-	private void OnEnable()
+	private void Awake()
 	{
 		_normalsProvider.onLoad += UpdateStartNormal;
+	}
+
+	private void OnEnable()
+	{
 		_checkEvent.onMonoCall += CheckDeviation;
 	}
 
 	private void OnDisable()
 	{
-		_normalsProvider.onLoad -= UpdateStartNormal;
 		_checkEvent.onMonoCall -= CheckDeviation;
+	}
+
+	private void OnDestroy()
+	{
+		_normalsProvider.onLoad -= UpdateStartNormal;
 	}
 
 	#endregion

@@ -110,6 +110,8 @@ public class MeshDeformation : MonoBehaviour
 
     public void RestoreMesh()
     {
+        if (_startVerticesProvider.vertices.Length == 0) return;
+        
         _meshFilter.mesh.vertices = _startVerticesProvider.vertices;
 
         onMeshUpdate?.Invoke();

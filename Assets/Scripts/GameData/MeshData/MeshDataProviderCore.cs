@@ -19,7 +19,7 @@ public class MeshDataProviderCore : MonoBehaviour
         _meshFilter ??= GetComponent<MeshFilter>();
     }
 
-    private void Awake()
+    private void Start()
     {
         LoadData();
     }

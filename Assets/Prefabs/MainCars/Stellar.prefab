@@ -49,7 +49,6 @@ GameObject:
   - component: {fileID: 1841760752196167430}
   - component: {fileID: 1865366881192711667}
   - component: {fileID: 1865366881192711668}
-  - component: {fileID: 6157420679637759505}
   - component: {fileID: 5621242604815640376}
   - component: {fileID: 8775353606950103369}
   - component: {fileID: 5590198474905197003}
@@ -229,21 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataProvider: {fileID: 1865366881192711667}
   _monoEvent: {fileID: 32473295730668943}
---- !u!114 &6157420679637759505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865366880963326655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd1d69cb9b882284aa76ca7f606a9ca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transform: {fileID: 1865366880963326652}
-  _meshFilter: {fileID: 1865366880963326643}
-  normals: []
 --- !u!114 &5621242604815640376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +435,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 1865366880963922426}
   _normalProvider: {fileID: 8815237072615882075}
-  _startNormalsProvider: {fileID: 6157420679637759505}
   _triangleIndex: 2001
   _restoreEvent: {fileID: 3552492543942358731}
 --- !u!114 &8841672683081334890
@@ -5501,7 +5484,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 1865366881303043538}
   _normalProvider: {fileID: 8815237072615882075}
-  _startNormalsProvider: {fileID: 6157420679637759505}
   _triangleIndex: 1888
   _restoreEvent: {fileID: 5316667475486678213}
 --- !u!114 &5316667475486678213
@@ -10346,7 +10328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 1865366881310466597}
   _normalProvider: {fileID: 8815237072615882075}
-  _startNormalsProvider: {fileID: 6157420679637759505}
   _triangleIndex: 1954
   _restoreEvent: {fileID: 1593781997591913613}
 --- !u!114 &1593781997591913613
@@ -21625,7 +21606,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 1865366882675075010}
   _normalProvider: {fileID: 8815237072615882075}
-  _startNormalsProvider: {fileID: 6157420679637759505}
   _triangleIndex: 2016
   _restoreEvent: {fileID: 6854067566106350578}
 --- !u!114 &5727811736428615817
