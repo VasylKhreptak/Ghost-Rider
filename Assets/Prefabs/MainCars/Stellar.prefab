@@ -22691,6 +22691,8 @@ GameObject:
   - component: {fileID: 7026974905472162277}
   - component: {fileID: 7339106632553513048}
   - component: {fileID: 4819130515687499084}
+  - component: {fileID: 3672277778989203436}
+  - component: {fileID: 4765270733163579419}
   m_Layer: 2
   m_Name: CarSpeedMovementProblems
   m_TagString: Untagged
@@ -23003,6 +23005,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3672277778989203436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642595725687646718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df05e1ed909d4b149877b1d5ed37d5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageableObject: {fileID: 1865366881192711660}
+--- !u!114 &4765270733163579419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642595725687646718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 3672277778989203436}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7026974905472162277}
+        m_TargetAssemblyTypeName: CarMovementProblems, Assembly-CSharp
+        m_MethodName: TryStopProblems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6910904597299794358
 GameObject:
   m_ObjectHideFlags: 0

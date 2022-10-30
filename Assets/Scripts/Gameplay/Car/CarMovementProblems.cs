@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using VLB;
 
 public class CarMovementProblems : MonoBehaviour
 {
@@ -118,7 +119,7 @@ public class CarMovementProblems : MonoBehaviour
 
     private bool HasAppropriateHealth(ref float health)
     {
-        return health < _maxHealth;
+        return health < _maxHealth && health.Approximately(0) == false;
     }
 
     private void TryStartProblems(ref float health)
@@ -129,7 +130,7 @@ public class CarMovementProblems : MonoBehaviour
         }
     }
 
-    private void TryStopProblems()
+    public void TryStopProblems()
     {
         if (_problemCoroutine != null)
         {
