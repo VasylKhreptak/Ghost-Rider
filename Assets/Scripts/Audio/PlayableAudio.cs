@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Serialization;
@@ -22,7 +23,10 @@ public class PlayableAudio : SoundHolder
     private AudioPooler _audioPooler;
 
     private int _currentAudioID;
+    
     private AudioPoolItem _currentAudioItem;
+
+    public Action onPlay; 
 
     [Inject]
     private void Construct(AudioPooler audioPooler)
@@ -52,6 +56,8 @@ public class PlayableAudio : SoundHolder
             _volume, _spatialBlend, _loop, _linkTo, _priority);
 
         _currentAudioItem = _audioPooler.GetAudioPoolItem(_currentAudioID);
+        
+        onPlay?.Invoke();
     }
 
     public override void Stop()
