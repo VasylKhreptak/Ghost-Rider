@@ -1825,6 +1825,9 @@ GameObject:
   - component: {fileID: 8888481693566488561}
   - component: {fileID: 8888481693566488560}
   - component: {fileID: 8888481693566488567}
+  - component: {fileID: 1224289061891057588}
+  - component: {fileID: 4269740623816948943}
+  - component: {fileID: 8185988698201008926}
   m_Layer: 6
   m_Name: RCCExhaust
   m_TagString: Player
@@ -1840,7 +1843,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536608713620210450}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0.582, y: -0.336, z: -2.295}
+  m_LocalPosition: {x: 0.468, y: -0.375, z: -2.568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6601,6 +6604,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97b4701a7011fb0488667186639219e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1224289061891057588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713620210450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33e9331d6d16284ab64144007ba288e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713620210449}
+  _centersProvider: {fileID: 2236680391619077252}
+  _triangleIndex: 440
+  _autoOffset: 1
+  _positionOffset: {x: 0.018569708, y: -0.025358558, z: -0.005683899}
+  _restoreEvent: {fileID: 8185988698201008926}
+--- !u!114 &4269740623816948943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713620210450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c515f0740989169449bdaa13b5eb72c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713620210449}
+  _normalProvider: {fileID: 8711373583659209661}
+  _triangleIndex: 440
+  _restoreEvent: {fileID: 8185988698201008926}
+--- !u!114 &8185988698201008926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713620210450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1536608713770957845
@@ -11446,6 +11495,9 @@ GameObject:
   - component: {fileID: 8888481693587892705}
   - component: {fileID: 8888481693587892704}
   - component: {fileID: 8888481693587892711}
+  - component: {fileID: 574223666855760981}
+  - component: {fileID: 5198212766101805075}
+  - component: {fileID: 4778960756861390240}
   m_Layer: 6
   m_Name: RCCExhaust (1)
   m_TagString: Player
@@ -11461,7 +11513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536608713915419417}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -0.586, y: -0.336, z: -2.295}
+  m_LocalPosition: {x: -0.472, y: -0.375, z: -2.568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16222,6 +16274,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97b4701a7011fb0488667186639219e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &574223666855760981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713915419417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33e9331d6d16284ab64144007ba288e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713915419416}
+  _centersProvider: {fileID: 2236680391619077252}
+  _triangleIndex: 697
+  _autoOffset: 1
+  _positionOffset: {x: 0.0069191456, y: -0.023147494, z: -0.005683899}
+  _restoreEvent: {fileID: 4778960756861390240}
+--- !u!114 &5198212766101805075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713915419417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c515f0740989169449bdaa13b5eb72c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1536608713915419416}
+  _normalProvider: {fileID: 8711373583659209661}
+  _triangleIndex: 697
+  _restoreEvent: {fileID: 4778960756861390240}
+--- !u!114 &4778960756861390240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536608713915419417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1536608713962098486
