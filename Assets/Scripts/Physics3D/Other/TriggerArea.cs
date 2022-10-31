@@ -57,4 +57,9 @@ public class TriggerArea : MonoBehaviour
             onEmpty?.Invoke();
         }
     }
+
+    public void Clear()
+    {
+        affectedObjects.Clear();
+    }
 }

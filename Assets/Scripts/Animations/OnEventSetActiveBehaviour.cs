@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class OnEventSetActiveBehaviour : MonoBehaviour
@@ -11,7 +10,6 @@ public class OnEventSetActiveBehaviour : MonoBehaviour
     
     [Header("MonoEvent")]
     [SerializeField] private MonoEvent _event;
-    
     
     #region MonoBehaviour
 
