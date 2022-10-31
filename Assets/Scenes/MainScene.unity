@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 98288105}
-  _cars: 0a0000000c0000000d0000000e000000
+  _cars: 0a0000000c0000000d0000000e0000000f000000
   _minOffset: {x: -0.1, y: 2, z: -5}
   _maxOffset: {x: -0.3, y: 2, z: 5}
   _minSpawnDelay: 2
@@ -14393,7 +14393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 790314435}
-  _cars: 0a0000000c0000000d0000000e000000
+  _cars: 0a0000000c0000000d0000000e0000000f000000
   _minOffset: {x: 0, y: 2, z: -5}
   _maxOffset: {x: 0, y: 2, z: 5}
   _minSpawnDelay: 2
@@ -23881,7 +23881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 1196886410}
-  _cars: 0a0000000c0000000d0000000e000000
+  _cars: 0a0000000c0000000d0000000e0000000f000000
   _minOffset: {x: 0, y: 2, z: -5}
   _maxOffset: {x: 0, y: 2, z: 5}
   _minSpawnDelay: 2
@@ -24312,6 +24312,10 @@ MonoBehaviour:
     folder: {fileID: 0}
   - poolType: 14
     prefab: {fileID: 6906151237082632825, guid: 7fd6761bdcea5e04293e3b462d1f73c7, type: 3}
+    size: 10
+    folder: {fileID: 0}
+  - poolType: 15
+    prefab: {fileID: 9145815078730460575, guid: eb85ede4a8afe3140aebf67c19f179f4, type: 3}
     size: 10
     folder: {fileID: 0}
 --- !u!1 &1234494375
@@ -42297,7 +42301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592419792}
   m_LocalRotation: {x: -0, y: -0, z: 0.013513301, w: 0.9999087}
-  m_LocalPosition: {x: 1.883, y: 0.881, z: 19.445}
+  m_LocalPosition: {x: 1.974, y: 0.866, z: 19.395}
   m_LocalScale: {x: 1.0265, y: 1.0265, z: 1.0265}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42319,7 +42323,7 @@ MonoBehaviour:
   _transform: {fileID: 1592419793}
   _targetMeshFilter: {fileID: 0}
   _targetTransform: {fileID: 0}
-  _triangleIndex: 1688
+  _triangleIndex: 1245
 --- !u!1 &1595055003
 GameObject:
   m_ObjectHideFlags: 0
@@ -45475,7 +45479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 1760711421}
-  _cars: 0a0000000c0000000d0000000e000000
+  _cars: 0a0000000c0000000d0000000e0000000f000000
   _minOffset: {x: 0.1, y: 2, z: -5}
   _maxOffset: {x: 0.3, y: 2, z: 5}
   _minSpawnDelay: 2

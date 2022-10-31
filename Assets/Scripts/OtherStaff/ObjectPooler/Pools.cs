@@ -16,10 +16,4 @@ public enum Pools
     RoadCar3 = 13,
     RoadCar4 = 14,
     RoadCar5 = 15,
-    RoadCar6 = 16,
-    RoadCar7 = 17,
-    RoadCar8 = 18,
-    RoadCar9 = 19,
-    RoadCar10 = 20,
-    RoadCar11 = 21,
 }
