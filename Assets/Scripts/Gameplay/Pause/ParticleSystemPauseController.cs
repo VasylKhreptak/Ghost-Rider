@@ -8,6 +8,8 @@ public class ParticleSystemPauseController : MonoBehaviour
     [SerializeField] private ParticleSystem _particleSystem;
 
     private PauseEvents _pauseEvents;
+
+    private bool _wasPlaying;
     
     [Inject]
     private void Construct(PauseEvents _pauseEvents)
@@ -53,11 +55,15 @@ public class ParticleSystemPauseController : MonoBehaviour
     
     private void OnPause()
     {
+        _wasPlaying = _particleSystem.isPlaying;
+        
         _particleSystem.Pause();
     }
 
     private void OnResume()
     {
+        if (_wasPlaying == false) return;
+        
         _particleSystem.Play();
     }
 }
