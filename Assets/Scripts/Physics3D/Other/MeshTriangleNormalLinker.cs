@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MeshTriangleNormalLinker : MonoBehaviour
@@ -27,6 +28,8 @@ public class MeshTriangleNormalLinker : MonoBehaviour
     private void Awake()
     {
         _startLocalRotation = _transform.localRotation.eulerAngles;
+
+        _restoreEvent.onMonoCall += Restore;
     }
 
     private void OnEnable()
@@ -35,7 +38,6 @@ public class MeshTriangleNormalLinker : MonoBehaviour
         _normalProvider.onLoad += UpdateLookDirection;
         _normalProvider.onLoad += UpdatePreviousNormalDirection;
         _normalProvider.onLoad += UpdateStartNormal;
-        _restoreEvent.onMonoCall += Restore;
     }
 
     private void OnDisable()
@@ -44,6 +46,10 @@ public class MeshTriangleNormalLinker : MonoBehaviour
         _normalProvider.onLoad -= UpdateLookDirection;
         _normalProvider.onLoad -= UpdatePreviousNormalDirection;
         _normalProvider.onLoad -= UpdateStartNormal;
+    }
+
+    private void OnDestroy()
+    {
         _restoreEvent.onMonoCall -= Restore;
     }
 
