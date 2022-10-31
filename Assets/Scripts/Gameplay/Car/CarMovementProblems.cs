@@ -2,32 +2,33 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using VLB;
+using Zenject;
 
 public class CarMovementProblems : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private RCC_CarControllerV3 _carController;
     [SerializeField] private DamageableObject _damageableObject;
-    
+
     [Header("General Preferences")]
     [SerializeField] private float _minHealth;
     [SerializeField] private float _maxHealth;
-    
+
     [Header("Problem delay")]
     [SerializeField] private float _minProblemDelay;
     [SerializeField] private float _maxProblemDelay;
     [SerializeField] private AnimationCurve _problemDelayCurve;
-    
+
     [Header("Problem probability")]
     [SerializeField, Range(0f, 1f)] private float _minProblemProbability;
     [SerializeField, Range(0f, 1f)] private float _maxProblemProbability;
     [SerializeField] private AnimationCurve _problemProbabilityCurve;
-    
+
     [Header("Gear shifting probability")]
     [SerializeField, Range(0f, 1f)] private float _minGearShiftProbability;
     [SerializeField, Range(0f, 1f)] private float _maxGearShiftProbability;
     [SerializeField] private AnimationCurve _gearShiftProbabilityCurve;
-    
+
     [Header("Gear shifting delay")]
     [SerializeField] private float _minGearShiftingDelay;
     [SerializeField] private float _maxGearShiftingDelay;
@@ -57,11 +58,19 @@ public class CarMovementProblems : MonoBehaviour
     [SerializeField] private float _minBrakeTorque;
     [SerializeField] private float _maxBrakeTorque;
     [SerializeField] private AnimationCurve _brakeTorqueCurve;
-    
+
     private Coroutine _problemCoroutine;
 
     private int _rawGearID;
 
+    private PauseEvents _pauseEvents;
+
+    [Inject]
+    private void Construct(PauseEvents pauseEvents)
+    {
+        _pauseEvents = pauseEvents;
+    }
+    
     #region MonoBehaviour
 
     private void OnValidate()
@@ -77,7 +86,7 @@ public class CarMovementProblems : MonoBehaviour
     private void Awake()
     {
         _rawGearID = _carController.currentGear;
-        
+
         SyncVariables();
     }
 
@@ -105,6 +114,8 @@ public class CarMovementProblems : MonoBehaviour
 
     private void OnHealthUpdated(float health)
     {
+        if (_pauseEvents.isPaused) return;
+
         if (HasAppropriateHealth(ref health))
         {
             TryStartProblems(ref health);
@@ -113,7 +124,7 @@ public class CarMovementProblems : MonoBehaviour
         {
             TryStopProblems();
         }
-        
+
         UpdateCarPreferences(ref health);
     }
 
@@ -144,7 +155,10 @@ public class CarMovementProblems : MonoBehaviour
     {
         while (true)
         {
-            TryDoProblem(ref health);
+            if (_pauseEvents.isPaused == false)
+            {
+                TryDoProblem(ref health);
+            }
 
             yield return new WaitForSeconds(GetProblemOccurDelay(ref health));
         }
@@ -189,7 +203,7 @@ public class CarMovementProblems : MonoBehaviour
 
         UpdateBrakeTorque(ref health);
     }
-    
+
     private void TryUpdateGear(ref float health)
     {
         if (Extensions.Mathf.Probability(GetGearShiftProbability(ref health)))
@@ -222,7 +236,7 @@ public class CarMovementProblems : MonoBehaviour
 
     private float GetGearShiftingDelay(ref float health)
     {
-        return _gearShiftDelayCurve.Evaluate(_minHealth, _maxHealth, health, 
+        return _gearShiftDelayCurve.Evaluate(_minHealth, _maxHealth, health,
             _maxGearShiftingDelay, _minGearShiftingDelay);
     }
 
