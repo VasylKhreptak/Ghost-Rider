@@ -9602,7 +9602,7 @@ MonoBehaviour:
   _startVerticesProvider: {fileID: 1609277787579978147}
   _updateCollider: 0
   _minDeformationRadius: 0.4
-  _maxDeformationRadius: 1
+  _maxDeformationRadius: 1.5
   _radiusDeformationCurve:
     serializedVersion: 2
     m_Curve:
@@ -9628,7 +9628,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _minVertexDeformation: 0.1
-  _maxVertexDeformation: 0.5
+  _maxVertexDeformation: 0.4
   _deformationCurve:
     serializedVersion: 2
     m_Curve:

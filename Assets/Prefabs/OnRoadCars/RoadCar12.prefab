@@ -7492,7 +7492,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6460948565836981364}
   serializedVersion: 2
-  m_Mass: 10000
+  m_Mass: 7000
   m_Drag: 0.01
   m_AngularDrag: 0.5
   m_UseGravity: 1
@@ -8276,7 +8276,7 @@ MonoBehaviour:
   _startVerticesProvider: {fileID: 3535569497048619080}
   _updateCollider: 0
   _minDeformationRadius: 0.4
-  _maxDeformationRadius: 1
+  _maxDeformationRadius: 1.7
   _radiusDeformationCurve:
     serializedVersion: 2
     m_Curve:
@@ -8302,7 +8302,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _minVertexDeformation: 0.1
-  _maxVertexDeformation: 0.5
+  _maxVertexDeformation: 0.4
   _deformationCurve:
     serializedVersion: 2
     m_Curve:
@@ -8337,7 +8337,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _minImpulse: 500
-  _maxImpulse: 10000
+  _maxImpulse: 35000
   _falloffCurve:
     serializedVersion: 2
     m_Curve:
