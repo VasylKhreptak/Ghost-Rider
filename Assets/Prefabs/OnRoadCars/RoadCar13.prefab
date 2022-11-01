@@ -156,7 +156,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minSpeed: 100
+  _minSpeed: 50
   _maxSpeed: 70
   _speedCurve:
     serializedVersion: 2
@@ -182,8 +182,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minEngineTorque: 800
-  _maxEngineTorque: 1000
+  _minEngineTorque: 5000
+  _maxEngineTorque: 6000
   _engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
@@ -208,8 +208,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minEngineRPMTorque: 1500
-  _maxEngineRPMTorque: 2000
+  _minEngineRPMTorque: 5000
+  _maxEngineRPMTorque: 7000
   _engineRPMTorqueCurve:
     serializedVersion: 2
     m_Curve:
@@ -260,8 +260,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minBrakeTorque: 1300
-  _maxBrakeTorque: 4400
+  _minBrakeTorque: 7000
+  _maxBrakeTorque: 8000
   _brakeTorqueCurve:
     serializedVersion: 2
     m_Curve:
@@ -17401,7 +17401,7 @@ MonoBehaviour:
   externalController: 1
   rigid: {fileID: 0}
   COM: {fileID: 6648699989323855639}
-  brakeTorque: 4400
+  brakeTorque: 8000
   steerAngle: 40
   highspeedsteerAngle: 5
   highspeedsteerAngleAtspeed: 400
@@ -17418,26 +17418,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.5
-      outSlope: 0.5
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 2000
-      value: 1000
-      inSlope: 0.21666667
-      outSlope: 0.21666667
+      inSlope: 0.85714287
+      outSlope: 0.85714287
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 7000
-      value: 666.6667
-      inSlope: -0.06666666
-      outSlope: -0.06666666
+      value: 6000
+      inSlope: 0.85714287
+      outSlope: 0.85714287
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -17446,8 +17437,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   autoGenerateEngineRPMCurve: 1
-  maxEngineTorque: 1000
-  maxEngineTorqueAtRPM: 2000
+  maxEngineTorque: 6000
+  maxEngineTorqueAtRPM: 7000
   minEngineRPM: 1000
   maxEngineRPM: 7000
   engineRPM: 0
@@ -18369,7 +18360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44a406c0664e254990aa0ca1b2f47c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 220
   _maxHealthOnAwake: 1
 --- !u!114 &5307010770847275816
 MonoBehaviour:

@@ -1454,7 +1454,7 @@ MonoBehaviour:
   downForce: 30
   useCounterSteering: 1
   counterSteeringFactor: 0.5
-  maxspeed: 70
+  maxspeed: 110
   engineTorqueCurve:
     serializedVersion: 2
     m_Curve:
@@ -1509,17 +1509,17 @@ MonoBehaviour:
   engineCoolRate: 1
   gears:
   - maxRatio: 2.86
-    maxSpeed: 35
-    targetSpeedForNextGear: 14
+    maxSpeed: 27
+    targetSpeedForNextGear: 11
   - maxRatio: 1.62
-    maxSpeed: 70
-    targetSpeedForNextGear: 28
+    maxSpeed: 55
+    targetSpeedForNextGear: 22
   - maxRatio: 1
-    maxSpeed: 105
-    targetSpeedForNextGear: 42
+    maxSpeed: 82
+    targetSpeedForNextGear: 33
   - maxRatio: 0.72
-    maxSpeed: 140
-    targetSpeedForNextGear: 56
+    maxSpeed: 110
+    targetSpeedForNextGear: 44
   totalGears: 4
   currentGear: 0
   NGear: 0
@@ -1976,8 +1976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiCarController: {fileID: 2342282523272249379}
   _waypoint: {fileID: 4779733887619029275}
-  _minSpeed: 50
-  _maxSpeed: 90
+  _minSpeed: 90
+  _maxSpeed: 110
 --- !u!114 &6770686257901877019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19981,8 +19981,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minSpeed: 100
-  _maxSpeed: 70
+  _minSpeed: 90
+  _maxSpeed: 110
   _speedCurve:
     serializedVersion: 2
     m_Curve:

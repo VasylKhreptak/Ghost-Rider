@@ -1427,7 +1427,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minSpeed: 100
+  _minSpeed: 50
   _maxSpeed: 70
   _speedCurve:
     serializedVersion: 2
