@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PauseEvents : MonoBehaviour
+public class PauseManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private MonoEvent _toggleEvent;

@@ -63,12 +63,12 @@ public class CarMovementProblems : MonoBehaviour
 
     private int _rawGearID;
 
-    private PauseEvents _pauseEvents;
+    private PauseManager _pauseManager;
 
     [Inject]
-    private void Construct(PauseEvents pauseEvents)
+    private void Construct(PauseManager pauseManager)
     {
-        _pauseEvents = pauseEvents;
+        _pauseManager = pauseManager;
     }
     
     #region MonoBehaviour
@@ -114,7 +114,7 @@ public class CarMovementProblems : MonoBehaviour
 
     private void OnHealthUpdated(float health)
     {
-        if (_pauseEvents.isPaused) return;
+        if (_pauseManager.isPaused) return;
 
         if (HasAppropriateHealth(ref health))
         {
@@ -155,7 +155,7 @@ public class CarMovementProblems : MonoBehaviour
     {
         while (true)
         {
-            if (_pauseEvents.isPaused == false)
+            if (_pauseManager.isPaused == false)
             {
                 TryDoProblem(ref health);
             }

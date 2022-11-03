@@ -36,13 +36,13 @@ public class FlyingVehicleSpawner : MonoBehaviour
 
     private GameObject _currentVehicle;
 
-    private PauseEvents _pauseEvents;
+    private PauseManager _pauseManager;
 
     [Inject]
-    private void Construct(ObjectPooler objectPooler, PauseEvents _pauseEvents)
+    private void Construct(ObjectPooler objectPooler, PauseManager pauseManager)
     {
         _objectPooler = objectPooler;
-        this._pauseEvents = _pauseEvents;
+        this._pauseManager = pauseManager;
     }
 
     #region MonoBehaviour
@@ -62,8 +62,8 @@ public class FlyingVehicleSpawner : MonoBehaviour
     {
         StartSpawning();
 
-        _pauseEvents.onPause += OnPause;
-        _pauseEvents.onResume += OnResume;
+        _pauseManager.onPause += OnPause;
+        _pauseManager.onResume += OnResume;
     }
 
     private void OnDisable()
@@ -72,8 +72,8 @@ public class FlyingVehicleSpawner : MonoBehaviour
 
         Kill();
 
-        _pauseEvents.onPause -= OnPause;
-        _pauseEvents.onResume -= OnResume;
+        _pauseManager.onPause -= OnPause;
+        _pauseManager.onResume -= OnResume;
     }
 
     private void OnDestroy()
@@ -108,7 +108,7 @@ public class FlyingVehicleSpawner : MonoBehaviour
 
         while (true)
         {
-            if (_pauseEvents.isPaused == false)
+            if (_pauseManager.isPaused == false)
             {
                 float duration = _duration;
                 Spawn(duration);

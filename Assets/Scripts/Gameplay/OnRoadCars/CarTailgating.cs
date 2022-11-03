@@ -18,7 +18,7 @@ public class CarTailgating : MonoBehaviour
     [SerializeField] private AnimationCurve _speedChangeCurve;
     [SerializeField] private float _speedChangeDelay;
 
-    private PauseEvents _pauseEvents;
+    private PauseManager _pauseManager;
 
     private float _rawSpeed;
 
@@ -27,9 +27,9 @@ public class CarTailgating : MonoBehaviour
     private ConfigurableUpdate _configurableUpdate = new ConfigurableUpdate();
 
     [Inject]
-    private void Construct(PauseEvents _pauseEvents)
+    private void Construct(PauseManager pauseManager)
     {
-        this._pauseEvents = _pauseEvents;
+        this._pauseManager = pauseManager;
     }
 
     #region MonoBehaviour
@@ -87,7 +87,7 @@ public class CarTailgating : MonoBehaviour
 
     private void TailgateRoutine()
     {
-        if (_pauseEvents.isPaused) return;
+        if (_pauseManager.isPaused) return;
 
         Transform closestCar = GetClosestCar();
         

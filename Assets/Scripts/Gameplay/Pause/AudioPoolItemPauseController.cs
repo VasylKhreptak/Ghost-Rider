@@ -7,12 +7,12 @@ public class AudioPoolItemPauseController : MonoBehaviour
     [Header("References")]
     [SerializeField] private AudioPoolItem _audioPoolItem;
 
-    private PauseEvents _pauseEvents;
+    private PauseManager _pauseManager;
 
     [Inject]
-    private void Construct(PauseEvents _pauseEvents)
+    private void Construct(PauseManager pauseManager)
     {
-        this._pauseEvents = _pauseEvents;
+        this._pauseManager = pauseManager;
     }
 
     #region MonoBehaviour
@@ -24,14 +24,14 @@ public class AudioPoolItemPauseController : MonoBehaviour
 
     private void OnEnable()
     {
-        _pauseEvents.onPause += OnPause;
-        _pauseEvents.onResume += OnResume;
+        _pauseManager.onPause += OnPause;
+        _pauseManager.onResume += OnResume;
     }
 
     private void OnDisable()
     {
-        _pauseEvents.onPause -= OnPause;
-        _pauseEvents.onResume -= OnResume;
+        _pauseManager.onPause -= OnPause;
+        _pauseManager.onResume -= OnResume;
     }
 
     #endregion

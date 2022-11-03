@@ -4,12 +4,13 @@ using Zenject;
 
 public class PauseEventsHolderInstaller : MonoInstaller
 {
+    [FormerlySerializedAs("_pauseEvents")]
     [FormerlySerializedAs("_pauseEventsHolder")]
     [Header("References")]
-    [SerializeField] private PauseEvents _pauseEvents;
+    [SerializeField] private PauseManager _pauseManager;
     
     public override void InstallBindings()
     {
-        Container.Bind<PauseEvents>().FromInstance(_pauseEvents).AsSingle();
+        Container.Bind<PauseManager>().FromInstance(_pauseManager).AsSingle();
     }
 }
