@@ -15,6 +15,7 @@ public class RodeDistanceCounter : MonoBehaviour
     private SafeFloat _rodeDistance;
 
     private Vector3 _previousPosition;
+    private Vector3 _startPosition;
     
     private ConfigurableUpdate _configurableUpdate = new ConfigurableUpdate();
 
@@ -28,7 +29,7 @@ public class RodeDistanceCounter : MonoBehaviour
     private void Awake()
     {
         _previousPosition = _target.position;
-        
+        _startPosition = _target.position;
         _configurableUpdate.Init(this, _updateDelay, UpdateValue);
     }
 
@@ -55,8 +56,10 @@ public class RodeDistanceCounter : MonoBehaviour
         _previousPosition = _target.position;
     }
 
-    private void ResetDistance()
+    public void ResetDistance()
     {
         _rodeDistance = 0;
+        _tmpText.text = "0";
+        _previousPosition = _startPosition;
     }
 }

@@ -419,7 +419,7 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 2001
   _autoOffset: 1
-  _positionOffset: {x: 0.04404831, y: -0.046362124, z: -0.02144903}
+  _positionOffset: {x: 0.04404807, y: -0.046362102, z: -0.021453857}
   _restoreEvent: {fileID: 3552492543942358731}
 --- !u!114 &1495047257
 MonoBehaviour:
@@ -5468,7 +5468,7 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 1888
   _autoOffset: 1
-  _positionOffset: {x: -0.001881361, y: -0.044583976, z: -0.027059495}
+  _positionOffset: {x: -0.0018815994, y: -0.044583976, z: -0.027061462}
   _restoreEvent: {fileID: 5316667475486678213}
 --- !u!114 &824458173027666322
 MonoBehaviour:
@@ -10312,7 +10312,7 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 1954
   _autoOffset: 1
-  _positionOffset: {x: 0.017374754, y: -0.04101324, z: -0.0018495321}
+  _positionOffset: {x: 0.017374516, y: -0.04101324, z: -0.0018539429}
   _restoreEvent: {fileID: 1593781997591913613}
 --- !u!114 &8088009873499767678
 MonoBehaviour:
@@ -21590,7 +21590,7 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 2016
   _autoOffset: 1
-  _positionOffset: {x: 0.033824325, y: -0.046362124, z: -0.035443068}
+  _positionOffset: {x: 0.033824205, y: -0.046362102, z: -0.035446167}
   _restoreEvent: {fileID: 6854067566106350578}
 --- !u!114 &621908755
 MonoBehaviour:
