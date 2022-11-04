@@ -19,20 +19,18 @@ public class MeshDataProviderCore : MonoBehaviour
         _meshFilter ??= GetComponent<MeshFilter>();
     }
 
+    private void Awake()
+    {
+        SyncData();
+    }
+
     private void Start()
     {
-        LoadData();
+        onLoad?.Invoke();
     }
 
     #endregion
 
-    private void LoadData()
-    {
-        SyncData();
-
-        onLoad?.Invoke();
-    }
-    
     public void UpdateData()
     {
         SyncData();
@@ -41,11 +39,6 @@ public class MeshDataProviderCore : MonoBehaviour
     }
 
     protected virtual void SyncData()
-    {
-        throw new NotImplementedException();
-    }
-
-    protected virtual void PreloadData()
     {
         throw new NotImplementedException();
     }

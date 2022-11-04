@@ -169,7 +169,7 @@ public class RCC_WheelCollider : RCC_Core
     public float bumpForce;
     public float oldForce;
 
-    void Start()
+    void Awake()
     {
 
         // Getting all WheelColliders attached to this vehicle (Except this).

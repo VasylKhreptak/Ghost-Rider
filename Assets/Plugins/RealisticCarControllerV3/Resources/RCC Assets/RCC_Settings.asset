@@ -310,7 +310,7 @@ MonoBehaviour:
   RCCCanvas: {fileID: 102148, guid: 3c49455ff7757444fa4b466c3250f423, type: 3}
   RCCTelemetry: {fileID: 6059275310813240883, guid: 65802e5058ade584d99e0fba314f4a68, type: 3}
   dontUseAnyParticleEffects: 0
-  dontUseSkidmarks: 0
+  dontUseSkidmarks: 1
   audioMixer: {fileID: 2655085652510014319, guid: c19a9743d81dacf4f9061509c715010a, type: 2}
   gearShiftingClips:
   - {fileID: 8300000, guid: fd92e514f75331e4085d0846a166fef8, type: 3}

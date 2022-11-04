@@ -24,6 +24,7 @@ public class OnEventSpawnObject : MonoBehaviour
 
     private void OnValidate()
     {
+        _spawnPlace ??= GetComponent<Transform>();
         _monoEvent ??= GetComponent<MonoEvent>();
     }
 

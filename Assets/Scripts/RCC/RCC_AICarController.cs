@@ -121,7 +121,7 @@ public class RCC_AICarController : MonoBehaviour
         OnEventSetActiveBehaviour onEventDisableNavigator = navigatorObject.AddComponent<OnEventSetActiveBehaviour>();
         
         delayedMonoEvent.SetEvent(enableEvent);
-        delayedMonoEvent.SetDelay(0.2f);
+        delayedMonoEvent.SetDelay(0.4f);
         onEventEnableNavigator.SetEvent(delayedMonoEvent);
         onEventEnableNavigator.SetTargetState(true);
         onEventEnableNavigator.SetScripts(new Behaviour[] {navigator});
