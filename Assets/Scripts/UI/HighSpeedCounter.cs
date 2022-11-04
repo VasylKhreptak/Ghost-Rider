@@ -47,4 +47,10 @@ public class HighSpeedCounter : MonoBehaviour
 
         _tmpText.text = ((int)_maxSpeed).ToString();
     }
+
+    public void ResetValue()
+    {
+        _maxSpeed = 0;
+        _tmpText.text = "0";
+    }
 }
