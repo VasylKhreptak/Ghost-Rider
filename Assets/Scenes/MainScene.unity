@@ -6983,6 +6983,7 @@ Transform:
   - {fileID: 214670281}
   - {fileID: 660475995}
   - {fileID: 1926458189}
+  - {fileID: 1006780050}
   m_Father: {fileID: 1648785219}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7008,6 +7009,7 @@ MonoBehaviour:
   - {fileID: 214670282}
   - {fileID: 660475996}
   - {fileID: 1926458190}
+  - {fileID: 1006780051}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -19983,6 +19985,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005362748}
   m_CullTransparentMesh: 1
+--- !u!1 &1006780049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1006780050}
+  - component: {fileID: 1006780051}
+  m_Layer: 0
+  m_Name: MainWaypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1006780050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006780049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 320256750}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1006780051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006780049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07459d01c8f57e5469c6844df39c31f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waypointsContainer: {fileID: 1967980371}
 --- !u!1 &1008895737
 GameObject:
   m_ObjectHideFlags: 0
@@ -54725,14 +54772,6 @@ PrefabInstance:
       propertyPath: _positionOffset.z
       value: -0.0018539429
       objectReference: {fileID: 0}
-    - target: {fileID: 1842045922422513769, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
-      propertyPath: _event
-      value: 
-      objectReference: {fileID: 951499998}
-    - target: {fileID: 1842045922422513775, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
-      propertyPath: waypointsContainer
-      value: 
-      objectReference: {fileID: 1967980371}
     - target: {fileID: 1842045922422513822, guid: 61162c587bca6b148823f5331296b0d2, type: 3}
       propertyPath: m_RootOrder
       value: 2
