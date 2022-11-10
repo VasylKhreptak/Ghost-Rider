@@ -21,6 +21,8 @@ public sealed class ObjectPooler : MonoBehaviour
 
     private DiContainer _diContainer;
 
+    public Action onInit;
+    
     [Inject]
     private void Construct(DiContainer container)
     {
@@ -39,6 +41,8 @@ public sealed class ObjectPooler : MonoBehaviour
         CreatePoolFolders();
 
         FillPool();
+        
+        onInit?.Invoke();
     }
 
     private void OnEnable()
