@@ -52,7 +52,6 @@ GameObject:
   - component: {fileID: 5621242604815640376}
   - component: {fileID: 8775353606950103369}
   - component: {fileID: 5590198474905197003}
-  - component: {fileID: 4105094653002161407}
   m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
@@ -241,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataProvider: {fileID: 1865366881192711667}
-  _monoEvent: {fileID: 4105094653002161407}
+  _monoEvent: {fileID: 6482535165990457795}
 --- !u!114 &8775353606950103369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataProvider: {fileID: 8815237072615882075}
-  _monoEvent: {fileID: 4105094653002161407}
+  _monoEvent: {fileID: 6482535165990457795}
 --- !u!114 &5590198474905197003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,19 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataProvider: {fileID: 3689277715653844502}
-  _monoEvent: {fileID: 4105094653002161407}
---- !u!114 &4105094653002161407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865366880963326655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 6482535165990457795}
 --- !u!1 &1865366880963922405
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +283,6 @@ GameObject:
   - component: {fileID: 1495047257}
   - component: {fileID: 8841672683081334890}
   - component: {fileID: 5034882335720253857}
-  - component: {fileID: 3552492543942358731}
   m_Layer: 2
   m_Name: Front2
   m_TagString: Untagged
@@ -419,8 +405,8 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 2001
   _autoOffset: 1
-  _positionOffset: {x: 0.04404807, y: -0.046362102, z: -0.021453857}
-  _restoreEvent: {fileID: 3552492543942358731}
+  _positionOffset: {x: 0.04404831, y: -0.046362124, z: -0.02144903}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &1495047257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +422,7 @@ MonoBehaviour:
   _transform: {fileID: 1865366880963922426}
   _normalProvider: {fileID: 8815237072615882075}
   _triangleIndex: 2001
-  _restoreEvent: {fileID: 3552492543942358731}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &8841672683081334890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,18 +453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 32473295730668943}
   _delay: 0.01
---- !u!114 &3552492543942358731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865366880963922405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1865366881283242952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,8 +5442,8 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 1888
   _autoOffset: 1
-  _positionOffset: {x: -0.0018815994, y: -0.044583976, z: -0.027061462}
-  _restoreEvent: {fileID: 5316667475486678213}
+  _positionOffset: {x: -0.001881361, y: -0.044583976, z: -0.027059495}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &824458173027666322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5485,7 +5459,7 @@ MonoBehaviour:
   _transform: {fileID: 1865366881303043538}
   _normalProvider: {fileID: 8815237072615882075}
   _triangleIndex: 1888
-  _restoreEvent: {fileID: 5316667475486678213}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &5316667475486678213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10312,8 +10286,8 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 1954
   _autoOffset: 1
-  _positionOffset: {x: 0.017374516, y: -0.04101324, z: -0.0018539429}
-  _restoreEvent: {fileID: 1593781997591913613}
+  _positionOffset: {x: 0.017374754, y: -0.04101324, z: -0.0018495321}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &8088009873499767678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10329,7 +10303,7 @@ MonoBehaviour:
   _transform: {fileID: 1865366881310466597}
   _normalProvider: {fileID: 8815237072615882075}
   _triangleIndex: 1954
-  _restoreEvent: {fileID: 1593781997591913613}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &1593781997591913613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20046,6 +20020,7 @@ GameObject:
   - component: {fileID: 2965346248525810105}
   - component: {fileID: 1865366881192711694}
   - component: {fileID: 1865366881192711727}
+  - component: {fileID: 2522857740294375416}
   m_Layer: 10
   m_Name: Stellar
   m_TagString: Untagged
@@ -20079,6 +20054,8 @@ Transform:
   - {fileID: 1932331141473475177}
   - {fileID: 6615760956953633883}
   - {fileID: 68458872533482046}
+  - {fileID: 7848215801576644801}
+  - {fileID: 9073049333090849772}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -53.849, z: 0}
@@ -20978,7 +20955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: 1109967835810402732}
+  _eventTrigger: {fileID: 6482535165990457795}
   _unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -21117,7 +21094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: 1109967835810402732}
+  _eventTrigger: {fileID: 6482535165990457795}
   _unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -21133,6 +21110,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2522857740294375416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865366882267259369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c562d816ee8dd54c81d61fa24985ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transform: {fileID: 1842045922422513822}
+  carController: {fileID: 1842045922422514042}
+  carObject: {fileID: 1865366882267259369}
 --- !u!1 &1865366882380033440
 GameObject:
   m_ObjectHideFlags: 0
@@ -21174,7 +21166,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1865366882396231381}
   - component: {fileID: 7696177411311805639}
-  - component: {fileID: 2491175304830885455}
   m_Layer: 2
   m_Name: Lights
   m_TagString: Untagged
@@ -21215,19 +21206,7 @@ MonoBehaviour:
   - {fileID: 1865366882675075021}
   - {fileID: 1865366880963922405}
   _active: 1
-  _monoEvent: {fileID: 2491175304830885455}
---- !u!114 &2491175304830885455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865366882396231380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 6482535165990457795}
 --- !u!1 &1865366882415938480
 GameObject:
   m_ObjectHideFlags: 0
@@ -21482,7 +21461,6 @@ GameObject:
   - component: {fileID: 621908755}
   - component: {fileID: 5727811736428615817}
   - component: {fileID: 3954798367230313483}
-  - component: {fileID: 6854067566106350578}
   m_Layer: 2
   m_Name: Front1
   m_TagString: Untagged
@@ -21605,8 +21583,8 @@ MonoBehaviour:
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 2016
   _autoOffset: 1
-  _positionOffset: {x: 0.033824205, y: -0.046362102, z: -0.035446167}
-  _restoreEvent: {fileID: 6854067566106350578}
+  _positionOffset: {x: 0.033824325, y: -0.046362124, z: -0.035443068}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &621908755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21622,7 +21600,7 @@ MonoBehaviour:
   _transform: {fileID: 1865366882675075010}
   _normalProvider: {fileID: 8815237072615882075}
   _triangleIndex: 2016
-  _restoreEvent: {fileID: 6854067566106350578}
+  _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &5727811736428615817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21653,18 +21631,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 32473295730668943}
   _delay: 0.01
---- !u!114 &6854067566106350578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865366882675075021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1865366882716781156
 GameObject:
   m_ObjectHideFlags: 0
@@ -22274,6 +22240,444 @@ MonoBehaviour:
   - {fileID: 1865366882675075021}
   _active: 0
   _monoEvent: {fileID: 3431532526579234958}
+--- !u!1 &2433841921826393133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7123330579853150600}
+  - component: {fileID: 5292627249661040278}
+  - component: {fileID: 1423925358936721448}
+  - component: {fileID: 448207268840182165}
+  - component: {fileID: 3726411069885090757}
+  - component: {fileID: 4245442917138012917}
+  - component: {fileID: 8481819291960375932}
+  m_Layer: 0
+  m_Name: CarEngineStateController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7123330579853150600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433841921826393133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4012204, y: 1.0384269, z: -0.66619647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9073049333090849772}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5292627249661040278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433841921826393133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0aa8104979f734b8bc147e4e67cec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _carController: {fileID: 1842045922422514042}
+--- !u!114 &1423925358936721448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433841921826393133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 7106784374860729130}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5292627249661040278}
+        m_TargetAssemblyTypeName: CarEngineStateController, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &448207268840182165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433841921826393133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6482535165990457795}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5292627249661040278}
+        m_TargetAssemblyTypeName: CarEngineStateController, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3726411069885090757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433841921826393133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 8481819291960375932}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5292627249661040278}
+        m_TargetAssemblyTypeName: CarEngineStateController, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4245442917138012917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433841921826393133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6482535165990457795}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5292627249661040278}
+        m_TargetAssemblyTypeName: CarEngineStateController, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8481819291960375932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433841921826393133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2718592054332324838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7848215801576644801}
+  - component: {fileID: 6482535165990457795}
+  m_Layer: 0
+  m_Name: GoToMenuEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7848215801576644801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718592054332324838}
+  m_LocalRotation: {x: -0, y: 0.45281595, z: -0, w: 0.891604}
+  m_LocalPosition: {x: -0.7752109, y: -0.17603067, z: 1.174046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1842045922422513822}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6482535165990457795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718592054332324838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df8060f05ce5d04e835493149ea7e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3430978383847647105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7197708911846912570}
+  - component: {fileID: 167110899186772446}
+  - component: {fileID: 4626581469203893451}
+  m_Layer: 0
+  m_Name: CarRotationSetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7197708911846912570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430978383847647105}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4012054, y: 1.0384395, z: -0.6661964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9073049333090849772}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167110899186772446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430978383847647105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4043fc7a6c5ba4d803106c6072e5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1842045922422513822}
+  _rotation: {x: 0, y: -53.849, z: 0}
+--- !u!114 &4626581469203893451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3430978383847647105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6482535165990457795}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 167110899186772446}
+        m_TargetAssemblyTypeName: CarRotationSetter, Assembly-CSharp
+        m_MethodName: SetRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &3770835429481231344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3742256635410173853}
+  - component: {fileID: 3651147475970846430}
+  - component: {fileID: 3260407325984226605}
+  - component: {fileID: 4615101714018548130}
+  - component: {fileID: 5297377255496593558}
+  - component: {fileID: 4533938080265756965}
+  m_Layer: 6
+  m_Name: CarControllableStateSetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3742256635410173853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770835429481231344}
+  m_LocalRotation: {x: -0, y: -0.45281363, z: -0, w: 0.8916052}
+  m_LocalPosition: {x: 2.8253057, y: 0.89603066, z: -83.316635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9073049333090849772}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3651147475970846430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770835429481231344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7659d79a86b6f048bb9ed2b1abbd302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 1842045922422514042}
+--- !u!114 &3260407325984226605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770835429481231344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 4533938080265756965}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3651147475970846430}
+        m_TargetAssemblyTypeName: CarControllableStateSetter, Assembly-CSharp
+        m_MethodName: SetControllableState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4615101714018548130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770835429481231344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6482535165990457795}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3651147475970846430}
+        m_TargetAssemblyTypeName: CarControllableStateSetter, Assembly-CSharp
+        m_MethodName: SetControllableState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5297377255496593558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770835429481231344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6482535165990457795}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3651147475970846430}
+        m_TargetAssemblyTypeName: CarControllableStateSetter, Assembly-CSharp
+        m_MethodName: SetControllableState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4533938080265756965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770835429481231344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4674185020628181772
 GameObject:
   m_ObjectHideFlags: 0
@@ -22427,6 +22831,81 @@ MonoBehaviour:
     m_RotationOrder: 4
   _minHealth: 0.001
   _maxHealth: 50
+--- !u!1 &4804318782628462336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2456862568720377334}
+  - component: {fileID: 2231520228339628402}
+  - component: {fileID: 8182327530684242907}
+  m_Layer: 0
+  m_Name: CarPositionSetter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2456862568720377334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804318782628462336}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4012054, y: 1.0384395, z: -0.6661964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9073049333090849772}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2231520228339628402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804318782628462336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f507009e106ebbe49bce9fbca0d25c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 1842045922422513822}
+  _position: {x: 1.42, y: 0.72, z: -83.25}
+--- !u!114 &8182327530684242907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804318782628462336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6482535165990457795}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2231520228339628402}
+        m_TargetAssemblyTypeName: CarPositionSetter, Assembly-CSharp
+        m_MethodName: SetPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5092980481412563244
 GameObject:
   m_ObjectHideFlags: 0
@@ -22667,7 +23146,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d980cb0e0b53da641bd5f953e97cf34b, type: 3}
     - {fileID: 8300000, guid: b87e297310d339c4ab0c8bf41a57a85a, type: 3}
     - {fileID: 8300000, guid: 476834af2f891f2438ea733fef50d3e0, type: 3}
-  _event: {fileID: 6396094812465084162}
+  _event: {fileID: 5258041449515864988}
 --- !u!114 &5258041449515864988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23260,6 +23739,187 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b582766cb59206944bcac655fd54c0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7202318546266170267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9073049333090849772}
+  m_Layer: 0
+  m_Name: StateControllers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9073049333090849772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7202318546266170267}
+  m_LocalRotation: {x: -0, y: 0.45281595, z: -0, w: 0.891604}
+  m_LocalPosition: {x: -0.7752109, y: -0.17603067, z: 1.174046}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2456862568720377334}
+  - {fileID: 7197708911846912570}
+  - {fileID: 5304428342743591765}
+  - {fileID: 3742256635410173853}
+  - {fileID: 7123330579853150600}
+  m_Father: {fileID: 1842045922422513822}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7710198133758899645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5304428342743591765}
+  - component: {fileID: 3122702942937866434}
+  - component: {fileID: 375848199478702146}
+  - component: {fileID: 2929169031797894289}
+  - component: {fileID: 4174509567280719404}
+  - component: {fileID: 6824444176982862668}
+  m_Layer: 0
+  m_Name: CarMovementRemover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5304428342743591765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710198133758899645}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4012054, y: 1.0384395, z: -0.6661964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9073049333090849772}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3122702942937866434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710198133758899645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4f9719cb5e8104fb6b269a9627f2c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1842045922422513772}
+--- !u!114 &375848199478702146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710198133758899645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6482535165990457795}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3122702942937866434}
+        m_TargetAssemblyTypeName: CarMovementRemover, Assembly-CSharp
+        m_MethodName: Freeze
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &2929169031797894289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710198133758899645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 6824444176982862668}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3122702942937866434}
+        m_TargetAssemblyTypeName: CarMovementRemover, Assembly-CSharp
+        m_MethodName: Freeze
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &4174509567280719404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710198133758899645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventTrigger: {fileID: 7106784374860729130}
+  _unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3122702942937866434}
+        m_TargetAssemblyTypeName: CarMovementRemover, Assembly-CSharp
+        m_MethodName: Freeze
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6824444176982862668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7710198133758899645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb337a4a63328a4d98a1e8a4ed1ba09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7895667224873723569

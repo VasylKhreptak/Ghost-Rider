@@ -24,4 +24,5 @@ public enum Pools
     RoadCar11 = 21,
     RoadCar12 = 22,
     RoadCar13 = 23,
+    MainCarStellar = 24,
 }

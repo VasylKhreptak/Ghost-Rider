@@ -12,7 +12,7 @@ public sealed class On3DHitPlayAmplifiedSound : On3DHitPlaySound
         float volume = _volume * _volumeAmplifier * collision.impulse.magnitude;
 
         volume = Mathf.Clamp(volume, _minVolume, _volume);
-
+        
         _audioPooler.PlaySound(_output, _audioClips.Random(), position, volume, _spatialBlend, linkTo: _linkTo, priority: _priority);
     }
 }

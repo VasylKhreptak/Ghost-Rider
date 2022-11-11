@@ -5,7 +5,7 @@ public class SpeedCounter : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Text _tmpText;
-    [SerializeField] private RCC_CarControllerV3 _carController;
+    [SerializeField] private MainCarSpawner _mainCarSpawner;
 
     [Header("Preferences")]
     [SerializeField] private float _updateDelay;
@@ -39,6 +39,8 @@ public class SpeedCounter : MonoBehaviour
 
     private void UpdateValue()
     {
-        _tmpText.text = ((int)_carController.speed).ToString();
+        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.carController;
+        
+        _tmpText.text = ((int)carController.speed).ToString();
     }
 }

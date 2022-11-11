@@ -4,7 +4,7 @@ using UnityEngine;
 public class RodeDistanceCounter : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform _target;
+    [SerializeField] private MainCarSpawner _mainCarSpawner;
     [SerializeField] private TMP_Text _tmpText;
 
     [Header("Preferences")]
@@ -28,8 +28,10 @@ public class RodeDistanceCounter : MonoBehaviour
 
     private void Awake()
     {
-        _previousPosition = _target.position;
-        _startPosition = _target.position;
+        Transform target = _mainCarSpawner.CurrentCar.transform;
+        
+        _previousPosition = target.position;
+        _startPosition = target.position;
         _configurableUpdate.Init(this, _updateDelay, UpdateValue);
     }
 
@@ -47,13 +49,15 @@ public class RodeDistanceCounter : MonoBehaviour
     
     private void UpdateValue()
     {
-        float distance = Vector3.Distance(_target.position, _previousPosition);
+        Transform target = _mainCarSpawner.CurrentCar.transform;
+
+        float distance = Vector3.Distance(target.position, _previousPosition);
 
         _rodeDistance += distance;
 
         _tmpText.text = (_rodeDistance * _amplifier).ToString(_format);
         
-        _previousPosition = _target.position;
+        _previousPosition = target.position;
     }
 
     public void ResetDistance()

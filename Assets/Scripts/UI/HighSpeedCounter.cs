@@ -5,7 +5,7 @@ public class HighSpeedCounter : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Text _tmpText;
-    [SerializeField] private RCC_CarControllerV3 _carController;
+    [SerializeField] private MainCarSpawner _mainCarSpawner;
 
     [Header("Preferences")]
     [SerializeField] private float _updateDelay;
@@ -40,9 +40,11 @@ public class HighSpeedCounter : MonoBehaviour
     
     private void UpdateValue()
     {
-        if (_carController.speed > _maxSpeed)
+        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.carController;
+        
+        if (carController.speed > _maxSpeed)
         {
-            _maxSpeed = _carController.speed;
+            _maxSpeed = carController.speed;
         }
 
         _tmpText.text = ((int)_maxSpeed).ToString();

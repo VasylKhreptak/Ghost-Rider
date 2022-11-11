@@ -1,7 +1,13 @@
+using UnityEngine;
 public static class ArrayExtensions
 {
     public static T Random<T>(this T[] array)
     {
+        if (array.Length == 0)
+        {
+            Debug.Log("Length == 0");
+        }
+        
         return array[UnityEngine.Random.Range(0, array.Length)];
     }
 

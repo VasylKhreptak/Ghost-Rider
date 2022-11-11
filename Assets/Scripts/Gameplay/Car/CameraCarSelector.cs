@@ -4,11 +4,11 @@ public class CameraCarSelector : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private RCC_Camera _rccCamera;
-    [SerializeField] private RCC_CarControllerV3 _carController;
-
+    [SerializeField] private MainCarSpawner _mainCarSpawner;
+    
     public void AimCameraToMainCar()
     {
-        _rccCamera.playerCar = _carController;
+        _rccCamera.playerCar = _mainCarSpawner.CurrentCar.carController;
     }
 
     public void ResetCarCamera()
