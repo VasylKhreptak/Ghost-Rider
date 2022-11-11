@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[System.Serializable]
 public class TransformPositionLinker : MonoBehaviour
 {
     [Header("References")]
