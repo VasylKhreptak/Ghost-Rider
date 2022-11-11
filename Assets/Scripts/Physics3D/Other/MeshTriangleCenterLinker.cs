@@ -1,4 +1,5 @@
 using System;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class MeshTriangleCenterLinker : MonoBehaviour
@@ -10,7 +11,7 @@ public class MeshTriangleCenterLinker : MonoBehaviour
 	[Header("Preferences")]
 	[SerializeField] private int _triangleIndex;
 	[SerializeField] private bool _autoOffset = true;
-	[SerializeField] private Vector3 _positionOffset;
+	[HideIf(nameof(_autoOffset)), SerializeField] private Vector3 _positionOffset;
 
 	[Header("Events")]
 	[SerializeField] private MonoEvent _restoreEvent;
