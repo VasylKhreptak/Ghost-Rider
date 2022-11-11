@@ -40,7 +40,7 @@ public class HighSpeedCounter : MonoBehaviour
     
     private void UpdateValue()
     {
-        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.carController;
+        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.CarController;
         
         if (carController.speed > _maxSpeed)
         {

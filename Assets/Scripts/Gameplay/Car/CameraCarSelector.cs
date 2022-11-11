@@ -8,7 +8,7 @@ public class CameraCarSelector : MonoBehaviour
     
     public void AimCameraToMainCar()
     {
-        _rccCamera.playerCar = _mainCarSpawner.CurrentCar.carController;
+        _rccCamera.playerCar = _mainCarSpawner.CurrentCar.CarController;
     }
 
     public void ResetCarCamera()

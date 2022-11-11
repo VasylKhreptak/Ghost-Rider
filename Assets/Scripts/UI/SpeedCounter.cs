@@ -39,7 +39,7 @@ public class SpeedCounter : MonoBehaviour
 
     private void UpdateValue()
     {
-        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.carController;
+        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.CarController;
         
         _tmpText.text = ((int)carController.speed).ToString();
     }
