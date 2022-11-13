@@ -7889,7 +7889,7 @@ MonoBehaviour:
   brakeInput: 0
   handbrakeInput: 0
   limitSpeed: 1
-  maximumSpeed: 140
+  maximumSpeed: 290
   smoothedSteer: 1
   lap: 0
   totalWaypointPassed: 0

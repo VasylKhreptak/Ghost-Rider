@@ -35,8 +35,7 @@ public class SpeedCounter : MonoBehaviour
     }
 
     #endregion
-
-
+    
     private void UpdateValue()
     {
         RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.CarController;

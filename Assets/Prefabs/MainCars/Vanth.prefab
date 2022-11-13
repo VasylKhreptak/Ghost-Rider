@@ -10191,7 +10191,7 @@ MonoBehaviour:
   brakeInput: 0
   handbrakeInput: 0
   limitSpeed: 1
-  maximumSpeed: 140
+  maximumSpeed: 340
   smoothedSteer: 1
   lap: 0
   totalWaypointPassed: 0
@@ -17797,7 +17797,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.3938866
   m_SuspensionSpring:
-    spring: 60000
+    spring: 80000
     damper: 1500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
@@ -17889,7 +17889,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0.1, z: 0}
   m_Radius: 0.3938866
   m_SuspensionSpring:
-    spring: 60000
+    spring: 80000
     damper: 1500
     targetPosition: 0.5
   m_SuspensionDistance: 0.2
