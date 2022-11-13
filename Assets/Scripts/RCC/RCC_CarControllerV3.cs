@@ -210,7 +210,7 @@ public class RCC_CarControllerV3 : RCC_Core
     public bool NGear = false; // N Gear.
 
     public float finalRatio = 3.23f; //	Final Drive Gear Ratio. 
-    [Range(0f, .5f)] public float gearShiftingDelay = .35f; //	Gear shifting delay with time.
+    [Range(0f, 2f)] public float gearShiftingDelay = .35f; //	Gear shifting delay with time.
     [Range(.25f, 1)] public float gearShiftingThreshold = .75f; //	Shifting gears at lower RPMs at higher values.
     [Range(.1f, .9f)] public float clutchInertia = .25f; //	Adjusting clutch faster at lower values. Higher values for smooth clutch.
 

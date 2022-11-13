@@ -7,6 +7,8 @@ public class MeshDataProviderCore : MonoBehaviour
     [Header("References")]
     [SerializeField] protected Transform _transform;
     [SerializeField] protected MeshFilter _meshFilter;
+
+    public Transform Transform => _transform;
     
     public Action onLoad;
     public Action onUpdate;

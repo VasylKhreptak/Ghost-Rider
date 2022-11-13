@@ -404,8 +404,6 @@ MonoBehaviour:
   _transform: {fileID: 1865366880963922426}
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 2001
-  _autoOffset: 1
-  _positionOffset: {x: 0.04404831, y: -0.046362124, z: -0.02144903}
   _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &1495047257
 MonoBehaviour:
@@ -5441,8 +5439,6 @@ MonoBehaviour:
   _transform: {fileID: 1865366881303043538}
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 1888
-  _autoOffset: 1
-  _positionOffset: {x: -0.001881361, y: -0.044583976, z: -0.027059495}
   _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &824458173027666322
 MonoBehaviour:
@@ -10285,8 +10281,6 @@ MonoBehaviour:
   _transform: {fileID: 1865366881310466597}
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 1954
-  _autoOffset: 1
-  _positionOffset: {x: 0.017374754, y: -0.04101324, z: -0.0018495321}
   _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &8088009873499767678
 MonoBehaviour:
@@ -20067,7 +20061,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865366882267259369}
   serializedVersion: 2
-  m_Mass: 1300
+  m_Mass: 1700
   m_Drag: 0.01
   m_AngularDrag: 0.5
   m_UseGravity: 1
@@ -20194,7 +20188,7 @@ MonoBehaviour:
   currentGear: 0
   NGear: 0
   finalRatio: 3.23
-  gearShiftingDelay: 0.5
+  gearShiftingDelay: 1.5
   gearShiftingThreshold: 0.4
   clutchInertia: 0.1
   gearShiftUpRPM: 5250
@@ -21122,9 +21116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c562d816ee8dd54c81d61fa24985ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transform: {fileID: 1842045922422513822}
-  carController: {fileID: 1842045922422514042}
-  carObject: {fileID: 1865366882267259369}
+  _transform: {fileID: 1842045922422513822}
+  _carController: {fileID: 1842045922422514042}
+  _carObject: {fileID: 1865366882267259369}
+  _damageableObject: {fileID: 1865366881192711660}
 --- !u!1 &1865366882380033440
 GameObject:
   m_ObjectHideFlags: 0
@@ -21582,8 +21577,6 @@ MonoBehaviour:
   _transform: {fileID: 1865366882675075010}
   _centersProvider: {fileID: 1865366881192711667}
   _triangleIndex: 2016
-  _autoOffset: 1
-  _positionOffset: {x: 0.033824325, y: -0.046362124, z: -0.035443068}
   _restoreEvent: {fileID: 6482535165990457795}
 --- !u!114 &621908755
 MonoBehaviour:
@@ -23303,7 +23296,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minGearShiftingDelay: 0.5
+  _minGearShiftingDelay: 1.5
   _maxGearShiftingDelay: 2
   _gearShiftDelayCurve:
     serializedVersion: 2

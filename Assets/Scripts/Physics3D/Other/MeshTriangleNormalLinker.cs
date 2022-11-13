@@ -35,7 +35,6 @@ public class MeshTriangleNormalLinker : MonoBehaviour
     private void OnEnable()
     {
         _normalProvider.onUpdate += UpdateLookDirection;
-        _normalProvider.onLoad += UpdateLookDirection;
         _normalProvider.onLoad += UpdatePreviousNormalDirection;
         _normalProvider.onLoad += UpdateStartNormal;
     }
@@ -43,7 +42,6 @@ public class MeshTriangleNormalLinker : MonoBehaviour
     private void OnDisable()
     {
         _normalProvider.onUpdate -= UpdateLookDirection;
-        _normalProvider.onLoad -= UpdateLookDirection;
         _normalProvider.onLoad -= UpdatePreviousNormalDirection;
         _normalProvider.onLoad -= UpdateStartNormal;
     }

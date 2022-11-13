@@ -25,4 +25,11 @@ public enum Pools
     RoadCar12 = 22,
     RoadCar13 = 23,
     MainCarStellar = 24,
+    MainCarAcrux = 25,
+    MainCarArcturus = 26, 
+    MainCarPollux = 27,
+    MainCarSpica = 28,
+    MainCarVanth = 29,
+    MainCarLamborghini = 30,
+    MainCarBugatti = 31,
 }
