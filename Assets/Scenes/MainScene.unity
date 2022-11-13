@@ -42240,7 +42240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCarSpawner: {fileID: 1557074298}
-  _car: 28
+  _car: 27
   _monoEvent: {fileID: 1557074301}
 --- !u!114 &1557074301
 MonoBehaviour:

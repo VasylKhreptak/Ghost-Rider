@@ -15282,7 +15282,7 @@ MonoBehaviour:
   NGear: 0
   finalRatio: 3.23
   gearShiftingDelay: 0.95
-  gearShiftingThreshold: 0.4
+  gearShiftingThreshold: 0.25
   clutchInertia: 0.1
   gearShiftUpRPM: 5250
   gearShiftDownRPM: 3000
