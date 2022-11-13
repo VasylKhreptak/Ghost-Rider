@@ -6,6 +6,8 @@ public class Bank : MonoBehaviour
 {
     private PlayerDataProvider _playerDataProvider;
 
+    public bool IsEmpty => _playerDataProvider.playerData.money == 0;
+    
     public Action<int> onMoneyChanged;
     
     [Inject]
