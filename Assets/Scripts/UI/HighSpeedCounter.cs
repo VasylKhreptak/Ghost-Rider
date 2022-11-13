@@ -23,7 +23,7 @@ public class HighSpeedCounter : MonoBehaviour
 
     private void Awake()
     {
-        _configurableUpdate.Init(this, _updateDelay, UpdateValue);
+        _configurableUpdate.Init(this, _updateDelay, TryUpdateValue);
     }
 
     private void OnEnable()
@@ -38,10 +38,16 @@ public class HighSpeedCounter : MonoBehaviour
 
     #endregion
     
-    private void UpdateValue()
+    private void TryUpdateValue()
     {
-        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.CarController;
+        if (_mainCarSpawner.CurrentCar == null) return;
         
+        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.CarController;
+
+        UpdateValue(carController);
+    }
+    private void UpdateValue(RCC_CarControllerV3 carController)
+    {
         if (carController.speed > _maxSpeed)
         {
             _maxSpeed = carController.speed;

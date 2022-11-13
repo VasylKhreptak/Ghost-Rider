@@ -182,6 +182,8 @@ public class RCC_CarControllerV3 : RCC_Core
 
     #endregion
 
+    public Action<int> onGearShifted;
+    
     #region Gears
 
     // Gears.
@@ -2187,7 +2189,7 @@ public class RCC_CarControllerV3 : RCC_Core
         {
 
             currentGear = 0;
-
+            
             if (!NGear)
                 direction = -1;
             else
@@ -2198,6 +2200,8 @@ public class RCC_CarControllerV3 : RCC_Core
         {
 
             currentGear = gear;
+
+            onGearShifted?.Invoke(currentGear);
 
             if (!NGear)
                 direction = 1;

@@ -8,7 +8,7 @@ public class MainCarSpawner : MonoBehaviour
 	[SerializeField] private Transform _spawnTransform;
 
 	public Action<MainCar> onSpawn;
-
+	public Action<MainCar> onDespawn;
 	private ObjectPooler _objectPooler;
 
 	private MainCar _currentCar;
@@ -26,6 +26,8 @@ public class MainCarSpawner : MonoBehaviour
 		if (_currentCar != null && _currentCar.IsActive())
 		{
 			_currentCar.Disable();
+			
+			onDespawn?.Invoke(_currentCar);
 		}
 
 		GameObject carObj = _objectPooler.Spawn(carPool, _spawnTransform.position, _spawnTransform.rotation);
@@ -35,7 +37,7 @@ public class MainCarSpawner : MonoBehaviour
 		_currentCar = car;
 
 		onSpawn?.Invoke(car);
-
+		
 		return car;
 	}
 }

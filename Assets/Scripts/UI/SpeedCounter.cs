@@ -21,7 +21,7 @@ public class SpeedCounter : MonoBehaviour
 
     private void Awake()
     {
-        _configurableUpdate.Init(this, _updateDelay, UpdateValue);
+        _configurableUpdate.Init(this, _updateDelay, TryUpdateValue);
     }
 
     private void OnEnable()
@@ -36,10 +36,18 @@ public class SpeedCounter : MonoBehaviour
 
     #endregion
     
-    private void UpdateValue()
+    private void TryUpdateValue()
     {
-        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.CarController;
+        if (_mainCarSpawner.CurrentCar == null) return;
         
+        RCC_CarControllerV3 carController = _mainCarSpawner.CurrentCar.CarController;
+
+        UpdateValue(carController);
+    }
+    
+    private void UpdateValue(RCC_CarControllerV3 carController)
+    {
+
         _tmpText.text = ((int)carController.speed).ToString();
     }
 }
