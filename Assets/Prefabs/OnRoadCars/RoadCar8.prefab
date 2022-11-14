@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 3975670449823067610}
   - component: {fileID: 3482185652506412013}
   - component: {fileID: 27796477796559701}
+  - component: {fileID: 1908388778360030945}
   m_Layer: 2
   m_Name: LeftHighCarPassSound
   m_TagString: Untagged
@@ -996,6 +997,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 3482185652506412013}
   _clipHolder: {fileID: 3975670449823067610}
+--- !u!114 &1908388778360030945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107860079805662285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 5358281681677963934}
 --- !u!1 &2331405281964146918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1226,7 @@ GameObject:
   - component: {fileID: 6106285743440884680}
   - component: {fileID: 7426064769383040408}
   - component: {fileID: 8529082268153104837}
+  - component: {fileID: 9217606226505005582}
   m_Layer: 2
   m_Name: RightHighCarPassSound
   m_TagString: Untagged
@@ -1337,6 +1352,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 7426064769383040408}
   _clipHolder: {fileID: 6106285743440884680}
+--- !u!114 &9217606226505005582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382457899968843500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 6761015462630888140}
 --- !u!1 &2548639053899719993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,8 +3196,6 @@ MonoBehaviour:
   _transform: {fileID: 2748340988277565387}
   _centersProvider: {fileID: 3205850579412012939}
   _triangleIndex: 1553
-  _autoOffset: 1
-  _positionOffset: {x: -0.029464722, y: 0.022382736, z: 0.012090683}
   _restoreEvent: {fileID: 3385843275537660160}
 --- !u!114 &6306952663048837575
 MonoBehaviour:
@@ -8762,8 +8788,6 @@ MonoBehaviour:
   _transform: {fileID: 3468899298479744768}
   _centersProvider: {fileID: 3205850579412012939}
   _triangleIndex: 1541
-  _autoOffset: 1
-  _positionOffset: {x: 0.03746462, y: 0.005941868, z: -0.008909225}
   _restoreEvent: {fileID: 3468899298479744773}
 --- !u!114 &3468899298479744772
 MonoBehaviour:

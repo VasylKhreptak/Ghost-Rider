@@ -2312,8 +2312,6 @@ MonoBehaviour:
   _transform: {fileID: 5320866538614041714}
   _centersProvider: {fileID: 6165140338738709753}
   _triangleIndex: 1821
-  _autoOffset: 1
-  _positionOffset: {x: 0.049933434, y: -0.03589654, z: -0.11135483}
   _restoreEvent: {fileID: 5320866538614041719}
 --- !u!114 &5320866538614041718
 MonoBehaviour:
@@ -7303,6 +7301,7 @@ GameObject:
   - component: {fileID: 3264653309825644730}
   - component: {fileID: 2232990418981097194}
   - component: {fileID: 1130088250795344567}
+  - component: {fileID: 2859886219825898402}
   m_Layer: 2
   m_Name: RightHighCarPassSound
   m_TagString: Untagged
@@ -7428,6 +7427,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 2232990418981097194}
   _clipHolder: {fileID: 3264653309825644730}
+--- !u!114 &2859886219825898402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405159575977313694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 2603205763575781822}
 --- !u!1 &6460786009043356564
 GameObject:
   m_ObjectHideFlags: 0
@@ -17320,8 +17332,6 @@ MonoBehaviour:
   _transform: {fileID: 6906151236585155429}
   _centersProvider: {fileID: 6165140338738709753}
   _triangleIndex: 1688
-  _autoOffset: 1
-  _positionOffset: {x: 0.064477205, y: 0.020690322, z: -0.009840012}
   _restoreEvent: {fileID: 636966823329000925}
 --- !u!114 &191245162840373358
 MonoBehaviour:
@@ -22228,8 +22238,6 @@ MonoBehaviour:
   _transform: {fileID: 6906151236830028652}
   _centersProvider: {fileID: 6165140338738709753}
   _triangleIndex: 1735
-  _autoOffset: 1
-  _positionOffset: {x: -0.0042772293, y: 0.005690336, z: -0.01584053}
   _restoreEvent: {fileID: 4260066426009193315}
 --- !u!114 &8198126887077371058
 MonoBehaviour:
@@ -28775,8 +28783,6 @@ MonoBehaviour:
   _transform: {fileID: 6906151237625359545}
   _centersProvider: {fileID: 6165140338738709753}
   _triangleIndex: 1868
-  _autoOffset: 1
-  _positionOffset: {x: 0.012034178, y: 0.016112685, z: -0.045612335}
   _restoreEvent: {fileID: 6273352522588992114}
 --- !u!114 &3347668126402368181
 MonoBehaviour:
@@ -28886,6 +28892,7 @@ GameObject:
   - component: {fileID: 5683517790437123752}
   - component: {fileID: 5305441581866535071}
   - component: {fileID: 8759856259738673191}
+  - component: {fileID: 3195109293790048054}
   m_Layer: 2
   m_Name: LeftHighCarPassSound
   m_TagString: Untagged
@@ -29011,6 +29018,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 5305441581866535071}
   _clipHolder: {fileID: 5683517790437123752}
+--- !u!114 &3195109293790048054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256176373619593023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 3724462221414324716}
 --- !u!1 &7330574025815895913
 GameObject:
   m_ObjectHideFlags: 0

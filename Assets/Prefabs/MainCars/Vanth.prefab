@@ -10160,7 +10160,7 @@ MonoBehaviour:
   turboBoost: 0
   NoS: 100
   useNOS: 0
-  useTurbo: 0
+  useTurbo: 1
   attachedTrailer: {fileID: 0}
 --- !u!114 &3704598276157035754
 MonoBehaviour:

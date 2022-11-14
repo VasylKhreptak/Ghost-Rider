@@ -2336,6 +2336,7 @@ GameObject:
   - component: {fileID: 7378773481994913311}
   - component: {fileID: 6996893083447257128}
   - component: {fileID: 5847925117552394384}
+  - component: {fileID: 927227624295158839}
   m_Layer: 2
   m_Name: LeftHighCarPassSound
   m_TagString: Untagged
@@ -2461,6 +2462,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 6996893083447257128}
   _clipHolder: {fileID: 7378773481994913311}
+--- !u!114 &927227624295158839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5479297200201838472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 1951941664708524379}
 --- !u!1 &5549046132292259806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,8 +3118,6 @@ MonoBehaviour:
   _transform: {fileID: 7020762030871481541}
   _centersProvider: {fileID: 9022883011343737934}
   _triangleIndex: 2319
-  _autoOffset: 1
-  _positionOffset: {x: -0.02338171, y: -0.01009351, z: -0.1033535}
   _restoreEvent: {fileID: 7020762030871481536}
 --- !u!114 &7020762030871481537
 MonoBehaviour:
@@ -3417,6 +3429,7 @@ GameObject:
   - component: {fileID: 429850570531723277}
   - component: {fileID: 3910372177102712413}
   - component: {fileID: 2816899813717631488}
+  - component: {fileID: 5801406298229323396}
   m_Layer: 2
   m_Name: RightHighCarPassSound
   m_TagString: Untagged
@@ -3542,6 +3555,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 3910372177102712413}
   _clipHolder: {fileID: 429850570531723277}
+--- !u!114 &5801406298229323396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8096047715553568041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 907813884617832713}
 --- !u!1 &8147029964813298467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3962,8 +3988,6 @@ MonoBehaviour:
   _transform: {fileID: 8606046593771605006}
   _centersProvider: {fileID: 9022883011343737934}
   _triangleIndex: 2413
-  _autoOffset: 1
-  _positionOffset: {x: 0.024381638, y: -0.0200935, z: -0.1033535}
   _restoreEvent: {fileID: 9202594376080462533}
 --- !u!114 &489780061401215490
 MonoBehaviour:
@@ -13662,8 +13686,6 @@ MonoBehaviour:
   _transform: {fileID: 8606046593962984411}
   _centersProvider: {fileID: 9022883011343737934}
   _triangleIndex: 2096
-  _autoOffset: 1
-  _positionOffset: {x: 0.003501892, y: -0.012055308, z: 0.00037002563}
   _restoreEvent: {fileID: 1416252226957454292}
 --- !u!114 &6448269309120379909
 MonoBehaviour:
@@ -24919,8 +24941,6 @@ MonoBehaviour:
   _transform: {fileID: 8606046594744667090}
   _centersProvider: {fileID: 9022883011343737934}
   _triangleIndex: 2016
-  _autoOffset: 1
-  _positionOffset: {x: 0.002098322, y: -0.0098553, z: -0.0034294128}
   _restoreEvent: {fileID: 2337288771651030378}
 --- !u!114 &3034918467370457305
 MonoBehaviour:

@@ -2345,8 +2345,6 @@ MonoBehaviour:
   _transform: {fileID: 5740390111480978047}
   _centersProvider: {fileID: 6048492568186254068}
   _triangleIndex: 4953
-  _autoOffset: 1
-  _positionOffset: {x: 0.028869152, y: 0.10416949, z: 0.006494522}
   _restoreEvent: {fileID: 5740390111480978042}
 --- !u!114 &5740390111480978043
 MonoBehaviour:
@@ -9039,8 +9037,6 @@ MonoBehaviour:
   _transform: {fileID: 6460948566368033460}
   _centersProvider: {fileID: 6048492568186254068}
   _triangleIndex: 4947
-  _autoOffset: 1
-  _positionOffset: {x: -0.034130335, y: 0.14505422, z: 0.006494522}
   _restoreEvent: {fileID: 5868499729042670719}
 --- !u!114 &2885465837198337208
 MonoBehaviour:
@@ -9198,6 +9194,7 @@ GameObject:
   - component: {fileID: 3112010895833878199}
   - component: {fileID: 1766353868098058471}
   - component: {fileID: 707228755337737402}
+  - component: {fileID: 8226348752487268481}
   m_Layer: 2
   m_Name: RightHighCarPassSound
   m_TagString: Untagged
@@ -9323,6 +9320,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 1766353868098058471}
   _clipHolder: {fileID: 3112010895833878199}
+--- !u!114 &8226348752487268481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817824464013030291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 2476421595309551539}
 --- !u!1 &6906031625666100633
 GameObject:
   m_ObjectHideFlags: 0
@@ -9539,6 +9549,7 @@ GameObject:
   - component: {fileID: 5233636701497790629}
   - component: {fileID: 5755251275513659026}
   - component: {fileID: 9218647795170514474}
+  - component: {fileID: 7271229699170506467}
   m_Layer: 2
   m_Name: LeftHighCarPassSound
   m_TagString: Untagged
@@ -9664,6 +9675,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 5755251275513659026}
   _clipHolder: {fileID: 5233636701497790629}
+--- !u!114 &7271229699170506467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119461480756066610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monoEvent: {fileID: 3878029328996659169}
 --- !u!1 &7189182841313368420
 GameObject:
   m_ObjectHideFlags: 0
