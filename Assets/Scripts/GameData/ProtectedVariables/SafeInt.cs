@@ -1,7 +1,8 @@
+[System.Serializable]
 public struct SafeInt
 {
-	private int value;
-	private int salt;
+	public int value;
+	public int salt;
 
 	public SafeInt(int value)
 	{

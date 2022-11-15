@@ -29,12 +29,12 @@ public class MoneyText : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_bank.onMoneyChanged += UpdateValue;
+		_bank.onMoneyUpdated += UpdateValue;
 	}
 
 	private void OnDisable()
 	{
-		_bank.onMoneyChanged -= UpdateValue;
+		_bank.onMoneyUpdated -= UpdateValue;
 	}
 
 	#endregion

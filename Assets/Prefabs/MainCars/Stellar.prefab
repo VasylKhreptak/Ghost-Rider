@@ -20115,7 +20115,7 @@ MonoBehaviour:
   antiRollFrontHorizontal: 1500
   antiRollRearHorizontal: 1500
   antiRollVertical: 0
-  downForce: 30
+  downForce: 35
   useCounterSteering: 1
   counterSteeringFactor: 0.5
   maxspeed: 140

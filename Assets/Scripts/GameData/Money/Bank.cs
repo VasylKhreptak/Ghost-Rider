@@ -8,8 +8,10 @@ public class Bank : MonoBehaviour
 
     public bool IsEmpty => _playerDataProvider.playerData.money == 0;
     
-    public Action<int> onMoneyChanged;
-    
+    public Action<int> onMoneyUpdated;
+    public Action<int> onMoneyAdded;
+    public Action<int> onMoneySpend;
+
     [Inject]
     private void Construct(PlayerDataProvider playerDataProvider)
     {
@@ -23,11 +25,20 @@ public class Bank : MonoBehaviour
 
     public void SetMoney(int money)
     {
-        _playerDataProvider.playerData.money = Mathf.Clamp(money, 0, int.MaxValue);
+        _playerDataProvider.playerData.money = GetClamped(money);
         
-        onMoneyChanged?.Invoke(_playerDataProvider.playerData.money);
+        onMoneyUpdated?.Invoke(_playerDataProvider.playerData.money);
     }
 
+    public void AddMoney(int money)
+    {
+        money = GetClamped(money);
+        
+        SetMoney(_playerDataProvider.playerData.money + money);
+        
+        onMoneyAdded?.Invoke(money);
+    }
+    
     public bool TrySpendMoney(int money)
     {
         if (CanSpendMoney(money))
@@ -42,13 +53,20 @@ public class Bank : MonoBehaviour
 
     private bool CanSpendMoney(int money)
     {
-        return _playerDataProvider.playerData.money >= money;
+        return _playerDataProvider.playerData.money >= money && money > 0;
     }
     
     private void SpendMoney(int money)
     {
         _playerDataProvider.playerData.money -= money;
         
-        onMoneyChanged?.Invoke(_playerDataProvider.playerData.money);
+        onMoneySpend?.Invoke(money);
+        
+        onMoneyUpdated?.Invoke(_playerDataProvider.playerData.money);
+    }
+
+    private int GetClamped(int money)
+    {
+        return Mathf.Clamp(money, 0, int.MaxValue);
     }
 }

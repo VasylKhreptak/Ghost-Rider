@@ -7301,7 +7301,7 @@ GameObject:
   - component: {fileID: 3264653309825644730}
   - component: {fileID: 2232990418981097194}
   - component: {fileID: 1130088250795344567}
-  - component: {fileID: 2859886219825898402}
+  - component: {fileID: 4384449456679097921}
   m_Layer: 2
   m_Name: RightHighCarPassSound
   m_TagString: Untagged
@@ -7317,7 +7317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6405159575977313694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.58, y: 0, z: 0}
+  m_LocalPosition: {x: 3.58, y: 0, z: 1.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7335,7 +7335,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1201761, y: 1, z: 3.6332912}
+  m_Size: {x: 1.1201761, y: 1, z: 0.92}
   m_Center: {x: -1.7359387, y: 0, z: -0.46945858}
 --- !u!114 &7660048015096496278
 MonoBehaviour:
@@ -7351,7 +7351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 1024
 --- !u!114 &2603205763575781822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7427,7 +7427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 2232990418981097194}
   _clipHolder: {fileID: 3264653309825644730}
---- !u!114 &2859886219825898402
+--- !u!114 &4384449456679097921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7436,10 +7436,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 6405159575977313694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Script: {fileID: 11500000, guid: 04cfcf5d630c53940a73f1df1f31bb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monoEvent: {fileID: 2603205763575781822}
+  _triggerEnterEvent: {fileID: 7660048015096496278}
+  _carController: {fileID: 6906151237082633094}
+  _minSpeedDifference: 20
+  _minScore: 30
+  _maxScore: 150
+  _scoreCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.997603
+      value: 0.8577331
+      inSlope: 0.05902442
+      outSlope: 0.05902442
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0000329
+      value: 1.0030644
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6460786009043356564
 GameObject:
   m_ObjectHideFlags: 0
@@ -28892,7 +28929,7 @@ GameObject:
   - component: {fileID: 5683517790437123752}
   - component: {fileID: 5305441581866535071}
   - component: {fileID: 8759856259738673191}
-  - component: {fileID: 3195109293790048054}
+  - component: {fileID: 6237649708292652680}
   m_Layer: 2
   m_Name: LeftHighCarPassSound
   m_TagString: Untagged
@@ -28908,7 +28945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7256176373619593023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.9500008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28926,7 +28963,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1201761, y: 1, z: 3.6332912}
+  m_Size: {x: 1.1201761, y: 1, z: 0.92}
   m_Center: {x: -1.7359387, y: 0, z: -0.46945858}
 --- !u!114 &6138443583956767044
 MonoBehaviour:
@@ -28942,7 +28979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layerMask:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 1024
 --- !u!114 &3724462221414324716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29018,7 +29055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monoEvent: {fileID: 5305441581866535071}
   _clipHolder: {fileID: 5683517790437123752}
---- !u!114 &3195109293790048054
+--- !u!114 &6237649708292652680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29027,10 +29064,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 7256176373619593023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d74107c446a9b0e45a6aba2cef80f822, type: 3}
+  m_Script: {fileID: 11500000, guid: 04cfcf5d630c53940a73f1df1f31bb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monoEvent: {fileID: 3724462221414324716}
+  _triggerEnterEvent: {fileID: 6138443583956767044}
+  _carController: {fileID: 6906151237082633094}
+  _minSpeedDifference: 20
+  _minScore: 30
+  _maxScore: 150
+  _scoreCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.997603
+      value: 0.8577331
+      inSlope: 0.05902442
+      outSlope: 0.05902442
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0000329
+      value: 1.0030644
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7330574025815895913
 GameObject:
   m_ObjectHideFlags: 0
