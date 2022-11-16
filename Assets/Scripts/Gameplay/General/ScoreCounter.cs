@@ -1,33 +1,41 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class ScoreCounter : MonoBehaviour
 {
-	[Header("Preferences")]
-	[SerializeField] private int _minScore;
-	[SerializeField] private int _maxScore;
+	[Header("Bonus Preferences")]
+	[SerializeField] private float[] _bonusCoefficients;
+	[SerializeField] private float _cooldown;
 
 	private SafeInt _score;
 
+	private int _currentBonusIndex = 0;
+
+	private Tween _waitTween;
+	
 	public int Score => _score;
 	
 	public Action<int> onScoreUpdated;
 	public Action<int> onScoreAdded;
 	public Action<int> onScoreReset;
-
-	private int RandomScore => Random.Range(_minScore, _maxScore + 1);
 	
-	private void AddRandomScore()
+	#region MonoBehaviour
+
+	private void OnDisable()
 	{
-		AddScore(RandomScore);
+		_waitTween.Kill();
 	}
+
+	#endregion
 
 	public void AddScoreWithBonuses(int score)
 	{
-		///new score with bonuses
+		score = (int)(score * GetBonusCoefficient());
 		
 		AddScore(score);
+
+		ProcessBonusSelection();
 	}
 	
 	private void AddScore(int score)
@@ -49,5 +57,25 @@ public class ScoreCounter : MonoBehaviour
 		onScoreReset?.Invoke(_score);
 		
 		SetScore(0);
+	}
+
+	private float GetBonusCoefficient()
+	{
+		if (_currentBonusIndex > _bonusCoefficients.Length - 1)
+		{
+			return _bonusCoefficients[_bonusCoefficients.Length - 1];
+		}
+
+		return _bonusCoefficients[_currentBonusIndex];
+	}
+
+	private void ProcessBonusSelection()
+	{
+		_currentBonusIndex++;
+
+		_waitTween.Kill();
+		_waitTween = this
+			.DOWait(_cooldown)
+			.OnComplete(() => _currentBonusIndex = 0);
 	}
 }

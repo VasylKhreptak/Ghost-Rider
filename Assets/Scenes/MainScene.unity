@@ -28054,8 +28054,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d9daac0169f9041bfa69283ed53b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minScore: 50
-  _maxScore: 100
+  _bonusCoefficients:
+  - 1
+  - 1.5
+  - 2
+  - 2.5
+  - 3
+  _cooldown: 3
 --- !u!114 &1295930994
 MonoBehaviour:
   m_ObjectHideFlags: 0
