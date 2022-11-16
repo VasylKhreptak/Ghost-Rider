@@ -33,10 +33,12 @@ public class Bank : MonoBehaviour
     public void AddMoney(int money)
     {
         money = GetClamped(money);
-        
-        SetMoney(_playerDataProvider.playerData.money + money);
+
+        if (money == 0) return;
         
         onMoneyAdded?.Invoke(money);
+        
+        SetMoney(_playerDataProvider.playerData.money + money);
     }
     
     public bool TrySpendMoney(int money)
