@@ -6068,7 +6068,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minRPM: 7500
+  _minRPM: 6000
   _maxRPM: 8000
   _rpmCurve:
     serializedVersion: 2

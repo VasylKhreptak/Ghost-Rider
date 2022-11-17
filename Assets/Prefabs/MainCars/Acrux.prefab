@@ -234,8 +234,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _minRPM: 9000
-  _maxRPM: 9500
+  _minRPM: 6000
+  _maxRPM: 8000
   _rpmCurve:
     serializedVersion: 2
     m_Curve:
@@ -7726,7 +7726,7 @@ MonoBehaviour:
   maxEngineTorque: 1600
   maxEngineTorqueAtRPM: 2500
   minEngineRPM: 1000
-  maxEngineRPM: 9500
+  maxEngineRPM: 8000
   engineRPM: 0
   engineInertia: 0.1
   useRevLimiter: 0

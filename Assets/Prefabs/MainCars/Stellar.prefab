@@ -20134,17 +20134,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 2000
       value: 1000
-      inSlope: 0.21666667
-      outSlope: 0.21666667
+      inSlope: 0.22222222
+      outSlope: 0.22222222
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 7000
+      time: 8000
       value: 666.6667
-      inSlope: -0.06666666
-      outSlope: -0.06666666
+      inSlope: -0.055555552
+      outSlope: -0.055555552
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -20156,7 +20156,7 @@ MonoBehaviour:
   maxEngineTorque: 1000
   maxEngineTorqueAtRPM: 2000
   minEngineRPM: 1000
-  maxEngineRPM: 7000
+  maxEngineRPM: 8000
   engineRPM: 0
   engineInertia: 0.1
   useRevLimiter: 0
@@ -23401,7 +23401,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _minRPM: 6000
-  _maxRPM: 7000
+  _maxRPM: 8000
   _rpmCurve:
     serializedVersion: 2
     m_Curve:
