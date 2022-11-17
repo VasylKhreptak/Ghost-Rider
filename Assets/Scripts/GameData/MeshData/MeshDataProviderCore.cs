@@ -8,6 +8,8 @@ public class MeshDataProviderCore : MonoBehaviour
     [SerializeField] protected Transform _transform;
     [SerializeField] protected MeshFilter _meshFilter;
 
+    private bool _wasLoaded;
+    
     public Transform Transform => _transform;
     
     public Action onLoad;
@@ -29,12 +31,16 @@ public class MeshDataProviderCore : MonoBehaviour
     private void Start()
     {
         onLoad?.Invoke();
+
+        _wasLoaded = true;
     }
 
     #endregion
 
     public void UpdateData()
     {
+        if (_wasLoaded == false) return;
+        
         SyncData();
 
         onUpdate?.Invoke();

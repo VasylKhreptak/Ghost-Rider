@@ -26,39 +26,52 @@ public class MeshTriangleCenterLinker : MonoBehaviour
     private void Awake()
     {
         _startLocalPosition = _transform.localPosition;
-
+        
+        _centersProvider.onLoad += OnLoad;
         _restoreEvent.onMonoCall += Restore;
     }
 
     private void OnEnable()
     {
         _centersProvider.onUpdate += UpdatePosition;
-        _centersProvider.onLoad += UpdatePreviousCenterPosition;
-        _centersProvider.onLoad += UpdateStartCenterPosition;
     }
 
     private void OnDisable()
     {
         _centersProvider.onUpdate -= UpdatePosition;
-        _centersProvider.onLoad -= UpdatePreviousCenterPosition;
-        _centersProvider.onLoad -= UpdateStartCenterPosition;
     }
 
     private void OnDestroy()
     {
+        _centersProvider.onLoad -= OnLoad;
         _restoreEvent.onMonoCall -= Restore;
     }
 
     #endregion
 
+    private void OnLoad()
+    {
+        UpdateStartCenterPosition();
+
+        UpdatePreviousCenterPosition();
+    }
+    
     private void UpdatePosition()
     {
         Vector3 center = _centersProvider.centers[_triangleIndex];
+
+        if (_previousCenterPosition == Vector3.zero)
+        {
+            Debug.Log("Zero");
+        }
+        
+        if (center == _previousCenterPosition) return;
+
         Vector3 direction = (center - _previousCenterPosition).normalized;
         float distance = Vector3.Distance(center, _previousCenterPosition);
         
         _transform.localPosition += (direction * distance);
-
+        
         UpdatePreviousCenterPosition();
     }
 

@@ -29,33 +29,41 @@ public class MeshTriangleNormalLinker : MonoBehaviour
     {
         _startLocalRotation = _transform.localRotation.eulerAngles;
 
+        _normalProvider.onLoad += OnLoad;
         _restoreEvent.onMonoCall += Restore;
     }
 
     private void OnEnable()
     {
         _normalProvider.onUpdate += UpdateLookDirection;
-        _normalProvider.onLoad += UpdatePreviousNormalDirection;
-        _normalProvider.onLoad += UpdateStartNormal;
     }
 
     private void OnDisable()
     {
         _normalProvider.onUpdate -= UpdateLookDirection;
-        _normalProvider.onLoad -= UpdatePreviousNormalDirection;
-        _normalProvider.onLoad -= UpdateStartNormal;
     }
 
     private void OnDestroy()
     {
+        _normalProvider.onLoad -= OnLoad;
         _restoreEvent.onMonoCall -= Restore;
     }
 
     #endregion
 
+    private void OnLoad()
+    {
+        UpdatePreviousNormalDirection();
+
+        UpdateStartNormal();
+    }
+    
     private void UpdateLookDirection()
     {
         Vector3 normal = _normalProvider.normals[_triangleIndex];
+
+        if (normal == _previousNormalDirection) return;
+        
         Quaternion normalRotation = Quaternion.FromToRotation(_previousNormalDirection, normal);
         _transform.forward = normalRotation * _transform.forward;
         
