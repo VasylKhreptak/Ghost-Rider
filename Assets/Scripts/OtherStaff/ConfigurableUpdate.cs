@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 public class ConfigurableUpdate
 {
@@ -8,9 +9,11 @@ public class ConfigurableUpdate
     private float _updateDelay;
     private Action _action;
 
-    private bool _init;
-    
+    private bool _initialized;
+
     private Coroutine _updateCoroutine;
+
+    private PauseManager _pauseManager;
 
     public void Init(MonoBehaviour monoBehaviour, float updateDelay, Action action)
     {
@@ -18,16 +21,16 @@ public class ConfigurableUpdate
         _updateDelay = updateDelay;
         _action = action;
 
-        _init = true;
+        _initialized = true;
     }
 
     public void StartUpdating()
     {
-        if (_init == false)
+        if (_initialized == false)
         {
             Debug.LogWarning("ConfigurableUpdate was not initialized, use Init()");
         }
-        
+
         if (_updateCoroutine == null)
         {
             _updateCoroutine = _targetScript.StartCoroutine(UpdateRoutine());
