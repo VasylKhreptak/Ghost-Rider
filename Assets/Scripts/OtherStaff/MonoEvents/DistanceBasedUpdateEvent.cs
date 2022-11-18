@@ -1,17 +1,19 @@
 using System.Collections;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class DistanceBasedUpdateEvent : MonoEvent
 {
 	[Header("References")]
 	[SerializeField] private Transform _transform;
-	[HideIf(nameof(_useMainCameraAsTarget)), SerializeField] private Transform _target;
-
+	[HideIf(nameof(_useCameraAsTarget)), SerializeField] private Transform _target;
+	[ShowIf(nameof(_useCameraAsTarget)), SerializeField] private CameraProvider _cameraProvider;
+	
 	[Header("Preferences")]
 	[SerializeField] private bool _affectedByPause = true;
-	[SerializeField] private bool _useMainCameraAsTarget;
+	[FormerlySerializedAs("_useMainCameraAsTarget")] [SerializeField] private bool _useCameraAsTarget;
 	[SerializeField] private float _minDistance;
 	[SerializeField] private float _maxDistance;
 	[SerializeField] private float _minDelay;
@@ -33,18 +35,13 @@ public class DistanceBasedUpdateEvent : MonoEvent
 	private void OnValidate()
 	{
 		_transform ??= GetComponent<Transform>();
-
-		if (_useMainCameraAsTarget)
-		{
-			_target = Camera.main.transform;
-		}
 	}
 
 	private void Awake()
 	{
-		if (_target == null && _useMainCameraAsTarget)
+		if (_useCameraAsTarget)
 		{
-			_target = Camera.main.transform;
+			_target = _cameraProvider.Camera.transform;
 		}
 	}
 

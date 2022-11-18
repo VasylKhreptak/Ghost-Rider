@@ -7,7 +7,7 @@ using Zenject;
 public class AntiAliasingDropdown : UIUpdatableItem
 {
     [Header("References")]
-    [SerializeField] private Camera _camera;
+    [SerializeField] private CameraProvider _cameraProvider;
     [SerializeField] private TMP_Dropdown _dropdown;
 
     private UniversalAdditionalCameraData _cameraData;
@@ -20,6 +20,8 @@ public class AntiAliasingDropdown : UIUpdatableItem
         AntialiasingMode.FastApproximateAntialiasing,
         AntialiasingMode.SubpixelMorphologicalAntiAliasing
     };
+    
+    private Camera _camera;
 
     [Inject]
     private void Construct(SettingsProvider settingsProvider)
@@ -31,8 +33,12 @@ public class AntiAliasingDropdown : UIUpdatableItem
 
     private void OnValidate()
     {
-        _camera ??= Camera.main;
         _dropdown ??= GetComponent<TMP_Dropdown>();
+    }
+
+    private void Awake()
+    {
+        _camera = _cameraProvider.Camera;
     }
 
     private void Start()

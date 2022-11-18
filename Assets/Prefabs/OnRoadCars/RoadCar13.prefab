@@ -1155,9 +1155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 6648699989284290214}
-  _camera: {fileID: 0}
+  _cameraProvider: {fileID: 2012346872666611347}
   _renderDistance: 265.35266
-  _useMainCamera: 1
   _checkEvent: {fileID: 6146824268917647420}
 --- !u!114 &7145423980910520017
 MonoBehaviour:
@@ -2171,6 +2170,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageableObject: {fileID: 5199627107470157558}
+--- !u!1 &5682032463375109881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3967997629110909271}
+  - component: {fileID: 2012346872666611347}
+  m_Layer: 6
+  m_Name: MainCameraProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3967997629110909271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5682032463375109881}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.120162725, y: -0.52, z: -36.04872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6648699989284290214}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2012346872666611347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5682032463375109881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8962d5c84d1e3d84199dbf42a7ff4565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5845414320813766783
 GameObject:
   m_ObjectHideFlags: 0
@@ -17545,6 +17588,7 @@ Transform:
   - {fileID: 6395184891848577531}
   - {fileID: 6402511226451097318}
   - {fileID: 7251692397780452617}
+  - {fileID: 3967997629110909271}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

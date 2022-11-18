@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class OnRaycastEvent : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private CameraProvider _cameraProvider;
+    
     [Header("Preferences")]
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _maxDistance;
@@ -18,7 +21,7 @@ public class OnRaycastEvent : MonoBehaviour
 
     private void Awake()
     {
-        _camera = Camera.main;
+        _camera = _cameraProvider.Camera;
 
         _monoEvent.onMonoCall += ThrowRaycast;
     }

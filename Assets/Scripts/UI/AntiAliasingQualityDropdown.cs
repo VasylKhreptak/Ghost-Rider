@@ -7,13 +7,15 @@ using Zenject;
 public class AntiAliasingQualityDropdown : UIUpdatableItem
 {
     [Header("References")]
-    [SerializeField] private Camera _camera;
+    [SerializeField] private CameraProvider _cameraProvider;
     [SerializeField] private TMP_Dropdown _dropdown;
 
     private UniversalAdditionalCameraData _cameraData;
 
     private SettingsProvider _settingsProvider;
 
+    private Camera _camera;
+    
     private AntialiasingQuality[] _antialiasingQualities =
     {
         AntialiasingQuality.Low,
@@ -31,8 +33,12 @@ public class AntiAliasingQualityDropdown : UIUpdatableItem
 
     private void OnValidate()
     {
-        _camera ??= Camera.main;
         _dropdown ??= GetComponent<TMP_Dropdown>();
+    }
+
+    private void Awake()
+    {
+        _camera = _cameraProvider.Camera;
     }
 
     private void Start()

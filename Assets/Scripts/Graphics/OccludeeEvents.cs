@@ -5,6 +5,7 @@ public class OccludeeEvents : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform _transform;
+    [SerializeField] private CameraProvider _cameraProvider;
     
     [Header("Preferences")]
     [SerializeField] private float _checkDelay;
@@ -24,11 +25,12 @@ public class OccludeeEvents : MonoBehaviour
     private void OnValidate()
     {
         _transform ??= GetComponent<Transform>();
+        _cameraProvider ??= GetComponent<CameraProvider>();
     }
 
     private void Awake()
     {
-        _camera = Camera.main;
+        _camera = _cameraProvider.Camera;
         
         _configurableUpdate.Init(this, _checkDelay, Check);
     }
@@ -65,6 +67,5 @@ public class OccludeeEvents : MonoBehaviour
                 _visible = true;
             }
         }
-            
     }
 }

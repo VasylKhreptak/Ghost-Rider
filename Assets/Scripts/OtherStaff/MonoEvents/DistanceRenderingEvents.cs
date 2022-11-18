@@ -8,12 +8,10 @@ public class DistanceRenderingEvents : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform _transform;
-    [HideIf(nameof(_useMainCamera)), SerializeField]
-    private Camera _camera;
+    [SerializeField] private CameraProvider _cameraProvider;
 
     [Header("Preferences")]
     [SerializeField] private float _renderDistance;
-    [SerializeField] private bool _useMainCamera;
 
     [Header("Events")]
     [SerializeField] private MonoEvent _checkEvent;
@@ -21,6 +19,8 @@ public class DistanceRenderingEvents : MonoBehaviour
     private bool _wasVisible;
     private bool _isVisible;
 
+    private Camera _camera;
+    
     public Action onStartRendering;
     public Action onStopRendering;
 
@@ -30,19 +30,11 @@ public class DistanceRenderingEvents : MonoBehaviour
     {
         _transform ??= GetComponent<Transform>();
         _checkEvent ??= GetComponent<MonoEvent>();
-
-        if (_useMainCamera)
-        {
-            _camera = Camera.main;
-        }
     }
 
     private void Awake()
     {
-        if (_camera == null && _useMainCamera)
-        {
-            _camera = Camera.main;
-        }
+        _camera = _cameraProvider.Camera;
     }
 
     private void OnEnable()

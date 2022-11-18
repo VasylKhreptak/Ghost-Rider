@@ -27265,6 +27265,7 @@ Transform:
   - {fileID: 6580669841581407449}
   - {fileID: 6577846547974773700}
   - {fileID: 4932718511633365752}
+  - {fileID: 8012004608564110759}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29481,6 +29482,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25e21d4ec621db4b91583c85863d059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7488552479785565814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8012004608564110759}
+  - component: {fileID: 8852360138721982727}
+  m_Layer: 6
+  m_Name: MainCameraProvider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8012004608564110759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488552479785565814}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.120162725, y: -0.52, z: -36.04872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6906151237082633092}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8852360138721982727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488552479785565814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8962d5c84d1e3d84199dbf42a7ff4565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7532006562787037338
 GameObject:
   m_ObjectHideFlags: 0
@@ -30056,9 +30101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 6906151237082633092}
-  _camera: {fileID: 0}
+  _cameraProvider: {fileID: 8852360138721982727}
   _renderDistance: 176.80475
-  _useMainCamera: 1
   _checkEvent: {fileID: 3637822916407345100}
 --- !u!114 &7523560377069244115
 MonoBehaviour:

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -5,11 +6,13 @@ using Zenject;
 public class CameraClippingSlider : UIUpdatableItem
 {
     [Header("References")]
-    [SerializeField] private Camera _camera;
+    [SerializeField] private CameraProvider _cameraProvider;
     [SerializeField] private Slider _slider;
 
     private SettingsProvider _settingsProvider;
 
+    private Camera _camera;
+    
     [Inject]
     private void Construct(SettingsProvider settingsProvider)
     {
@@ -21,7 +24,11 @@ public class CameraClippingSlider : UIUpdatableItem
     private void OnValidate()
     {
         _slider ??= GetComponent<Slider>();
-        _camera = Camera.main;
+    }
+
+    private void Awake()
+    {
+        _camera = _cameraProvider.Camera;
     }
 
     private void Start()
