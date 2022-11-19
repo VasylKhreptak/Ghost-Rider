@@ -35,5 +35,6 @@ public class Settings
     public bool depthOfFieldEnabled = true;
     public bool dofHighQualityEnabled = true;
     public bool bloomHighQualityEnabled = true;
+    public bool highSpeedEffectEnabled = true;
     public int masterTextureLimit = 0;
 }

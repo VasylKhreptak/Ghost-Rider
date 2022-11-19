@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
@@ -26,6 +27,8 @@ public class SettingsLoader : MonoBehaviour
     [SerializeField] private GameFramerate _gameFramerate;
     [SerializeField] private Camera _camera;
     [SerializeField] private Volume _postProcessingVolume;
+    [SerializeField] private ChromaticAberrationHighSpeedEffect _chromaticAberrationEffect;
+    [SerializeField] private DistortionHighSpeedEffect _distortionEffect;
 
     private UniversalAdditionalCameraData _cameraData;
 
@@ -36,6 +39,8 @@ public class SettingsLoader : MonoBehaviour
     private Bloom _bloom;
     private Vignette _vignette;
     private DepthOfField _depthOfField;
+    private ChromaticAberration _chromaticAberration;
+    private LensDistortion _lensDistortion;
 
     private RectTransform _fpsRectTransform;
 
@@ -47,6 +52,12 @@ public class SettingsLoader : MonoBehaviour
 
     #region MonoBehaviour
 
+    private void OnValidate()
+    {
+        _distortionEffect ??= _postProcessingVolume.GetComponent<DistortionHighSpeedEffect>();
+        _chromaticAberrationEffect ??= _postProcessingVolume.GetComponent<ChromaticAberrationHighSpeedEffect>();
+    }
+
     private void Awake()
     {
         _cameraData = _camera.GetComponent<UniversalAdditionalCameraData>();
@@ -55,6 +66,8 @@ public class SettingsLoader : MonoBehaviour
         _postProcessingVolume.profile.TryGet(out _bloom);
         _postProcessingVolume.profile.TryGet(out _vignette);
         _postProcessingVolume.profile.TryGet(out _depthOfField);
+        _postProcessingVolume.profile.TryGet(out _chromaticAberration);
+        _postProcessingVolume.profile.TryGet(out _lensDistortion);
 
         _fpsRectTransform = _fpsCounterObject.GetComponent<RectTransform>();
     }
@@ -66,7 +79,7 @@ public class SettingsLoader : MonoBehaviour
 
     #endregion
 
-    private void ApplySettings(Settings settings)
+    public void ApplySettings(Settings settings)
     {
         ApplyVolumeSettings(settings);
         ApplyUISettings(settings);
@@ -125,6 +138,8 @@ public class SettingsLoader : MonoBehaviour
         _depthOfField.active = settings.depthOfFieldEnabled;
         _depthOfField.highQualitySampling.value = settings.dofHighQualityEnabled;
         _bloom.highQualityFiltering.value = settings.bloomHighQualityEnabled;
+        _chromaticAberration.active = settings.highSpeedEffectEnabled;
+        _lensDistortion.active = settings.highSpeedEffectEnabled;
 
         QualitySettings.masterTextureLimit = settings.masterTextureLimit;
 
@@ -161,6 +176,7 @@ public class SettingsLoader : MonoBehaviour
         _settingsProvider.settings.dofHighQualityEnabled = settings.dofHighQualityEnabled;
         _settingsProvider.settings.bloomHighQualityEnabled = settings.bloomHighQualityEnabled;
         _settingsProvider.settings.masterTextureLimit = settings.masterTextureLimit;
+        _settingsProvider.settings.highSpeedEffectEnabled = settings.highSpeedEffectEnabled;
     }
 
     public void ApplyScreenSettings(Settings settings)
