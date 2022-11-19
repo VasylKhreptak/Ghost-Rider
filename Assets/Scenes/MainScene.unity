@@ -24013,7 +24013,7 @@ MonoBehaviour:
   cameraMode: 0
   lastCameraMode: 0
   useTopCameraMode: 1
-  useHoodCameraMode: 0
+  useHoodCameraMode: 1
   useOrbitInTPSCameraMode: 1
   useOrbitInHoodCameraMode: 1
   useWheelCameraMode: 0
@@ -24070,6 +24070,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1953103642}
+  - {fileID: 1611223174}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 45.346, z: 0}
@@ -44793,6 +44794,178 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609642796}
   m_CullTransparentMesh: 1
+--- !u!1 &1611223173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1611223174}
+  - component: {fileID: 1611223179}
+  - component: {fileID: 1611223176}
+  - component: {fileID: 1611223178}
+  - component: {fileID: 1611223177}
+  - component: {fileID: 1611223175}
+  - component: {fileID: 1611223181}
+  - component: {fileID: 1611223180}
+  - component: {fileID: 1611223182}
+  - component: {fileID: 1611223183}
+  m_Layer: 0
+  m_Name: HoodCameraControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1611223174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1113618953}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611223175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed9dcddc87abcd43b89cfaf29c1fdbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 1113618952}
+  _mainCarSpawner: {fileID: 1557074298}
+  _resetLookDirection: 0
+  _normalCameraMode: 0
+  _enableHoodCameraEvent: {fileID: 1611223181}
+  _disableHoodCameraEvent: {fileID: 1611223180}
+--- !u!114 &1611223176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2539e896b25d244bfae6bc81b1197d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerEvent: {fileID: 1611223179}
+  _startState: 0
+--- !u!114 &1611223177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a477099f1a3d2449f6dbc9b5ef2534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toggleMonoEvent: {fileID: 1611223176}
+--- !u!114 &1611223178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8761abcdfac0854e840ca874c005f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toggleMonoEvent: {fileID: 1611223176}
+--- !u!114 &1611223179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28af7a871b33814d9a50500f5be6477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _keyCode: 99
+--- !u!114 &1611223180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f86f270839680744a05b182f092f942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _events:
+  - {fileID: 1611223177}
+  - {fileID: 773987793}
+--- !u!114 &1611223181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f86f270839680744a05b182f092f942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _events:
+  - {fileID: 1611223178}
+--- !u!114 &1611223182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35187c189bea8d54795bb5dc35e615dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetScripts:
+  - {fileID: 1611223175}
+  _active: 1
+  _event: {fileID: 1083930330}
+--- !u!114 &1611223183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611223173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35187c189bea8d54795bb5dc35e615dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetScripts:
+  - {fileID: 1611223175}
+  _active: 0
+  _event: {fileID: 773987793}
 --- !u!1 &1612223050
 GameObject:
   m_ObjectHideFlags: 0
@@ -55477,7 +55650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: 951499998}
+  _eventTrigger: {fileID: 1083930330}
   _unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -55519,7 +55692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd2e833145fa264485f72e309851313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventTrigger: {fileID: 1050963879}
+  _eventTrigger: {fileID: 773987793}
   _unityEvent:
     m_PersistentCalls:
       m_Calls:

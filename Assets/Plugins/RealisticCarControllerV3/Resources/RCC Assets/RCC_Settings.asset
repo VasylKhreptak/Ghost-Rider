@@ -337,9 +337,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: abe24e1d59cd24e48ab2b17acb6b57ff, type: 3}
   - {fileID: 8300000, guid: 4ebe01570cad61a40be61693713688b4, type: 3}
   - {fileID: 8300000, guid: f772a702dcfbfe9478afe01aa9429fbc, type: 3}
-  maxGearShiftingSoundVolume: 0.5
+  maxGearShiftingSoundVolume: 0.681
   maxCrashSoundVolume: 0.5
-  maxWindSoundVolume: 1
+  maxWindSoundVolume: 0.479
   maxBrakeSoundVolume: 0.494
   foldGeneralSettings: 1
   foldBehaviorSettings: 1
