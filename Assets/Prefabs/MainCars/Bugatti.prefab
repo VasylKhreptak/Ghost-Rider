@@ -18237,6 +18237,7 @@ MonoBehaviour:
   _carController: {fileID: 5900491469068453280}
   _carObject: {fileID: 5877654844095743283}
   _damageableObject: {fileID: 5877654845170266422}
+  _pool: 31
 --- !u!1 &5877654844578609037
 GameObject:
   m_ObjectHideFlags: 0

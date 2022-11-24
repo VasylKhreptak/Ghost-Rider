@@ -44215,8 +44215,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1557074297}
   - component: {fileID: 1557074298}
-  - component: {fileID: 1557074300}
+  - component: {fileID: 1557074302}
   - component: {fileID: 1557074301}
+  - component: {fileID: 1557074303}
   m_Layer: 0
   m_Name: MainCarSpawner
   m_TagString: Untagged
@@ -44252,21 +44253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTransform: {fileID: 1952046109}
---- !u!114 &1557074300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557074296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5dd781d08416c4fb6c8da1d5f3ad3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCarSpawner: {fileID: 1557074298}
-  _car: 29
-  _monoEvent: {fileID: 1557074301}
 --- !u!114 &1557074301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44277,6 +44263,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc7b5fe2c19e9ec4687a9f11965a872b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1557074302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557074296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88d8e9483cff1f41954b4da8f96c17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCarSpawner: {fileID: 1557074298}
+  _playerDataProvider: {fileID: 1946053953}
+  _event: {fileID: 1557074301}
+--- !u!114 &1557074303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557074296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5126f21b95b33494dba43d37387bf14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1565502916
@@ -53964,6 +53977,7 @@ MonoBehaviour:
     money:
       value: 0
       salt: 0
+    _currentCar: 0
 --- !u!1 &1950239702
 GameObject:
   m_ObjectHideFlags: 0
