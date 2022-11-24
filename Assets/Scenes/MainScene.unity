@@ -846,7 +846,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 53386665}
   _monoEvent: {fileID: 53386668}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &53386667
 MonoBehaviour:
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 81549237}
   _monoEvent: {fileID: 81549240}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &81549239
 MonoBehaviour:
@@ -2299,8 +2299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 98288105}
   _cars: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000
-  _minOffset: {x: -0.1, y: 2, z: -5}
-  _maxOffset: {x: -0.3, y: 2, z: 5}
+  _minOffset: {x: -0.1, y: 3, z: -5}
+  _maxOffset: {x: -0.3, y: 3, z: 5}
   _minSpawnDelay: 1
   _maxSpawnDelay: 3
   _spawnProbability: 0.804
@@ -2359,8 +2359,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 1, z: 25}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.5, y: 1, z: 57.88772}
+  m_Center: {x: 0, y: 0, z: 28.94386}
 --- !u!1 &101589535
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,7 +5304,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 241259566}
   _monoEvent: {fileID: 241259569}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &241259568
 MonoBehaviour:
@@ -7471,7 +7471,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 337830566}
   _monoEvent: {fileID: 337830569}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &337830568
 MonoBehaviour:
@@ -9431,7 +9431,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 469626567}
   _monoEvent: {fileID: 469626570}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &469626569
 MonoBehaviour:
@@ -15777,7 +15777,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 776340452}
   _monoEvent: {fileID: 776340455}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &776340454
 MonoBehaviour:
@@ -16011,8 +16011,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 790314435}
   _cars: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000
-  _minOffset: {x: 0, y: 2, z: -5}
-  _maxOffset: {x: 0, y: 2, z: 5}
+  _minOffset: {x: 0, y: 3, z: -5}
+  _maxOffset: {x: 0, y: 3, z: 5}
   _minSpawnDelay: 1
   _maxSpawnDelay: 3
   _spawnProbability: 0.804
@@ -16071,8 +16071,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 1, z: 25}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.5, y: 1, z: 57.88772}
+  m_Center: {x: 0, y: 0, z: 28.94386}
 --- !u!1 &815372524
 GameObject:
   m_ObjectHideFlags: 0
@@ -17940,7 +17940,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 865295832}
   _monoEvent: {fileID: 865295835}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &865295834
 MonoBehaviour:
@@ -22324,7 +22324,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1031416037}
   _monoEvent: {fileID: 1031416040}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1031416039
 MonoBehaviour:
@@ -24203,7 +24203,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1090671745}
   _monoEvent: {fileID: 1090671748}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1090671747
 MonoBehaviour:
@@ -24891,7 +24891,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1109400328}
   _monoEvent: {fileID: 1109400331}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1109400330
 MonoBehaviour:
@@ -25963,7 +25963,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1155889603}
   _monoEvent: {fileID: 1155889606}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1155889605
 MonoBehaviour:
@@ -26911,8 +26911,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 1196886410}
   _cars: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000
-  _minOffset: {x: 0, y: 2, z: -5}
-  _maxOffset: {x: 0, y: 2, z: 5}
+  _minOffset: {x: 0, y: 3, z: -5}
+  _maxOffset: {x: 0, y: 3, z: 5}
   _minSpawnDelay: 1
   _maxSpawnDelay: 3
   _spawnProbability: 0.804
@@ -26971,8 +26971,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 1, z: 25}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.5, y: 1, z: 57.88772}
+  m_Center: {x: 0, y: 0, z: 28.94386}
 --- !u!1 &1204878345
 GameObject:
   m_ObjectHideFlags: 0
@@ -29701,7 +29701,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1313953074}
   _monoEvent: {fileID: 1313953077}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1313953076
 MonoBehaviour:
@@ -51321,7 +51321,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1750520979}
   _monoEvent: {fileID: 1750520982}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1750520981
 MonoBehaviour:
@@ -51404,8 +51404,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 1, z: 25}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.5, y: 1, z: 57.88772}
+  m_Center: {x: 0, y: 0, z: 28.94386}
 --- !u!114 &1760711419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51464,8 +51464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _triggerArea: {fileID: 1760711421}
   _cars: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000017000000
-  _minOffset: {x: 0.1, y: 2, z: -5}
-  _maxOffset: {x: 0.3, y: 2, z: 5}
+  _minOffset: {x: 0.1, y: 3, z: -5}
+  _maxOffset: {x: 0.3, y: 3, z: 5}
   _minSpawnDelay: 1
   _maxSpawnDelay: 3
   _spawnProbability: 0.804
@@ -52408,7 +52408,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1791576532}
   _monoEvent: {fileID: 1791576535}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1791576534
 MonoBehaviour:
@@ -55821,7 +55821,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1909035225}
   _monoEvent: {fileID: 1909035228}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1909035227
 MonoBehaviour:
@@ -56675,7 +56675,7 @@ MonoBehaviour:
   _allObjects: 0a0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000150000001600000016000000
   _spawnPlace: {fileID: 1952945733}
   _monoEvent: {fileID: 1952945736}
-  _offset: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 3, z: 0}
   _rotation: {x: 0, y: 0, z: 0}
 --- !u!114 &1952945735
 MonoBehaviour:
