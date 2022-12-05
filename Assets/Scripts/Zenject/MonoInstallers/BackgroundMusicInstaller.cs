@@ -9,6 +9,6 @@ public class BackgroundMusicInstaller : MonoInstaller
     public override void InstallBindings()
     {
         GameObject instance = GameObjectExtensions.InstantiateDontDestroyOnLoad(_prefab);
-        Container.Bind<BackgroundMusic>().FromComponentOn(instance).AsSingle();
+        Container.Bind<BackgroundMusicPlayer>().FromComponentOn(instance).AsSingle();
     }
 }

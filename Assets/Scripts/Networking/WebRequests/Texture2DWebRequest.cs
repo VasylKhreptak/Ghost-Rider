@@ -15,7 +15,7 @@ public static partial class WebRequests
 
 		private static IEnumerator GetAsyncRoutine(Uri url, Action<UnityEngine.Texture2D> onSuccess, Action<string> onError)
 		{
-			using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
+			using (UnityWebRequest webRequest = UnityWebRequestTexture.GetTexture(url))
 			{
 				yield return webRequest.SendWebRequest();
 
@@ -35,7 +35,7 @@ public static partial class WebRequests
 					}
 					else
 					{
-						OnError(webRequest.error);
+						OnError("Something went wrong!");
 					}
 				}
 

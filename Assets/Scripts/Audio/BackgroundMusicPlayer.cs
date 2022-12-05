@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
-public class BackgroundMusic : MonoBehaviour
+public class BackgroundMusicPlayer : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private AudioSource _audioSource;
@@ -18,6 +19,15 @@ public class BackgroundMusic : MonoBehaviour
     }
 
     #region MonoBehaviour
+
+    private void Awake()
+    {
+        WebRequests.AudioClip.GetAsync(new Uri("https://firebasestorage.googleapis.com/v0/b/ghost-rider-1c1c4.appspot.com/o/Music%2F1997.mp3?alt=media&token=ba4cba12-4d6c-44b0-99b2-64743f8f54fb"),
+            AudioType.MPEG, (clip) =>
+            {
+                Debug.Log(clip.length);
+            });
+    }
 
     private void OnValidate()
     {

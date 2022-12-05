@@ -6,16 +6,16 @@ public static partial class WebRequests
 {
 	public static class AudioClip
 	{
-		public static void GetAsync(Uri url, Action<UnityEngine.AudioClip> onSuccess, Action<string> onError = null)
+		public static void GetAsync(Uri url, UnityEngine.AudioType audioType, Action<UnityEngine.AudioClip> onSuccess, Action<string> onError = null)
 		{
 			TryInit();
 			
-			_webRequestsMonoBehaviour.StartCoroutine(GetAsyncRoutine(url, onSuccess, onError));
+			_webRequestsMonoBehaviour.StartCoroutine(GetAsyncRoutine(url, audioType, onSuccess, onError));
 		}
 
-		private static IEnumerator GetAsyncRoutine(Uri url, Action<UnityEngine.AudioClip> onSuccess, Action<string> onError)
+		private static IEnumerator GetAsyncRoutine(Uri url, UnityEngine.AudioType audioType, Action<UnityEngine.AudioClip> onSuccess, Action<string> onError)
 		{
-			using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
+			using (UnityWebRequest webRequest = UnityWebRequestMultimedia.GetAudioClip(url, audioType))
 			{
 				yield return webRequest.SendWebRequest();
 
