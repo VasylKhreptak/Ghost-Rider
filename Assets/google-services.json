@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297710907089",
+    "project_id": "ghost-rider-1c1c4",
+    "storage_bucket": "ghost-rider-1c1c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297710907089:android:bcf033ed607f611dc3dff0",
+        "android_client_info": {
+          "package_name": "com.FGames.GhostRider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297710907089-268p61uabd8q62vmr7vu49e31uhst7k5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ-f1sVYda_5o8v_GEvxEZB90mCAL6ZS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297710907089-268p61uabd8q62vmr7vu49e31uhst7k5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

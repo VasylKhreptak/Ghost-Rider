@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.Networking;
 
 public static partial class WebRequests
@@ -27,18 +28,12 @@ public static partial class WebRequests
 				}
 				else if (webRequest.result == UnityWebRequest.Result.Success)
 				{
-					OnSuccess(webRequest.downloadHandler.text);
+					OnSuccess(webRequest.downloadHandler.text); 
 				}
 
-				void OnSuccess(string text)
-				{
-					onSuccess?.Invoke(text);
-				}
+				void OnSuccess(string text) => onSuccess?.Invoke(text);
 
-				void OnError(string error)
-				{
-					onError?.Invoke(error);
-				}
+				void OnError(string error) => onError?.Invoke(error);
 			}
 		}
 	}

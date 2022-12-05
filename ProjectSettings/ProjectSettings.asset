@@ -155,6 +155,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.FGames.GhostRider
     Standalone: com.FGames.Ghost-Rider
   buildNumber:
     Standalone: 0

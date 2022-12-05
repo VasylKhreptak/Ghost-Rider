@@ -13,6 +13,8 @@ public static partial class WebRequests
 		if (_webRequestsMonoBehaviour == null)
 		{
 			GameObject behaviourObject = new GameObject("WebRequestsMonoBehaviour");
+			behaviourObject.transform.SetParent(null);
+			Object.DontDestroyOnLoad(behaviourObject);
 			_webRequestsMonoBehaviour = behaviourObject.AddComponent<WebRequestsMonoBehaviour>();
 		}
 	}

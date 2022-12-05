@@ -1,16 +1,21 @@
-using System;
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 public class BackgroundMusicPlayer : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private AudioSource _audioSource;
 
-    [Header("Preferences")]
-    [SerializeField] private AudioClip[] _audioClips;
-
     private Coroutine _playingCoroutine;
+
+    private BackgroundTrackProvider _backgroundTrackProvider;
+
+    [Inject]
+    private void Construct(BackgroundTrackProvider backgroundTrackProvider)
+    {
+        _backgroundTrackProvider = backgroundTrackProvider;
+    }
 
     public float Volume
     {
@@ -20,31 +25,29 @@ public class BackgroundMusicPlayer : MonoBehaviour
 
     #region MonoBehaviour
 
-    private void Awake()
-    {
-        WebRequests.AudioClip.GetAsync(new Uri("https://firebasestorage.googleapis.com/v0/b/ghost-rider-1c1c4.appspot.com/o/Music%2F1997.mp3?alt=media&token=ba4cba12-4d6c-44b0-99b2-64743f8f54fb"),
-            AudioType.MPEG, (clip) =>
-            {
-                Debug.Log(clip.length);
-            });
-    }
-
     private void OnValidate()
     {
         _audioSource ??= GetComponent<AudioSource>();
     }
 
-    private void OnEnable()
+    private void Awake()
     {
-        StartPlaying();
+        _backgroundTrackProvider.onDataLoaded += OnTracksLoad;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        StopPlaying();
+        _backgroundTrackProvider.onDataLoaded -= OnTracksLoad;
     }
 
     #endregion
+
+    private void OnTracksLoad()
+    {
+        StopPlaying();
+
+        StartPlaying();
+    }
 
     private void StartPlaying()
     {
@@ -68,13 +71,42 @@ public class BackgroundMusicPlayer : MonoBehaviour
     {
         while (true)
         {
-            AudioClip clip = _audioClips.Random();
+            TryPlayRandomAudio();
 
-            _audioSource.clip = clip;
+            yield return new WaitWhile(() => _audioSource.clip == null);
+
+            yield return new WaitForSeconds(_audioSource.clip.length);
+        }
+    }
+
+    private void TryPlayRandomAudio()
+    {
+        TryDisposeClip();
+        
+        _backgroundTrackProvider.GetAudioClipAsync(OnSuccess, OnError);
+
+        void OnSuccess(AudioClip audioClip)
+        {
+            _audioSource.clip = audioClip;
 
             _audioSource.Play();
+        }
 
-            yield return new WaitForSeconds(clip.length);
+        void OnError(string error)
+        {
+            Debug.Log("Error: " + (error));
+        }
+    }
+
+    private void TryDisposeClip()
+    {
+        AudioClip clip = _audioSource.clip;
+        
+        if (clip != null)
+        {
+            _audioSource.clip = null;
+            clip.UnloadAudioData();
+            AudioClip.Destroy(clip);
         }
     }
 }
