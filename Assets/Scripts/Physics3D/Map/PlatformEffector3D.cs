@@ -42,7 +42,7 @@ public class PlatformEffector3D : MonoBehaviour
 
     private void OnExit(Collider collider)
     {
-        SetColliderState(false);
+        SetColliderState(true);
     }
 
     private void SetColliderState(bool state)

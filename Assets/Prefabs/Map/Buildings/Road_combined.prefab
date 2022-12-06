@@ -422,7 +422,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerEnterEvent: {fileID: 6787353463729254987}
   triggerExitEvent: {fileID: 1696801670510212452}
-  affectedObjects: []
 --- !u!114 &1332624441062296122
 MonoBehaviour:
   m_ObjectHideFlags: 0
