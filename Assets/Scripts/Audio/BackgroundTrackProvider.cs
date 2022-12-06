@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Threading.Tasks;
 using Firebase.Extensions;
 using Firebase.Storage;
@@ -27,11 +28,18 @@ public class BackgroundTrackProvider : MonoBehaviour
 
     #region MonoBehaviour
 
-    private void Start()
+    private IEnumerator Start()
     {
         _musicFolderReference = _firebaseConnection.StorageReference.Child(_musicFolderName);
 
         LoadMusicDataAsync(onDataLoaded, Debug.Log);
+
+        yield return new WaitForSeconds(4f);
+        
+        // WebRequests.AudioClip.GetAsync(new Uri("https://firebasestorage.googleapis.com/v0/b/ghost-rider-1c1c4.appspot.com/o/ukrayinske-nebo-zaxishhayut-bogi-podolyak-pro-novii-udar-rosiyi.mp3?alt=media&token=18929ebf-fa54-4b6c-93b5-fcccc8b05032"), AudioType.MPEG, (clip) =>
+        // {
+        //     Debug.Log(clip.length);
+        // });
     }
 
     #endregion
@@ -52,7 +60,9 @@ public class BackgroundTrackProvider : MonoBehaviour
 
     public void GetAudioClipAsync(Action<AudioClip> onSuccess, Action<string> onError = null)
     {
-        _musicFolderReference.Child(_trackNames.Random()).GetDownloadUrlAsync().ContinueWithOnMainThread(task =>
+        string trackName = _trackNames.Random();
+        
+        _musicFolderReference.Child(trackName).GetDownloadUrlAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted && task.Exception != null)
             {
@@ -60,16 +70,21 @@ public class BackgroundTrackProvider : MonoBehaviour
             }
             else if (task.IsCompletedSuccessfully)
             {
-                OnGetDownloadUrl(task.Result);
+                OnDownloadedUrl(task.Result);
             }
 
-            void OnGetDownloadUrl(Uri uri)
+            void OnDownloadedUrl(Uri uri)
             {
                 WebRequests.AudioClip.GetAsync(uri, AudioType.MPEG, OnSuccess, OnError);
             }
         });
 
-        void OnSuccess(AudioClip clip) => onSuccess?.Invoke(clip);
+        void OnSuccess(AudioClip clip)
+        {
+            clip.name = trackName;
+
+            onSuccess?.Invoke(clip);
+        }
 
         void OnError(string error) => onError?.Invoke(error);
     }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.Networking;
 
 public static partial class WebRequests
@@ -31,7 +32,9 @@ public static partial class WebRequests
 					
 					if (downloadHandlerAudioClip != null)
 					{
-						OnSuccess(downloadHandlerAudioClip.audioClip);
+						downloadHandlerAudioClip.streamAudio = true;
+						UnityEngine.AudioClip clip = downloadHandlerAudioClip.audioClip;
+						OnSuccess(clip);
 					}
 					else
 					{
