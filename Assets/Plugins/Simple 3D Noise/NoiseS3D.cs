@@ -1,7 +1,10 @@
 ﻿using System;
 using UnityEngine;
+using Random = System.Random;
 
-public static class NoiseS3D {
+public static class NoiseS3D
+{
+	private static Random _random;
 	
 	private static int seed_;
 	
@@ -14,7 +17,7 @@ public static class NoiseS3D {
 		}
 		set {
 			seed_ = value;
-			UnityEngine.Random.InitState(value);
+			_random = new Random(seed);
 			SetupNoise();
 		}
 	}
@@ -46,9 +49,12 @@ public static class NoiseS3D {
 		}
 	}
 	
-	private static void SetupNoise() {
+	private static void SetupNoise()
+	{
+		_random = new Random();
+		
 		p = new int[256];
-		for(int i = 0; i < 256; i++) p[i] = Mathf.FloorToInt(UnityEngine.Random.value * 256);
+		for(int i = 0; i < 256; i++) p[i] = Mathf.FloorToInt((float)_random.NextDouble() * 256);
 		
 		perm_ = new int[512];
 		for(int i = 0; i < 512; i++) perm_[i] = p[i & 255];

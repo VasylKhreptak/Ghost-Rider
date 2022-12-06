@@ -36,7 +36,7 @@ public static class NetworkConnection
 
         using (UnityWebRequest webRequests = UnityWebRequest.Head(echoServer))
         {
-            webRequests.timeout = 1;
+            webRequests.timeout = 2;
 
             yield return webRequests.SendWebRequest();
 

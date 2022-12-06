@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a6bf51beca10841a134653623f0f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkDelay: 0.5
+  _checkDelay: 2

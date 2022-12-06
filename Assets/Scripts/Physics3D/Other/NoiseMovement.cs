@@ -1,4 +1,8 @@
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class NoiseMovement : MonoBehaviour
 {
@@ -11,6 +15,18 @@ public class NoiseMovement : MonoBehaviour
 
     private Vector3 _startPosition;
 
+    private CancellationTokenSource _cancellationTokenSource;
+
+    private Stopwatch _stopwatch;
+    
+    private Vector3 _calculatedPosition;
+    
+    private Vector3 _transformRight;
+    private Vector3 _transformUp;
+    private Vector3 _transformForward;
+    
+    private float TimeFromStart => (float)_stopwatch.Elapsed.TotalSeconds;
+
     #region MonoBehaviour
 
     private void OnValidate()
@@ -21,29 +37,72 @@ public class NoiseMovement : MonoBehaviour
     private void Awake()
     {
         _startPosition = _transform.position;
+
+        _cancellationTokenSource = new CancellationTokenSource();
+        
+        _stopwatch = Stopwatch.StartNew();
     }
 
+    private void OnEnable()
+    {
+        _cancellationTokenSource.Dispose();
+        
+        _cancellationTokenSource = new CancellationTokenSource();
+    }
+    
     private void Update()
     {
         if (_amplitude == Vector3.zero) return;
 
-        Move();
+        CacheVariables();
+
+        CancellationToken cancellationToken = _cancellationTokenSource.Token;
+
+        Task<Vector3> task = Task.Run(GetPosition, cancellationToken);
+
+        task.Wait(cancellationToken);
+
+        _calculatedPosition = task.Result;
+        
+        UpdatePosition();
+    }
+
+    private void OnDisable()
+    {
+        _cancellationTokenSource.Cancel();
+    }
+
+    private void OnDestroy()
+    {
+        _stopwatch.Stop();
     }
 
     #endregion
 
-    private void Move()
+    private void UpdatePosition()
     {
-        float dx = (float)NoiseS3D.Noise(Time.time * _frequency.x, 0f, 0f) * _amplitude.x;
-        float dy = (float)NoiseS3D.Noise(0f, Time.time * _frequency.y, 0f) * _amplitude.y;
-        float dz = (float)NoiseS3D.Noise(0f, 0f, Time.time * _frequency.z) * _amplitude.z;
+        _transform.position = _calculatedPosition;
+    }
+
+    private void CacheVariables()
+    {
+        _transformRight = _transform.right;
+        _transformUp = _transform.up;
+        _transformForward = _transform.forward;
+    }
+    
+    private Vector3 GetPosition()
+    {
+        float dx = (float)NoiseS3D.Noise(TimeFromStart * _frequency.x, 0f, 0f) * _amplitude.x;
+        float dy = (float)NoiseS3D.Noise(0f, TimeFromStart * _frequency.y, 0f) * _amplitude.y;
+        float dz = (float)NoiseS3D.Noise(0f, 0f, TimeFromStart * _frequency.z) * _amplitude.z;
 
         Vector3 position = _startPosition;
 
-        position += _transform.right * dx;
-        position += _transform.up * dy;
-        position += _transform.forward * dz;
+        position += _transformRight * dx;
+        position += _transformUp * dy;
+        position += _transformForward * dz;
 
-        _transform.position = position;
+        return position;
     }
 }
