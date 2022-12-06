@@ -28,6 +28,8 @@ public class PlatformEffector3D : MonoBehaviour
     {
         _triggerEnterEvent.onEnter -= OnEnter;
         _triggerExitEvent.onExit -= OnExit;
+
+        SetColliderState(false);
     }
 
     #endregion
