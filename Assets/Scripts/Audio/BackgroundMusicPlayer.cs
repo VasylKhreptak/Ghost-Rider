@@ -10,17 +10,13 @@ public class BackgroundMusicPlayer : MonoBehaviour
     private Coroutine _playingCoroutine;
 
     private BackgroundTrackProvider _backgroundTrackProvider;
+    private NetworkConnectionEvents _networkConnectionEvents;
 
     [Inject]
-    private void Construct(BackgroundTrackProvider backgroundTrackProvider)
+    private void Construct(BackgroundTrackProvider backgroundTrackProvider, NetworkConnectionEvents networkConnectionEvents)
     {
         _backgroundTrackProvider = backgroundTrackProvider;
-    }
-
-    public float Volume
-    {
-        get => _audioSource.volume;
-        set => _audioSource.volume = value;
+        _networkConnectionEvents = networkConnectionEvents;
     }
 
     #region MonoBehaviour
@@ -49,7 +45,7 @@ public class BackgroundMusicPlayer : MonoBehaviour
         StartPlaying();
     }
 
-    private void StartPlaying()
+    public void StartPlaying()
     {
         if (_playingCoroutine == null)
         {
@@ -57,7 +53,7 @@ public class BackgroundMusicPlayer : MonoBehaviour
         }
     }
 
-    private void StopPlaying()
+    public void StopPlaying()
     {
         if (_playingCoroutine != null)
         {
@@ -71,6 +67,8 @@ public class BackgroundMusicPlayer : MonoBehaviour
     {
         while (true)
         {
+            yield return new WaitUntil(() => _networkConnectionEvents.IsConnected);
+            
             TryPlayRandomAudio();
 
             yield return new WaitWhile(() => _audioSource.clip == null);
@@ -82,7 +80,7 @@ public class BackgroundMusicPlayer : MonoBehaviour
     private void TryPlayRandomAudio()
     {
         TryDisposeClip();
-        
+
         _backgroundTrackProvider.GetAudioClipAsync(OnSuccess, OnError);
 
         void OnSuccess(AudioClip audioClip)
@@ -101,7 +99,7 @@ public class BackgroundMusicPlayer : MonoBehaviour
     private void TryDisposeClip()
     {
         AudioClip clip = _audioSource.clip;
-        
+
         if (clip != null)
         {
             _audioSource.clip = null;

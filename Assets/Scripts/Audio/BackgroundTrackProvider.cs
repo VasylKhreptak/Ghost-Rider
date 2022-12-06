@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Threading.Tasks;
 using Firebase.Extensions;
 using Firebase.Storage;
 using UnityEngine;
@@ -18,31 +16,59 @@ public class BackgroundTrackProvider : MonoBehaviour
 
     private FirebaseConnection _firebaseConnection;
 
+    private NetworkConnectionEvents _networkConnectionEvents;
+
+    private bool _wasLoaded;
+
     public Action onDataLoaded;
 
     [Inject]
-    private void Construct(FirebaseConnection firebaseConnection)
+    private void Construct(FirebaseConnection firebaseConnection, NetworkConnectionEvents networkConnectionEvents)
     {
         _firebaseConnection = firebaseConnection;
+        _networkConnectionEvents = networkConnectionEvents;
     }
 
     #region MonoBehaviour
 
-    private IEnumerator Start()
+    private void Start()
     {
         _musicFolderReference = _firebaseConnection.StorageReference.Child(_musicFolderName);
 
-        LoadMusicDataAsync(onDataLoaded, Debug.Log);
+        NetworkConnection.CheckAsync((isConnected) =>
+        {
+            if (isConnected)
+            {
+                TryLoadMusicDataAsync();
+            }
+        });
 
-        yield return new WaitForSeconds(4f);
-        
-        // WebRequests.AudioClip.GetAsync(new Uri("https://firebasestorage.googleapis.com/v0/b/ghost-rider-1c1c4.appspot.com/o/ukrayinske-nebo-zaxishhayut-bogi-podolyak-pro-novii-udar-rosiyi.mp3?alt=media&token=18929ebf-fa54-4b6c-93b5-fcccc8b05032"), AudioType.MPEG, (clip) =>
-        // {
-        //     Debug.Log(clip.length);
-        // });
+        _networkConnectionEvents.onConnected += TryLoadMusicDataAsync;
+    }
+
+    private void OnDestroy()
+    {
+        _networkConnectionEvents.onConnected -= TryLoadMusicDataAsync;
     }
 
     #endregion
+
+    private void TryLoadMusicDataAsync() => TryLoadMusicDataAsync(onDataLoaded);
+
+    private void TryLoadMusicDataAsync(Action onSuccess, Action<string> onError = null)
+    {
+        if (_wasLoaded == false)
+        {
+            LoadMusicDataAsync(OnLoaded, onError);
+
+            void OnLoaded()
+            {
+                _wasLoaded = true;
+
+                onSuccess?.Invoke();
+            }
+        }
+    }
 
     private void LoadMusicDataAsync(Action onSuccess, Action<string> onError = null)
     {
@@ -51,7 +77,7 @@ public class BackgroundTrackProvider : MonoBehaviour
         void OnSuccess(string[] names)
         {
             _trackNames = names;
-            
+
             onSuccess?.Invoke();
         }
 
@@ -61,7 +87,7 @@ public class BackgroundTrackProvider : MonoBehaviour
     public void GetAudioClipAsync(Action<AudioClip> onSuccess, Action<string> onError = null)
     {
         string trackName = _trackNames.Random();
-        
+
         _musicFolderReference.Child(trackName).GetDownloadUrlAsync().ContinueWithOnMainThread(task =>
         {
             if (task.IsFaulted && task.Exception != null)
