@@ -21,6 +21,26 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Map/Buildings/RightBuildings_menu_combined.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: af52eafeaf318444ab41c8ae48b66ae5
+    m_Address: Assets/Prefabs/Map/Buildings/LeftBuildings_menu_combined.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fdf350dd0314aee4a9458700b8161d94
+    m_Address: Assets/Prefabs/Map/Buildings/RightBuildings.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9bddc147f2438a043b8048015f90e523
+    m_Address: Assets/Prefabs/Map/Buildings/RightBuildings_combined.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 263499b6719c62f488008d978026766a
+    m_Address: Assets/Prefabs/Map/Buildings/LeftBuildings_combined.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c41dc0f19265210479bff8ae3872b705
+    m_Address: Assets/Prefabs/Map/Buildings/Road_combined.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a32ec5e788b6ad6488f6e4f202dfa889, type: 2}
   m_SchemaSet:

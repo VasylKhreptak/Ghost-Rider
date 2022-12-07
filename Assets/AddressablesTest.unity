@@ -257,7 +257,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _unloadDelay: 0
+  _unloadDelay: 0.3
 --- !u!1 &1320972234
 GameObject:
   m_ObjectHideFlags: 0
