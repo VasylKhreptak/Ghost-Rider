@@ -17,18 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c558de67c574deb4ba11cba5b505b3f9
   m_SerializeEntries:
-  - m_GUID: fc82f55367e119c4cac85cd225c88f98
-    m_Address: Assets/Prefabs/Map/Buildings/RightBuildings_menu_combined.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: af52eafeaf318444ab41c8ae48b66ae5
-    m_Address: Assets/Prefabs/Map/Buildings/LeftBuildings_menu_combined.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: fdf350dd0314aee4a9458700b8161d94
-    m_Address: Assets/Prefabs/Map/Buildings/RightBuildings.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 9bddc147f2438a043b8048015f90e523
     m_Address: Assets/Prefabs/Map/Buildings/RightBuildings_combined.prefab
     m_ReadOnly: 0

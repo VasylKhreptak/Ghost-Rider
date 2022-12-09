@@ -25,12 +25,12 @@ public class AddressableMemorySaver : MonoBehaviour
 
     private void OnEnable()
     {
-        LoadAsync();
+        TryLoadAsync();
     }
 
     private void OnDisable()
     {
-        Unload();
+        TryUnload();
     }
 
     private void OnDestroy()
@@ -40,21 +40,21 @@ public class AddressableMemorySaver : MonoBehaviour
 
     #endregion
 
-    private void LoadAsync()
+    private void TryLoadAsync()
     {
         _unloadWaitTween.Kill();
 
         if (_child == null)
         {
-            _assetReference.InstantiateAsync(_transform).Completed += OnLoaded;
-
-            void OnLoaded(AsyncOperationHandle<GameObject> asyncOperation)
+            _assetReference.InstantiateAsync().Completed += OnCompleted;
+            
+            void OnCompleted(AsyncOperationHandle<GameObject> asyncOperation)
             {
                 _child = asyncOperation.Result;
 
                 if (gameObject.activeSelf == false)
                 {
-                    Unload();
+                    TryUnload();
                 }
             }
         }
@@ -64,11 +64,16 @@ public class AddressableMemorySaver : MonoBehaviour
         }
     }
 
-    private void Unload()
+    private void TryUnload()
     {
         _unloadWaitTween = this.DOWait(_unloadDelay).OnComplete(() =>
         {
-            Addressables.Release(_child);
+            if (_child != null)
+            {
+                _child.SetActive(false);
+            
+                Addressables.ReleaseInstance(_child);
+            }
 
             _child = null;
         });
