@@ -45,7 +45,7 @@ public class AudioDelay : MonoBehaviour
     private void StartTimer()
     {
         if (_resetOnStart)
-        {
+        { 
             KillTween();
         }
 
