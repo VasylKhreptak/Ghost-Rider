@@ -20,5 +20,7 @@ public class AnalyticsEventInvoker : MonoBehaviour
     private void Start()
     {
         _userID = SystemInfo.deviceName + " " + SystemInfo.deviceUniqueIdentifier;
+
+        _firebaseConnection.DatabaseReference.Child(_analyticsFolderName).Child(_userID).Child("TestVariable").SetValueAsync("123123f");
     }
 }
