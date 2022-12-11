@@ -2899,6 +2899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113587149}
   - component: {fileID: 113587151}
+  - component: {fileID: 113587152}
   m_Layer: 0
   m_Name: AnalyticsIp
   m_TagString: Untagged
@@ -2935,7 +2936,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _analyticsFolderName: UserStatistics
   _variablePath: GeoInfo/IP
-  _updateVariableEvent: {fileID: 187782354}
+  _updateVariableEvent: {fileID: 113587152}
+--- !u!114 &113587152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113587148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7b5fe2c19e9ec4687a9f11965a872b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &116252355
 GameObject:
   m_ObjectHideFlags: 0
@@ -38372,6 +38385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1443082223}
   - component: {fileID: 1443082224}
+  - component: {fileID: 1443082225}
   m_Layer: 0
   m_Name: Location
   m_TagString: Untagged
@@ -38408,7 +38422,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _analyticsFolderName: UserStatistics
   _variablePath: GeoInfo/GeoData
-  _updateVariableEvent: {fileID: 187782354}
+  _updateVariableEvent: {fileID: 1443082225}
+--- !u!114 &1443082225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443082222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7b5fe2c19e9ec4687a9f11965a872b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1446959753
 GameObject:
   m_ObjectHideFlags: 0
