@@ -5,6 +5,6 @@ public class AnalyticsDateUpdater : AnalyticsVariableUpdater
 {
     protected override void UpdateVariable()
     {
-        _variableReference.SetValueAsync(DateTime.UtcNow.ToString(CultureInfo.InvariantCulture));
+        _variableReference.SetValueAsync(DateTime.Now.ToString(CultureInfo.InvariantCulture));
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnalyticsVariableIncrementer : AnalyticsVariableUpdater
 {
     [Header("Preferences")]
-    [SerializeField] private int _defaultValue = 1;
+    [SerializeField] private int _startWith = 1;
     
     protected override void UpdateVariable()
     {
@@ -19,7 +19,7 @@ public class AnalyticsVariableIncrementer : AnalyticsVariableUpdater
                 }
                 else
                 {
-                    SetDefaultValue();
+                    SetStartValue();
                 }
             }
         });
@@ -32,8 +32,8 @@ public class AnalyticsVariableIncrementer : AnalyticsVariableUpdater
         _variableReference.SetValueAsync(value + 1);
     }
 
-    private void SetDefaultValue()
+    private void SetStartValue()
     {
-        _variableReference.SetValueAsync(_defaultValue);
+        _variableReference.SetValueAsync(_startWith);
     }
 }

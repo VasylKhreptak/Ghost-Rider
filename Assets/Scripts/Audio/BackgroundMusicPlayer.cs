@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Zenject;
@@ -11,6 +12,8 @@ public class BackgroundMusicPlayer : MonoBehaviour
 
     private BackgroundTrackProvider _backgroundTrackProvider;
     private NetworkConnectionEvents _networkConnectionEvents;
+
+    public Action<AudioClip> onTrackPlayed;
 
     [Inject]
     private void Construct(BackgroundTrackProvider backgroundTrackProvider, NetworkConnectionEvents networkConnectionEvents)
@@ -88,6 +91,8 @@ public class BackgroundMusicPlayer : MonoBehaviour
             _audioSource.clip = audioClip;
 
             _audioSource.Play();
+
+            onTrackPlayed?.Invoke(audioClip);
         }
 
         void OnError(string error)

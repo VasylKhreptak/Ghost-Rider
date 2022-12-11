@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using Object = UnityEngine.Object;
@@ -47,5 +48,38 @@ public static class NetworkConnection
 
             result.Invoke(hasConnection);
         }
+    }
+
+    public static void GetPublicIP(Action<string> onSuccess, Action<string> onError = null)
+    {
+       WebRequests.Text.GetAsync(new Uri("http://checkip.dyndns.org"), OnGetRequestText, OnError);
+
+       void OnGetRequestText(string text)
+       {
+           Task<string> task = Task.Run(() => GetIpFromText(text));
+
+           string GetIpFromText(string test)
+           {
+               string[] a = text.Split(':');
+               string a2 = a[1].Substring(1);
+               string[] a3 = a2.Split('<');
+
+               return a3[0];
+           }
+           
+           task.Wait();
+               
+           OnSuccess(task.Result);
+       }
+
+       void OnSuccess(string ip)
+       {
+           onSuccess?.Invoke(ip);
+       }
+       
+       void OnError(string error)
+       {
+           onError?.Invoke(error);
+       }
     }
 }
