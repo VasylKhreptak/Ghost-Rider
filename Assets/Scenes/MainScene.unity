@@ -53497,6 +53497,7 @@ GameObject:
   - component: {fileID: 1639906824}
   - component: {fileID: 1639906823}
   - component: {fileID: 1639906828}
+  - component: {fileID: 1639906829}
   m_Layer: 5
   m_Name: LeftArrow
   m_TagString: Untagged
@@ -53998,6 +53999,21 @@ MonoBehaviour:
   _animation: {fileID: 1639906822}
   _monoEvent: {fileID: 156497253}
   _forward: 0
+--- !u!114 &1639906829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639906798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862cf80c9c138d8459c04e89e45f2de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1639906817}
+  _mainCarSpawner: {fileID: 1557074298}
+  _cars: 180000001a0000001c0000001e0000001f000000190000001b0000001d000000
 --- !u!1 &1640349552
 GameObject:
   m_ObjectHideFlags: 0
@@ -55231,6 +55247,7 @@ GameObject:
   - component: {fileID: 1677578514}
   - component: {fileID: 1677578513}
   - component: {fileID: 1677578512}
+  - component: {fileID: 1677578528}
   m_Layer: 5
   m_Name: RightArrow
   m_TagString: Untagged
@@ -55732,6 +55749,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677578510}
   m_CullTransparentMesh: 1
+--- !u!114 &1677578528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677578510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06c9bc240c920d4d920c3e5ea4975f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1677578524}
+  _mainCarSpawner: {fileID: 1557074298}
+  _cars: 180000001a0000001c0000001e0000001f000000190000001b0000001d000000
 --- !u!1 &1678333700
 GameObject:
   m_ObjectHideFlags: 0
