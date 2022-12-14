@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50bdc9c426847242b138b88db58c21c, type: 3}
+  m_Name: PolluxCarSpecification
+  m_EditorClassIdentifier: 
+  _carPool: 27
+  _maxSpeed: 320
+  _engineTorque: 2000
+  _breakTorque: 5000
+  _gears: 8
+  _price: 9999

@@ -11065,6 +11065,7 @@ MonoBehaviour:
   _carObject: {fileID: 3682324687020316012}
   _damageableObject: {fileID: 3682324688092733801}
   _pool: 29
+  _carSpecification: {fileID: 11400000, guid: 7c9bbc17c21a7ce45aca32e6a16d6922, type: 2}
 --- !u!1 &3682324687475910610
 GameObject:
   m_ObjectHideFlags: 0

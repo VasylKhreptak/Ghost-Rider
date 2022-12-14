@@ -8,12 +8,14 @@ public class MainCar : MonoBehaviour
 	[SerializeField] private  GameObject _carObject;
 	[SerializeField] private  DamageableObject _damageableObject;
 	[SerializeField] private Pools _pool;
+	[SerializeField] private CarSpecification _carSpecification;
 
 	public Transform Transform => _transform;
 	public RCC_CarControllerV3 CarController => _carController;
 	public GameObject GameObject => _carObject;
 	public DamageableObject DamageableObject => _damageableObject;
 	public Pools Pool => _pool;
+	public CarSpecification CarSpecification => _carSpecification;
 	
 	#region MonoBehaviour
 

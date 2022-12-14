@@ -15217,17 +15217,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 3000
       value: 2000
-      inSlope: 0.2916667
-      outSlope: 0.2916667
+      inSlope: 0.26666668
+      outSlope: 0.26666668
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 11000
+      time: 8000
       value: 1333.3334
-      inSlope: -0.08333333
-      outSlope: -0.08333333
+      inSlope: -0.13333333
+      outSlope: -0.13333333
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -16216,6 +16216,7 @@ MonoBehaviour:
   _carObject: {fileID: 632788994162368071}
   _damageableObject: {fileID: 632788993087859266}
   _pool: 27
+  _carSpecification: {fileID: 11400000, guid: 18724ca8cfb654a4a9d3f2b817f3e92d, type: 2}
 --- !u!1 &632788994230126461
 GameObject:
   m_ObjectHideFlags: 0
