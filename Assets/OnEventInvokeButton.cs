@@ -14,6 +14,7 @@ public class OnEventInvokeButton : MonoBehaviour
    private void OnValidate()
    {
       _button ??= GetComponent<Button>();
+      _monoEvent ??= GetComponent<MonoEvent>();
    }
 
    private void OnEnable()
