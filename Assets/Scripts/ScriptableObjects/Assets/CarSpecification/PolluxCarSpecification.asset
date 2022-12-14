@@ -17,4 +17,4 @@ MonoBehaviour:
   _engineTorque: 2000
   _breakTorque: 5000
   _gears: 8
-  _price: 9999
+  _price: 100000
