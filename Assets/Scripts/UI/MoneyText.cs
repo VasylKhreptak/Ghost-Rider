@@ -1,11 +1,10 @@
-using TMPro;
 using UnityEngine;
 using Zenject;
 
 public class MoneyText : MonoBehaviour
 {
 	[Header("References")]
-	[SerializeField] private TMP_Text _tmpText;
+	[SerializeField] private TMP_SmoothIntText _tmpText;
 
 	private Bank _bank;
 		
@@ -19,7 +18,7 @@ public class MoneyText : MonoBehaviour
 
 	private void OnValidate()
 	{
-		_tmpText ??= GetComponent<TMP_Text>();
+		_tmpText ??= GetComponent<TMP_SmoothIntText>();
 	}
 
 	private void Start()
