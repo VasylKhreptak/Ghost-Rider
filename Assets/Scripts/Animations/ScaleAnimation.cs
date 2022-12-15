@@ -23,7 +23,7 @@ public class ScaleAnimation : AnimationCore
 
     private void OnValidate()
     {
-        _transform = GetComponent<Transform>();
+        _transform ??= GetComponent<Transform>();
     }
 
     private void OnDestroy()
