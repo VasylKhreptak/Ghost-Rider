@@ -23,7 +23,7 @@ public class AnchorMoveAnimation : AnimationCore
 
     private void OnValidate()
     {
-        _rectTransform = GetComponent<RectTransform>();
+        _rectTransform ??= GetComponent<RectTransform>();
     }
 
     private void OnDestroy()

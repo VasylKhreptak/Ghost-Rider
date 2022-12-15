@@ -21,7 +21,7 @@ public class FadeAnimation : AnimationCore
 
     private void OnValidate()
     {
-        _alphaAdapter = GetComponent<AlphaAdapter>();
+        _alphaAdapter ??= GetComponent<AlphaAdapter>();
     }
 
     private void OnDestroy()

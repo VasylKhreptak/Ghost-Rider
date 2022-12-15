@@ -4,12 +4,17 @@ using UnityEngine;
 public class ShopCarAffordanceEvents : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private MainCarSpawner _mainCarSpawner;
     [SerializeField] private PlayerDataProvider _playerDataProvider;
+    [SerializeField] private MainCarSpawner _mainCarSpawner;
     [SerializeField] private Bank _bank;
+
+    [Header("Events")]
+    [SerializeField] private MonoEvent _checkEvent;
 
     public Action onSpawnedAffordable;
     public Action onSpawnedNotAffordable;
+    public Action onSpawnedBough;
+    public Action onSpawnedNotBought;
     
     #region MonoBehaviour
 
@@ -22,22 +27,24 @@ public class ShopCarAffordanceEvents : MonoBehaviour
 
     private void OnEnable()
     {
-        TryInvokeAtStart();
-        
-        _mainCarSpawner.onSpawn += TryInvoke;
+        _checkEvent.onMonoCall += TryInvoke;
     }
 
     private void OnDisable()
     {
-        _mainCarSpawner.onSpawn -= TryInvoke;
+        _checkEvent.onMonoCall -= TryInvoke;
     }
 
     #endregion
 
-    private void TryInvoke(MainCar mainCar)
+    private void TryInvoke()
     {
-        bool isAffordable = CanAfford(mainCar);
+        if (_mainCarSpawner.CurrentCar == null) return;
         
+        bool isAffordable = CanAfford(_mainCarSpawner.CurrentCar);
+        bool isCarBought = IsCarBought(_mainCarSpawner.CurrentCar);
+
+        (isCarBought ? onSpawnedBough : onSpawnedNotBought)?.Invoke();
         (isAffordable ? onSpawnedAffordable : onSpawnedNotAffordable)?.Invoke();
     }
 
@@ -57,12 +64,5 @@ public class ShopCarAffordanceEvents : MonoBehaviour
         }
 
         return false;
-    }
-
-    private void TryInvokeAtStart()
-    {
-        if (_mainCarSpawner.CurrentCar == null) return;
-
-        TryInvoke(_mainCarSpawner.CurrentCar);
     }
 }

@@ -2,7 +2,6 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 public class NoiseMovement : MonoBehaviour
 {
