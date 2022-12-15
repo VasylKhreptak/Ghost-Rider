@@ -7,6 +7,7 @@ public class FadeAnimation : AnimationCore
     [SerializeField] private AlphaAdapter _alphaAdapter;
 
     [Header("Preferences")]
+    [SerializeField] private bool _resetAlphaOnPlay = true;
     [SerializeField] private float _duration;
     [SerializeField] private float _startAlpha;
     [SerializeField] private float _targetAlpha = 1f;
@@ -32,7 +33,10 @@ public class FadeAnimation : AnimationCore
 
     public override void Animate(bool state)
     {
-        _alphaAdapter.alpha = state ? _startAlpha : _targetAlpha;
+        if (_resetAlphaOnPlay)
+        {
+            _alphaAdapter.alpha = state ? _startAlpha : _targetAlpha;
+        }
 
         _fadeTween = DOTween
             .To(() => _alphaAdapter.alpha, x => _alphaAdapter.alpha = x, state ? _targetAlpha : _startAlpha, _duration)

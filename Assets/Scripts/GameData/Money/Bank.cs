@@ -7,6 +7,7 @@ public class Bank : MonoBehaviour
     private PlayerDataProvider _playerDataProvider;
 
     public bool IsEmpty => _playerDataProvider.playerData.money == 0;
+    public int Money => _playerDataProvider.playerData.money;
     
     public Action<int> onMoneyUpdated;
     public Action<int> onMoneyAdded;
@@ -53,7 +54,7 @@ public class Bank : MonoBehaviour
         return false;
     }
 
-    private bool CanSpendMoney(int money)
+    public bool CanSpendMoney(int money)
     {
         return _playerDataProvider.playerData.money >= money && money > 0;
     }
