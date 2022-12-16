@@ -13,8 +13,8 @@ public class OnEventAnchorPosition : MonoBehaviour
 
     private void OnValidate()
     {
-        _rectTransform = GetComponent<RectTransform>();
-        _monoEvent = GetComponent<MonoEvent>();
+        _rectTransform ??= GetComponent<RectTransform>();
+        _monoEvent ??= GetComponent<MonoEvent>();
     }
 
     private void Awake()
