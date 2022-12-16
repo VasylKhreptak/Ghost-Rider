@@ -8,9 +8,7 @@ public class CarBuyButton : MonoEvent
    [SerializeField] private PlayerDataProvider _playerDataProvider;
    [SerializeField] private Bank _bank;
    [SerializeField] private MainCarSpawner _mainCarSpawner;
-   
-      
-   
+
    #region MonoBehaviour
 
    private void OnValidate()
@@ -43,7 +41,8 @@ public class CarBuyButton : MonoEvent
    private void BuyCar()
    {
       _playerDataProvider.playerData.boughtCars.Add(_mainCarSpawner.CurrentCar.Pool);
-
+      _playerDataProvider.playerData.lastCar = _mainCarSpawner.CurrentCar.Pool;
+      
       onMonoCall?.Invoke();
    }
 }
